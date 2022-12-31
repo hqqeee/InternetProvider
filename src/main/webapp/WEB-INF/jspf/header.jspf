@@ -1,0 +1,107 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/jspf/taglibs.jspf"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+<%@ include file = "/style/style.css" %>
+<%@ include file = "/bootstrap/css/bootstrap.min.css" %>
+</style>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<title>Internet Provider</title>
+</head>
+<body> 
+	<!-- HEADER -->
+	<header class="p-3 text-bg-dark">
+		<div class="container">
+			<div
+				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+				<ul
+					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+					<li><a href="index.jsp" class="nav-link px-2 ${pageContext.request.servletPath == '/index.jsp'? 'text-secondary':'text-white'}">Home</a></li>
+					<li>
+					<form action="controller?action=viewTariff" id="view_tariff" method="post">
+					<a href="#" onclick="document.getElementById('view_tariff').submit();" class="nav-link px-2 ${pageContext.request.getParameter("action") == "viewTariff"?'text-secondary':'text-white'}">Tariffs</a></form></li>
+					
+					
+					<li>
+					<a href="faq.jsp"  class="nav-link px-2 ${pageContext.request.servletPath == '/faq.jsp'? 'text-secondary':'text-white'}">FAQs</a></li>
+					<li><a href="about.jsp" class="nav-link px-2 ${pageContext.request.servletPath == '/about.jsp'? 'text-secondary':'text-white'}">About</a></li>
+				</ul>
+				<ul class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" >
+				<c:choose>
+					<c:when test="${sessionScope.loggedUser.roleId == 1}"><li class="nav-item">
+    <a class="nav-link disabled text-white">Hello, ${sessionScope.loggedUser.login}!</a>
+  </li>
+					
+					<li><form action="controller?action=adminMenu" method="post"><button type="submit" class="btn btn-outline-warning px-2 mx-1"
+								>Admin menu</button></form></li>
+					</c:when>
+					<c:when test="${sessionScope.loggedUser.roleId == 2}"><li class="nav-item">
+    					<a class="nav-link disabled text-white">Hello, ${sessionScope.loggedUser.firstName}!</a>
+ 							 </li>
+					
+						<li>
+					<form action="controller?action=viewProfile" method="post"><button type="submit" class="btn btn-outline-warning px-2 mx-1"
+								>My Profile</button></form></li>
+					</c:when>
+				</c:choose>
+					<c:choose>
+						<c:when test="${empty sessionScope.loggedUser}">
+							<li><button type="button" class="btn btn-warning px-2"
+								data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
+						</c:when>
+						<c:otherwise>
+						
+						<li><form action="controller?action=logout" method="post"><button type="submit" class="btn btn-warning px-2 mx-1"
+								>Logout</button></form></li>
+						</c:otherwise>
+					</c:choose>
+				</ul>
+				<div class="dropdown text-end">
+					<a class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+						data-bs-toggle="dropdown" aria-expanded="false"><img
+						src="${pageContext.request.contextPath}/images/gb.svg" width="16"></a>
+					<ul class="dropdown-menu text-bg-dark">
+						<li><a class="dropdown-item m-0" href="#"><img
+								src="${pageContext.request.contextPath}/images/ua.svg"
+								width="16"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<%@ include file="/WEB-INF/jspf/login.jspf"%>
+
+	</header>
+	<c:if test="${not empty requestScope.successMessage}">
+	<div class="container pt-3">
+				<div class="alert alert-success text-center" role="alert">
+ 					 ${requestScope.successMessage}
+				</div>
+				</div>
+			</c:if>
+	<div class="container pt-3">
+				<c:if test="${not empty requestScope.errorMessages}">
+			<div class="alert alert-danger text-center" role="alert">
+  				<c:forEach var="error" items="${requestScope.errorMessages}">
+  					<li>${error }</li>
+  				</c:forEach>
+			</div>
+			</c:if>
+				</div>
+<div class="container p-3">
+
+			<div class="bg-dark text-secondary px-4 py-5 text-center">
+			
+			
+			
+			
+			
+			
+			

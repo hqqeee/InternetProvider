@@ -1,0 +1,4 @@
+/home/ruslan/workspace-eclipse/InternetProvider/src/test/java/com/epam/dataaccess/dao/mariadb/datasource/ConnectionPoolTest.java
+/home/ruslan/workspace-eclipse/InternetProvider/src/test/java/com/epam/dataaccess/dao/mariadb/impl/MariaDBConstantsTest.java
+/home/ruslan/workspace-eclipse/InternetProvider/src/test/java/com/epam/dataaccess/dao/mariadb/impl/UserDAOMariaDBTest.java
+/home/ruslan/workspace-eclipse/InternetProvider/src/test/java/com/epam/dataaccess/dao/mariadb/datasource/QueryStringBuilderTest.java

@@ -1,0 +1,18 @@
+<script type="text/javascript" defer src="${pageContext.request.contextPath}/js/subscriber_menu.js"></script>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+  <form id="about" action="controller?action=viewProfile" method="post">
+    <a class="nav-link ${pageContext.request.getParameter("action") == "viewProfile"?"active":"text-warning"}" id="about_tab" onclick="document.getElementById('about').submit();" href="#">About</a></form>
+  </li>
+  
+  <li class="nav-item">
+  <form id="tariffs" action="controller?action=viewActiveTariffs" method="post">
+    <a class="nav-link ${pageContext.request.getParameter("action") == "viewActiveTariffs"?"active":"text-warning"}" id="tariff_tab" onclick="document.getElementById('tariffs').submit();" href="#">Tariffs</a></form>
+  </li>
+  <li class="nav-item">
+  
+  <form id="account" action="controller?action=viewAccount" method="post">
+    <a class="nav-link ${pageContext.request.getParameter("action") == "viewAccount"?"active":"text-warning"}" id="account_tab" onclick="document.getElementById('account').submit();" href="#">Account</a></form>
+  </li>
+</ul>
+<c:set var="currentUser" scope="request" value="${sessionScope.loggedUser}" />
