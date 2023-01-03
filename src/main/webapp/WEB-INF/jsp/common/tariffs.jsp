@@ -155,11 +155,23 @@
 				<p class="mx-3 dw-bold">Price: $${tariff.price}/month</p>
 			</div>
 			<div class="d-flex justify-content-start m-3 text-start">${tariff.description }</div>
+			<c:if test="${loggedUser.roleId==1}">
+				<div class="text-end mb-3 me-3">
+
+					<button type="button" class="btn btn-warning me-2"
+						data-bs-toggle="modal" data-bs-target="#editTariff"
+						onclick="edit_tariff('${tariff.name}','${tariff.price}','${tariff.serviceId}','${tariff.description}','${tariff.id}')">Edit</button>
+					<button type="button" class="btn btn-danger" data-bs-toggle="modal"
+						data-bs-target="#submitTariffRemove"
+						onclick="confirm_tariff_remove('${tariff.name}', '${tariff.id}')">Remove</button>
+				</div>
+			</c:if>
 			<c:if test="${loggedUser.roleId==2}">
 				<div class="text-center mb-3">
 
 					<button type="button" class="btn btn-warning btn-lg "
-						data-bs-toggle="modal" data-bs-target="#submitTariffSelection" onclick="confirm_tariff_selection('${tariff.price}', '${tariff.name}', '${tariff.id}')">GET
+						data-bs-toggle="modal" data-bs-target="#submitTariffSelection"
+						onclick="confirm_tariff_selection('${tariff.price}', '${tariff.name}', '${tariff.id}')">GET
 						NOW</button>
 				</div>
 			</c:if>
@@ -194,14 +206,19 @@
 	</form>
 	<c:choose>
 		<c:when test="${loggedUser.roleId == 1}">
-			<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Add
+		<form action="controller?action=openAddTariff" method="post">
+			<button type="submit"
+				class="btn btn-outline-warning mx-3 mb-3">Add
 				new tariff</button>
+		</form>
 		</c:when>
 		<c:otherwise>
-		<form action = "controller?action=downloadTariff" method="post">
-			<input type="hidden" name="serviceId" value="${requestScope.serviceId}"/>
-			<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Download
-				PDF</button></form>
+			<form action="controller?action=downloadTariff" method="post">
+				<input type="hidden" name="serviceId"
+					value="${requestScope.serviceId}" />
+				<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Download
+					PDF</button>
+			</form>
 		</c:otherwise>
 	</c:choose>
 </div>
@@ -218,11 +235,12 @@
 						You are about to connect tariff <span id="tariff_name"></span>
 					</p>
 					<p class="text-muted">
-						Please note. You will now be charged $<span id="tariff_price"></span> per month.
+						Please note. You will now be charged $<span id="tariff_price"></span>
+						per month.
 					</p>
 					<div class="text-end">
 						<form action="controller?action=connectTariff" method="post">
-						<input type="hidden" name="tariffId" id="tariff_id"/>
+							<input type="hidden" name="tariffId" id="tariff_id" />
 							<button type="button" class="btn btn-secondary me-2"
 								data-bs-dismiss="modal">Let me think</button>
 							<button type="submit" class="btn btn-warning">Confirm</button>
@@ -232,6 +250,96 @@
 			</div>
 		</div>
 	</div>
+</c:if>
+
+<c:if test="${loggedUser.roleId==1}">
+	<div class="modal fade" id="submitTariffRemove" tabindex="-1"
+		role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content text-bg-dark">
+				<div class="modal-body">
+					<p class="fs-2">Please confirm you action.</p>
+					<hr class="style1">
+					<p class="fw-bold">You are about to remove tariff</p>
+					<p id="tariff_name" class="fw-bold fs-5"></p>
+
+					<div class="text-end">
+						<form action="controller?action=removeTariff" method="post">
+							<input type="hidden" name="tariffId" id="tariff_id" />
+							<button type="button" class="btn btn-secondary me-2"
+								data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-warning">Confirm</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</c:if>
+<c:if test="${loggedUser.roleId==1}">
+	<div class="modal fade" id="editTariff" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content text-bg-dark">
+				<div class="modal-body">
+					<p class="fs-2" id="enter_invite">Please provide data to update.</p>
+					<hr class="style1">
+					<c:if test="${not empty requestScope.tariffValidateErrors}">
+						<c:forEach var="error"
+							items="${requestScope.tariffValidateErrors}">
+							<div class="alert alert-danger" role="alert">
+									${error}</div>
+						</c:forEach>
+					</c:if>
+					<form action="controller?action=editTariff" method="post"
+						id="edit_tariff_form">
+						<div class="input-group">
+							<label for="name" class="input-group-text">Name: </label><input
+								type="text" class="form-control" id="edit_tariff_name"
+								name="name" maxlength="32" placeholder="Max 32 characters."
+								value="${requestScope.tariffForm.name}" required>
+						</div>
+						<select class="form-select my-3" id="edit_tariff_service_id"
+							name="serviceIdNew">
+							<option value="1" ${requestScope.tariffForm.serviceId == 1?'selected':''}>Telephone</option>
+							<option value="2" ${requestScope.tariffForm.serviceId == 2?'selected':''}>Internet</option>
+							<option value="3" ${requestScope.tariffForm.serviceId == 3?'selected':''}>Cable TV</option>
+							<option value="4" ${requestScope.tariffForm.serviceId == 4?'selected':''}>IP-TV</option>
+						</select>
+
+
+						<div class="input-group my-3">
+							<label for="price" class="input-group-text">Rate</label> <span
+								class="input-group-text">$</span> <input id="edit_tariff_rate"
+								type="number" name="price" class="form-control" step="0.01"
+								value="0" min="0" value="${requestScope.tariffForm.price}" required /> <span class="input-group-text">Per
+								month</span>
+						</div>
+						<div class="input-group">
+							<span class="input-group-text">Description</span>
+							<textarea class="form-control" name="description"
+								id="edit_tariff_description" placeholder="Max 255 characters."
+								maxlength="255" required>${requestScope.tariffForm.description}"</textarea>
+						</div>
+						<hr class="style1">
+						<div class="text-end my-3">
+							<input type="hidden" name="tariffId" id="edit_tariff_id" />
+							<button type="button" class="btn btn-secondary me-2"
+								data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-warning"
+								id="update_add_buttom">Update</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</c:if>
+<c:if test="${not empty requestScope.tariffValidateErrors}">
+	<script type="text/javascript">
+		var myModal = new bootstrap.Modal(
+				document.getElementById('editTariff'), {})
+		myModal.toggle()
+	</script>
 </c:if>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/tariff_menu.js"></script>

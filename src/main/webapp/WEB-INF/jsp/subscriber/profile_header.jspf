@@ -14,5 +14,8 @@
   <form id="account" action="controller?action=viewAccount" method="post">
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewAccount"?"active":"text-warning"}" id="account_tab" onclick="document.getElementById('account').submit();" href="#">Account</a></form>
   </li>
+
 </ul>
+<c:if test="${currentUser eq null}">
 <c:set var="currentUser" scope="request" value="${sessionScope.loggedUser}" />
+</c:if>

@@ -148,7 +148,18 @@ public class ContextInitListener implements ServletContextListener {
 				.forName(prop.getProperty("admin.changeUserStatus.fqn")).getDeclaredConstructor().newInstance());
 		adminCommands.put(prop.getProperty("admin.changeUserBalance.name"), (Command) Class
 				.forName(prop.getProperty("admin.changeUserBalance.fqn")).getDeclaredConstructor().newInstance());
-
+		adminCommands.put(prop.getProperty("admin.removeTariff.name"), (Command) Class
+				.forName(prop.getProperty("admin.removeTariff.fqn")).getDeclaredConstructor().newInstance());
+		adminCommands.put(prop.getProperty("admin.addTariff.name"), (Command) Class
+				.forName(prop.getProperty("admin.addTariff.fqn")).getDeclaredConstructor().newInstance()); 
+		adminCommands.put(prop.getProperty("admin.editTariff.name"), (Command) Class
+				.forName(prop.getProperty("admin.editTariff.fqn")).getDeclaredConstructor().newInstance()); 
+		adminCommands.put(prop.getProperty("admin.openAddTariff.name"), (Command) Class
+				.forName(prop.getProperty("admin.openAddTariff.fqn")).getDeclaredConstructor().newInstance()); 
+		adminCommands.put(prop.getProperty("admin.viewSubscriberProfile.name"), (Command) Class
+				.forName(prop.getProperty("admin.viewSubscriberProfile.fqn")).getDeclaredConstructor().newInstance()); 
+		
+		
 		servletContext.setAttribute("adminCommands", adminCommands);
 		System.out.println(adminCommands);
 		System.out.println("Action load commands.");

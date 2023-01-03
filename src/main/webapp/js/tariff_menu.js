@@ -19,3 +19,16 @@ function confirm_tariff_selection(price,name,id){
 	document.getElementById('tariff_price').innerHTML=price
 	document.getElementById('tariff_id').value=id
 }
+
+function confirm_tariff_remove(name,id) {
+	document.getElementById('tariff_name').innerHTML=name
+	document.getElementById('tariff_id').value=id
+}
+
+function edit_tariff(name, price, serviceId, description, id){
+	document.getElementById("edit_tariff_name").value=name
+	document.getElementById("edit_tariff_rate").value=price
+	document.getElementById("edit_tariff_description").value=description
+	document.getElementById("edit_tariff_service_id").value=serviceId
+	document.getElementById("edit_tariff_id").value=id
+}

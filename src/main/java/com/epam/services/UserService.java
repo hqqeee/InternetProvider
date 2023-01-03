@@ -18,6 +18,7 @@ public interface UserService {
 	public void registerUser(UserForm userForm, String password) throws UserAlreadyExistException, ValidationErrorException;
 	public List<User> getAllSubscribers();
 	public List<User> viewSubscribers(String searchField, int page, int entriesPerPage);
+	public User getUserById(int userId) throws UserNotFoundException, UserServiceException;
 	public int getSubscribersNumber(String searchField);
 	public void removeUser(int userId) throws UnableToRemoveUser;
 	public void changeUserStatus(boolean blocked, int id) throws UserServiceException;

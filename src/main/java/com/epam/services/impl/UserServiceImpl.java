@@ -124,6 +124,17 @@ public class UserServiceImpl implements UserService{
 	}
 	
 
+
+	@Override
+	public User getUserById(int userId) throws UserNotFoundException, UserServiceException {
+		try {
+			User user = userDAO.get(userId);
+			return user;
+		} catch (DAOException e) {
+			throw new UserServiceException("Cannot get user by id " + userId);
+		}
+	}
+	
 	@Override
 	public void removeUser(int userId) throws UnableToRemoveUser {
 		try {
@@ -286,6 +297,7 @@ public class UserServiceImpl implements UserService{
 			errors.add("Password must be at least 8 characters long.");
 		}
 	}
+
 
 
 

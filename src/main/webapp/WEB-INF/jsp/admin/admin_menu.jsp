@@ -84,12 +84,23 @@
 						</c:otherwise>
 					</c:choose></td>
 				<td>$${user.balance}</td>
-				<td><div class="btn-group">
-						<button type="button" class="btn btn-warning">Edit</button>
+
+				<td>
+
+					<form action="controller?action=viewSubscriberProfile"
+						method="post" id="view_profile_form">
+						<input type="hidden" name="userId" id="view_user_profile_id">
+					</form>
+					<div class="btn-group">
+						<button type="button" class="btn btn-warning"
+							onclick="
+							document.getElementById('view_user_profile_id').value='${user.id}';
+							document.getElementById('view_profile_form').submit()">Profile</button>
+
 						<button type="button"
 							class="btn btn-outline-warning dropdown-toggle dropdown-toggle-split"
 							data-bs-toggle="dropdown" aria-expanded="false">
-							<span class="visually-hidden">Edit</span>
+							<span class="visually-hidden">Profile</span>
 						</button>
 						<ul class="dropdown-menu dropdown-menu-dark">
 							<li><button type="button" class="dropdown-item"
@@ -116,7 +127,8 @@
 									onClick="change_balance_modal('${user.login}','${user.balance}','${user.id}')">Balance
 									change</button></li>
 						</ul>
-					</div></td>
+					</div>
+				</td>
 			</tr>
 		</c:forEach>
 	</tbody>
@@ -124,23 +136,23 @@
 <div class="container pt-3">
 	<div class="d-flex justify-content-between align-items-center">
 
-		<form
-			action="controller?action=adminMenu" method="post">
+		<form action="controller?action=adminMenu" method="post">
 			<input type="hidden" name="searchField" value="${searchField}" /> <input
 				type="hidden" name="rowNumber" value="${rowNumber}" /> <input
 				type="hidden" name="page" id="pageNumber" />
-				<div class="form-group btn-group col-lg-auto me-lg-auto mx-2 justify-content-center">
-			<c:forEach begin="1" end="${numberOfPages}" var="i">
-				<c:choose>
-					<c:when test="${page eq i}">
-						<button type="button" class="btn btn-warning">${i}</button>
-					</c:when>
-					<c:otherwise>
-						<button value="${i}" type="submit" class="btn btn-outline-warning"
-							onclick=submit_page(this.value)>${i}</button>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>
+			<div
+				class="form-group btn-group col-lg-auto me-lg-auto mx-2 justify-content-center">
+				<c:forEach begin="1" end="${numberOfPages}" var="i">
+					<c:choose>
+						<c:when test="${page eq i}">
+							<button type="button" class="btn btn-warning">${i}</button>
+						</c:when>
+						<c:otherwise>
+							<button value="${i}" type="submit"
+								class="btn btn-outline-warning" onclick=submit_page(this.value)>${i}</button>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
 			</div>
 		</form>
 
@@ -206,25 +218,29 @@
 						id="change_balance_modal_user_login"></li>
 				</ul>
 				<form action="controller?action=changeBalance" method="post">
-				<input type="hidden" name="page" value="${page}" /> <input
+					<input type="hidden" name="page" value="${page}" /> <input
 						type="hidden" name="searchField" value="${searchField}" /> <input
 						type="hidden" name="rowNumber" value="${rowNumber}" /> <input
 						type="hidden" name="userId" id="change_balance_user_id" />
-				<div class="input-group my-3">
-					<span class="input-group-text">$</span> <span
-						class="input-group-text" id="current_user_balance"></span> <input
-						type="number" name="amount" class="form-control" step="0.01" value="0" min="0" required />
-				</div>
-				<div class="input-group">
-					<span class="input-group-text">Description</span>
-					<textarea class="form-control" name="description" placeholder="Max 100 characters." maxlength="100" required></textarea>
-				</div>
-				<hr class="style1">
-				<br>
-				<button type="button" class="btn btn-secondary"
-					data-bs-dismiss="modal">Close</button>
-				<button type=submit class="btn btn-warning" name="balanceChangeType" value="withdraw">Withdraw</button>
-				<button type="submit" class="btn btn-warning" name="balanceChangeType" value="topUp">Top-up</button>
+					<div class="input-group my-3">
+						<span class="input-group-text">$</span> <span
+							class="input-group-text" id="current_user_balance"></span> <input
+							type="number" name="amount" class="form-control" step="0.01"
+							value="0" min="0" required />
+					</div>
+					<div class="input-group">
+						<span class="input-group-text">Description</span>
+						<textarea class="form-control" name="description"
+							placeholder="Max 100 characters." maxlength="100" required></textarea>
+					</div>
+					<hr class="style1">
+					<br>
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+					<button type=submit class="btn btn-warning"
+						name="balanceChangeType" value="withdraw">Withdraw</button>
+					<button type="submit" class="btn btn-warning"
+						name="balanceChangeType" value="topUp">Top-up</button>
 				</form>
 			</div>
 		</div>

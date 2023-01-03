@@ -15,7 +15,7 @@
 
 <title>Internet Provider</title>
 </head>
-<body> 
+<body class="d-flex flex-column min-vh-100"> 
 	<!-- HEADER -->
 	<header class="p-3 text-bg-dark">
 		<div class="container">

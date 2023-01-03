@@ -8,4 +8,5 @@ public final class Page {
 	public static final String ACCOUNT_PAGE = "/WEB-INF/jsp/subscriber/account.jsp";
 	public static final String ACTIVE_TARIFFS_PAGE = "/WEB-INF/jsp/subscriber/active_tariffs.jsp";
 	public static final String VIEW_TARIFF_PAGE = "/WEB-INF/jsp/common/tariffs.jsp";
+	public static final String ADD_TARIFF_PAGE = "/WEB-INF/jsp/admin/add_tariff.jsp";
 }
