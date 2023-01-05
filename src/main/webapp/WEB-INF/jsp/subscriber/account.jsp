@@ -3,9 +3,11 @@
 <%@ include file="/WEB-INF/jsp/subscriber/profile_header.jspf"%>
 <div class="text-white  text-start">
 	<div class="d-flex justify-content-between align-items-center">
-		<p class="h2 m-3 fw-bold">Your balance: $${currentUser.balance}</p>
+		<p class="h2 m-3 fw-bold">Your balance: $${requestScope.userBalance}</p>
+		<c:if test="${sessionScope.loggedUser.roleId eq 2}">
 		<button class="btn btn-warning" data-bs-toggle="modal"
 			data-bs-target="#replenishModal">Replenish</button>
+		</c:if>
 	</div>
 	<hr class="style1">
 
@@ -40,8 +42,14 @@
 
 		</tbody>
 	</table>
+	<c:if test="${sessionScope.loggedUser.roleId eq 2}">
 	<form
-		action="controller?action=viewAccount" method="post">
+		action="controller?action=viewAccount" method="post"> </c:if>
+		<c:if test="${sessionScope.loggedUser.roleId eq 1}">
+		<form
+		action="controller?action=viewSubscriberAccount" method="post"> 
+		<input name="userId" value="${requestScope.userId}" type="hidden"/>
+		</c:if>
 		<input type="hidden" name="page" id="pageNumber" />
 		<div class="form-group btn-group col-lg-auto me-lg-auto mx-2 justify-content-center">
 		<c:forEach begin="1" end="${numberOfPages}" var="i">
@@ -59,6 +67,7 @@
 	</div>	
 	</form>
 </div>
+<c:if test="${sessionScope.loggedUser.roleId eq 2}">
 <!-- 			Replenish modal -->
 <div class="modal fade" id="replenishModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -108,4 +117,5 @@
 		</div>
 	</div>
 </div>
+</c:if>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

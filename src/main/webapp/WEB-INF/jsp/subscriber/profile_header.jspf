@@ -1,5 +1,28 @@
 <script type="text/javascript" defer src="${pageContext.request.contextPath}/js/subscriber_menu.js"></script>
+
 <ul class="nav nav-tabs">
+<c:choose>
+<c:when test="${sessionScope.loggedUser.roleId eq 1}">
+
+  <li class="nav-item">
+  <form id="about" action="controller?action=viewSubscriberProfile" method="post">
+  	<input name="userId" value="${requestScope.userId}" type="hidden"/>
+    <a class="nav-link ${pageContext.request.getParameter("action") == "viewSubscriberProfile"?"active":"text-warning"}" id="about_tab" onclick="document.getElementById('about').submit();" href="#">About</a></form>
+  </li>
+  
+  <li class="nav-item">
+  <form id="tariffs" action="controller?action=viewSubscriberTariffs" method="post">
+ 	<input name="userId" value="${requestScope.userId}" type="hidden"/>
+    <a class="nav-link ${pageContext.request.getParameter("action") == "viewSubscriberTariffs"?"active":"text-warning"}" id="tariff_tab" onclick="document.getElementById('tariffs').submit();" href="#">Tariffs</a></form>
+  </li>
+  <li class="nav-item">
+  
+  <form id="account" action="controller?action=viewSubscriberAccount" method="post">
+  <input name="userId" value="${requestScope.userId}" type="hidden"/>
+    <a class="nav-link ${pageContext.request.getParameter("action") == "viewSubscriberAccount"?"active":"text-warning"}" id="account_tab" onclick="document.getElementById('account').submit();" href="#">Account</a></form>
+  </li>
+</c:when>
+<c:otherwise>
   <li class="nav-item">
   <form id="about" action="controller?action=viewProfile" method="post">
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewProfile"?"active":"text-warning"}" id="about_tab" onclick="document.getElementById('about').submit();" href="#">About</a></form>
@@ -7,6 +30,7 @@
   
   <li class="nav-item">
   <form id="tariffs" action="controller?action=viewActiveTariffs" method="post">
+  	<input name="userId" value="${sessionScope.loggedUser.id}" type="hidden"/>
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewActiveTariffs"?"active":"text-warning"}" id="tariff_tab" onclick="document.getElementById('tariffs').submit();" href="#">Tariffs</a></form>
   </li>
   <li class="nav-item">
@@ -15,7 +39,6 @@
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewAccount"?"active":"text-warning"}" id="account_tab" onclick="document.getElementById('account').submit();" href="#">Account</a></form>
   </li>
 
+</c:otherwise>
+</c:choose>
 </ul>
-<c:if test="${currentUser eq null}">
-<c:set var="currentUser" scope="request" value="${sessionScope.loggedUser}" />
-</c:if>

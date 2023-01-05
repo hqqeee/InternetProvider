@@ -17,6 +17,7 @@ public class ViewSubscriberProfileCommand implements Command{
 		try {
 			User user = ((UserService)req.getServletContext().getAttribute("userService")).getUserById(Integer.parseInt(req.getParameter("userId")));
 			req.setAttribute("currentUser", user);
+			req.setAttribute("userId", req.getParameter("userId"));
 			return Page.PROFILE_PAGE;
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
@@ -28,7 +29,7 @@ public class ViewSubscriberProfileCommand implements Command{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return Page.ADMIN_MENU_PAGE;
+		return new AdminMenuCommand().execute(req, resp);
 	}
 
 }

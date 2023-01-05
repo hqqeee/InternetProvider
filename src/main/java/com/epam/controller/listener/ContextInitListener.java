@@ -158,6 +158,10 @@ public class ContextInitListener implements ServletContextListener {
 				.forName(prop.getProperty("admin.openAddTariff.fqn")).getDeclaredConstructor().newInstance()); 
 		adminCommands.put(prop.getProperty("admin.viewSubscriberProfile.name"), (Command) Class
 				.forName(prop.getProperty("admin.viewSubscriberProfile.fqn")).getDeclaredConstructor().newInstance()); 
+		adminCommands.put(prop.getProperty("admin.viewSubscriberTariffs.name"), (Command) Class
+				.forName(prop.getProperty("admin.viewSubscriberTariffs.fqn")).getDeclaredConstructor().newInstance()); 
+		adminCommands.put(prop.getProperty("admin.viewSubscriberAccount.name"), (Command) Class
+				.forName(prop.getProperty("admin.viewSubscriberAccount.fqn")).getDeclaredConstructor().newInstance()); 
 		
 		
 		servletContext.setAttribute("adminCommands", adminCommands);

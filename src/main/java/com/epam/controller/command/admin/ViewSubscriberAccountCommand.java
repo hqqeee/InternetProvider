@@ -1,4 +1,4 @@
-package com.epam.controller.command.subscriber;
+package com.epam.controller.command.admin;
 
 import java.util.List;
 
@@ -8,15 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
 import com.epam.dataaccess.entity.Transaction;
-import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
 
-public class ViewAccountCommand implements Command {
+public class ViewSubscriberAccountCommand implements Command{
 
 	private static final int RECORDS_PER_PAGE = 20;
-
+	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		TransactionService transactionService = (TransactionService) req.getServletContext()
@@ -29,8 +28,8 @@ public class ViewAccountCommand implements Command {
 		}
 
 		try {
-			int userId = ((User) req.getSession().getAttribute("loggedUser")).getId();
-			req.setAttribute("userBalance", ((User) req.getSession().getAttribute("loggedUser")).getBalance());
+			int userId = Integer.parseInt(req.getParameter("userId"));
+			req.setAttribute("userId", req.getParameter("userId"));
 			req.setAttribute("numberOfPages",
 					Math.ceil(transactionService.getUsersTransactionNumber(userId) * 1.0 / RECORDS_PER_PAGE));
 			List<Transaction> transactions = transactionService.getUserTransaction(userId, currentPage,
@@ -38,7 +37,7 @@ public class ViewAccountCommand implements Command {
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
 		} catch (NoTransactionsFoundException e) {
-			req.setAttribute("noTransactionFount", "Payment history is empty");
+			req.setAttribute("noTransactionFound", "Payment history is empty");
 		} catch (TransactionServiceException e) {
 			e.printStackTrace();
 			req.setAttribute("errorMessages", "Unable to load payment history. Try again later.");
