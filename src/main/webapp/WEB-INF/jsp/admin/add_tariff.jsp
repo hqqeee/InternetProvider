@@ -26,11 +26,16 @@
 
 
 	<div class="input-group my-3">
-		<label for="price" class="input-group-text">Rate</label> <span
+		<label for="rate" class="input-group-text">Rate</label> <span
 			class="input-group-text">$</span> <input id="edit_tariff_rate"
-			type="number" name="price" class="form-control" step="0.01" value="0"
-			min="0" value="${requestScope.tariffForm.price}" required /> <span
-			class="input-group-text">Per month</span>
+			type="number" name="rate" class="form-control" step="0.01" value="0"
+			min="0" value="${requestScope.tariffForm.rate}" required /> <select
+			class="form-select" name="paymentPeriod">
+			<option value="1" ${requestScope.tariffForm.paymentPeriod == 1?'selected':''}>Per day</option>
+			<option value="7" ${requestScope.tariffForm.paymentPeriod == 7?'selected':''}>Per week</option>
+			<option value="14" ${requestScope.tariffForm.paymentPeriod == 14?'selected':''}>Every two weeks</option>
+			<option value="28" ${requestScope.tariffForm.paymentPeriod == 28?'selected':''}>Per month</option>
+		</select>
 	</div>
 	<div class="input-group">
 		<span class="input-group-text">Description</span>
@@ -43,7 +48,7 @@
 		<input type="hidden" name="tariffId" id="edit_tariff_id" />
 		<button type="button" class="btn btn-secondary me-2"
 			data-bs-dismiss="modal">Cancel</button>
-		<button type="submit" class="btn btn-warning" id="update_add_buttom">Update</button>
+		<button type="submit" class="btn btn-warning" id="update_add_buttom">Add</button>
 	</div>
 </form>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

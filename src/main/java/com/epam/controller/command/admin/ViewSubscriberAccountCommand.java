@@ -11,6 +11,7 @@ import com.epam.dataaccess.entity.Transaction;
 import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
+import com.epam.services.UserService;
 
 public class ViewSubscriberAccountCommand implements Command{
 
@@ -36,6 +37,8 @@ public class ViewSubscriberAccountCommand implements Command{
 					RECORDS_PER_PAGE);
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
+			req.setAttribute("userBalance", ((UserService) req.getServletContext()
+					.getAttribute("userService")).getUserBalance(userId));
 		} catch (NoTransactionsFoundException e) {
 			req.setAttribute("noTransactionFound", "Payment history is empty");
 		} catch (TransactionServiceException e) {

@@ -67,7 +67,7 @@ public class DownloadTariffsCommand implements Command {
 		for (Tariff tariff : tariffs) {
 			nameCell = new PdfPCell(new Phrase(tariff.getName()));
 			descCell = new PdfPCell(new Phrase(tariff.getDescription()));
-			priceCell = new PdfPCell(new Phrase(tariff.getPrice().toString()));
+			priceCell = new PdfPCell(new Phrase(tariff.getRate().toString() + " per " + tariff.getPaymentPeriod() + " days."));
 			table.addCell(nameCell);
 			table.addCell(descCell);
 			table.addCell(priceCell);

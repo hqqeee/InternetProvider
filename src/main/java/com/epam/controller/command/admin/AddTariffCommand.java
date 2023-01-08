@@ -20,18 +20,25 @@ public class AddTariffCommand implements Command {
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		TariffForm form = null;
 		try {
-			form = new TariffForm(req.getParameter("name"), new BigDecimal(req.getParameter("price")), Integer.parseInt(req.getParameter("serviceIdNew")),req.getParameter("description"));
+			form = new TariffForm(
+					req.getParameter("name"),
+					Integer.parseInt(req.getParameter("paymentPeriod")),
+					new BigDecimal(req.getParameter("rate")),
+					Integer.parseInt(req.getParameter("serviceIdNew")),
+					req.getParameter("description"));
 			((TariffService) req.getServletContext().getAttribute("tariffService")).addTariff(form);
 			req.setAttribute("successMessage", "Tariff successfully added." );
 			return new ViewTariffsCommand().execute(req, resp);
 		} catch (ValidationErrorException e) {
-			if(form != null) req.setAttribute("tariffForm", form);
 			req.setAttribute("errorMessages", e.getErrors());
 		} catch (TariffServiceException e) {
+			e.printStackTrace();
 			req.setAttribute("errorMessages", "Cannot add tariff. Something went wrong. Try again later.");
 		} catch (Exception e) {
+			e.printStackTrace();
 			req.setAttribute("errorMessages", "Cannot add tariff. Something went wrong. Try again later or report bag.");
 		}
+		if(form != null) req.setAttribute("tariffForm", form);
 		return new OpenAddTariffCommand().execute(req, resp);
 	}
 

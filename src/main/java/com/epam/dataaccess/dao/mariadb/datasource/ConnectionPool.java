@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 public enum ConnectionPool {
 	INSTANCE;
 
-	private DataSource dataSource = null; /* MUST BE STATIC? */
+	private DataSource dataSource = null; 
 
 	private ConnectionPool() {
 		try {

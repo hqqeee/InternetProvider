@@ -4,13 +4,15 @@ import java.math.BigDecimal;
 
 public class TariffForm {
 	private String name;
-	private BigDecimal price;
+	private int paymentPeriod;
+	private BigDecimal rate;
 	private int serviceId;
     private String description;
-    
-	public TariffForm(String name, BigDecimal price, int serviceId, String description) {
+	public TariffForm(String name, int paymentPeriod, BigDecimal rate, int serviceId, String description) {
+		super();
 		this.name = name;
-		this.price = price;
+		this.paymentPeriod = paymentPeriod;
+		this.rate = rate;
 		this.serviceId = serviceId;
 		this.description = description;
 	}
@@ -20,11 +22,17 @@ public class TariffForm {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public BigDecimal getPrice() {
-		return price;
+	public int getPaymentPeriod() {
+		return paymentPeriod;
 	}
-	public void setPrice(BigDecimal price) {
-		this.price = price;
+	public void setPaymentPeriod(int paymentPeriod) {
+		this.paymentPeriod = paymentPeriod;
+	}
+	public BigDecimal getRate() {
+		return rate;
+	}
+	public void setRate(BigDecimal rate) {
+		this.rate = rate;
 	}
 	public int getServiceId() {
 		return serviceId;
@@ -39,5 +47,6 @@ public class TariffForm {
 		this.description = description;
 	}
     
+	
     
 }

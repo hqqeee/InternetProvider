@@ -71,6 +71,11 @@ public class QueryStringBuilder {
 		query.append(" INNER JOIN " + table + " ON " + on);
 		return this;
 	}
+	
+	public QueryStringBuilder addLeftJoin(String table, String on) {
+		query.append(" LEFT JOIN " + table + " ON " + on);
+		return this;
+	}
 
 	public QueryStringBuilder addGroupBy(String criteria) {
 		query.append(" GROUP BY " + criteria);

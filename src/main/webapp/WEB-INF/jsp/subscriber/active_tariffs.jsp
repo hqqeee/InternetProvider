@@ -10,24 +10,28 @@
 	<c:forEach var="tariff" items="${requestScope.tariffsToDisplay}">
 		<div class="card bg-dark text-white border-light mb-5 mt-3">
 			<div class="d-flex justify-content-between align-items-center">
-				<p class="h2 m-3 fw-bold">${tariff.name}</p>
+				<p class="h2 m-3 fw-bold">${tariff.key.name}</p>
 				<img class="align-self-center mx-3"
-					src="${tariff.serviceId==1?'images/call-contact-phone-svgrepo-com.svg':tariff.serviceId==2?'images/connection-svgrepo-com.svg':tariff.serviceId==3?'images/satelite-svgrepo-com.svg':'images/smart-svgrepo-com.svg'}
+					src="${tariff.key.serviceId==1?'images/call-contact-phone-svgrepo-com.svg':tariff.key.serviceId==2?'images/connection-svgrepo-com.svg':tariff.key.serviceId==3?'images/satelite-svgrepo-com.svg':'images/smart-svgrepo-com.svg'}
 					
 					"
 					alt="..." width="32" style="filter: invert(1);">
 			</div>
+			<div class="text-start mb-3 ms-3 text-muted">
+			  ${tariff.value} day(s) until next payment.
+			</div>
 			<hr class="style1">
 			<div class="d-flex justify-content-between align-items-center">
 				<div class="text-muted mx-3">Description</div>
-				<p class="mx-3 dw-bold">Price: $${tariff.price}/month</p>
+				<p class="mx-3 dw-bold">Price: $${tariff.key.rate}/${tariff.key.paymentPeriod eq 28?'month':tariff.key.paymentPeriod eq 14?'two weeks': tariff.key.paymentPeriod eq 7? 'week':'day'}</p>
 			</div>
-			<div class="d-flex justify-content-start m-3 text-start">${tariff.description }</div>
+			<div class="d-flex justify-content-start m-3 text-start">${tariff.key.description }</div>
+			
 			<c:if test="${loggedUser.roleId==2}">
 				<div class="text-end mb-3 me-3">
 
 					<button type="button" class="btn btn-danger"
-						data-bs-toggle="modal" data-bs-target="#submitTariffRemove" onclick="confirm_tariff_remove('${tariff.name}', '${tariff.id}')">Disable
+						data-bs-toggle="modal" data-bs-target="#submitTariffRemove" onclick="confirm_tariff_remove('${tariff.key.name}', '${tariff.key.id}')">Disable
 						</button>
 				</div>
 			</c:if>

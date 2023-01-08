@@ -1,8 +1,9 @@
 package com.epam.services.impl;
 
-import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.epam.dataaccess.dao.TariffDAO;
 import com.epam.dataaccess.entity.Tariff;
@@ -40,36 +41,54 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public int getTariffsCount(int serviceId) throws TariffServiceException {
 		try {
-			if(serviceId == 0) {
+			if (serviceId == 0) {
 				return tariffDAO.getTariffCount();
-			} 
+			}
 			return tariffDAO.getTariffCount(serviceId);
-		}
-		catch (DAOException e) {
+		} catch (DAOException e) {
 			e.printStackTrace();
-			throw new TariffServiceException("Cannot get count of tariffs with service id "+ serviceId);
+			throw new TariffServiceException("Cannot get count of tariffs with service id " + serviceId);
 		}
 	}
 
 	@Override
 	public List<Tariff> getAllTariff(int serviceId) throws TariffServiceException {
 		try {
-			if(serviceId == 0) {
+			if (serviceId == 0) {
 				return tariffDAO.getAll();
-			} 
+			}
 			return tariffDAO.getAll(serviceId);
-		}
-		catch (DAOException e) {
+		} catch (DAOException e) {
 			e.printStackTrace();
-			throw new TariffServiceException("Cannot get all tariff with service id "+ serviceId);
+			throw new TariffServiceException("Cannot get all tariff with service id " + serviceId);
 		}
 	}
 
 	@Override
 	public List<Tariff> getUsersTariff(int userId) throws TariffServiceException {
-		
+
 		try {
 			return tariffDAO.getUsersTariffs(userId);
+		} catch (DAOException e) {
+			e.printStackTrace();
+			throw new TariffServiceException("Cannot get tariffs for user with id " + userId, e);
+		}
+	}
+
+	@Override
+	public List<Tariff> getUnpaidTariffs(int userId) throws TariffServiceException {
+		try {
+			return tariffDAO.getUsersUnpaidTariffs(userId);
+		} catch (DAOException e) {
+			e.printStackTrace();
+			throw new TariffServiceException("Cannot get unpiad tariffs for user with id " + userId, e);
+		}
+	}
+
+	@Override
+	public Map<Tariff, Integer> getUsersTariffWithDaysUntilPayment(int userId) throws TariffServiceException {
+		try {
+			return tariffDAO.getUsersTariffsWithDayToPayment(userId);
 		} catch (DAOException e) {
 			e.printStackTrace();
 			throw new TariffServiceException("Cannot get tariffs for user with id " + userId);
@@ -86,7 +105,7 @@ public class TariffServiceImpl implements TariffService {
 			e.printStackTrace();
 			throw new TariffServiceException("Cannot remove tariff with id " + tariffId);
 		}
-		
+
 	}
 
 	@Override
@@ -97,51 +116,69 @@ public class TariffServiceImpl implements TariffService {
 		} catch (DAOException e) {
 			throw new TariffServiceException("Connot add user.", e);
 		}
-		
+
 	}
 
 	@Override
-	public void editTariff(TariffForm tariffForm, int tariffId) throws TariffServiceException, ValidationErrorException {
+	public void editTariff(TariffForm tariffForm, int tariffId)
+			throws TariffServiceException, ValidationErrorException {
 		Tariff tariff = validateTariff(tariffForm);
 		tariff.setId(tariffId);
 		try {
 			tariffDAO.update(tariff);
-		} catch(DAOException e) {
+		} catch (DAOException e) {
 			throw new TariffServiceException("Connot edit user.", e);
 		}
-		
+
 	}
-	
-	private Tariff validateTariff(TariffForm form) throws ValidationErrorException{
+
+	private Tariff validateTariff(TariffForm form) throws ValidationErrorException {
 		List<String> errors = new ArrayList<>();
 		validateTextFieldValues(errors, form.getName(), "name", 32);
-		validateTextFieldValues(errors, form.getDescription(), "description" , 255);
-		if(form.getServiceId() < 1 || form.getServiceId() > 4) {
+		validateTextFieldValues(errors, form.getDescription(), "description", 255);
+		if (form.getServiceId() < 1 || form.getServiceId() > 4) {
 			errors.add("Invalid service Id. Service id must be between 1 and 4.");
 		}
-		if (form.getPrice().signum() <= 0) {
+		if (form.getRate().signum() <= 0) {
 			errors.add("Invalid price. Price must be greater than 0.");
 		}
-		if(errors.isEmpty()) {
+		if (form.getPaymentPeriod() <= 0) {
+			errors.add("Payment period must be greater than 0.");
+		}
+		if (errors.isEmpty()) {
 			Tariff tariff = new Tariff();
 			tariff.setName(form.getName());
-			tariff.setPrice(form.getPrice());
+			tariff.setRate(form.getRate());
+			tariff.setPaymentPeriod(form.getPaymentPeriod());
 			tariff.setDescription(form.getDescription());
 			tariff.setServiceId(form.getServiceId());
 			return tariff;
-		}
-		else throw new ValidationErrorException(errors);
+		} else
+			throw new ValidationErrorException(errors);
 	}
 
-	private static void validateTextFieldValues(List<String> errors, String fieldValue, String fieldName, int maxLength) {
-		if(isEmpty(fieldValue)) {
+	private static void validateTextFieldValues(List<String> errors, String fieldValue, String fieldName,
+			int maxLength) {
+		if (isEmpty(fieldValue)) {
 			errors.add(fieldName + " is empty.");
-		} else if(fieldValue.trim().length() > maxLength) {
-			errors.add(fieldName + " must not exceed " + maxLength +" characters.");
-		} 
+		} else if (fieldValue.trim().length() > maxLength) {
+			errors.add(fieldName + " must not exceed " + maxLength + " characters.");
+		}
 	}
+
 	private static boolean isEmpty(String fieldValue) {
-		return fieldValue ==null || fieldValue.trim().isEmpty();
+		return fieldValue == null || fieldValue.trim().isEmpty();
+	}
+
+	@Override
+	public void updateDaysUntilPayments() throws TariffServiceException {
+		try {
+			tariffDAO.updateDaysLeftForUnblockedUsers();
+
+		} catch (DAOException e) {
+			throw new TariffServiceException("Cannot update days until payment", e);
+		}
+
 	}
 
 }

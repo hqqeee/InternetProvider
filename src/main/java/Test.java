@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
+import com.epam.controller.command.admin.DailyWithdrawCommand;
 import com.epam.dataaccess.dao.DAOFactory;
 import com.epam.dataaccess.dao.RoleDAO;
 import com.epam.dataaccess.dao.ServiceDAO;
@@ -29,6 +30,10 @@ import com.epam.dataaccess.entity.Tariff;
 import com.epam.dataaccess.entity.Transaction;
 import com.epam.dataaccess.entity.User;
 import com.epam.exception.dao.DAOException;
+import com.epam.exception.services.NegativeUserBalanceException;
+import com.epam.exception.services.TariffServiceException;
+import com.epam.exception.services.UserServiceException;
+import com.epam.util.AppContext;
 import com.epam.util.SortingOrder;
 
 @WebServlet("/test")
@@ -38,6 +43,8 @@ public class Test extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		AppContext appContext = AppContext.getInstance();
+		new DailyWithdrawCommand().run();
 //		System.out.println("User DAO test");
 //		DAOFactory factory = new DAOFactoryMariaDB();
 //		UserDAO dao = factory.getUserDAO();
@@ -102,15 +109,15 @@ public class Test extends HttpServlet {
 //		} catch (DAOException e) {
 //			e.printStackTrace();
 //		}
-		DAOFactory factoryDAO = (DAOFactory) getServletContext().getAttribute("daoFactory");
-		try {
-			System.out.println(factoryDAO.getUserDAO().get(1));
-		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		Map <String,Command> commonActions = ((Map<String,Command>) getServletContext().getAttribute("commonActions"));
-		commonActions.get("login").execute(req, resp);
+//		DAOFactory factoryDAO = (DAOFactory) getServletContext().getAttribute("daoFactory");
+//		try {
+//			System.out.println(factoryDAO.getUserDAO().get(1));
+//		} catch (DAOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		Map <String,Command> commonActions = ((Map<String,Command>) getServletContext().getAttribute("commonActions"));
+//		commonActions.get("login").execute(req, resp);
 	}
 
 	@Override

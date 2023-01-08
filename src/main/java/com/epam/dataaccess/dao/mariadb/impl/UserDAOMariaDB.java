@@ -1,5 +1,6 @@
 package com.epam.dataaccess.dao.mariadb.impl;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
@@ -134,7 +135,7 @@ public class UserDAOMariaDB implements UserDAO {
 	public int addTariffToUser(int userId, int tariffId) throws DAOException {
 		try {
 			return new QueryBuilder().addPreparedStatement(MariaDBConstants.ADD_TARIFF_TO_USER)
-					.setIntField(userId).setIntField(tariffId).executeUpdate()
+					.setIntField(userId).setIntField(tariffId).setIntField(0).executeUpdate()
 					;
 		}	catch(SQLIntegrityConstraintViolationException e) {
 			throw new DAORecordAlreadyExistsException("Pair tariffId-userId("+tariffId +"-"+userId+ ") already exists.",e);
@@ -160,6 +161,38 @@ public class UserDAOMariaDB implements UserDAO {
 		return subscribers;
 	}
 	
+
+	@Override
+	public List<User> getAllUnblockedSubscriber() throws DAOException {
+		List<User> subscribers = new ArrayList<>();
+		try(ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_ALL_UNBLOCKED_SUBSCRIBERS)
+				.setIntField(2).executeQuery()
+				) {
+			while (rs.next()) {
+				subscribers.add(getUserFromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			throw new DAOReadException("Cannot get all unblocked subscribers.", e);
+		}
+		return subscribers;
+	}
+
+	@Override
+	public List<User> getSubscriberForCharging() throws DAOException {
+		List<User> subscribers = new ArrayList<>();
+		try(ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_UNBLOCKED_AND_PAYMENT_NEEDED_SUBSCRIBERS)
+				.executeQuery()
+				) {
+			while (rs.next()) {
+				subscribers.add(getUserFromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			throw new DAOReadException("Cannot get all unblocked subscribers.", e);
+		}
+		return subscribers;
+	}
+
+
 
 	@Override
 	public List<User> getSubscriberForView(String searchField, int offset,
@@ -227,6 +260,33 @@ public class UserDAOMariaDB implements UserDAO {
 			throw new DAOMappingException("Cannot map user from ResultSet.", e);
 		}
 	}
+
+	@Override
+	public BigDecimal getUserBalance(int userId) throws DAOException {
+		try(ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_USER_BALANCE).setIntField(userId).executeQuery()){
+			BigDecimal result = null;
+			if(rs.next()) {
+				result = rs.getBigDecimal(MariaDBConstants.USER_BALANCE_FIELD);
+			}
+			return result;
+		} catch (SQLException e) {
+			throw new DAOReadException("Cannot get balance for user with id " + userId + ".", e);
+		} 
+	}
+
+	@Override
+	public boolean getUserStatus(int userId) throws DAOException {
+		try(ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_USER_STATUS).setIntField(userId).executeQuery()){
+			boolean result = false;
+			if(rs.next()) {
+				result = rs.getBoolean(MariaDBConstants.USER_BLOCKED_FIELD);
+			}
+			return result;
+		} catch (SQLException e) {
+			throw new DAOReadException("Cannot get status of the user with id " + userId + ".", e);
+		} 
+	}
+
 
 
 

@@ -1,6 +1,7 @@
 package com.epam.services;
 
 import java.util.List;
+import java.util.Map;
 
 import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.services.TariffServiceException;
@@ -13,7 +14,10 @@ public interface TariffService {
 	public int getTariffsCount(int serviceId) throws TariffServiceException;
 	public List<Tariff> getAllTariff(int serviceId) throws TariffServiceException;
 	public List<Tariff> getUsersTariff(int userId) throws TariffServiceException;
+	public List<Tariff> getUnpaidTariffs(int userId) throws TariffServiceException;
+	public Map<Tariff, Integer> getUsersTariffWithDaysUntilPayment(int userId) throws TariffServiceException;
 	public void removeTariff(int tariffId) throws TariffServiceException;
 	public void addTariff(TariffForm tariffForm) throws TariffServiceException, ValidationErrorException;
 	public void editTariff(TariffForm tariffForm, int tariffId) throws TariffServiceException, ValidationErrorException;
+	public void updateDaysUntilPayments() throws TariffServiceException;
 }

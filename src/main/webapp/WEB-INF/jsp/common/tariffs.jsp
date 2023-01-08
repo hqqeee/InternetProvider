@@ -4,7 +4,7 @@
 <c:choose>
 	<c:when test="${sortingField=='name'}">
 		<c:set var="sortingFieldLabel" scope="request" value="Name" />
-		<c:set var="anotherSortingFieldName" scope="request" value="Price" />
+		<c:set var="anotherSortingFieldName" scope="request" value="Rate" />
 	</c:when>
 	<c:otherwise>
 		<c:set var="sortingFieldLabel" scope="request" value="Price" />
@@ -152,7 +152,7 @@
 			<hr class="style1">
 			<div class="d-flex justify-content-between align-items-center">
 				<div class="text-muted mx-3">Description</div>
-				<p class="mx-3 dw-bold">Price: $${tariff.price}/month</p>
+				<p class="mx-3 dw-bold">Rate: $${tariff.rate}/${tariff.paymentPeriod eq 28?'month':tariff.paymentPeriod eq 14?'two weeks': tariff.paymentPeriod eq 7? 'week':'day'}</p>
 			</div>
 			<div class="d-flex justify-content-start m-3 text-start">${tariff.description }</div>
 			<c:if test="${loggedUser.roleId==1}">
@@ -160,7 +160,7 @@
 
 					<button type="button" class="btn btn-warning me-2"
 						data-bs-toggle="modal" data-bs-target="#editTariff"
-						onclick="edit_tariff('${tariff.name}','${tariff.price}','${tariff.serviceId}','${tariff.description}','${tariff.id}')">Edit</button>
+						onclick="edit_tariff('${tariff.name}','${tariff.rate}','${tariff.serviceId}','${tariff.description}','${tariff.paymentPeriod}','${tariff.id}')">Edit</button>
 					<button type="button" class="btn btn-danger" data-bs-toggle="modal"
 						data-bs-target="#submitTariffRemove"
 						onclick="confirm_tariff_remove('${tariff.name}', '${tariff.id}')">Remove</button>
@@ -171,7 +171,7 @@
 
 					<button type="button" class="btn btn-warning btn-lg "
 						data-bs-toggle="modal" data-bs-target="#submitTariffSelection"
-						onclick="confirm_tariff_selection('${tariff.price}', '${tariff.name}', '${tariff.id}')">GET
+						onclick="confirm_tariff_selection('${tariff.rate}', '${tariff.name}', '${tariff.id}')">GET
 						NOW</button>
 				</div>
 			</c:if>
@@ -235,7 +235,7 @@
 						You are about to connect tariff <span id="tariff_name"></span>
 					</p>
 					<p class="text-muted">
-						Please note. You will now be charged $<span id="tariff_price"></span>
+						Please note. You will now be charged $<span id="tariff_rate"></span>
 						per month.
 					</p>
 					<div class="text-end">
@@ -308,11 +308,12 @@
 
 
 						<div class="input-group my-3">
-							<label for="price" class="input-group-text">Rate</label> <span
+							<label for="rate" class="input-group-text">Rate</label> <span
 								class="input-group-text">$</span> <input id="edit_tariff_rate"
-								type="number" name="price" class="form-control" step="0.01"
-								value="0" min="0" value="${requestScope.tariffForm.price}" required /> <span class="input-group-text">Per
-								month</span>
+								type="number" name="rate" class="form-control" step="0.01"
+								value="0" min="0" value="${requestScope.tariffForm.rate}" required />
+								<input type="hidden" name="paymentPeriod" id="payment_period">
+								 <span class="input-group-text" id="payment_period_span"></span>
 						</div>
 						<div class="input-group">
 							<span class="input-group-text">Description</span>

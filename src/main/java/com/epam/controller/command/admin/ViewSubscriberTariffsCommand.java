@@ -1,6 +1,7 @@
 package com.epam.controller.command.admin;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +17,9 @@ public class ViewSubscriberTariffsCommand implements Command{
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		try {
-			List<Tariff> tariffs = ((TariffService) req.getServletContext().getAttribute("tariffService")).getUsersTariff(Integer.parseInt(req.getParameter("userId")));
-			req.setAttribute("tariffsToDisplay", tariffs);
+			Map<Tariff, Integer> tariffsWithDaysLeft = ((TariffService) req.getServletContext().getAttribute("tariffService"))
+					.getUsersTariffWithDaysUntilPayment(Integer.parseInt(req.getParameter("userId")));
+			req.setAttribute("tariffsToDisplay", tariffsWithDaysLeft);
 			req.setAttribute("userId", req.getParameter("userId"));
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

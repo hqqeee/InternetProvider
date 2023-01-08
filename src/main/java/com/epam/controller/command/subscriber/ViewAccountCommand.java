@@ -12,6 +12,7 @@ import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
+import com.epam.services.UserService;
 
 public class ViewAccountCommand implements Command {
 
@@ -30,13 +31,18 @@ public class ViewAccountCommand implements Command {
 
 		try {
 			int userId = ((User) req.getSession().getAttribute("loggedUser")).getId();
-			req.setAttribute("userBalance", ((User) req.getSession().getAttribute("loggedUser")).getBalance());
+			req.setAttribute("userBalance", ((UserService) req.getServletContext()
+					.getAttribute("userService")).getUserBalance(userId));
 			req.setAttribute("numberOfPages",
 					Math.ceil(transactionService.getUsersTransactionNumber(userId) * 1.0 / RECORDS_PER_PAGE));
 			List<Transaction> transactions = transactionService.getUserTransaction(userId, currentPage,
 					RECORDS_PER_PAGE);
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
+			if(((UserService) req.getServletContext()
+					.getAttribute("userService")).getUserStatus(userId)) {
+				req.setAttribute("errorMessages", "You cannot use our services since you have not enoght money on your account. Please replenish account.");
+			}
 		} catch (NoTransactionsFoundException e) {
 			req.setAttribute("noTransactionFount", "Payment history is empty");
 		} catch (TransactionServiceException e) {

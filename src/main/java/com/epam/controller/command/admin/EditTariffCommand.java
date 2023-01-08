@@ -19,7 +19,12 @@ public class EditTariffCommand implements Command{
 		TariffForm form = null;
 		try {
 			
-			form = new TariffForm(req.getParameter("name"), new BigDecimal(req.getParameter("price")), Integer.parseInt(req.getParameter("serviceIdNew")),req.getParameter("description"));
+			form = new TariffForm(
+					req.getParameter("name"),
+					Integer.parseInt(req.getParameter("paymentPeriod")),
+					new BigDecimal(req.getParameter("rate")),
+					Integer.parseInt(req.getParameter("serviceIdNew")),
+					req.getParameter("description"));
 			((TariffService) req.getServletContext().getAttribute("tariffService")).editTariff(form, 
 					Integer.parseInt(req.getParameter("tariffId")));
 			req.setAttribute("successMessage", "Tariff successfully edited." );
@@ -27,9 +32,11 @@ public class EditTariffCommand implements Command{
 			if(form != null) {req.setAttribute("tariffForm", form);}
 			req.setAttribute("tariffValidateErrors", e.getErrors());
 		} catch (TariffServiceException e) {
-			req.setAttribute("errorMessages", "Cannot add user. Something went wrong. Try again later.");
+			e.printStackTrace();
+			req.setAttribute("errorMessages", "Cannot modify tariff. Something went wrong. Try again later.");
 		} catch (Exception e) {
-			req.setAttribute("errorMessages", "Cannot add user. Something went wrong. Try again later or report bag.");
+			e.printStackTrace();
+			req.setAttribute("errorMessages", "Cannot modify tariff. Something went wrong. Try again later or report bag.");
 		}
 		
 		return new ViewTariffsCommand().execute(req, resp);

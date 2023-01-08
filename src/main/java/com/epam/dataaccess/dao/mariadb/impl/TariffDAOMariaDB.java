@@ -3,7 +3,9 @@ package com.epam.dataaccess.dao.mariadb.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.epam.dataaccess.dao.TariffDAO;
 import com.epam.dataaccess.dao.mariadb.datasource.QueryBuilder;
@@ -49,7 +51,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 	public int insert(Tariff tariff) throws DAOException {
 		try {
 			return new QueryBuilder().addPreparedStatement(MariaDBConstants.ADD_TARIFF).setStringField(tariff.getName())
-					.setStringField(tariff.getDescription()).setBigDecimalField(tariff.getPrice())
+					.setStringField(tariff.getDescription()).setIntField(tariff.getPaymentPeriod()).setBigDecimalField(tariff.getRate())
 					.setIntField(tariff.getServiceId()).executeUpdate();
 		} catch (SQLException e) {
 			throw new DAOInsertException("Cannot insert tariff " + tariff +".", e);
@@ -60,7 +62,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 	public int update(Tariff tariff) throws DAOException {
 		try {
 			return new QueryBuilder().addPreparedStatement(MariaDBConstants.UPDATE_TARIFF).setStringField(tariff.getName())
-					.setStringField(tariff.getDescription()).setBigDecimalField(tariff.getPrice())
+					.setStringField(tariff.getDescription()).setIntField(tariff.getPaymentPeriod()).setBigDecimalField(tariff.getRate())
 					.setIntField(tariff.getServiceId()).setIntField(tariff.getId()).executeUpdate();
 		} catch (SQLException e) {
 			throw new DAOUpdateException("Cannot update tariff " + tariff + ".",e);
@@ -178,16 +180,56 @@ public class TariffDAOMariaDB implements TariffDAO {
 		return tariffs;
 	}
 
+	@Override
+	public List<Tariff> getUsersUnpaidTariffs(int userId) throws DAOException {
+		List<Tariff> unpaidTariffs = new ArrayList<>();
+		try (ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_USERS_UNPAID_TARIFFS)
+				.setIntField(userId).executeQuery()) {
+			while (rs.next()) {
+				unpaidTariffs.add(getTariffFromResultSet(rs));
+			}
+		} catch (SQLException e) {
+			throw new DAOReadException("Cannot get unpaid tariffs of user with id " + userId + ".", e);
+		}
+
+		return unpaidTariffs;
+	}
+
+
+	@Override
+	public Map<Tariff, Integer> getUsersTariffsWithDayToPayment(int userId) throws DAOException {
+		Map<Tariff, Integer> tariffsWithDayToPayment = new HashMap<>();
+		try (ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_USERS_TARIFFS_BY_ID_WITH_DAY_TO_PAY)
+				.setIntField(userId).executeQuery()) {
+			while (rs.next()) {
+				tariffsWithDayToPayment.put(getTariffFromResultSet(rs), rs.getInt(MariaDBConstants.USER_HAS_TARIFF_DAYS_UNTIL_NEXT_PAYMENT_FIELD));
+			}
+		} catch (SQLException e) {
+			throw new DAOReadException("Cannot get tariffs of user with id " + userId + ".", e);
+		}
+		return tariffsWithDayToPayment;
+	}
+	
 	private Tariff getTariffFromResultSet(ResultSet rs) throws DAOException {
 		try {
 			return new Tariff(rs.getInt(MariaDBConstants.TARIFF_ID_FIELD), rs.getString(MariaDBConstants.TARIFF_NAME_FIELD),
 					rs.getString(MariaDBConstants.TARIFF_DESCRIPTION_FIELD),
-					rs.getBigDecimal(MariaDBConstants.TARIFF_PRICE_FIELD),
+					rs.getInt(MariaDBConstants.TARIFF_PAYMENT_PERIOD_FIELD),
+					rs.getBigDecimal(MariaDBConstants.TARIFF_RATE_FIELD),
 					rs.getInt(MariaDBConstants.TARIFF_SERVICE_ID_FIELD)
 
 			);
 		} catch (SQLException e) {
 			throw new DAOMappingException("Cannot map tariff from ResultSet.", e);
+		}
+	}
+
+	@Override
+	public void updateDaysLeftForUnblockedUsers() throws DAOException {
+		try {
+			new QueryBuilder().addPreparedStatement(MariaDBConstants.UPDATE_DAYS_UNTIL_PAYMENT_FOR_UNBLOCKED_USERS).executeUpdate();
+		} catch (SQLException e) {
+			throw new DAOUpdateException("Cannot update days until payment.",e);
 		}
 	}
 
