@@ -29,6 +29,9 @@ public class FrontController extends HttpServlet {
 		String page;
 		if(command != null) {
 			page = command.execute(req, resp);
+			if(page == null) {
+				return;
+			}
 		} else {
 			page = Page.HOME_PAGE;
 			req.setAttribute("errorMessages", "You cannot access this page");

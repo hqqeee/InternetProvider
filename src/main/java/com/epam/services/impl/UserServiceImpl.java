@@ -10,16 +10,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.regex.Pattern;
 
+import com.epam.dataaccess.dao.DAOFactory;
 import com.epam.dataaccess.dao.TariffDAO;
 import com.epam.dataaccess.dao.TransactionDAO;
 import com.epam.dataaccess.dao.UserDAO;
 import com.epam.dataaccess.entity.Tariff;
 import com.epam.dataaccess.entity.User;
 import com.epam.exception.dao.DAOException;
+import com.epam.exception.dao.DAOReadException;
 import com.epam.exception.dao.DAORecordAlreadyExistsException;
 import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.PasswordNotMatchException;
-import com.epam.exception.services.UnableToRemoveUser;
 import com.epam.exception.services.UserAlreadyExistException;
 import com.epam.exception.services.UserAlreadyHasTariffException;
 import com.epam.exception.services.UserNotFoundException;
@@ -31,23 +32,17 @@ import com.epam.util.AppContext;
 
 public class UserServiceImpl implements UserService{
 
-	private final UserDAO userDAO;
-	private final TransactionDAO transactionDAO;
-	private final TariffDAO tariffDAO;
+	private DAOFactory daoFactory;
 	
-	
-	
-	public UserServiceImpl(UserDAO userDAO, TransactionDAO transactionDAO, TariffDAO tariffDAO) {
 
-		this.transactionDAO = transactionDAO;
-		this.userDAO = userDAO;
-		this.tariffDAO = tariffDAO;
+	private UserServiceImpl(DAOFactory daoFactory) {
+		this.daoFactory = daoFactory;
 	}
 
-
 	@Override
-	public User login(String login, String password) throws UserNotFoundException{
+	public User login(String login, String password) throws UserNotFoundException, UserServiceException{
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			String hashedPassword = hashPassword(password + userDAO.getSalt(login));
 			User user = userDAO.getUser(login, hashedPassword);
 			if(user == null) {
@@ -60,13 +55,13 @@ public class UserServiceImpl implements UserService{
 		} catch (DAOException e) {
 			e.printStackTrace();
 			System.out.println(e);
-			throw new UserNotFoundException(login);
+			throw new UserServiceException("Cannot get user with login " + login + " and password " + password + ".");
 		}
 	}
 
 	@Override
 	public void registerUser(UserForm userForm, String password)
-			throws UserAlreadyExistException, ValidationErrorException {
+			throws UserAlreadyExistException, ValidationErrorException, UserServiceException {
 		validateUser(userForm , password);
 		String salt = getSalt();
 		User user = new User(
@@ -84,9 +79,12 @@ public class UserServiceImpl implements UserService{
 				BigDecimal.ZERO
 				);
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			userDAO.insert(user);
-		} catch (DAOException e) {
+		} catch(DAORecordAlreadyExistsException e) {
 			throw new UserAlreadyExistException(userForm.getLogin());
+		} catch (DAOException e) {
+			throw new UserServiceException(userForm.getLogin());
 		}
 		
 	}
@@ -95,10 +93,11 @@ public class UserServiceImpl implements UserService{
 	public List<User> getAllSubscribers() throws UserServiceException{
 		List<User> subscribers = new ArrayList<>();
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			subscribers = userDAO.getAllSubscriber();
 		} catch(DAOException e) {
 			System.out.println(e);
-			throw new UserServiceException("Cannot get all .", e);
+			throw new UserServiceException("Cannot get all subscribers.", e);
 		}
 		return subscribers;
 	}
@@ -108,6 +107,7 @@ public class UserServiceImpl implements UserService{
 	public List<User> getAllUnblockedSubscribers() throws UserServiceException {
 		List<User> subscribers = new ArrayList<>();
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			subscribers = userDAO.getAllUnblockedSubscriber();
 		} catch(DAOException e) {
 			System.out.println(e);
@@ -121,6 +121,7 @@ public class UserServiceImpl implements UserService{
 	public List<User> getSubscriberForCharging() throws UserServiceException {
 		List<User> subscribers = new ArrayList<>();
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			subscribers = userDAO.getSubscriberForCharging();
 		} catch(DAOException e) {
 			System.out.println(e);
@@ -134,26 +135,29 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> viewSubscribers(String searchField, int page,
-			int entriesPerPage) {
+			int entriesPerPage) throws UserServiceException{
 		List<User> subscribers = new ArrayList<>();
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			subscribers = userDAO.getSubscriberForView(searchField, ((page - 1) * entriesPerPage), entriesPerPage);
 		} catch(DAOException e) {
 			e.printStackTrace();
 			System.out.println(e);
-		}
+			throw new UserServiceException("Cannot get userse for view with pararameters: serachField " + searchField + " page " + page + " entriesPerPage "+ entriesPerPage + ".",e);		}
 		return subscribers;
 	}
 	
 
 	@Override
-	public int getSubscribersNumber(String searchField) {
+	public int getSubscribersNumber(String searchField)  throws UserServiceException{
 		int result = 0;
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			result = userDAO.getSubscriberNumber(searchField);
 		} catch(DAOException e) {
 			e.printStackTrace();
 			System.out.println(e);
+			throw new UserServiceException("Cannot get number of subscriber by searchField " + searchField + ".",e);
 		}
 		return result;
 	}
@@ -163,7 +167,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User getUserById(int userId) throws UserNotFoundException, UserServiceException {
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			User user = userDAO.get(userId);
+			if(user == null) {
+				throw new UserNotFoundException("Cannot get user with id " + userId + ".");
+			}
 			return user;
 		} catch (DAOException e) {
 			throw new UserServiceException("Cannot get user by id " + userId);
@@ -171,13 +179,14 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	@Override
-	public void removeUser(int userId) throws UnableToRemoveUser {
+	public void removeUser(int userId) throws UserServiceException {
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			User user = new User();
 			user.setId(userId);
 			userDAO.delete(user);
 		} catch(DAOException e) {
-			throw new UnableToRemoveUser("Unable to remove user with id " + userId, e);
+			throw new UserServiceException("Unable to remove user with id " + userId, e);
 		}
 		
 	}
@@ -186,6 +195,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void changeUserStatus(boolean blocked, int id) throws UserServiceException {
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			userDAO.changeBlocked(!blocked, id);
 		} catch (DAOException e) {
 			throw new UserServiceException("Cannot change status for user with id: " + id, e);
@@ -201,6 +211,8 @@ public class UserServiceImpl implements UserService{
 			throw new UserServiceException("Description is too long");
 		}
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
+			TransactionDAO transactionDAO = daoFactory.getTransactionDAO();
 			if((userDAO.get(userId).getBalance().add(diffrence)).signum() < 0) {
 				throw new NegativeUserBalanceException();
 			}
@@ -222,6 +234,7 @@ public class UserServiceImpl implements UserService{
 				validatePassword(newPassword, errors);
 				if(!errors.isEmpty()) throw new ValidationErrorException(errors);
 			}
+			UserDAO userDAO = daoFactory.getUserDAO();
 			User user = userDAO.get(userId);
 			if(user == null) throw new UserNotFoundException(userId);
 			String oldHashedPassword = hashPassword(currentPassword + user.getSalt());
@@ -242,6 +255,8 @@ public class UserServiceImpl implements UserService{
 	public void addTariffToUser(int userId, int tariffId) throws UserAlreadyHasTariffException, UserServiceException, NegativeUserBalanceException {
 	
 			try {
+				UserDAO userDAO = daoFactory.getUserDAO();
+				TariffDAO tariffDAO = daoFactory.getTariffDAO();
 				Tariff tariff = tariffDAO.get(tariffId);
 				if(userDAO.getUserBalance(userId).compareTo(tariff.getRate()) < 0) {
 					throw new NegativeUserBalanceException();
@@ -265,6 +280,7 @@ public class UserServiceImpl implements UserService{
 			BigDecimal amountToPay = unpaidTariffs.stream().map(Tariff::getRate).reduce(BigDecimal.ZERO, BigDecimal::add);
 			User user = null;
 			try {
+				UserDAO userDAO = daoFactory.getUserDAO();
 				user = userDAO.get(userId);
 				if(user.getBalance().compareTo(amountToPay) < 0) {
 					throw new NegativeUserBalanceException();
@@ -281,6 +297,7 @@ public class UserServiceImpl implements UserService{
 	private void processChargingTransaction(int userId, Tariff tariff) throws UserServiceException {
 		String description =  "For using tariff " + tariff.getName() + ".";
 		try {
+			TransactionDAO transactionDAO = daoFactory.getTransactionDAO();
 			transactionDAO.chargeUserForTariffUsing(userId,tariff.getId(), description);
 		} catch (DAOException e) {
 			e.printStackTrace();
@@ -292,6 +309,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void removeTariffFromUser(int userId, int tariffId) throws UserServiceException {
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			userDAO.removeTariffFromUser(userId, tariffId);
 		} catch (DAOException e) {
 			e.printStackTrace();
@@ -368,6 +386,8 @@ public class UserServiceImpl implements UserService{
 			errors.add("Password cannot be empty");
 		} else if(password.length() < 8) {
 			errors.add("Password must be at least 8 characters long.");
+		} else if(password.length() > 32) {
+			errors.add("Password must not exceed 32 characters long.");
 		}
 	}
 
@@ -375,6 +395,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public BigDecimal getUserBalance(int userId) throws UserServiceException {
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			return userDAO.getUserBalance(userId);
 		} catch (DAOException e) {
 			throw new UserServiceException("Cannot get user balance.", e);
@@ -385,6 +406,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public boolean getUserStatus(int userId) throws UserServiceException {
 		try {
+			UserDAO userDAO = daoFactory.getUserDAO();
 			return userDAO.getUserStatus(userId);
 		} catch (DAOException e) {
 			throw new UserServiceException("Cannot get status of the user.", e);

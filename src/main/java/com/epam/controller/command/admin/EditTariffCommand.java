@@ -11,6 +11,7 @@ import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.TariffService;
 import com.epam.services.forms.TariffForm;
+import com.epam.util.AppContext;
 
 public class EditTariffCommand implements Command{
 
@@ -25,7 +26,7 @@ public class EditTariffCommand implements Command{
 					new BigDecimal(req.getParameter("rate")),
 					Integer.parseInt(req.getParameter("serviceIdNew")),
 					req.getParameter("description"));
-			((TariffService) req.getServletContext().getAttribute("tariffService")).editTariff(form, 
+			AppContext.getInstance().getTariffService().editTariff(form, 
 					Integer.parseInt(req.getParameter("tariffId")));
 			req.setAttribute("successMessage", "Tariff successfully edited." );
 		} catch (ValidationErrorException e) {

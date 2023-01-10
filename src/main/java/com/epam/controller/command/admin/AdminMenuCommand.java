@@ -8,16 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
 import com.epam.dataaccess.entity.User;
+import com.epam.exception.services.UserServiceException;
 import com.epam.services.UserService;
+import com.epam.util.AppContext;
 import com.epam.util.SortingOrder;
 
 public class AdminMenuCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-
-		System.out.println(req.getParameter("page"));
-		System.out.println(req.getParameter("rowNumber"));
 		int currentPage;
 		String reqParam = req.getParameter("page");
 		if(reqParam != null && !reqParam.trim().isEmpty()) {
@@ -37,15 +36,22 @@ public class AdminMenuCommand implements Command{
 			currentRowNumber = 5;
 		}
 		
-
-		int numberOfSubscriber = ((UserService) req.getServletContext().getAttribute("userService")).getSubscribersNumber(currentSearchField);
-		int numberOfPages = (int)Math.ceil(numberOfSubscriber * 1.0 / currentRowNumber);
-		req.setAttribute("numberOfPages", numberOfPages);
-		req.setAttribute("currentPage", currentPage);
-		req.setAttribute("currentSearchField", currentSearchField);
-		req.setAttribute("currentRowNumber", currentRowNumber);
-		List<User> subscribers = ((UserService) req.getServletContext().getAttribute("userService")).viewSubscribers(currentSearchField, currentPage, currentRowNumber);
-		req.setAttribute("usersToDisplay", subscribers);
+		UserService userService = AppContext.getInstance().getUserService();
+		int numberOfSubscriber;
+		try {
+			numberOfSubscriber = userService.getSubscribersNumber(currentSearchField);
+			int numberOfPages = (int)Math.ceil(numberOfSubscriber * 1.0 / currentRowNumber);
+			req.setAttribute("numberOfPages", numberOfPages);
+			req.setAttribute("currentPage", currentPage);
+			req.setAttribute("currentSearchField", currentSearchField);
+			req.setAttribute("currentRowNumber", currentRowNumber);
+			List<User> subscribers = userService.viewSubscribers(currentSearchField, currentPage, currentRowNumber);
+			req.setAttribute("usersToDisplay", subscribers);
+		} catch (UserServiceException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		return Page.ADMIN_MENU_PAGE;
 	}

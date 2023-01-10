@@ -6,3 +6,15 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+
+.filter-yellow{
+    filter: invert(69%) sepia(69%) saturate(828%) hue-rotate(352deg) brightness(105%) contrast(104%);
+}
+
+.rotate-90{
+	transform: rotate(90deg);
+}
+
+.rotate-270{
+	transform: rotate(270deg);
+}

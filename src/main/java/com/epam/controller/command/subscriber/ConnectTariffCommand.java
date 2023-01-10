@@ -10,13 +10,14 @@ import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.UserAlreadyHasTariffException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.services.UserService;
+import com.epam.util.AppContext;
 
 public class ConnectTariffCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 			try {
-				((UserService) req.getServletContext().getAttribute("userService"))
+				AppContext.getInstance().getUserService()
 				.addTariffToUser(((User)req.getSession().getAttribute("loggedUser")).getId(),
 						Integer.parseInt(req.getParameter("tariffId")));
 				

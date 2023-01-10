@@ -24,11 +24,11 @@ public class ReplenishCommand implements Command {
 			User user = (User) req.getSession().getAttribute("loggedUser");
 			String description = "Replenish via web site.";
 			int userId = user.getId();
-			((UserService) req.getServletContext().getAttribute("userService")).changeUserBalance(userId, amount,
+			AppContext appContext = AppContext.getInstance();
+			appContext.getUserService().changeUserBalance(userId, amount,
 					description);
 			req.setAttribute("successMessage", "Funds have been successfully added!");
-			if (((UserService) req.getServletContext().getAttribute("userService")).getUserStatus(userId)) {
-				AppContext appContext = AppContext.getInstance();
+			if (appContext.getUserService().getUserStatus(userId)) {
 				List<Tariff> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
 				appContext.getUserService().chargeUserForTariffsUsing(user.getId(), usersUnpaidTariffs);
 				appContext.getUserService().changeUserStatus(true, userId);

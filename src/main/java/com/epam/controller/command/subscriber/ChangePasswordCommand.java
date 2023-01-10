@@ -10,6 +10,7 @@ import com.epam.exception.services.UserNotFoundException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.UserService;
+import com.epam.util.AppContext;
 
 public class ChangePasswordCommand implements Command{
 
@@ -21,7 +22,7 @@ public class ChangePasswordCommand implements Command{
 		
 		if(user == null || currentPassword == null || newPassword == null) req.setAttribute("errorMessages", "Something went wrong. Cannot change password. Try againg later.");
 		else {try {
-			((UserService) req.getServletContext().getAttribute("userService")).changePassword(user.getId(), currentPassword, newPassword);
+			AppContext.getInstance().getUserService().changePassword(user.getId(), currentPassword, newPassword);
 			req.setAttribute("successMessage", "Password seccsessfully changed");
 		} catch (UserNotFoundException e) {
 			req.setAttribute("errorMessages", "Something went wrong. Cannot change password. Relogin and try again.");

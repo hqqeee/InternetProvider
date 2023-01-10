@@ -1,5 +1,8 @@
 package com.epam.controller.command.common;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,7 +17,7 @@ public class LogoutCommand implements Command{
 		HttpSession session = req.getSession();
 		if(session!=null) {
 			session.invalidate();
-			req.setAttribute("successMessage", "You've seccessfully logged out.");
+			req.setAttribute("successMessage", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getObject("login.success_logout"));
 		}
 		return Page.HOME_PAGE;
 	}

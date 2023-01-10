@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.epam.controller.command.Command;
 import com.epam.exception.services.UserServiceException;
 import com.epam.services.UserService;
+import com.epam.util.AppContext;
 
 public class ChangeUserStatusCommand implements Command{
 
@@ -14,7 +15,7 @@ public class ChangeUserStatusCommand implements Command{
 		String blocked = req.getParameter("userBlocked");
 		String userId = req.getParameter("userId");
 		try{
-			((UserService) req.getServletContext().getAttribute("userService"))
+			AppContext.getInstance().getUserService()
 			.changeUserStatus(Boolean.parseBoolean(blocked), Integer.parseInt(userId));
 			req.setAttribute("successMessage", "User status successfully changed.");
 		} catch (UserServiceException e) {

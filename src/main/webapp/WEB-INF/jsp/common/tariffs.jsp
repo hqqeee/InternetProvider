@@ -20,7 +20,8 @@
 				value="${requestScope.sortingField}"> <input type="hidden"
 				name="sortingOrder" value="${requestScope.sortingOrder}"> <input
 				type="hidden" name="rowNumber" value="${requestScope.rowNumber}">
-			<input type="hidden" name="page" value="${requestScope.page}" /> <input
+<%-- 			<input type="hidden" name="page" value="${requestScope.page}" /> --%>
+			 <input
 				type="hidden" name="serviceId" id="service_id"
 				value="${requestScope.serviceId}">
 			<div class="row justify-content-around form-group">
@@ -30,7 +31,7 @@
 						src="images/call-contact-phone-svgrepo-com.svg" alt="..."
 						width="64" style="filter: invert(1);">
 					<div class="card-body">
-						<h5 class="card-title text-center text-white">Telephone</h5>
+						<h5 class="card-title text-center text-white"><fmt:message key="tariffs.telephone_service_header"/></h5>
 						<p class="card-text">Some quick example text to build on the
 							card title and make up the bulk of the card's content.</p>
 
@@ -45,7 +46,7 @@
 						src="images/connection-svgrepo-com.svg" alt="..." width="64"
 						style="filter: invert(1);">
 					<div class="card-body">
-						<h5 class="card-title text-center text-white">Internet</h5>
+						<h5 class="card-title text-center text-white"><fmt:message key="tariffs.internet_service_header"/></h5>
 						<p class="card-text">Some quick example text to build on the
 							card title and make up the bulk of the card's content.</p>
 
@@ -59,7 +60,7 @@
 						src="images/satelite-svgrepo-com.svg" alt="..." width="64"
 						style="filter: invert(1);">
 					<div class="card-body">
-						<h5 class="card-title text-center text-white">Cable TV</h5>
+						<h5 class="card-title text-center text-white"><fmt:message key="tariffs.cableTV_service_header"/></h5>
 						<p class="card-text">Some quick example text to build on the
 							card title and make up the bulk of the card's content.</p>
 
@@ -73,7 +74,7 @@
 						src="images/smart-svgrepo-com.svg" alt="..." width="64"
 						style="filter: invert(1);">
 					<div class="card-body">
-						<h5 class="card-title text-center text-white">IP-TV</h5>
+						<h5 class="card-title text-center text-white"><fmt:message key="tariffs.IP-TV_service_header"/></h5>
 						<p class="card-text">Some quick example text to build on the
 							card title and make up the bulk of the card's content.</p>
 					</div>
@@ -88,8 +89,10 @@
 		<form class="my-3 mx-1 d-flex" method="post">
 			<input type="hidden" name="sortingField"
 				value="${requestScope.sortingField}"> <input type="hidden"
-				name="sortingOrder" value="${requestScope.sortingOrder}"> <input
-				type="hidden" name="page" value="${requestScope.page}" /> <input
+				name="sortingOrder" value="${requestScope.sortingOrder}"> 
+<%-- 				<input -->
+<%-- 				type="hidden" name="page" value="${requestScope.page}" /> --%>
+				 <input
 				type="hidden" name="serviceId" value="${requestScope.serviceId}" />
 			<label class="fs-5 text-white">Show</label> <select
 				class="form-select bg-dark text-white mx-2"
@@ -114,8 +117,9 @@
 					name="sortingOrder" id="sorting_order" value="${sortingOrder}">
 				<input type="hidden" name="serviceId"
 					value="${requestScope.serviceId}" /> <input type="hidden"
-					name="rowNumber" value="${requestScope.rowNumber}"> <input
-					type="hidden" name="page" value="${requestScope.page}" /> <label
+					name="rowNumber" value="${requestScope.rowNumber}"> 
+<%-- 					<input type="hidden" name="page" value="${requestScope.page}" /> --%>
+					 <label
 					class="fs-5 text-white me-2">Sort by</label>
 				<div class="btn-group">
 					<button type="button"
@@ -213,7 +217,7 @@
 		</form>
 		</c:when>
 		<c:otherwise>
-			<form action="controller?action=downloadTariff" method="post">
+			<form action="controller?action=downloadTariffs" method="post">
 				<input type="hidden" name="serviceId"
 					value="${requestScope.serviceId}" />
 				<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Download
@@ -300,10 +304,10 @@
 						</div>
 						<select class="form-select my-3" id="edit_tariff_service_id"
 							name="serviceIdNew">
-							<option value="1" ${requestScope.tariffForm.serviceId == 1?'selected':''}>Telephone</option>
-							<option value="2" ${requestScope.tariffForm.serviceId == 2?'selected':''}>Internet</option>
-							<option value="3" ${requestScope.tariffForm.serviceId == 3?'selected':''}>Cable TV</option>
-							<option value="4" ${requestScope.tariffForm.serviceId == 4?'selected':''}>IP-TV</option>
+							<option value="1" ${requestScope.tariffForm.serviceId == 1?'selected':''}><fmt:message key="tariffs.telephone_service_header"/></option>
+							<option value="2" ${requestScope.tariffForm.serviceId == 2?'selected':''}><fmt:message key="tariffs.internet_service_header"/></option>
+							<option value="3" ${requestScope.tariffForm.serviceId == 3?'selected':''}><fmt:message key="tariffs.cableTV_service_header"/></option>
+							<option value="4" ${requestScope.tariffForm.serviceId == 4?'selected':''}><fmt:message key="tariffs.IP-TV_service_header"/></option>
 						</select>
 
 
@@ -326,6 +330,13 @@
 							<input type="hidden" name="tariffId" id="edit_tariff_id" />
 							<button type="button" class="btn btn-secondary me-2"
 								data-bs-dismiss="modal">Cancel</button>
+								<input type="hidden" name="serviceId"
+					value="${requestScope.serviceId}" /> <input type="hidden"
+					name="rowNumber" value="${requestScope.rowNumber}"> <input
+			type="hidden" name="sortingField"
+			value="${requestScope.sortingField}"> <input type="hidden"
+			name="sortingOrder" value="${requestScope.sortingOrder}">
+					<input type="hidden" name="page" value="${requestScope.page}" />
 							<button type="submit" class="btn btn-warning"
 								id="update_add_buttom">Update</button>
 						</div>

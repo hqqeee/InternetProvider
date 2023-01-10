@@ -9,6 +9,7 @@ import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
 import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.services.TariffServiceException;
+import com.epam.util.AppContext;
 import com.epam.util.SortingOrder;
 import com.epam.services.TariffService;
 
@@ -50,7 +51,7 @@ public class ViewTariffsCommand implements Command {
 			currentRowNumber = 5;
 		}
 		try {
-			TariffService tariffService = ((TariffService) req.getServletContext().getAttribute("tariffService"));
+			TariffService tariffService = AppContext.getInstance().getTariffService();
 			List<Tariff> tariffs = tariffService.getTariffsForView(activeSortingField, activeSortingOrder, currentServiceId, currentPage, currentRowNumber);
 			req.setAttribute("tariffsToDisplay", tariffs);
 			req.setAttribute("page", currentPage);

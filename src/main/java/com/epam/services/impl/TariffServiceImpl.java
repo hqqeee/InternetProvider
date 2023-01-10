@@ -1,10 +1,11 @@
 package com.epam.services.impl;
 
-import java.sql.Timestamp;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.epam.dataaccess.dao.DAOFactory;
 import com.epam.dataaccess.dao.TariffDAO;
 import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.dao.DAOException;
@@ -15,16 +16,19 @@ import com.epam.services.forms.TariffForm;
 import com.epam.util.SortingOrder;
 
 public class TariffServiceImpl implements TariffService {
-	private TariffDAO tariffDAO;
+	private DAOFactory daoFactory;
 
-	private TariffServiceImpl(TariffDAO tariffDAO) {
-		this.tariffDAO = tariffDAO;
+
+
+	private TariffServiceImpl(DAOFactory daoFactory) {
+		this.daoFactory = daoFactory;
 	}
 
 	@Override
 	public List<Tariff> getTariffsForView(String fieldName, SortingOrder sortingOrder, int serviceId, int page,
 			int entriesPerPage) throws TariffServiceException {
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			if (serviceId == 0) {
 				return tariffDAO.getAll(entriesPerPage * (page - 1), entriesPerPage, sortingOrder, fieldName);
 			}
@@ -41,6 +45,7 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public int getTariffsCount(int serviceId) throws TariffServiceException {
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			if (serviceId == 0) {
 				return tariffDAO.getTariffCount();
 			}
@@ -54,6 +59,7 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public List<Tariff> getAllTariff(int serviceId) throws TariffServiceException {
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			if (serviceId == 0) {
 				return tariffDAO.getAll();
 			}
@@ -68,6 +74,7 @@ public class TariffServiceImpl implements TariffService {
 	public List<Tariff> getUsersTariff(int userId) throws TariffServiceException {
 
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			return tariffDAO.getUsersTariffs(userId);
 		} catch (DAOException e) {
 			e.printStackTrace();
@@ -78,6 +85,7 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public List<Tariff> getUnpaidTariffs(int userId) throws TariffServiceException {
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			return tariffDAO.getUsersUnpaidTariffs(userId);
 		} catch (DAOException e) {
 			e.printStackTrace();
@@ -88,6 +96,7 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public Map<Tariff, Integer> getUsersTariffWithDaysUntilPayment(int userId) throws TariffServiceException {
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			return tariffDAO.getUsersTariffsWithDayToPayment(userId);
 		} catch (DAOException e) {
 			e.printStackTrace();
@@ -98,6 +107,7 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public void removeTariff(int tariffId) throws TariffServiceException {
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			Tariff tariff = new Tariff();
 			tariff.setId(tariffId);
 			tariffDAO.delete(tariff);
@@ -112,6 +122,7 @@ public class TariffServiceImpl implements TariffService {
 	public void addTariff(TariffForm tariffForm) throws TariffServiceException, ValidationErrorException {
 		Tariff tariff = validateTariff(tariffForm);
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			tariffDAO.insert(tariff);
 		} catch (DAOException e) {
 			throw new TariffServiceException("Connot add user.", e);
@@ -125,6 +136,7 @@ public class TariffServiceImpl implements TariffService {
 		Tariff tariff = validateTariff(tariffForm);
 		tariff.setId(tariffId);
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			tariffDAO.update(tariff);
 		} catch (DAOException e) {
 			throw new TariffServiceException("Connot edit user.", e);
@@ -173,6 +185,7 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public void updateDaysUntilPayments() throws TariffServiceException {
 		try {
+			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			tariffDAO.updateDaysLeftForUnblockedUsers();
 
 		} catch (DAOException e) {

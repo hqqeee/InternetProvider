@@ -11,13 +11,14 @@ import com.epam.dataaccess.entity.Tariff;
 import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.services.TariffService;
+import com.epam.util.AppContext;
 
 public class ViewActiveTariffsCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		try {
-			Map<Tariff, Integer> tariffsWithDaysLeft = ((TariffService) req.getServletContext().getAttribute("tariffService"))
+			Map<Tariff, Integer> tariffsWithDaysLeft = AppContext.getInstance().getTariffService()
 					.getUsersTariffWithDaysUntilPayment(((User) req.getSession().getAttribute("loggedUser")).getId());
 //			List<Tariff> tariffs = ((TariffService) req.getServletContext().getAttribute("tariffService"))
 //					.getUsersTariff(((User) req.getSession().getAttribute("loggedUser")).getId());

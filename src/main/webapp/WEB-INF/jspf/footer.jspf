@@ -6,16 +6,16 @@
 		<div class="container">
 			<ul class="nav justify-content-center border-bottom pb-3 mb-3">
 				<li class="nav-item"><a href="index.jsp"
-					class="nav-link px-2 text-muted">Home</a></li>
+					class="nav-link px-2 text-muted"><fmt:message key="nav.home"/></a></li>
 				<li class="nav-item"><form action="controller?action=viewTariff" id="view_tariff" method="post">
-					<a href="#" onclick="document.getElementById('view_tariff').submit();" class="nav-link px-2 text-secondary">Tariffs</a></form></li>
+					<a href="#" onclick="document.getElementById('view_tariff').submit();" class="nav-link px-2 text-secondary"><fmt:message key="nav.tariffs"/></a></form></li>
 					</li>
 				<li class="nav-item"><a href="faq.jsp"
-					class="nav-link px-2 text-muted">FAQs</a></li>
-				<li class="nav-item"><a href="about.jsp""
-					class="nav-link px-2 text-muted">About</a></li>
+					class="nav-link px-2 text-muted"><fmt:message key="nav.faq"/></a></li>
+				<li class="nav-item"><a href="about.jsp"
+					class="nav-link px-2 text-muted"><fmt:message key="nav.about"/></a></li>
 			</ul>
-			<p class="text-center text-muted">© 2022 Company, Inc</p>
+			<p class="text-center text-muted">© 2023 Maven Telecom, Inc</p>
 		</div>
 	</footer>
 </body>

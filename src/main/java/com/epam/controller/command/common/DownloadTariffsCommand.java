@@ -11,6 +11,7 @@ import com.epam.controller.command.Command;
 import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.services.TariffService;
+import com.epam.util.AppContext;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -28,7 +29,7 @@ public class DownloadTariffsCommand implements Command {
 
 
 		try {
-			List<Tariff> tariffs = ((TariffService) req.getServletContext().getAttribute("tariffService"))
+			List<Tariff> tariffs = AppContext.getInstance().getTariffService()
 					.getAllTariff(Integer.parseInt(req.getParameter("serviceId")));
 			try (OutputStream out = resp.getOutputStream()) {
 				Document document = new Document();

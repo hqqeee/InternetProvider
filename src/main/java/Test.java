@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Map;
@@ -43,8 +44,8 @@ public class Test extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		AppContext appContext = AppContext.getInstance();
-		new DailyWithdrawCommand().run();
+//		AppContext appContext = AppContext.getInstance();
+//		new DailyWithdrawCommand().run();
 //		System.out.println("User DAO test");
 //		DAOFactory factory = new DAOFactoryMariaDB();
 //		UserDAO dao = factory.getUserDAO();

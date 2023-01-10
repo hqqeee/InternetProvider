@@ -13,6 +13,7 @@ import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
 import com.epam.services.UserService;
+import com.epam.util.AppContext;
 
 public class ViewAccountCommand implements Command {
 
@@ -20,8 +21,7 @@ public class ViewAccountCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-		TransactionService transactionService = (TransactionService) req.getServletContext()
-				.getAttribute("transactionService");
+		TransactionService transactionService = AppContext.getInstance().getTransactionService();
 		int currentPage = 1;
 		try {
 			currentPage = Integer.parseInt(req.getParameter("page"));
@@ -31,16 +31,14 @@ public class ViewAccountCommand implements Command {
 
 		try {
 			int userId = ((User) req.getSession().getAttribute("loggedUser")).getId();
-			req.setAttribute("userBalance", ((UserService) req.getServletContext()
-					.getAttribute("userService")).getUserBalance(userId));
+			req.setAttribute("userBalance", AppContext.getInstance().getUserService().getUserBalance(userId));
 			req.setAttribute("numberOfPages",
 					Math.ceil(transactionService.getUsersTransactionNumber(userId) * 1.0 / RECORDS_PER_PAGE));
 			List<Transaction> transactions = transactionService.getUserTransaction(userId, currentPage,
 					RECORDS_PER_PAGE);
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
-			if(((UserService) req.getServletContext()
-					.getAttribute("userService")).getUserStatus(userId)) {
+			if(AppContext.getInstance().getUserService().getUserStatus(userId)) {
 				req.setAttribute("errorMessages", "You cannot use our services since you have not enoght money on your account. Please replenish account.");
 			}
 		} catch (NoTransactionsFoundException e) {

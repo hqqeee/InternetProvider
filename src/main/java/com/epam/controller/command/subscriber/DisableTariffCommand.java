@@ -22,10 +22,11 @@ public class DisableTariffCommand implements Command {
 		try {
 			int userId = ((User)req.getSession().getAttribute("loggedUser")).getId();
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
-			((UserService) req.getServletContext().getAttribute("userService")).removeTariffFromUser(userId, tariffId);
+			AppContext appContext = AppContext.getInstance();
+			appContext.getUserService().removeTariffFromUser(userId, tariffId);
 			req.setAttribute("successMessage", "Tariff removed seccessfully.");
-			if (((UserService) req.getServletContext().getAttribute("userService")).getUserStatus(userId)) {
-				AppContext appContext = AppContext.getInstance();
+			
+			if (appContext.getUserService().getUserStatus(userId)) {
 				List<Tariff> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(userId);
 				appContext.getUserService().chargeUserForTariffsUsing(userId, usersUnpaidTariffs);
 				appContext.getUserService().changeUserStatus(true, userId);

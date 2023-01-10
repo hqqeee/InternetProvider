@@ -18,7 +18,8 @@
 
 			<form action="controller?action=adminMenu" class="my-3 mx-1 d-flex"
 				method="post">
-				<input type="hidden" name="page" value="${page}" /> <input
+<%-- 				<input type="hidden" name="page" value="${page}" />  --%>
+				<input
 					type="hidden" name="searchField" value="${searchField}" /> <label
 					class="fs-5 text-white">Show</label> <select
 					class="form-select bg-dark text-white mx-2"
@@ -42,7 +43,8 @@
 		<div class="text-end">
 			<form class="d-flex text-end" role="search"
 				action="controller?action=adminMenu" method="post">
-				<input type="hidden" name="page" value="${page}" /> <input
+<%-- 				<input type="hidden" name="page" value="${page}" /> --%>
+				 <input
 					type="hidden" name="rowNumber" value="${rowNumber}" /> <input
 					class="form-control me-2" type="search" placeholder="Login part"
 					aria-label="Search" name="searchField" value="${searchField}">
@@ -192,7 +194,8 @@
 				<button type="button" class="btn btn-secondary"
 					data-bs-dismiss="modal">Close</button>
 				<form action="controller?action=removeUser" method="post">
-					<input type="hidden" name="page" value="${page}" /> <input
+					<input type="hidden" name="page" value="${page}" />
+					 <input
 						type="hidden" name="searchField" value="${searchField}" /> <input
 						type="hidden" name="rowNumber" value="${rowNumber}" /> <input
 						type="hidden" name="userId" id="remove_user_id" />
@@ -217,7 +220,7 @@
 					<li class="list-group-item flex-fill"
 						id="change_balance_modal_user_login"></li>
 				</ul>
-				<form action="controller?action=changeBalance" method="post">
+				<form action="controller?action=changeUserBalance" method="post">
 					<input type="hidden" name="page" value="${page}" /> <input
 						type="hidden" name="searchField" value="${searchField}" /> <input
 						type="hidden" name="rowNumber" value="${rowNumber}" /> <input

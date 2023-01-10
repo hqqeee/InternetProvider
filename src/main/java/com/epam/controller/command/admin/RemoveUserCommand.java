@@ -4,8 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
-import com.epam.exception.services.UnableToRemoveUser;
+import com.epam.exception.services.UserServiceException;
 import com.epam.services.UserService;
+import com.epam.util.AppContext;
 
 public class RemoveUserCommand implements Command{
 
@@ -13,9 +14,9 @@ public class RemoveUserCommand implements Command{
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		try {
 			int userId = Integer.parseInt(req.getParameter("userId"));
-			((UserService) req.getServletContext().getAttribute("userService")).removeUser(userId);
+			AppContext.getInstance().getUserService().removeUser(userId);
 			req.setAttribute("successMessage", "User successfully removed.");
-		} catch(UnableToRemoveUser e) {
+		} catch(UserServiceException e) {
 			System.out.println(e);
 			req.setAttribute("errorMessages", "Unable remove user. Try again.");
 		}	catch (Exception e) {

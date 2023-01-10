@@ -2,19 +2,18 @@
 				</div>
 		</div>
 	<!-- FOOTER -->
-	<footer class="py-3 text-bg-dark">
+	<footer class="py-3 text-bg-dark mt-auto">
 		<div class="container">
 			<ul class="nav justify-content-center border-bottom pb-3 mb-3">
-				<li class="nav-item"><a href="#"
-					class="nav-link px-2 text-muted">Home</a></li>
-				<li class="nav-item"><a href="#"
-					class="nav-link px-2 text-muted">Features</a></li>
-				<li class="nav-item"><a href="#"
-					class="nav-link px-2 text-muted">Pricing</a></li>
-				<li class="nav-item"><a href="#"
-					class="nav-link px-2 text-muted">FAQs</a></li>
-				<li class="nav-item"><a href="#"
-					class="nav-link px-2 text-muted">About</a></li>
+				<li class="nav-item"><a href="index.jsp"
+					class="nav-link px-2 text-muted"><fmt:message key="nav.home"/></a></li>
+				<li class="nav-item"><form action="controller?action=viewTariff" id="view_tariff" method="post">
+					<a href="#" onclick="document.getElementById('view_tariff').submit();" class="nav-link px-2 text-secondary"><fmt:message key="nav.tariffs"/></a></form></li>
+					</li>
+				<li class="nav-item"><a href="faq.jsp"
+					class="nav-link px-2 text-muted"><fmt:message key="nav.faq"/></a></li>
+				<li class="nav-item"><a href="about.jsp"
+					class="nav-link px-2 text-muted"><fmt:message key="nav.about"/></a></li>
 			</ul>
 			<p class="text-center text-muted">© 2022 Company, Inc</p>
 		</div>

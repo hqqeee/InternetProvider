@@ -13,9 +13,12 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<fmt:setLocale value="${empty cookie['lang'].value?'en':cookie['lang'].value}"/>
+<fmt:setBundle basename="lang"/>
+
 <title>Internet Provider</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100"> 
 	<!-- HEADER -->
 	<header class="p-3 text-bg-dark">
 		<div class="container">
@@ -24,26 +27,38 @@
 
 				<ul
 					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-					<li><a href="index.jsp" class="nav-link px-2 text-secondary">Home</a></li>
-					<li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-					<li><a href="#" class="nav-link px-2 text-white">Tariffs</a></li>
-					<li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-					<li><a href="#" class="nav-link px-2 text-white">About</a></li>
+					<li><a href="index.jsp" class="nav-link px-2 ${pageContext.request.servletPath == '/index.jsp'? 'text-secondary':'text-white'}"><fmt:message key="nav.home"/></a></li>
+					<li>
+					<form action="controller?action=viewTariff" id="view_tariff" method="post">
+					<a href="#" onclick="document.getElementById('view_tariff').submit();" class="nav-link px-2 ${pageContext.request.getParameter("action") == "viewTariff"?'text-secondary':'text-white'}"><fmt:message key="nav.tariffs"/></a></form></li>
+					
+					
+					<li>
+					<a href="faq.jsp"  class="nav-link px-2 ${pageContext.request.servletPath == '/faq.jsp'? 'text-secondary':'text-white'}"><fmt:message key="nav.faq"/></a></li>
+					<li><a href="about.jsp" class="nav-link px-2 ${pageContext.request.servletPath == '/about.jsp'? 'text-secondary':'text-white'}"><fmt:message key="nav.about"/></a></li>
 				</ul>
 				<ul class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" >
 				<c:choose>
 					<c:when test="${sessionScope.loggedUser.roleId == 1}"><li class="nav-item">
-    <a class="nav-link disabled text-white">Hello, ${sessionScope.loggedUser.login}!</a>
+    <a class="nav-link disabled text-white"><fmt:message key="label.welcome"/>${sessionScope.loggedUser.login}!</a>
   </li>
 					
 					<li><form action="controller?action=adminMenu" method="post"><button type="submit" class="btn btn-outline-warning px-2 mx-1"
 								>Admin menu</button></form></li>
 					</c:when>
+					<c:when test="${sessionScope.loggedUser.roleId == 2}"><li class="nav-item">
+    					<a class="nav-link disabled text-white"><fmt:message key="label.welcome"/>, ${sessionScope.loggedUser.firstName}!</a>
+ 							 </li>
+					
+						<li>
+					<form action="controller?action=viewProfile" method="post"><button type="submit" class="btn btn-outline-warning px-2 mx-1"
+								>My Profile</button></form></li>
+					</c:when>
 				</c:choose>
 					<c:choose>
 						<c:when test="${empty sessionScope.loggedUser}">
 							<li><button type="button" class="btn btn-warning px-2"
-								data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
+								data-bs-toggle="modal" data-bs-target="#loginModal"><fmt:message key="nav.login"/></button></li>
 						</c:when>
 						<c:otherwise>
 						
@@ -53,15 +68,33 @@
 					</c:choose>
 				</ul>
 				<div class="dropdown text-end">
+				<form id="change_lang" action="controller?action=changeLanguage" method="post">
+					<input id="lang" type="hidden" name="lang"/>
+				</form>
+				<c:choose>
+					<c:when test="${cookie['lang'].value eq 'uk'}">
+					<a class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+						data-bs-toggle="dropdown" aria-expanded="false"><img
+						src="${pageContext.request.contextPath}/images/ua.svg" width="16"></a>
+					<ul class="dropdown-menu text-bg-dark">
+						<li><a class="dropdown-item m-0" href="#" onclick="document.getElementById('lang').value='en';document.getElementById('change_lang').submit()"><img
+								src="${pageContext.request.contextPath}/images/gb.svg"
+								width="16"> <span class="text-warning">English</span></a></li>
+						</ul>
+					</div>
+					</c:when>
+					<c:otherwise>
 					<a class="dropdown-toggle" type="button" id="dropdownMenuButton1"
 						data-bs-toggle="dropdown" aria-expanded="false"><img
 						src="${pageContext.request.contextPath}/images/gb.svg" width="16"></a>
 					<ul class="dropdown-menu text-bg-dark">
-						<li><a class="dropdown-item m-0" href="#"><img
+						<li><a class="dropdown-item m-0" href="#" onclick="document.getElementById('lang').value='uk';document.getElementById('change_lang').submit()"><img
 								src="${pageContext.request.contextPath}/images/ua.svg"
-								width="16"></a></li>
+								width="16"> <span class="text-warning">Українська</span></a></li>
 						</ul>
 					</div>
+					</c:otherwise>
+				</c:choose>
 				</div>
 			</div>
 		<%@ include file="/WEB-INF/jspf/login.jspf"%>

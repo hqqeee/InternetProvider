@@ -11,13 +11,14 @@ import com.epam.controller.command.Page;
 import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.services.TariffService;
+import com.epam.util.AppContext;
 
 public class ViewSubscriberTariffsCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		try {
-			Map<Tariff, Integer> tariffsWithDaysLeft = ((TariffService) req.getServletContext().getAttribute("tariffService"))
+			Map<Tariff, Integer> tariffsWithDaysLeft = AppContext.getInstance().getTariffService()
 					.getUsersTariffWithDaysUntilPayment(Integer.parseInt(req.getParameter("userId")));
 			req.setAttribute("tariffsToDisplay", tariffsWithDaysLeft);
 			req.setAttribute("userId", req.getParameter("userId"));

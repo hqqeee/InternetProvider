@@ -12,6 +12,7 @@ import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
 import com.epam.services.UserService;
+import com.epam.util.AppContext;
 
 public class ViewSubscriberAccountCommand implements Command{
 
@@ -19,8 +20,7 @@ public class ViewSubscriberAccountCommand implements Command{
 	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-		TransactionService transactionService = (TransactionService) req.getServletContext()
-				.getAttribute("transactionService");
+		TransactionService transactionService = AppContext.getInstance().getTransactionService();
 		int currentPage = 1;
 		try {
 			currentPage = Integer.parseInt(req.getParameter("page"));
@@ -37,8 +37,7 @@ public class ViewSubscriberAccountCommand implements Command{
 					RECORDS_PER_PAGE);
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
-			req.setAttribute("userBalance", ((UserService) req.getServletContext()
-					.getAttribute("userService")).getUserBalance(userId));
+			req.setAttribute("userBalance", AppContext.getInstance().getUserService().getUserBalance(userId));
 		} catch (NoTransactionsFoundException e) {
 			req.setAttribute("noTransactionFound", "Payment history is empty");
 		} catch (TransactionServiceException e) {

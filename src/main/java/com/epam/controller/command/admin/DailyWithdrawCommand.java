@@ -24,9 +24,8 @@ public class DailyWithdrawCommand implements Command, Runnable{
 		List<User> users = null;
 
 		try {
-			users = appContext.getUserService().getSubscriberForCharging();
 			appContext.getTariffService().updateDaysUntilPayments();
-			System.out.println(users);
+			users = appContext.getUserService().getSubscriberForCharging();
 		} catch (UserServiceException | TariffServiceException e1) {
 			e1.printStackTrace();
 		}
