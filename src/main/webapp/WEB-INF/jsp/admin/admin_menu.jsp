@@ -69,7 +69,7 @@
 		<c:forEach var="user" items="${requestScope.usersToDisplay}">
 			<tr>
 				<td>
-					<p class="fw-bold mb-1">${user.firstName}${user.lastName}</p>
+					<p class="fw-bold mb-1">${user.firstName} ${user.lastName}</p>
 					<p class="text-muted mb-0">${user.email}</p>
 				</td>
 				<td><p class="fw-bold mb-1">${user.login}</p></td>
@@ -139,11 +139,10 @@
 	<div class="d-flex justify-content-between align-items-center">
 
 		<form action="controller?action=adminMenu" method="post">
-			<input type="hidden" name="searchField" value="${searchField}" /> <input
-				type="hidden" name="rowNumber" value="${rowNumber}" /> <input
-				type="hidden" name="page" id="pageNumber" />
-			<div
-				class="form-group btn-group col-lg-auto me-lg-auto mx-2 justify-content-center">
+			<input type="hidden" name="searchField" value="${searchField}" />
+			<input type="hidden" name="rowNumber" value="${rowNumber}" />
+			<input type="hidden" name="page" id="pageNumber" />
+			<div class="form-group btn-group col-lg-auto me-lg-auto mx-2 justify-content-center">
 				<c:forEach begin="1" end="${numberOfPages}" var="i">
 					<c:choose>
 						<c:when test="${page eq i}">

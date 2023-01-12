@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.epam.controller.command.Command;
 import com.epam.controller.command.admin.DailyWithdrawCommand;
 import com.epam.dataaccess.dao.DAOFactory;
@@ -41,9 +44,16 @@ import com.epam.util.SortingOrder;
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	public static void main(String[] args) {
+		Logger logger = LogManager.getLogger(Test.class);
+		logger.info("Configuration File Defined To Be :: "+System.getProperty("log4j.configurationFile"));
+	}
+	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
 //		AppContext appContext = AppContext.getInstance();
 //		new DailyWithdrawCommand().run();
 //		System.out.println("User DAO test");

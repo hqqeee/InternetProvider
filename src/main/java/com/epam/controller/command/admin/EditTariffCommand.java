@@ -9,7 +9,6 @@ import com.epam.controller.command.Command;
 import com.epam.controller.command.common.ViewTariffsCommand;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.ValidationErrorException;
-import com.epam.services.TariffService;
 import com.epam.services.forms.TariffForm;
 import com.epam.util.AppContext;
 

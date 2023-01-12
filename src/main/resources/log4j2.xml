@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration status="info">
+
+	<Properties>
+		<Property name="logdir">/home/ruslan/workspace-eclipse/InternetProvider/logs</Property>
+		<Property name="layout">%d [%t] %-5p %c{1} %m%n%throwable</Property>
+		<Property name="consoleLayout">%highlight{%d{HH:mm:ss,S} [%t] %-5p %m%n}%highlight{%throwable}{FATAL=red, ERROR=red}</Property>
+	</Properties>
+
+	<Appenders>
+
+		<RollingFile name="INFO"
+			fileName="${logdir}/info.log"
+			filePattern="${logdir}/info.%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${layout}" />
+			<LevelRangeFilter minLevel="WARN" maxLevel="INFO"
+				onMatch="ACCEPT" onMismatch="DENY" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="1 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="10" />
+		</RollingFile>
+
+		<File name="ERRORS" fileName="${logdir}/error.log">
+			<PatternLayout pattern="${layout}" />
+			<LevelRangeFilter minLevel="FATAL" maxLevel="ERROR"
+				onMatch="ACCEPT" onMismatch="DENY" />
+		</File>
+
+		<Console name="STDOUT" target="SYSTEM_OUT"
+			ignoreExceptions="false">
+			<PatternLayout pattern="${consoleLayout}" />
+		</Console>
+
+	</Appenders>
+
+	<Loggers>
+
+		<Logger name="com.epam" level="trace" additivity="false">
+			<AppenderRef ref="INFO" />
+			<AppenderRef ref="STDOUT" />
+			<AppenderRef ref="ERRORS" />
+		</Logger>
+
+		<Root level="error">
+		</Root>
+	</Loggers>
+</Configuration>

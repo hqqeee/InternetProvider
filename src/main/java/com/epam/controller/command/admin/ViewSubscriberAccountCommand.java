@@ -11,7 +11,6 @@ import com.epam.dataaccess.entity.Transaction;
 import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
-import com.epam.services.UserService;
 import com.epam.util.AppContext;
 
 public class ViewSubscriberAccountCommand implements Command{

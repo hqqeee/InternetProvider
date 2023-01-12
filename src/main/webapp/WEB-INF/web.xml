@@ -10,17 +10,20 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<filter-mapping>
+		<filter-name>LogAccessFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<filter-mapping>
 		<filter-name>AuthenticationFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/controller</url-pattern>
 
 	</filter-mapping>
 
 	<filter-mapping>
 		<filter-name>LocaleSetFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-
 	</filter-mapping>
 </web-app>
  

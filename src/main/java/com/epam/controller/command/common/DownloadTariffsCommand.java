@@ -14,8 +14,11 @@ import com.epam.services.TariffService;
 import com.epam.util.AppContext;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -33,12 +36,12 @@ public class DownloadTariffsCommand implements Command {
 					.getAllTariff(Integer.parseInt(req.getParameter("serviceId")));
 			try (OutputStream out = resp.getOutputStream()) {
 				Document document = new Document();
-
+				Font font = FontFactory.getFont("/fonts/RobotoMono-VariableFont_wght.ttf", "cp1251", BaseFont.EMBEDDED, 10);
 				PdfWriter.getInstance(document, out);
 				document.open();
-				document.add(new Paragraph("Tariff list"));
-				document.add(generatePDFTableWithTariffs(tariffs));
-				document.add(new Paragraph("Telecom"));
+				document.add(new Paragraph("Tariff list", font));
+				document.add(generatePDFTableWithTariffs(tariffs, font));
+				document.add(new Paragraph("Telecom", font));
 				document.close();
 
 			} catch (IOException | DocumentException e) {
@@ -56,19 +59,19 @@ public class DownloadTariffsCommand implements Command {
 		return null;
 	}
 
-	private PdfPTable generatePDFTableWithTariffs(List<Tariff> tariffs) {
+	private PdfPTable generatePDFTableWithTariffs(List<Tariff> tariffs, Font font) {
 		PdfPTable table = new PdfPTable(3);
-		PdfPCell nameCell = new PdfPCell(new Paragraph("Name"));
-		PdfPCell descCell = new PdfPCell(new Paragraph("Description"));
-		PdfPCell priceCell = new PdfPCell(new Paragraph("Price"));
+		PdfPCell nameCell = new PdfPCell(new Paragraph("Name", font));
+		PdfPCell descCell = new PdfPCell(new Paragraph("Description",font));
+		PdfPCell priceCell = new PdfPCell(new Paragraph("Price", font));
 
 		table.addCell(nameCell);
 		table.addCell(descCell);
 		table.addCell(priceCell);
 		for (Tariff tariff : tariffs) {
-			nameCell = new PdfPCell(new Phrase(tariff.getName()));
-			descCell = new PdfPCell(new Phrase(tariff.getDescription()));
-			priceCell = new PdfPCell(new Phrase(tariff.getRate().toString() + " per " + tariff.getPaymentPeriod() + " days."));
+			nameCell = new PdfPCell(new Phrase(tariff.getName(), font));
+			descCell = new PdfPCell(new Phrase(tariff.getDescription(), font));
+			priceCell = new PdfPCell(new Phrase(tariff.getRate().toString() + " per " + tariff.getPaymentPeriod() + " days.",  font));
 			table.addCell(nameCell);
 			table.addCell(descCell);
 			table.addCell(priceCell);

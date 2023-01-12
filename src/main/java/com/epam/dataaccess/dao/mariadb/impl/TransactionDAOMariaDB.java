@@ -8,7 +8,6 @@ import java.util.List;
 
 import com.epam.dataaccess.dao.TransactionDAO;
 import com.epam.dataaccess.dao.mariadb.datasource.QueryBuilder;
-import com.epam.dataaccess.entity.Tariff;
 import com.epam.dataaccess.entity.Transaction;
 import com.epam.exception.dao.DAODeleteException;
 import com.epam.exception.dao.DAOException;
@@ -132,7 +131,6 @@ public class TransactionDAOMariaDB implements TransactionDAO {
 					rs.getTimestamp(MariaDBConstants.TRANSACTION_TIMESTAMP_FIELD),
 					rs.getBigDecimal(MariaDBConstants.TRANSACTION_AMOUNT_FIELD),
 					rs.getString(MariaDBConstants.TRANSACTION_DESCRIPTION_FIELD)
-
 			);
 		} catch (SQLException e) {
 			throw new DAOMappingException("Cannot map transaction from ResultSet.", e);
@@ -143,12 +141,12 @@ public class TransactionDAOMariaDB implements TransactionDAO {
 	public int chargeUserForTariffUsing(int userId, int tariffId, String description) throws DAOException {
 		try {
 			return new QueryBuilder()
-					.addPreparedStatement(MariaDBConstants.CHARGE_FOR_USING_TARIFF).setIntField(tariffId)
-					.setIntField(userId)
-					.addPreparedStatement(MariaDBConstants.UPDATE_DAYS_UNTIL_NEXT_PAYMENT).setIntField(tariffId)
-					.setIntField(userId).setIntField(tariffId)
 					.addPreparedStatement(MariaDBConstants.ADD_TARIFF_CHARGE_TRANSACTION)
 					.setIntField(userId).setIntField(tariffId).setStringField(description)
+					.addPreparedStatement(MariaDBConstants.UPDATE_DAYS_UNTIL_NEXT_PAYMENT).setIntField(tariffId)
+					.setIntField(userId).setIntField(tariffId)
+					.addPreparedStatement(MariaDBConstants.CHARGE_FOR_USING_TARIFF).setIntField(tariffId)
+					.setIntField(userId)
 					.executeUpdate();
 		} catch (SQLException e) {
 			throw new DAOUpdateException("Cannot proccess of charging user with id " + userId + " for using tariff with id " + tariffId,e);

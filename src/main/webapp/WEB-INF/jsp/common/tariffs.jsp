@@ -14,7 +14,7 @@
 
 <div class="container py-3">
 	<div class="container bg-dark p-2 text-dark  px-4 py-4">
-		<form action="controller?action=viewTariff" id="select_service"
+		<form action="controller?action=viewTariffs" id="select_service"
 			method="post">
 			<input type="hidden" name="sortingField"
 				value="${requestScope.sortingField}"> <input type="hidden"
@@ -110,7 +110,7 @@
 			</select>
 		</form>
 		<div>
-			<form action="controller?action=viewTariff" id="sorting_change"
+			<form action="controller?action=viewTariffs" id="sorting_change"
 				method="post">
 				<input type="hidden" name="sortingField" id="sorting_field"
 					value="${sortingField}"> <input type="hidden"
@@ -185,7 +185,7 @@
 
 </div>
 <div class="d-flex justify-content-between align-items-center">
-	<form action="controller?action=viewTariff" method="post">
+	<form action="controller?action=viewTariffs" method="post">
 		<input type="hidden" name="page" id="page_number" /> <input
 			type="hidden" name="sortingField"
 			value="${requestScope.sortingField}"> <input type="hidden"

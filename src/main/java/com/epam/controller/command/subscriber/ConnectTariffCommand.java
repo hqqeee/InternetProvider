@@ -25,15 +25,15 @@ public class ConnectTariffCommand implements Command{
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 				req.setAttribute("errorMessages", "Something went wrong. Please try again.");
+			} catch (NegativeUserBalanceException e) {
+				req.setAttribute("errorMessages", "Not enoght money. Please replenish your account.");
+				e.printStackTrace();
 			} catch (UserAlreadyHasTariffException e) {
 				e.printStackTrace();
 				req.setAttribute("errorMessages", "You have already connected this tariff plan.");
 			} catch (UserServiceException e) {
 				e.printStackTrace();
 				req.setAttribute("errorMessages", "Something went wrong. Please try again.");
-			} catch (NegativeUserBalanceException e) {
-				req.setAttribute("errorMessages", "Not enoght money. Please replenish your account.");
-				e.printStackTrace();
 			}
 		
 		return new ViewTariffsCommand().execute(req, resp);

@@ -6,6 +6,9 @@ import java.util.ResourceBundle;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
 import com.epam.exception.services.UserNotFoundException;
@@ -14,18 +17,29 @@ import com.epam.util.AppContext;
 
 public class LoginCommand implements Command{
 
+	private final Logger logger = LogManager.getLogger(LoginCommand.class);
+	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp){
-		System.out.println("Login executing");
 		ResourceBundle bundle =  ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
+		String login = req.getParameter("login");
+		String password = req.getParameter("password");
+		if(login == null || password == null || login.trim().isEmpty() || password.trim().isEmpty()) {
+			req.setAttribute("incorrectLoginOrPassword", bundle.getString("login.empty_login_or_password_field"));
+			return Page.HOME_PAGE;
+		}
 		try {
-			req.getSession().setAttribute("loggedUser",AppContext.getInstance().getUserService()
-			.login(req.getParameter("login"), req.getParameter("password")));
+			req.getSession().setAttribute("loggedUser",
+					AppContext.getInstance().getUserService().login(login, password));
 			req.setAttribute("successMessage", bundle.getString("login.success"));
+			logger.info("User with login " + login + " successfully logged in.");
 		} catch (UserNotFoundException e) {
+			logger.warn("Unsuccessful attempt to access account with login " + login + ".");
 			req.setAttribute("login", req.getParameter("login"));
 			req.setAttribute("incorrectLoginOrPassword", bundle.getString("login.incorrect_login_or_password"));
 		} catch (UserServiceException e) {
+			logger.warn("An error occurred while logging into the system.");
+			logger.error("Unable to login due to service error error.", e);
 			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
 		}
 		return Page.HOME_PAGE;

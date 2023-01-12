@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
+import com.epam.controller.command.CommandFactory;
 import com.epam.controller.command.Page;
+import com.epam.exception.controller.CommandNotFoundException;
 
 @WebServlet("/controller")
 public class FrontController extends HttpServlet {
@@ -25,17 +27,17 @@ public class FrontController extends HttpServlet {
 	}
 
 	private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		Command command = ((Command) req.getAttribute("command"));
-		String page;
-		if(command != null) {
+		Command command = null;
+		String page = Page.HOME_PAGE;
+		try {
+			command = CommandFactory.getInstance().getCommand(req.getParameter("action"));
 			page = command.execute(req, resp);
-			if(page == null) {
-				return;
-			}
-		} else {
-			page = Page.HOME_PAGE;
-			req.setAttribute("errorMessages", "You cannot access this page");
+		} catch (CommandNotFoundException e) {
+			System.out.println(e.getMessage());
+			req.setAttribute("errorMessages", "You cannot access this page.");
 		}
-		getServletContext().getRequestDispatcher(page).forward(req, resp);
+		if(page != null) {
+			getServletContext().getRequestDispatcher(page).forward(req, resp);
+		}
 	}
 }

@@ -19,10 +19,11 @@ public class ChangeLanguageCommand implements Command{
 			resp.addCookie(langCookie);
 		}
 		try {
-			resp.sendRedirect("/InternetProvider" + Page.HOME_PAGE);
+			resp.sendRedirect(req.getContextPath());
+			
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} 
 		return null;
 	}
 

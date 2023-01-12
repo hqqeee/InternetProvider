@@ -29,8 +29,8 @@
 					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 					<li><a href="index.jsp" class="nav-link px-2 ${pageContext.request.servletPath == '/index.jsp'? 'text-secondary':'text-white'}"><fmt:message key="nav.home"/></a></li>
 					<li>
-					<form action="controller?action=viewTariff" id="view_tariff" method="post">
-					<a href="#" onclick="document.getElementById('view_tariff').submit();" class="nav-link px-2 ${pageContext.request.getParameter("action") == "viewTariff"?'text-secondary':'text-white'}"><fmt:message key="nav.tariffs"/></a></form></li>
+					<form action="controller?action=viewTariffs" id="view_tariff" method="post">
+					<a href="#" onclick="document.getElementById('view_tariff').submit();" class="nav-link px-2 ${pageContext.request.getParameter("action") == "viewTariffs"?'text-secondary':'text-white'}"><fmt:message key="nav.tariffs"/></a></form></li>
 					
 					
 					<li>
@@ -98,7 +98,6 @@
 				</div>
 			</div>
 		<%@ include file="/WEB-INF/jspf/login.jspf"%>
-
 	</header>
 	<c:if test="${not empty requestScope.successMessage}">
 	<div class="container pt-3">
@@ -117,12 +116,4 @@
 			</c:if>
 				</div>
 <div class="container p-3">
-
 			<div class="bg-dark text-secondary px-4 py-5 text-center">
-			
-			
-			
-			
-			
-			
-			

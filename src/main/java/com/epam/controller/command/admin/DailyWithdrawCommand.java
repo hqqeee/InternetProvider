@@ -5,6 +5,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
 import com.epam.dataaccess.entity.Tariff;
@@ -14,43 +17,34 @@ import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.util.AppContext;
 
-public class DailyWithdrawCommand implements Command, Runnable{
+public class DailyWithdrawCommand implements Command, Runnable {
 
+	private final Logger logger = LogManager.getLogger(DailyWithdrawCommand.class);
+	
+	
 	@Override
 	public void run() {
 		AppContext appContext = AppContext.getInstance();
-		
-		
+
 		List<User> users = null;
 
 		try {
 			appContext.getTariffService().updateDaysUntilPayments();
 			users = appContext.getUserService().getSubscriberForCharging();
-		} catch (UserServiceException | TariffServiceException e1) {
-			e1.printStackTrace();
-		}
-		for(User user: users) {
-			try {
+			for (User user : users) {
 				List<Tariff> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
 				try {
 					appContext.getUserService().chargeUserForTariffsUsing(user.getId(), usersUnpaidTariffs);
-				} catch (UserServiceException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
 				} catch (NegativeUserBalanceException e) {
-					try {
-						appContext.getUserService().changeUserStatus(false, user.getId());
-					} catch (UserServiceException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					appContext.getUserService().changeUserStatus(false, user.getId());
 				}
-			} catch (TariffServiceException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-			System.out.println("DailyWithdraw executed");
+			logger.info("Daily withdrawal successfully completed.");
+		} catch (UserServiceException | TariffServiceException e1) {
+			logger.warn("An error occurred while executing daily withdrawal.");
+			logger.fatal("Daily withdrawal failed.", e1);
 		}
+
 	}
 
 	@Override
