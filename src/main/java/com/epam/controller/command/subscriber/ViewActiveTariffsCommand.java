@@ -7,10 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
-import com.epam.dataaccess.entity.Tariff;
-import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.TariffServiceException;
-import com.epam.services.TariffService;
+import com.epam.services.dto.TariffDTO;
+import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 
 public class ViewActiveTariffsCommand implements Command{
@@ -18,8 +17,8 @@ public class ViewActiveTariffsCommand implements Command{
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		try {
-			Map<Tariff, Integer> tariffsWithDaysLeft = AppContext.getInstance().getTariffService()
-					.getUsersTariffWithDaysUntilPayment(((User) req.getSession().getAttribute("loggedUser")).getId());
+			Map<TariffDTO, Integer> tariffsWithDaysLeft = AppContext.getInstance().getTariffService()
+					.getUsersTariffWithDaysUntilPayment(((UserDTO) req.getSession().getAttribute("loggedUser")).getId());
 //			List<Tariff> tariffs = ((TariffService) req.getServletContext().getAttribute("tariffService"))
 //					.getUsersTariff(((User) req.getSession().getAttribute("loggedUser")).getId());
 			req.setAttribute("tariffsToDisplay", tariffsWithDaysLeft);

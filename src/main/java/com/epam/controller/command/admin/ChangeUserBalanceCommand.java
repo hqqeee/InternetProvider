@@ -11,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 import com.epam.controller.command.Command;
 import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.UserServiceException;
-import com.epam.services.UserService;
 import com.epam.util.AppContext;
 
 public class ChangeUserBalanceCommand implements Command {

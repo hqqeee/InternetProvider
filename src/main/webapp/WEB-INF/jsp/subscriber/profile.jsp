@@ -60,7 +60,7 @@
 	</div>
 
 </div>
-<c:if test="${sessionScope.loggedUser.roleId == 2}">
+<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
 	<div class="row justify-content-md-center container-fluid">
 		<div class="align-items-center d-flex justify-content-start">
 

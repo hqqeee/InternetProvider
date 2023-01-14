@@ -10,11 +10,10 @@ import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
-import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.UserServiceException;
 import com.epam.services.UserService;
+import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
-import com.epam.util.SortingOrder;
 
 public class AdminMenuCommand implements Command {
 
@@ -58,7 +57,7 @@ public class AdminMenuCommand implements Command {
 			req.setAttribute("currentPage", currentPage);
 			req.setAttribute("currentSearchField", currentSearchField);
 			req.setAttribute("currentRowNumber", currentRowNumber);
-			List<User> subscribers = userService.viewSubscribers(currentSearchField, currentPage, currentRowNumber);
+			List<UserDTO> subscribers = userService.viewSubscribers(currentSearchField, currentPage, currentRowNumber);
 			req.setAttribute("usersToDisplay", subscribers);
 		} catch (UserServiceException e) {
 			logger.warn("An error occurred while loading user view.");

@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
-import com.epam.dataaccess.entity.Tariff;
-import com.epam.dataaccess.entity.User;
+
 import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.UserServiceException;
-import com.epam.services.UserService;
+import com.epam.services.dto.TariffDTO;
+import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 
 public class ReplenishCommand implements Command {
@@ -21,7 +21,7 @@ public class ReplenishCommand implements Command {
 		try {
 			BigDecimal amount = new BigDecimal(req.getParameter("amount"));
 			// TODO validate amount not negative!!
-			User user = (User) req.getSession().getAttribute("loggedUser");
+			UserDTO user = (UserDTO) req.getSession().getAttribute("loggedUser");
 			String description = "Replenish via web site.";
 			int userId = user.getId();
 			AppContext appContext = AppContext.getInstance();
@@ -29,7 +29,7 @@ public class ReplenishCommand implements Command {
 					description);
 			req.setAttribute("successMessage", "Funds have been successfully added!");
 			if (appContext.getUserService().getUserStatus(userId)) {
-				List<Tariff> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
+				List<TariffDTO> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
 				appContext.getUserService().chargeUserForTariffsUsing(user.getId(), usersUnpaidTariffs);
 				appContext.getUserService().changeUserStatus(true, userId);
 			}

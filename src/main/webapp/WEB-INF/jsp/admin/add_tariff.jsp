@@ -12,16 +12,16 @@
 			value="${requestScope.tariffForm.name}" required>
 	</div>
 	<select class="form-select my-3" id="edit_tariff_service_id"
-		name="serviceIdNew">
-		<option value="1"
-			${requestScope.tariffForm.serviceId == 1?'selected':''}>Telephone</option>
-		<option value="2"
-			${requestScope.tariffForm.serviceId == 2?'selected':''}>Internet</option>
-		<option value="3"
-			${requestScope.tariffForm.serviceId == 3?'selected':''}>Cable
+		name="serviceSelected">
+		<option value="TELEPHONE"
+			${requestScope.tariffForm.service == TELEPHONE?'selected':''}>Telephone</option>
+		<option value="INTERNET"
+			${requestScope.tariffForm.service == INTERNET?'selected':''}>Internet</option>
+		<option value="CABLE_TV"
+			${requestScope.tariffForm.service == CABLE_TV?'selected':''}>Cable
 			TV</option>
-		<option value="4"
-			${requestScope.tariffForm.serviceId == 4?'selected':''}>IP-TV</option>
+		<option value="IP_TV"
+			${requestScope.tariffForm.service == IP_TV?'selected':''}>IP-TV</option>
 	</select>
 
 

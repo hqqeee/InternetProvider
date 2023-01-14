@@ -4,19 +4,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
-import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.PasswordNotMatchException;
 import com.epam.exception.services.UserNotFoundException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.exception.services.ValidationErrorException;
-import com.epam.services.UserService;
+import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 
 public class ChangePasswordCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-		User user = (User)req.getSession().getAttribute("loggedUser");
+		UserDTO user = (UserDTO)req.getSession().getAttribute("loggedUser");
 		String currentPassword = req.getParameter("currentPassword");
 		String newPassword = req.getParameter("newPassword");
 		

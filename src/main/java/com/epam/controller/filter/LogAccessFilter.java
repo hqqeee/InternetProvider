@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.epam.dataaccess.entity.User;
+import com.epam.services.dto.UserDTO;
 
 @WebFilter(filterName = "LogAccessFilter")
 public class LogAccessFilter implements Filter {
@@ -26,9 +26,10 @@ public class LogAccessFilter implements Filter {
 			throws IOException, ServletException {
 		Date dateInitRequest = new Date();
 
+//		System.out.println(request.getServletContext().getMimeType(".svg"));
 		String ip = ((HttpServletRequest) request).getRemoteAddr();
 		String login = "Unlogged user";
-		User user = (User) ((HttpServletRequest) request).getSession().getAttribute("loggedUser");
+		UserDTO user = (UserDTO) ((HttpServletRequest) request).getSession().getAttribute("loggedUser");
 		if (user != null) {
 			login = user.getLogin();
 		}
@@ -37,7 +38,7 @@ public class LogAccessFilter implements Filter {
 		chain.doFilter(request, response);
 
 		Date dateEndRequest = new Date();
-
+		System.out.println(request.getServletContext().getMimeType(".svg"));
 		logger.info("Login: " + login + ", IP: " + ip + " Page: " + page + " Access time : "
 				+ Long.toString(dateEndRequest.getTime() - dateInitRequest.getTime()) + " ms");
 	}

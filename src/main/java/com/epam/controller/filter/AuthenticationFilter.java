@@ -17,7 +17,8 @@ import org.apache.logging.log4j.Logger;
 import static com.epam.controller.command.CommandNames.*;
 
 import com.epam.controller.command.Page;
-import com.epam.dataaccess.entity.User;
+import com.epam.services.dto.Role;
+import com.epam.services.dto.UserDTO;
 
 @WebFilter(filterName = "AuthenticationFilter")
 public class AuthenticationFilter implements Filter {
@@ -26,10 +27,10 @@ public class AuthenticationFilter implements Filter {
 
 	private static final String[] ADMIN_COMMANDS = { REGISER_USER, ADMIN_MENU, OPEN_USER_REGISTRATION,
 			VIEW_SUBSCRIBER_PROFILE, VIEW_SUBSCRIBER_TARIFFS, VIEW_SUBSCRIBER_ACCOUNT, CHANGE_USER_BALANCE,
-			REMOVE_TARIFF, CHANGE_USER_STATUS, EDIT_TARIFF, ADD_TARIFF, OPEN_ADD_TARIFF };
+			REMOVE_TARIFF, REMOVE_USER, CHANGE_USER_STATUS, EDIT_TARIFF, ADD_TARIFF, OPEN_ADD_TARIFF };
 	private static final String[] SUBSCRIBER_COMMANDS = { VIEW_PROFILE, VIEW_ACCOUNT, VIEW_ACTIVE_TARIFFS,
 			CHANGE_PASSWORD, REPLENISH, CONNECT_TARIFF, DISABLE_TARIFF };
-	private static final String[] COMMON_COMMANDS = { LOGIN, LOGOUT, VIEW_TARIFFS, DOWNLOAD_TARIFFS, CHANGE_LANGUAGE };
+	private static final String[] COMMON_COMMANDS = { LOGIN, LOGOUT, VIEW_TARIFFS, DOWNLOAD_TARIFFS, CHANGE_LANGUAGE, RESET_PASSWORD};
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -52,22 +53,16 @@ public class AuthenticationFilter implements Filter {
 		if (Arrays.stream(COMMON_COMMANDS).anyMatch(action::equals)) {
 			return true;
 		}
-		User user = (User) req.getSession().getAttribute("loggedUser");
+		UserDTO user = (UserDTO) req.getSession().getAttribute("loggedUser");
 		if (user == null) {
 			logger.warn("An attempt to access " + action + " failed.");
 			return false;
 		}
-		switch (user.getRoleId()) {
-		case 1:
-			if (Arrays.stream(ADMIN_COMMANDS).anyMatch(action::equals)) {
-				return true;
-			}
-		case 2:
-			if (Arrays.stream(SUBSCRIBER_COMMANDS).anyMatch(action::equals)) {
-				return true;
-			}
-		default:
-			logger.warn("An attempt to access " + action + " failed. User: " + user.getLogin() + ".");
+		if ((user.getRole() == Role.ADMIN && Arrays.stream(ADMIN_COMMANDS).anyMatch(action::equals))
+				|| (user.getRole() == Role.SUBSCRIBER && Arrays.stream(SUBSCRIBER_COMMANDS).anyMatch(action::equals))) {
+			return true;
+		} else {
+			logger.warn("An attempt to access " + action + " failed. User: " + user.getLogin() + " .");
 			return false;
 		}
 	}

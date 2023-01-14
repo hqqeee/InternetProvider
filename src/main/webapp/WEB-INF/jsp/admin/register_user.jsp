@@ -36,22 +36,6 @@
 									required>
 							</div>
 						</div>
-						<div class="col-12">
-							<label for="password" class="form-label">Password</label>
-							<div class="input-group has-validation">
-							<input type="password"
-									class="form-control" placeholder="Password" id="password" name="password"
-									required>
-							</div>
-						</div>
-						<div class="col-12">
-							<label for="password" class="form-label">Confirm password</label>
-							<div class="input-group has-validation">
-							<input type="password"
-									class="form-control" placeholder="Confirm Password" id="confirm_password"
-									required>
-							</div>
-						</div>
 
 						<div class="col-12">
 							<label for="email" class="form-label">Email</label> <input type="email"
@@ -72,12 +56,11 @@
 					</div>
 					<hr class="my-4">
 
-					<button class="w-80 btn btn-warning btn-lg" type="submit" onclick="checkPassword()">Register</button>
+					<button class="w-80 btn btn-warning btn-lg" type="submit">Register</button>
 				</form>
 			</div>
 
 
 </div>
 
-<script  type="text/javascript" src="${pageContext.request.contextPath}/js/validate_password_confirm.js"></script>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

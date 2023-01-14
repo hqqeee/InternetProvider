@@ -11,7 +11,7 @@ import com.epam.controller.command.Page;
 import com.epam.exception.services.UserAlreadyExistException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.exception.services.ValidationErrorException;
-import com.epam.services.forms.UserForm;
+import com.epam.services.dto.UserForm;
 import com.epam.util.AppContext;
 
 public class RegisterUserCommand implements Command {
@@ -29,7 +29,7 @@ public class RegisterUserCommand implements Command {
 		userForm.setCity(req.getParameter("city"));
 		userForm.setAddress(req.getParameter("address"));
 		try {
-			AppContext.getInstance().getUserService().registerUser(userForm, req.getParameter("password"));
+			AppContext.getInstance().getUserService().registerUser(userForm);
 		} catch (ValidationErrorException e) {
 			req.setAttribute("userForm", userForm);
 			req.setAttribute("errorMessages", e.getErrors());

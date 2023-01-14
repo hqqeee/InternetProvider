@@ -23,6 +23,7 @@ public enum CommandFactory {
 		commands.put(VIEW_TARIFFS, new ViewTariffsCommand());
 		commands.put(DOWNLOAD_TARIFFS, new DownloadTariffsCommand());
 		commands.put(CHANGE_LANGUAGE, new ChangeLanguageCommand());
+		commands.put(RESET_PASSWORD, new ResetPasswordCommand());
 		/** Subscriber commands  **/
 		commands.put(VIEW_PROFILE, new ViewProfileCommand());
 		commands.put(VIEW_ACCOUNT, new ViewAccountCommand());
@@ -34,6 +35,7 @@ public enum CommandFactory {
 		/** Admin commands **/
 		commands.put(REGISER_USER, new RegisterUserCommand());
 		commands.put(ADMIN_MENU, new AdminMenuCommand());
+		commands.put(REMOVE_USER, new RemoveUserCommand());
 		commands.put(OPEN_USER_REGISTRATION, new OpenUserRegistrationCommand());
 		commands.put(VIEW_SUBSCRIBER_PROFILE, new ViewSubscriberProfileCommand());
 		commands.put(VIEW_SUBSCRIBER_TARIFFS, new ViewSubscriberTariffsCommand());

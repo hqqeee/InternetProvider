@@ -9,6 +9,7 @@ public final class CommandNames {
 	public static final String VIEW_TARIFFS = "viewTariffs";
 	public static final String DOWNLOAD_TARIFFS = "downloadTariffs";
 	public static final String CHANGE_LANGUAGE = "changeLanguage";
+	public static final String RESET_PASSWORD = "resetPassword";
 	/** Subscriber commands  **/
 	public static final String VIEW_PROFILE = "viewProfile";
 	public static final String VIEW_ACCOUNT = "viewAccount";
@@ -30,4 +31,5 @@ public final class CommandNames {
 	public static final String EDIT_TARIFF = "editTariff";
 	public static final String ADD_TARIFF = "addTariff";
 	public static final String OPEN_ADD_TARIFF = "openAddTariff";
+	public static final String REMOVE_USER = "removeUser";
 }

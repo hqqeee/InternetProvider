@@ -4,17 +4,17 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class Tariff implements Serializable {
-    private static final long serialVersionUID = 1L;
-    private int id;
-    private String name;
-    private String description;
-    private int paymentPeriod;
-    private BigDecimal rate;
-    private int serviceId;
-    
-    
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String name;
+	private String description;
+	private int paymentPeriod;
+	private BigDecimal rate;
+	private int serviceId;
+
 	public Tariff() {
 	}
+
 	public Tariff(int id, String name, String description, int paymentPeriod, BigDecimal rate, int serviceId) {
 		this.id = id;
 		this.name = name;
@@ -23,48 +23,59 @@ public class Tariff implements Serializable {
 		this.rate = rate;
 		this.serviceId = serviceId;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public int getPaymentPeriod() {
 		return paymentPeriod;
 	}
+
 	public void setPaymentPeriod(int paymentPeriod) {
 		this.paymentPeriod = paymentPeriod;
 	}
+
 	public BigDecimal getRate() {
 		return rate;
 	}
+
 	public void setRate(BigDecimal rate) {
 		this.rate = rate;
 	}
+
 	public int getServiceId() {
 		return serviceId;
 	}
+
 	public void setServiceId(int serviceId) {
 		this.serviceId = serviceId;
 	}
+
 	@Override
 	public String toString() {
 		return "Tariff [id=" + id + ", name=" + name + ", description=" + description + ", paymentPeriod="
 				+ paymentPeriod + ", rate=" + rate + ", serviceId=" + serviceId + "]";
 	}
-	
-	
 
 }

@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
-import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.services.TariffServiceException;
-import com.epam.services.TariffService;
+import com.epam.services.dto.Service;
+import com.epam.services.dto.TariffDTO;
 import com.epam.util.AppContext;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -32,8 +32,13 @@ public class DownloadTariffsCommand implements Command {
 
 
 		try {
-			List<Tariff> tariffs = AppContext.getInstance().getTariffService()
-					.getAllTariff(Integer.parseInt(req.getParameter("serviceId")));
+			String serviceReq = req.getParameter("service");
+			Service service = Service.ALL;
+			if(!serviceReq.isBlank()) {
+				service = Service.getServiceByString(serviceReq.toUpperCase());
+			}
+			List<TariffDTO> tariffs = AppContext.getInstance().getTariffService()
+					.getAllTariff(service);
 			try (OutputStream out = resp.getOutputStream()) {
 				Document document = new Document();
 				Font font = FontFactory.getFont("/fonts/RobotoMono-VariableFont_wght.ttf", "cp1251", BaseFont.EMBEDDED, 10);
@@ -59,7 +64,7 @@ public class DownloadTariffsCommand implements Command {
 		return null;
 	}
 
-	private PdfPTable generatePDFTableWithTariffs(List<Tariff> tariffs, Font font) {
+	private PdfPTable generatePDFTableWithTariffs(List<TariffDTO> tariffs, Font font) {
 		PdfPTable table = new PdfPTable(3);
 		PdfPCell nameCell = new PdfPCell(new Paragraph("Name", font));
 		PdfPCell descCell = new PdfPCell(new Paragraph("Description",font));
@@ -68,7 +73,7 @@ public class DownloadTariffsCommand implements Command {
 		table.addCell(nameCell);
 		table.addCell(descCell);
 		table.addCell(priceCell);
-		for (Tariff tariff : tariffs) {
+		for (TariffDTO tariff : tariffs) {
 			nameCell = new PdfPCell(new Phrase(tariff.getName(), font));
 			descCell = new PdfPCell(new Phrase(tariff.getDescription(), font));
 			priceCell = new PdfPCell(new Phrase(tariff.getRate().toString() + " per " + tariff.getPaymentPeriod() + " days.",  font));

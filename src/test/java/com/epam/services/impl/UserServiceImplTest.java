@@ -30,7 +30,7 @@ import com.epam.exception.services.UserNotFoundException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.UserService;
-import com.epam.services.forms.UserForm;
+import com.epam.services.dto.UserForm;
 import com.epam.util.AppContext;
 
 class UserServiceImplTest {

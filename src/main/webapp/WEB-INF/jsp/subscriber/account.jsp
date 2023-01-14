@@ -4,7 +4,7 @@
 <div class="text-white  text-start">
 	<div class="d-flex justify-content-between align-items-center">
 		<p class="h2 m-3 fw-bold">Your balance: $${requestScope.userBalance}</p>
-		<c:if test="${sessionScope.loggedUser.roleId eq 2}">
+		<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
 		<button class="btn btn-warning" data-bs-toggle="modal"
 			data-bs-target="#replenishModal">Replenish</button>
 		</c:if>
@@ -42,10 +42,10 @@
 
 		</tbody>
 	</table>
-	<c:if test="${sessionScope.loggedUser.roleId eq 2}">
+	<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
 	<form
 		action="controller?action=viewAccount" method="post"> </c:if>
-		<c:if test="${sessionScope.loggedUser.roleId eq 1}">
+		<c:if test="${sessionScope.loggedUser.role eq 'ADMIN'}">
 		<form
 		action="controller?action=viewSubscriberAccount" method="post"> 
 		<input name="userId" value="${requestScope.userId}" type="hidden"/>
@@ -67,7 +67,7 @@
 	</div>	
 	</form>
 </div>
-<c:if test="${sessionScope.loggedUser.roleId eq 2}">
+<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
 <!-- 			Replenish modal -->
 <div class="modal fade" id="replenishModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

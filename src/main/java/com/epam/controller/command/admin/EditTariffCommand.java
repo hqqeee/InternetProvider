@@ -9,7 +9,8 @@ import com.epam.controller.command.Command;
 import com.epam.controller.command.common.ViewTariffsCommand;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.ValidationErrorException;
-import com.epam.services.forms.TariffForm;
+import com.epam.services.dto.Service;
+import com.epam.services.dto.TariffForm;
 import com.epam.util.AppContext;
 
 public class EditTariffCommand implements Command{
@@ -23,7 +24,7 @@ public class EditTariffCommand implements Command{
 					req.getParameter("name"),
 					Integer.parseInt(req.getParameter("paymentPeriod")),
 					new BigDecimal(req.getParameter("rate")),
-					Integer.parseInt(req.getParameter("serviceIdNew")),
+					Service.getServiceByString(req.getParameter("serviceSelected")),
 					req.getParameter("description"));
 			AppContext.getInstance().getTariffService().editTariff(form, 
 					Integer.parseInt(req.getParameter("tariffId")));

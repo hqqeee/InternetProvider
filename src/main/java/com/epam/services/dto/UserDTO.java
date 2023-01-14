@@ -1,36 +1,51 @@
-package com.epam.services.forms;
+package com.epam.services.dto;
 
-public class LoggedUser {
-	private int userId;
+import java.math.BigDecimal;
+
+public class UserDTO {
+	private int id;
+	private boolean blocked;
 	private String login;
+	private BigDecimal balance;
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String city;
 	private String address;
 	private Role role;
 
-	public LoggedUser() {
+	public UserDTO() {
 	}
 
-	public LoggedUser(int userId, String login, String firstName, String lastName, String email, String address,
-			Role role) {
-		super();
-		this.userId = userId;
+	
+
+	public UserDTO(int id, boolean blocked, String login, BigDecimal balance, String firstName, String lastName,
+			String email, String city, String address, Role role) {
+		this.id = id;
+		this.blocked = blocked;
 		this.login = login;
+		this.balance = balance;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.city = city;
 		this.address = address;
 		this.role = role;
 	}
 
-	public int getUserId() {
-		return userId;
+
+
+	public int getId() {
+		return id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
+
 
 	public String getLogin() {
 		return login;
@@ -39,6 +54,20 @@ public class LoggedUser {
 	public void setLogin(String login) {
 		this.login = login;
 	}
+	
+	
+
+	public BigDecimal getBalance() {
+		return balance;
+	}
+
+
+
+	public void setBalance(BigDecimal balance) {
+		this.balance = balance;
+	}
+
+
 
 	public String getFirstName() {
 		return firstName;
@@ -64,12 +93,28 @@ public class LoggedUser {
 		this.email = email;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	public String getAddress() {
 		return address;
 	}
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public boolean isBlocked() {
+		return blocked;
+	}
+
+	public void setBlocked(boolean blocked) {
+		this.blocked = blocked;
 	}
 
 	public Role getRole() {

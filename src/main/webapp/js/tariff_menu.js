@@ -1,6 +1,6 @@
-function select_service(id){
-	if(document.getElementById("service_id").value==id) document.getElementById("service_id").value=0
-	else document.getElementById("service_id").value=id
+function select_service(name){
+	if(document.getElementById("service_name").value==name) document.getElementById("service_name").value="ALL"
+	else document.getElementById("service_name").value=name
 }
 
 function change_sorting_field(sort_field){
@@ -25,11 +25,11 @@ function confirm_tariff_remove(name,id) {
 	document.getElementById('tariff_id').value=id
 }
 
-function edit_tariff(name, rate, serviceId, description, payment_period, id){
+function edit_tariff(name, rate, service, description, payment_period, id){
 	document.getElementById("edit_tariff_name").value=name
 	document.getElementById("edit_tariff_rate").value=rate
 	document.getElementById("edit_tariff_description").value=description
-	document.getElementById("edit_tariff_service_id").value=serviceId
+	document.getElementById("edit_tariff_service").value=service
 	document.getElementById("payment_period").value=payment_period
 	switch(payment_period) {
 		case '1':

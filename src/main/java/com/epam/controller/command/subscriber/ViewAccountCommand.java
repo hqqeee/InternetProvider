@@ -7,12 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
-import com.epam.dataaccess.entity.Transaction;
-import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
-import com.epam.services.UserService;
+import com.epam.services.dto.TransactionDTO;
+import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 
 public class ViewAccountCommand implements Command {
@@ -30,11 +29,11 @@ public class ViewAccountCommand implements Command {
 		}
 
 		try {
-			int userId = ((User) req.getSession().getAttribute("loggedUser")).getId();
+			int userId = ((UserDTO) req.getSession().getAttribute("loggedUser")).getId();
 			req.setAttribute("userBalance", AppContext.getInstance().getUserService().getUserBalance(userId));
 			req.setAttribute("numberOfPages",
 					Math.ceil(transactionService.getUsersTransactionNumber(userId) * 1.0 / RECORDS_PER_PAGE));
-			List<Transaction> transactions = transactionService.getUserTransaction(userId, currentPage,
+			List<TransactionDTO> transactions = transactionService.getUserTransaction(userId, currentPage,
 					RECORDS_PER_PAGE);
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);

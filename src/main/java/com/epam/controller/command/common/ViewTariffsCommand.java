@@ -10,33 +10,35 @@ import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
-import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.util.AppContext;
 import com.epam.util.SortingOrder;
 import com.epam.services.TariffService;
+import com.epam.services.dto.Service;
+import com.epam.services.dto.TariffDTO;
 
 public class ViewTariffsCommand implements Command {
 
 	private final Logger logger = LogManager.getLogger(ViewTariffsCommand.class);
-	
+
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		int currentPage;
 		try {
 			currentPage = Integer.parseInt(req.getParameter("page"));
-		} catch(Exception e) {
+		} catch (Exception e) {
 			currentPage = 1;
 		}
-		int currentServiceId;
-		try {
-			currentServiceId = Integer.parseInt(req.getParameter("serviceId"));
-		} catch(Exception e) {
-			currentServiceId = 0;
+		Service service = Service.ALL;
+		String serviceReq = req.getParameter("service");
+		if(serviceReq != null && !serviceReq.isBlank()) {
+			System.out.println(serviceReq);
+			service = Service.getServiceByString(serviceReq.toUpperCase());
 		}
+		
 		SortingOrder activeSortingOrder;
 		try {
-			if(req.getParameter("sortingOrder").toUpperCase().equals("ASC")) {
+			if (req.getParameter("sortingOrder").toUpperCase().equals("ASC")) {
 				activeSortingOrder = SortingOrder.ASC;
 			} else {
 				activeSortingOrder = SortingOrder.DESC;
@@ -46,7 +48,7 @@ public class ViewTariffsCommand implements Command {
 		}
 		String activeSortingField;
 		activeSortingField = req.getParameter("sortingField");
-		if(activeSortingField == null || activeSortingField.trim().isEmpty()) {
+		if (activeSortingField == null || activeSortingField.trim().isEmpty()) {
 			activeSortingField = "name";
 		}
 		int currentRowNumber;
@@ -57,24 +59,25 @@ public class ViewTariffsCommand implements Command {
 		}
 		try {
 			TariffService tariffService = AppContext.getInstance().getTariffService();
-			List<Tariff> tariffs = tariffService.getTariffsForView(activeSortingField, activeSortingOrder, currentServiceId, currentPage, currentRowNumber);
+			List<TariffDTO> tariffs = tariffService.getTariffsForView(activeSortingField, activeSortingOrder,
+					service, currentPage, currentRowNumber);
 			req.setAttribute("tariffsToDisplay", tariffs);
 			req.setAttribute("page", currentPage);
-			req.setAttribute("serviceId", currentServiceId);
+			req.setAttribute("service", service);
 			req.setAttribute("sortingOrder", activeSortingOrder.getOrder());
 			req.setAttribute("sortingField", activeSortingField);
 			req.setAttribute("rowNumber", currentRowNumber);
-			req.setAttribute("numberOfPages", (int)Math.ceil(tariffService.getTariffsCount(currentServiceId) * 1.0/currentRowNumber));
+			req.setAttribute("numberOfPages",
+					(int) Math.ceil(tariffService.getTariffsCount(service) * 1.0 / currentRowNumber));
 		} catch (TariffServiceException e) {
 			logger.warn("An error occurred while loading tariffs view.");
-			logger.error("Unable to load tariffs view due to service error.",e);
+			logger.error("Unable to load tariffs view due to service error.", e);
 			req.setAttribute("errorMessages", "Unable to show tariffs. Please try again later.");
-		} catch(Exception e) {
+		} catch (Exception e) {
 			logger.warn("An error occurred while loading tariffs view.");
-			logger.error("Unable to load tariffs view due to unexpected error.",e);
+			logger.error("Unable to load tariffs view due to unexpected error.", e);
 			req.setAttribute("errorMessages", "Unable to show tariffs. Please try again later.");
 		}
-		
 
 		return Page.VIEW_TARIFF_PAGE;
 	}

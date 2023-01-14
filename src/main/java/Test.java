@@ -8,6 +8,14 @@ import java.sql.Timestamp;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,16 +46,17 @@ import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.util.AppContext;
+import com.epam.util.EmailUtil;
 import com.epam.util.SortingOrder;
 
 @WebServlet("/test")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public static void main(String[] args) {
-		Logger logger = LogManager.getLogger(Test.class);
-		logger.info("Configuration File Defined To Be :: "+System.getProperty("log4j.configurationFile"));
-	}
+    public static void main(String[] args) {
+		EmailUtil.INSTANCE.sendMail("bastafutru@gufum.com", "Hello", "From java app<br> Yout <br>ASD");
+
+    }
 	
 	
 	@Override

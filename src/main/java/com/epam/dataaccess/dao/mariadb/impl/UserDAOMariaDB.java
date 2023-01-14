@@ -60,10 +60,15 @@ public class UserDAOMariaDB implements UserDAO {
 					.setStringField(user.getFirstName()).setStringField(user.getLastName())
 					.setStringField(user.getCity()).setStringField(user.getAddress())
 					.setBigDecimalField(user.getBalance()).executeUpdate();
-		} catch(SQLIntegrityConstraintViolationException e) {
-			throw new DAORecordAlreadyExistsException("User with login " + user.getLogin() + " already exists.", e);
-		}
-		catch (SQLException e) {
+		} catch (SQLIntegrityConstraintViolationException e) {
+			if (e.getMessage().contains("for key 'login'")) {
+				throw new DAORecordAlreadyExistsException("User with login " + user.getLogin() + " already exists.", e);
+			} else if(e.getMessage().contains("for key 'email'")) {
+				throw new DAORecordAlreadyExistsException("User with email " + user.getEmail() + " already exists.", e);
+			} else {
+				throw new DAOInsertException("Cannot add user " + user + ".", e);
+			}
+		} catch (SQLException e) {
 			throw new DAOInsertException("Cannot add user " + user + ".", e);
 		}
 	}
@@ -150,8 +155,8 @@ public class UserDAOMariaDB implements UserDAO {
 	@Override
 	public List<User> getAllSubscriber() throws DAOException {
 		List<User> subscribers = new ArrayList<>();
-		try (ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_ALL_USERS_WITH_ROLE_ID).setIntField(2)
-				.executeQuery()) {
+		try (ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_ALL_USERS_WITH_ROLE_ID)
+				.setIntField(2).executeQuery()) {
 			while (rs.next()) {
 				subscribers.add(getUserFromResultSet(rs));
 			}
@@ -193,8 +198,8 @@ public class UserDAOMariaDB implements UserDAO {
 	public List<User> getSubscriberForView(String searchField, int offset, int entriesPerPage) throws DAOException {
 		List<User> subscribers = new ArrayList<>();
 		try (ResultSet rs = new QueryBuilder()
-				.addPreparedStatement(MariaDBConstants.GET_USERS_FOR_VIEW + "LOWER('%" + searchField + "%')"
-						+ MariaDBConstants.LIMIT)
+				.addPreparedStatement(
+						MariaDBConstants.GET_USERS_FOR_VIEW + "LOWER('%" + searchField + "%')" + MariaDBConstants.LIMIT)
 				.setIntField(2).setIntField(offset).setIntField(entriesPerPage).executeQuery()) {
 			while (rs.next()) {
 				subscribers.add(getUserFromResultSet(rs));
@@ -229,6 +234,16 @@ public class UserDAOMariaDB implements UserDAO {
 			throw new DAOUpdateException("Cannot change password for user with id " + userId + ".", e);
 		}
 
+	}
+	
+	@Override
+	public int changePassword(String email, String newPassword, String salt) throws DAOException {
+		try {
+			return new QueryBuilder().addPreparedStatement(MariaDBConstants.CHANGE_USER_PASSWORD_BY_EMAIL)
+					.setStringField(newPassword).setStringField(salt).setStringField(email).executeUpdate();
+		} catch(SQLException e) {
+			throw new DAOUpdateException("Cannot change password for user with email " + email + ".", e);
+		}
 	}
 
 	@Override
@@ -270,7 +285,6 @@ public class UserDAOMariaDB implements UserDAO {
 		}
 	}
 
-
 	private User getUserFromResultSet(ResultSet rs) throws DAOException {
 		try {
 			return new User(rs.getInt(MariaDBConstants.USER_ID_FIELD),
@@ -285,5 +299,20 @@ public class UserDAOMariaDB implements UserDAO {
 			throw new DAOMappingException("Cannot map user from ResultSet.", e);
 		}
 	}
+
+	@Override
+	public String getLoginByEmail(String email) throws DAOException {
+		try(ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.GET_LOGIN_BY_EMAIL).setStringField(email).executeQuery()){
+			if(rs.next()) {
+				return rs.getString(MariaDBConstants.USER_LOGIN_FIELD);
+			}
+		} catch (SQLException e) {
+			throw new DAOReadException("Cannot get user with email " + email + ".",e);
+	
+		}
+		return null;
+	}
+
+
 
 }

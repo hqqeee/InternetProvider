@@ -1,4 +1,4 @@
-package com.epam.services.forms;
+package com.epam.services.dto;
 
 import java.math.BigDecimal;
 
@@ -6,14 +6,14 @@ public class TariffForm {
 	private String name;
 	private int paymentPeriod;
 	private BigDecimal rate;
-	private int serviceId;
+	private Service service;
     private String description;
-	public TariffForm(String name, int paymentPeriod, BigDecimal rate, int serviceId, String description) {
+	public TariffForm(String name, int paymentPeriod, BigDecimal rate, Service service, String description) {
 		super();
 		this.name = name;
 		this.paymentPeriod = paymentPeriod;
 		this.rate = rate;
-		this.serviceId = serviceId;
+		this.service = service;
 		this.description = description;
 	}
 	public String getName() {
@@ -34,11 +34,11 @@ public class TariffForm {
 	public void setRate(BigDecimal rate) {
 		this.rate = rate;
 	}
-	public int getServiceId() {
-		return serviceId;
+	public Service getService() {
+		return service;
 	}
-	public void setServiceId(int serviceId) {
-		this.serviceId = serviceId;
+	public void setServiceId(Service service) {
+		this.service = service;
 	}
 	public String getDescription() {
 		return description;

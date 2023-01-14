@@ -77,7 +77,6 @@ public final class MariaDBConstants {
 
 	public static final String GET_SALT_BY_LOGIN = "SELECT " + USER_SALT_FIELD + " FROM " + USER_TABLE + " WHERE "
 			+ USER_LOGIN_FIELD + " = ?";
-	// TODO make dto logged user
 	public static final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT " + USER_ID_FIELD + ", " + USER_PASSWORD_FIELD
 			+ ", " + USER_SALT_FIELD + ", " + USER_LOGIN_FIELD + ", " + USER_ROLE_ID_FIELD + ", " + USER_BLOCKED_FIELD
 			+ " , " + USER_EMAIL_FIELD + ", " + USER_FIRST_NAME_FIELD + ", " + USER_LAST_NAME_FIELD + "," + " "
@@ -114,9 +113,12 @@ public final class MariaDBConstants {
 
 	public static final String GET_SUBSCRIBER_COUNT = "SELECT  COUNT(*) FROM " + USER_TABLE + " WHERE "
 			+ USER_ROLE_ID_FIELD + "= 2  AND LOWER(" + USER_LOGIN_FIELD + ") LIKE ";
-
+	public static final String GET_LOGIN_BY_EMAIL = "SELECT " + USER_LOGIN_FIELD + " FROM " + USER_TABLE + 
+			" WHERE " + USER_EMAIL_FIELD + " = ?";
 	public static final String CHANGE_USER_PASSWORD = "UPDATE " + USER_TABLE + " SET " + USER_PASSWORD_FIELD + " = ?, "
 			+ USER_SALT_FIELD + " =?  WHERE " + USER_ID_FIELD + " = ?";
+	public static final String CHANGE_USER_PASSWORD_BY_EMAIL = "UPDATE " + USER_TABLE + " SET " + USER_PASSWORD_FIELD + " = ?, "
+			+ USER_SALT_FIELD + " =?  WHERE " + USER_EMAIL_FIELD + " = ?";
 	public static final String REMOVE_USER_TARIFF = "DELETE  FROM  " + USER_HAS_TARIFF_TABLE + " WHERE  "
 			+ USER_HAS_TARIFF_USER_ID_FIELD + " = ?  AND  " + USER_HAS_TARIFF_TARIFF_ID_FIELD + " = ?";
 	public static final String GET_UNBLOCKED_AND_PAYMENT_NEEDED_SUBSCRIBERS = "SELECT DISTINCT " + USER_ID_FIELD + ", "

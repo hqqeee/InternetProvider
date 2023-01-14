@@ -10,11 +10,11 @@ import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
-import com.epam.dataaccess.entity.Tariff;
-import com.epam.dataaccess.entity.User;
 import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.UserServiceException;
+import com.epam.services.dto.TariffDTO;
+import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 
 public class DailyWithdrawCommand implements Command, Runnable {
@@ -26,13 +26,13 @@ public class DailyWithdrawCommand implements Command, Runnable {
 	public void run() {
 		AppContext appContext = AppContext.getInstance();
 
-		List<User> users = null;
+		List<UserDTO> users = null;
 
 		try {
 			appContext.getTariffService().updateDaysUntilPayments();
 			users = appContext.getUserService().getSubscriberForCharging();
-			for (User user : users) {
-				List<Tariff> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
+			for (UserDTO user : users) {
+				List<TariffDTO> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
 				try {
 					appContext.getUserService().chargeUserForTariffsUsing(user.getId(), usersUnpaidTariffs);
 				} catch (NegativeUserBalanceException e) {

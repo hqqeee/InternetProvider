@@ -24,5 +24,7 @@ public interface UserDAO extends DAO<User>{
 			int entriesPerPage) throws DAOException;
     public int getSubscriberNumber(String searchField) throws DAOException;
     public int changePassword(int userId, String newPassword, String salt) throws DAOException;
+    public int changePassword(String email, String newPassword, String salt) throws DAOException;
 	public boolean getUserStatus(int userId) throws DAOException;
+	public String getLoginByEmail(String email) throws DAOException;;
 }

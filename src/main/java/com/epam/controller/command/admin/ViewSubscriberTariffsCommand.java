@@ -1,6 +1,5 @@
 package com.epam.controller.command.admin;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,9 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
-import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.services.TariffServiceException;
-import com.epam.services.TariffService;
+import com.epam.services.dto.TariffDTO;
 import com.epam.util.AppContext;
 
 public class ViewSubscriberTariffsCommand implements Command{
@@ -18,7 +16,7 @@ public class ViewSubscriberTariffsCommand implements Command{
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		try {
-			Map<Tariff, Integer> tariffsWithDaysLeft = AppContext.getInstance().getTariffService()
+			Map<TariffDTO, Integer> tariffsWithDaysLeft = AppContext.getInstance().getTariffService()
 					.getUsersTariffWithDaysUntilPayment(Integer.parseInt(req.getParameter("userId")));
 			req.setAttribute("tariffsToDisplay", tariffsWithDaysLeft);
 			req.setAttribute("userId", req.getParameter("userId"));

@@ -12,9 +12,9 @@
 			<div class="d-flex justify-content-between align-items-center">
 				<p class="h2 m-3 fw-bold">${tariff.key.name}</p>
 				<img class="align-self-center mx-3"
-					src="${tariff.key.serviceId==1?'images/call-contact-phone-svgrepo-com.svg':tariff.key.serviceId==2?'images/connection-svgrepo-com.svg':tariff.key.serviceId==3?'images/satelite-svgrepo-com.svg':'images/smart-svgrepo-com.svg'}
-					
-					"
+					src="${tariff.key.service eq 'TELEPHONE'?'images/call-contact-phone-svgrepo-com.png'
+									:tariff.key.service eq 'INTERNET'?'images/connection-svgrepo-com.png'
+				 					:tariff.key.service eq 'CABLE_TV'?'images/satelite-svgrepo-com.png':'images/smart-svgrepo-com.png'} "
 					alt="..." width="32" style="filter: invert(1);">
 			</div>
 			<div class="text-start mb-3 ms-3 text-muted">
@@ -27,7 +27,7 @@
 			</div>
 			<div class="d-flex justify-content-start m-3 text-start">${tariff.key.description }</div>
 			
-			<c:if test="${loggedUser.roleId==2}">
+			<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
 				<div class="text-end mb-3 me-3">
 
 					<button type="button" class="btn btn-danger"
