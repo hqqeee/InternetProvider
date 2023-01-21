@@ -2,9 +2,7 @@ package com.epam.services.impl;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import com.epam.dataaccess.dao.DAOFactory;
 import com.epam.dataaccess.dao.TariffDAO;
@@ -20,7 +18,6 @@ import com.epam.exception.services.UserAlreadyExistException;
 import com.epam.exception.services.UserAlreadyHasTariffException;
 import com.epam.exception.services.UserNotFoundException;
 import com.epam.exception.services.UserServiceException;
-import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.UserService;
 import com.epam.services.dto.Role;
 import com.epam.services.dto.Service;
@@ -31,7 +28,7 @@ import com.epam.util.EmailUtil;
 import com.epam.util.PasswordUtil;
 
 public class UserServiceImpl implements UserService {
-
+	
 	private DAOFactory daoFactory;
 
 	private UserServiceImpl(DAOFactory daoFactory) {
@@ -47,40 +44,36 @@ public class UserServiceImpl implements UserService {
 			if (user == null) {
 				throw new UserNotFoundException(login);
 			} else {
-				System.out.println("Successful login");
 				return convertUserToUserDTO(user);
 			}
 		} catch (DAOException e) {
-			e.printStackTrace();
-			System.out.println(e);
 			throw new UserServiceException("Cannot get user with login " + login + " and password " + password + ".");
 		}
 	}
 
 	@Override
 	public void registerUser(UserForm userForm)
-			throws UserAlreadyExistException, ValidationErrorException, UserServiceException {
-		validateUser(userForm);
+			throws UserAlreadyExistException, UserServiceException {
 		String salt = PasswordUtil.getRandomString(12);
 		String password = PasswordUtil.getRandomString(10);
-		EmailUtil.INSTANCE.sendRegistrationEmail(userForm.getEmail(), userForm.getLogin(), password);
-		User user = new User(0, PasswordUtil.hashPassword(password + salt), salt, userForm.getLogin(), 2, false,
-				userForm.getEmail(), userForm.getFirstName(), userForm.getLastName(), userForm.getCity(),
-				userForm.getAddress(), BigDecimal.ZERO);
+		User user = convertUserFormToUser(userForm, salt, password);
 		try {
 			UserDAO userDAO = daoFactory.getUserDAO();
 			userDAO.insert(user);
+			EmailUtil.INSTANCE.addRegistrationEmailToQueue(userForm.getEmail(), userForm.getLogin(), password);
+			EmailUtil.INSTANCE.sendMails();
 		} catch (DAORecordAlreadyExistsException e) {
 			if (e.getMessage().contains("email")) {
 				throw new UserAlreadyExistException("email", userForm.getEmail());
-			} else if (e.getMessage().contains("email")) {
+			} else if (e.getMessage().contains("login")) {
 				throw new UserAlreadyExistException("login", userForm.getLogin());
 			}
 		} catch (DAOException e) {
-			throw new UserServiceException(userForm.getLogin());
+			throw new UserServiceException("Cannot register user with login " + userForm.getLogin() + ".",e);
 		}
 
 	}
+
 
 	@Override
 	public List<UserDTO> getAllSubscribers() throws UserServiceException {
@@ -90,7 +83,6 @@ public class UserServiceImpl implements UserService {
 			List<User> subscribers = userDAO.getAllSubscriber();
 			subscribers.forEach(u -> subscribersDTOs.add(convertUserToUserDTO(u)));
 		} catch (DAOException e) {
-			System.out.println(e);
 			throw new UserServiceException("Cannot get all subscribers.", e);
 		}
 		return subscribersDTOs;
@@ -104,7 +96,6 @@ public class UserServiceImpl implements UserService {
 			List<User> subscribers = userDAO.getAllUnblockedSubscriber();
 			subscribers.forEach(u -> subscribersDTOs.add(convertUserToUserDTO(u)));
 		} catch (DAOException e) {
-			System.out.println(e);
 			throw new UserServiceException("Cannot get all unblocked subscribers.", e);
 		}
 		return subscribersDTOs;
@@ -118,7 +109,6 @@ public class UserServiceImpl implements UserService {
 			List<User> subscribers = userDAO.getSubscriberForCharging();
 			subscribers.forEach(u -> subscribersDTOs.add(convertUserToUserDTO(u)));
 		} catch (DAOException e) {
-			System.out.println(e);
 			throw new UserServiceException("Cannot get all subscribers for charging.", e);
 		}
 		return subscribersDTOs;
@@ -133,8 +123,6 @@ public class UserServiceImpl implements UserService {
 					entriesPerPage);
 			subscribers.forEach(u -> subscribersDTOs.add(convertUserToUserDTO(u)));
 		} catch (DAOException e) {
-			e.printStackTrace();
-			System.out.println(e);
 			throw new UserServiceException("Cannot get users for view with pararameters: serachField " + searchField
 					+ " page " + page + " entriesPerPage " + entriesPerPage + ".", e);
 		}
@@ -148,8 +136,6 @@ public class UserServiceImpl implements UserService {
 			UserDAO userDAO = daoFactory.getUserDAO();
 			result = userDAO.getSubscriberNumber(searchField);
 		} catch (DAOException e) {
-			e.printStackTrace();
-			System.out.println(e);
 			throw new UserServiceException("Cannot get number of subscriber by searchField " + searchField + ".", e);
 		}
 		return result;
@@ -207,7 +193,6 @@ public class UserServiceImpl implements UserService {
 			}
 			transactionDAO.changeUserBalance(userId, diffrence, description);
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new UserServiceException();
 		}
 
@@ -215,28 +200,19 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void changePassword(int userId, String currentPassword, String newPassword)
-			throws ValidationErrorException, UserServiceException, UserNotFoundException, PasswordNotMatchException {
+			throws UserServiceException, UserNotFoundException, PasswordNotMatchException {
 		try {
-			{
-				List<String> errors = new ArrayList<>();
-				validatePassword(newPassword, errors);
-				if (!errors.isEmpty())
-					throw new ValidationErrorException(errors);
-			}
 			UserDAO userDAO = daoFactory.getUserDAO();
 			User user = userDAO.get(userId);
 			if (user == null)
 				throw new UserNotFoundException(userId);
 			String oldHashedPassword = PasswordUtil.hashPassword(currentPassword + user.getSalt());
-			System.out.println(currentPassword);
-			System.out.println(user.getSalt());
 			if (!oldHashedPassword.equals(user.getPassword()))
 				throw new PasswordNotMatchException();
 			String salt = PasswordUtil.getRandomString(12);
 			String newHashedPassword = PasswordUtil.hashPassword(newPassword + salt);
 			userDAO.changePassword(userId, newHashedPassword, salt);
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new UserServiceException("Something went wrong with DAO. User password was not changed.");
 		}
 	}
@@ -250,13 +226,9 @@ public class UserServiceImpl implements UserService {
 			if (userDAO.changePassword(email, PasswordUtil.hashPassword(password + salt), salt) != 0) {
 				String login = userDAO.getLoginByEmail(email);
 				if (login != null) {
-					EmailUtil.INSTANCE.sendNewPassword(email, login, password);
-				} else {
-					System.out.println("Attempt to resety not existing user.");
+					EmailUtil.INSTANCE.addSendNewPasswordEmailToQueue(email, login, password);
+					EmailUtil.INSTANCE.sendMails();
 				}
-
-			} else {
-				System.out.println("Attempt to resety not existing user.");
 			}
 		} catch (DAOException e) {
 			throw new UserServiceException("Cannot reset password for user with email " + email + ".", e);
@@ -282,7 +254,6 @@ public class UserServiceImpl implements UserService {
 		} catch (DAORecordAlreadyExistsException e) {
 			throw new UserAlreadyHasTariffException(e.getMessage(), e);
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new UserServiceException("Cannot add tariff(ID - " + tariffId + " to user(ID - " + userId + ".");
 		}
 
@@ -298,7 +269,7 @@ public class UserServiceImpl implements UserService {
 			UserDAO userDAO = daoFactory.getUserDAO();
 			user = userDAO.get(userId);
 			if (user.getBalance().compareTo(amountToPay) < 0) {
-				throw new NegativeUserBalanceException();
+				throw new NegativeUserBalanceException(amountToPay.subtract(user.getBalance()));
 			}
 		} catch (DAOException e) {
 			throw new UserServiceException("Cannot charge user for tariffs using.", e);
@@ -314,7 +285,6 @@ public class UserServiceImpl implements UserService {
 			TransactionDAO transactionDAO = daoFactory.getTransactionDAO();
 			transactionDAO.chargeUserForTariffUsing(userId, tariff.getId(), description);
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new UserServiceException("Cannot charger user with id " + userId + " for tariff " + tariff + ".", e);
 		}
 	}
@@ -325,53 +295,12 @@ public class UserServiceImpl implements UserService {
 			UserDAO userDAO = daoFactory.getUserDAO();
 			userDAO.removeTariffFromUser(userId, tariffId);
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new UserServiceException(
 					"Cannot remove tariff with id " + userId + " from user with id " + userId + ".", e);
 		}
 	}
 
-	private static void validateUser(UserForm form) throws ValidationErrorException {
-		List<String> errors = new ArrayList<>();
-		validateTextFieldValues(errors, form.getFirstName(), "First Name", 16);
-		validateTextFieldValues(errors, form.getLastName(), "Last Name", 16);
-		validateTextFieldValues(errors, form.getCity(), "City", 32);
-		validateTextFieldValues(errors, form.getAddress(), "Address", 32);
-		validateTextFieldValues(errors, form.getLogin(), "Login", 32);
-		validateTextFieldValues(errors, form.getEmail(), "Email", 32);
-		if (!Pattern.compile(
-				"^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$")
-				.matcher(form.getEmail()).matches()) {
-			errors.add("Incorrect email.");
-		}
-		if (errors.isEmpty())
-			return;
-		throw new ValidationErrorException(errors);
 
-	}
-
-	private static void validateTextFieldValues(List<String> errors, String fieldValue, String fieldName,
-			int maxLength) {
-		if (isEmpty(fieldValue)) {
-			errors.add(fieldName + " is empty.");
-		} else if (fieldValue.trim().length() > maxLength) {
-			errors.add(fieldName + " must not exceed " + maxLength + " characters.");
-		}
-	}
-
-	private static boolean isEmpty(String fieldValue) {
-		return fieldValue == null || fieldValue.trim().isEmpty();
-	}
-
-	private static void validatePassword(String password, List<String> errors) {
-		if (isEmpty(password)) {
-			errors.add("Password cannot be empty");
-		} else if (password.length() < 8) {
-			errors.add("Password must be at least 8 characters long.");
-		} else if (password.length() > 32) {
-			errors.add("Password must not exceed 32 characters long.");
-		}
-	}
 
 	@Override
 	public BigDecimal getUserBalance(int userId) throws UserServiceException {
@@ -393,9 +322,17 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	private UserDTO convertUserToUserDTO(User user) {
+	protected UserDTO convertUserToUserDTO(User user) {
 		return new UserDTO(user.getId(), user.isBlocked(), user.getLogin(), user.getBalance(), user.getFirstName(),
 				user.getLastName(), user.getEmail(), user.getCity(), user.getAddress(), Role.valueOf(user.getRoleId()));
+	}
+	
+
+	protected User convertUserFormToUser(UserForm userForm, String salt, String password) {
+		User user = new User(0, PasswordUtil.hashPassword(password + salt), salt, userForm.getLogin(), 2, false,
+				userForm.getEmail(), userForm.getFirstName(), userForm.getLastName(), userForm.getCity(),
+				userForm.getAddress(), BigDecimal.ZERO);
+		return user;
 	}
 
 }

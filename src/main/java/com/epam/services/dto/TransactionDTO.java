@@ -1,7 +1,8 @@
 package com.epam.services.dto;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
+import java.util.Objects;
 
 public class TransactionDTO {
 	private int id;
@@ -43,6 +44,23 @@ public class TransactionDTO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(amount, description, id, timestamp);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TransactionDTO other = (TransactionDTO) obj;
+		return Objects.equals(amount, other.amount) && Objects.equals(description, other.description) && id == other.id
+				&& Objects.equals(timestamp, other.timestamp);
+	}
+	
 	
 	
 }

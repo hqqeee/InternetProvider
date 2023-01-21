@@ -16,9 +16,10 @@
 		<div
 			class="col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
-			<form action="controller?action=adminMenu" class="my-3 mx-1 d-flex"
-				method="post">
+			<form action="controller" class="my-3 mx-1 d-flex"
+				method="get">
 <%-- 				<input type="hidden" name="page" value="${page}" />  --%>
+				<input type="hidden" name="action" value="adminMenu"/>
 				<input
 					type="hidden" name="searchField" value="${searchField}" /> <label
 					class="fs-5 text-white">Show</label> <select
@@ -42,8 +43,9 @@
 		</div>
 		<div class="text-end">
 			<form class="d-flex text-end" role="search"
-				action="controller?action=adminMenu" method="post">
+				action="controller" method="get">
 <%-- 				<input type="hidden" name="page" value="${page}" /> --%>
+				<input type="hidden" name="action" value="adminMenu"/>
 				 <input
 					type="hidden" name="rowNumber" value="${rowNumber}" /> <input
 					class="form-control me-2" type="search" placeholder="Login part"
@@ -89,8 +91,9 @@
 
 				<td>
 
-					<form action="controller?action=viewSubscriberProfile"
-						method="post" id="view_profile_form">
+					<form action="controller"
+						method="get" id="view_profile_form">
+						<input type="hidden" name="action" value="viewSubscriberProfile"/>
 						<input type="hidden" name="userId" id="view_user_profile_id">
 					</form>
 					<div class="btn-group">
@@ -138,7 +141,8 @@
 <div class="container pt-3">
 	<div class="d-flex justify-content-between align-items-center">
 
-		<form action="controller?action=adminMenu" method="post">
+		<form action="controller" method="get">
+		<input type="hidden" name="action" value="adminMenu"/>
 			<input type="hidden" name="searchField" value="${searchField}" />
 			<input type="hidden" name="rowNumber" value="${rowNumber}" />
 			<input type="hidden" name="page" id="pageNumber" />
@@ -159,7 +163,8 @@
 
 
 		<div class="text-end">
-			<form action="controller?action=openUserRegistration" method="post">
+			<form action="controller" method="get">
+			<input type="hidden" name="action" value="openUserRegistration"/>
 				<button type="submit" class="btn btn-outline-warning">Register
 					user</button>
 			</form>

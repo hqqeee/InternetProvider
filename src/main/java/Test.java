@@ -53,16 +53,20 @@ import com.epam.util.SortingOrder;
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	
     public static void main(String[] args) {
-		EmailUtil.INSTANCE.sendMail("bastafutru@gufum.com", "Hello", "From java app<br> Yout <br>ASD");
-
+		
     }
 	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
+		EmailUtil.INSTANCE.addRegistrationEmailToQueue("yinigac598@usharer.com", "asd", "asd");
+		EmailUtil.INSTANCE.addSendNewPasswordEmailToQueue("yinigac598@usharer.com", "asd", "asd");
+		EmailUtil.INSTANCE.addRegistrationEmailToQueue("yinigac598@usharer.com", "123", "131");
+		EmailUtil.INSTANCE.sendMails();
+		System.out.println(Thread.currentThread().getName());
 //		AppContext appContext = AppContext.getInstance();
 //		new DailyWithdrawCommand().run();
 //		System.out.println("User DAO test");

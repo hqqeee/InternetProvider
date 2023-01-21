@@ -92,9 +92,11 @@ public final class MariaDBConstants {
 //	+ USER_HAS_TARIFF_DAYS_UNTIL_NEXT_PAYMENT_FIELD).getQuery() + "(" + new QueryStringBuilder()
 //			.addSelect("?,?, " + TARIFF_PAYMENT_PERIOD_FIELD).addFrom(TARIFF_TABLE).addWhere(TARIFF_ID_FIELD + " = ?)")
 //			.getQuery();
-	public static final String ADD_TARIFF_TO_USER = "INSERT INTO  " + USER_HAS_TARIFF_TABLE + " ( "
+	public static final String ADD_TARIFF_TO_USER =  "INSERT INTO  " + USER_HAS_TARIFF_TABLE + " ( "
 			+ USER_HAS_TARIFF_USER_ID_FIELD + ",  " + USER_HAS_TARIFF_TARIFF_ID_FIELD + ",  "
-			+ USER_HAS_TARIFF_DAYS_UNTIL_NEXT_PAYMENT_FIELD + ") VALUES (?,?,?)";
+			+ USER_HAS_TARIFF_DAYS_UNTIL_NEXT_PAYMENT_FIELD + ") SELECT ?,?,? FROM DUAL WHERE NOT EXISTS" 
+			+ "(SELECT * FROM " + USER_HAS_TARIFF_TABLE + " WHERE "+ USER_HAS_TARIFF_USER_ID_FIELD
+			+ " = ? AND " + USER_HAS_TARIFF_TARIFF_ID_FIELD + " = ?)";
 	public static final String GET_ALL_USERS_WITH_ROLE_ID = "SELECT " + USER_ID_FIELD + ", " + USER_PASSWORD_FIELD + ", "
 			+ USER_SALT_FIELD + ", " + USER_LOGIN_FIELD + ", " + USER_ROLE_ID_FIELD + ", " + USER_BLOCKED_FIELD + " , "
 			+ USER_EMAIL_FIELD + ", " + USER_FIRST_NAME_FIELD + ", " + USER_LAST_NAME_FIELD + ", " + USER_CITY_FIELD
@@ -132,6 +134,8 @@ public final class MariaDBConstants {
 			+ USER_ID_FIELD + " = ?";
 	public static final String GET_USER_BLOCKED_STATUS = "SELECT " + USER_BLOCKED_FIELD + "  FROM " + USER_TABLE + " WHERE "
 			+ USER_ID_FIELD + " = ?";
+	public static final String EXISTS_USER_BY_LOGIN = "SELECT 1 FROM " + USER_TABLE + " WHERE "+ USER_LOGIN_FIELD + "=?";
+	public static final String EXISTS_USER_BY_EMAIL = "SELECT 1 FROM " + USER_TABLE + " WHERE "+ USER_EMAIL_FIELD + "=?";
 
 	/** TARIFF QUERIES */
 	public static final String GET_TARIFF_BY_ID = "SELECT  " + TARIFF_ID_FIELD + ",  " + TARIFF_NAME_FIELD + ",  "

@@ -40,7 +40,6 @@ public class TariffServiceImpl implements TariffService {
 			tariffs.forEach(t -> tariffDTOs.add(convertTariffToTariffDTO(t)));
 			return tariffDTOs;
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new TariffServiceException("Cannot get tariffs for vie with service " + service + " fieldName "
 					+ fieldName + " sortingOrder " + sortingOrder.getOrder() + " page " + page + " entries per page "
 					+ entriesPerPage + ".");
@@ -57,7 +56,6 @@ public class TariffServiceImpl implements TariffService {
 			}
 			return tariffDAO.getTariffCount(service.getId());
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new TariffServiceException("Cannot get count of tariffs with service " + service);
 		}
 	}
@@ -76,7 +74,6 @@ public class TariffServiceImpl implements TariffService {
 			tariffs.forEach(t -> tariffDTOs.add(convertTariffToTariffDTO(t)));
 			return tariffDTOs;
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new TariffServiceException("Cannot get all tariff with service " + service);
 		}
 	}
@@ -92,7 +89,6 @@ public class TariffServiceImpl implements TariffService {
 			tariffs.forEach(t -> tariffDTOs.add(convertTariffToTariffDTO(t)));
 			return tariffDTOs;
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new TariffServiceException("Cannot get tariffs for user with id " + userId, e);
 		}
 	}
@@ -107,7 +103,6 @@ public class TariffServiceImpl implements TariffService {
 			tariffs.forEach(t -> tariffDTOs.add(convertTariffToTariffDTO(t)));
 			return tariffDTOs;
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new TariffServiceException("Cannot get unpiad tariffs for user with id " + userId, e);
 		}
 	}
@@ -122,7 +117,6 @@ public class TariffServiceImpl implements TariffService {
 			tariffsWithDaysUntilPayment.forEach((t,i) -> tariffDTOsWithDaysUntilPayment.put(convertTariffToTariffDTO(t), i));
 			return tariffDTOsWithDaysUntilPayment;
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new TariffServiceException("Cannot get tariffs for user with id " + userId);
 		}
 	}
@@ -135,7 +129,6 @@ public class TariffServiceImpl implements TariffService {
 			tariff.setId(tariffId);
 			tariffDAO.delete(tariff);
 		} catch (DAOException e) {
-			e.printStackTrace();
 			throw new TariffServiceException("Cannot remove tariff with id " + tariffId);
 		}
 
@@ -143,12 +136,17 @@ public class TariffServiceImpl implements TariffService {
 
 	@Override
 	public void addTariff(TariffForm tariffForm) throws TariffServiceException, ValidationErrorException {
-		Tariff tariff = validateTariff(tariffForm);
+		Tariff tariff = new Tariff();
+		tariff.setName(tariffForm.getName());
+		tariff.setRate(tariffForm.getRate());
+		tariff.setPaymentPeriod(tariffForm.getPaymentPeriod());
+		tariff.setDescription(tariffForm.getDescription());
+		tariff.setServiceId(tariffForm.getService().getId());
 		try {
 			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			tariffDAO.insert(tariff);
 		} catch (DAOException e) {
-			throw new TariffServiceException("Connot add tariff.", e);
+			throw new TariffServiceException("Cannot add tariff.", e);
 		}
 
 	}
@@ -156,53 +154,20 @@ public class TariffServiceImpl implements TariffService {
 	@Override
 	public void editTariff(TariffForm tariffForm, int tariffId)
 			throws TariffServiceException, ValidationErrorException {
-		Tariff tariff = validateTariff(tariffForm);
+		Tariff tariff = new Tariff();
+		tariff.setName(tariffForm.getName());
+		tariff.setRate(tariffForm.getRate());
+		tariff.setPaymentPeriod(tariffForm.getPaymentPeriod());
+		tariff.setDescription(tariffForm.getDescription());
+		tariff.setServiceId(tariffForm.getService().getId());
 		tariff.setId(tariffId);
 		try {
 			TariffDAO tariffDAO = daoFactory.getTariffDAO();
 			tariffDAO.update(tariff);
 		} catch (DAOException e) {
-			throw new TariffServiceException("Connot edit user.", e);
+			throw new TariffServiceException("Cannot edit user.", e);
 		}
 
-	}
-
-	private Tariff validateTariff(TariffForm form) throws ValidationErrorException {
-		List<String> errors = new ArrayList<>();
-		validateTextFieldValues(errors, form.getName(), "name", 32);
-		validateTextFieldValues(errors, form.getDescription(), "description", 255);
-		if (form.getService() == Service.ALL) {
-			errors.add("Invalid service. Try again.");
-		}
-		if (form.getRate().signum() <= 0) {
-			errors.add("Invalid price. Price must be greater than 0.");
-		}
-		if (form.getPaymentPeriod() <= 0) {
-			errors.add("Payment period must be greater than 0.");
-		}
-		if (errors.isEmpty()) {
-			Tariff tariff = new Tariff();
-			tariff.setName(form.getName());
-			tariff.setRate(form.getRate());
-			tariff.setPaymentPeriod(form.getPaymentPeriod());
-			tariff.setDescription(form.getDescription());
-			tariff.setServiceId(form.getService().getId());
-			return tariff;
-		} else
-			throw new ValidationErrorException(errors);
-	}
-
-	private static void validateTextFieldValues(List<String> errors, String fieldValue, String fieldName,
-			int maxLength) {
-		if (isEmpty(fieldValue)) {
-			errors.add(fieldName + " is empty.");
-		} else if (fieldValue.trim().length() > maxLength) {
-			errors.add(fieldName + " must not exceed " + maxLength + " characters.");
-		}
-	}
-
-	private static boolean isEmpty(String fieldValue) {
-		return fieldValue == null || fieldValue.trim().isEmpty();
 	}
 
 	@Override
@@ -217,7 +182,7 @@ public class TariffServiceImpl implements TariffService {
 
 	}
 
-	private TariffDTO convertTariffToTariffDTO(Tariff tariff) {
+	protected TariffDTO convertTariffToTariffDTO(Tariff tariff) {
 		return new TariffDTO(tariff.getId(), tariff.getName(), tariff.getDescription(), tariff.getPaymentPeriod(),
 				tariff.getRate(), Service.valueOf(tariff.getServiceId()));
 	}

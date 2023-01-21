@@ -9,13 +9,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.Command;
+import com.epam.controller.command.CommandNames;
+import com.epam.controller.command.Page;
 import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.util.AppContext;
 
 public class ChangeUserBalanceCommand implements Command {
 
-	private final Logger logger = LogManager.getLogger(ChangeUserBalanceCommand.class);
+	private static final Logger LOG = LogManager.getLogger(ChangeUserBalanceCommand.class);
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -36,18 +38,19 @@ public class ChangeUserBalanceCommand implements Command {
 			}
 			int userId = Integer.parseInt(req.getParameter("userId"));
 			AppContext.getInstance().getUserService().changeUserBalance(userId, difference, description);
-			req.setAttribute("successMessage", "User's balance uccessfully changed!");
-			logger.info("Balance of user with id " + userId + " changed.");
-
+			LOG.info("Balance of user with id " + userId + " changed.");
+			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.ADMIN_MENU + "&userId=" + userId
+					+ "&success=balance_changed");
+			return Page.REDIRECTED;
 		} catch (NegativeUserBalanceException e) {
 			req.setAttribute("errorMessages", "User balance cannot be negative.");
 		} catch (UserServiceException e) {
-			logger.warn("An error occurred while changing user balance.");
-			logger.error("Unable to change user balance due to service error.", e);
+			LOG.warn("An error occurred while changing user balance.");
+			LOG.error("Unable to change user balance due to service error.", e);
 			req.setAttribute("errorMessages", "Unable change user balance. Please try again later.");
 		} catch (Exception e) {
-			logger.warn("An error occurred while changing user balance.");
-			logger.error("Unable to change user balance due to unexpected error.", e);
+			LOG.warn("An error occurred while changing user balance.");
+			LOG.error("Unable to change user balance due to unexpected error.", e);
 			req.setAttribute("errorMessages", "Unable change user balance. Please check your input.");
 		}
 		return new AdminMenuCommand().execute(req, resp);

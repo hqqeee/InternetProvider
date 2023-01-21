@@ -1,6 +1,6 @@
 package com.epam.services.impl;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +28,7 @@ public class TransactionServiceImpl implements TransactionService{
 				throw new NoTransactionsFoundException("No transaction found.");
 			}
 			List<TransactionDTO> transactionDTOs = new ArrayList<>();
-			transactions.forEach(t -> transactionDTOs.add(convertUserToTransactionDTO(t)));
+			transactions.forEach(t -> transactionDTOs.add(convertTransactionToTransactionDTO(t)));
 			return transactionDTOs;
 		} catch(DAOException e) {
 			throw new TransactionServiceException("Cannot get user transaction userID = " + userId + " page " + page + " recordsPerPage " + recordsPerPage,e);
@@ -45,7 +45,7 @@ public class TransactionServiceImpl implements TransactionService{
 		}
 	}
 	
-	private TransactionDTO convertUserToTransactionDTO(Transaction transaction) {
+	protected TransactionDTO convertTransactionToTransactionDTO(Transaction transaction) {
 		return new TransactionDTO(
 				transaction.getId(),
 				new Date(transaction.getTimestamp().getTime()),

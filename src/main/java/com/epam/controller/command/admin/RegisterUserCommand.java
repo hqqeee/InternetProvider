@@ -1,5 +1,8 @@
 package com.epam.controller.command.admin;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -7,12 +10,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.Command;
+import com.epam.controller.command.CommandNames;
 import com.epam.controller.command.Page;
 import com.epam.exception.services.UserAlreadyExistException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.dto.UserForm;
 import com.epam.util.AppContext;
+import com.epam.util.Validator;
 
 public class RegisterUserCommand implements Command {
 
@@ -21,7 +26,6 @@ public class RegisterUserCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		UserForm userForm = new UserForm();
-		String regPage = Page.USER_REGISTRATION_PAGE;
 		userForm.setFirstName(req.getParameter("firstName"));
 		userForm.setLastName(req.getParameter("lastName"));
 		userForm.setLogin(req.getParameter("login"));
@@ -29,25 +33,28 @@ public class RegisterUserCommand implements Command {
 		userForm.setCity(req.getParameter("city"));
 		userForm.setAddress(req.getParameter("address"));
 		try {
+			Validator.validateUserForm(userForm, ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")));
 			AppContext.getInstance().getUserService().registerUser(userForm);
+			logger.info("User: [" + userForm.getFirstName() + "," + userForm.getLastName() + "," + userForm.getLogin() + ","
+					+ userForm.getEmail() + ", " + userForm.getCity() + "]" + " registered successfully.");
+			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.OPEN_USER_REGISTRATION + "&success=register_user");
+			return Page.REDIRECTED;
 		} catch (ValidationErrorException e) {
 			req.setAttribute("userForm", userForm);
 			req.setAttribute("errorMessages", e.getErrors());
-			return regPage;
 		} catch (UserAlreadyExistException e) {
 			req.setAttribute("userForm", userForm);
 			req.setAttribute("userAlreadyExists", e.getMessage());
-			return regPage;
 		} catch (UserServiceException e) {
-			logger.warn("An error occurred while registering user.");
+			logger.warn("A service error occurred while registering user.");
+			logger.error("Unable to register user due to service error.", e);
+			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
+		} catch (Exception e) {
+			logger.warn("An unexpected error occurred while registering user.");
 			logger.error("Unable to register user due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Something went wrong. Try again later");
-			return regPage;
+			req.setAttribute("errorMessages", "Something went wrong. Try again.");
 		}
-		logger.info("User: [" + userForm.getFirstName() + "," + userForm.getLastName() + "," + userForm.getLogin() + ","
-				+ userForm.getEmail() + ", " + userForm.getCity() + "]" + " registered successfully.");
-		req.setAttribute("successMessage", "User Registered Successfully!");
-		return new AdminMenuCommand().execute(req, resp);
+		return Page.USER_REGISTRATION_PAGE;
 	}
 
 }

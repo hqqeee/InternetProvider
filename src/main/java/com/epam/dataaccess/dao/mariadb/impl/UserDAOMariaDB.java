@@ -31,7 +31,6 @@ public class UserDAOMariaDB implements UserDAO {
 				user = getUserFromResultSet(rs);
 			}
 		} catch (SQLException e) {
-
 			throw new DAOReadException("Cannot get user with id " + id + ".", e);
 		}
 		return user;
@@ -54,20 +53,18 @@ public class UserDAOMariaDB implements UserDAO {
 	@Override
 	public int insert(User user) throws DAOException {
 		try {
+			if(checkUserExistsByLogin(user.getLogin())) {
+				throw new DAORecordAlreadyExistsException("User with login " + user.getLogin() + " already exists.");
+			}
+			if(checkUserExistsByEmail(user.getLogin())) {
+				throw new DAORecordAlreadyExistsException("User with email " + user.getEmail() + " already exists.");
+			}
 			return new QueryBuilder().addPreparedStatement(MariaDBConstants.ADD_USER).setStringField(user.getPassword())
 					.setStringField(user.getSalt()).setStringField(user.getLogin()).setIntField(user.getRoleId())
 					.setBooleanField(user.isBlocked()).setStringField(user.getEmail())
 					.setStringField(user.getFirstName()).setStringField(user.getLastName())
 					.setStringField(user.getCity()).setStringField(user.getAddress())
 					.setBigDecimalField(user.getBalance()).executeUpdate();
-		} catch (SQLIntegrityConstraintViolationException e) {
-			if (e.getMessage().contains("for key 'login'")) {
-				throw new DAORecordAlreadyExistsException("User with login " + user.getLogin() + " already exists.", e);
-			} else if(e.getMessage().contains("for key 'email'")) {
-				throw new DAORecordAlreadyExistsException("User with email " + user.getEmail() + " already exists.", e);
-			} else {
-				throw new DAOInsertException("Cannot add user " + user + ".", e);
-			}
 		} catch (SQLException e) {
 			throw new DAOInsertException("Cannot add user " + user + ".", e);
 		}
@@ -139,13 +136,16 @@ public class UserDAOMariaDB implements UserDAO {
 	}
 
 	@Override
-	public int addTariffToUser(int userId, int tariffId) throws DAOException {
+	public void addTariffToUser(int userId, int tariffId) throws DAOException {
 		try {
-			return new QueryBuilder().addPreparedStatement(MariaDBConstants.ADD_TARIFF_TO_USER).setIntField(userId)
-					.setIntField(tariffId).setIntField(0).executeUpdate();
-		} catch (SQLIntegrityConstraintViolationException e) {
-			throw new DAORecordAlreadyExistsException(
-					"Pair tariffId-userId(" + tariffId + "-" + userId + ") already exists.", e);
+			if(new QueryBuilder().addPreparedStatement(MariaDBConstants.ADD_TARIFF_TO_USER)
+					.setIntField(userId).setIntField(tariffId).setIntField(0)
+					.setIntField(userId).setIntField(tariffId).executeUpdate() ==0) {
+				throw new DAORecordAlreadyExistsException(
+						"Pair tariffId-userId(" + tariffId + "-" + userId + ") already exists.");
+			} else {
+				return;
+		}
 		} catch (SQLException e) {
 			throw new DAOInsertException(
 					"Cannot insert tariff with id " + tariffId + " for user with id " + userId + ".", e);
@@ -314,5 +314,15 @@ public class UserDAOMariaDB implements UserDAO {
 	}
 
 
-
+	private boolean checkUserExistsByLogin(String login) throws SQLException {
+		try(ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.EXISTS_USER_BY_LOGIN).setStringField(login).executeQuery()){
+			return rs.next();
+		}
+	}
+	
+	private boolean checkUserExistsByEmail(String email) throws SQLException {
+		try(ResultSet rs = new QueryBuilder().addPreparedStatement(MariaDBConstants.EXISTS_USER_BY_EMAIL).setStringField(email).executeQuery()){
+			return rs.next();
+		}
+	}
 }

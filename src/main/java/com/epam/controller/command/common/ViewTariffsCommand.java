@@ -19,7 +19,7 @@ import com.epam.services.dto.TariffDTO;
 
 public class ViewTariffsCommand implements Command {
 
-	private final Logger logger = LogManager.getLogger(ViewTariffsCommand.class);
+	private static final Logger LOG = LogManager.getLogger(ViewTariffsCommand.class);
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -70,12 +70,12 @@ public class ViewTariffsCommand implements Command {
 			req.setAttribute("numberOfPages",
 					(int) Math.ceil(tariffService.getTariffsCount(service) * 1.0 / currentRowNumber));
 		} catch (TariffServiceException e) {
-			logger.warn("An error occurred while loading tariffs view.");
-			logger.error("Unable to load tariffs view due to service error.", e);
+			LOG.warn("An error occurred while loading tariffs view.");
+			LOG.error("Unable to load tariffs view due to service error.", e);
 			req.setAttribute("errorMessages", "Unable to show tariffs. Please try again later.");
 		} catch (Exception e) {
-			logger.warn("An error occurred while loading tariffs view.");
-			logger.error("Unable to load tariffs view due to unexpected error.", e);
+			LOG.warn("An error occurred while loading tariffs view.");
+			LOG.error("Unable to load tariffs view due to unexpected error.", e);
 			req.setAttribute("errorMessages", "Unable to show tariffs. Please try again later.");
 		}
 

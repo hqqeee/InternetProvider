@@ -26,7 +26,8 @@ public class FrontController extends HttpServlet {
 		processRequest(req, resp);
 	}
 
-	private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+	private void processRequest(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
 		Command command = null;
 		String page = Page.HOME_PAGE;
 		try {
@@ -36,7 +37,7 @@ public class FrontController extends HttpServlet {
 			System.out.println(e.getMessage());
 			req.setAttribute("errorMessages", "You cannot access this page.");
 		}
-		if(page != null) {
+		if(page != null && !page.equals(Page.REDIRECTED)) {
 			getServletContext().getRequestDispatcher(page).forward(req, resp);
 		}
 	}

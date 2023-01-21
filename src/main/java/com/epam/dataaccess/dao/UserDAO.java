@@ -14,7 +14,7 @@ public interface UserDAO extends DAO<User>{
     public String getSalt(String login) throws DAOException;
     public User getUser(String login, String password) throws DAOException;
     public int changeBlocked(boolean blocked, int id) throws DAOException;
-    public int addTariffToUser(int userId, int tariffId) throws DAOException;
+    public void addTariffToUser(int userId, int tariffId) throws DAOException;
     public int removeTariffFromUser(int userId, int tariffId) throws DAOException;
     public BigDecimal getUserBalance(int userId) throws DAOException;
     public List<User> getAllSubscriber() throws DAOException;

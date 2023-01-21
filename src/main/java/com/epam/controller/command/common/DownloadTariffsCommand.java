@@ -7,7 +7,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.epam.controller.command.Command;
+import com.epam.controller.command.Page;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.services.dto.Service;
 import com.epam.services.dto.TariffDTO;
@@ -25,6 +29,8 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class DownloadTariffsCommand implements Command {
 
+	private static final Logger LOG = LogManager.getLogger(DownloadTariffsCommand.class);
+	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		resp.setContentType("application/pdf");
@@ -48,20 +54,21 @@ public class DownloadTariffsCommand implements Command {
 				document.add(generatePDFTableWithTariffs(tariffs, font));
 				document.add(new Paragraph("Telecom", font));
 				document.close();
+				return Page.REDIRECTED;
 
-			} catch (IOException | DocumentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (DocumentException | IOException e) {
+				LOG.warn("An error occurred while forming pdf document for downloading.");
+				LOG.error("Unable to form pdf document due to error.", e);
 			}
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (TariffServiceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOG.warn("A service error occurred while downloading pdf with tariffs.");
+			LOG.error("Unable to upload tariffs pdf document due to service error.", e);
+		} catch (Exception e) {
+			LOG.warn("A unexpected error occurred while downloading pdf with tariffs.");
+			LOG.error("Unable to upload tariffs pdf document due to unexpected error.", e);
 		}
-
-		return null;
+		req.setAttribute("errorMessages", "Cannot download tariffs. Please try againe later.");
+		return new ViewTariffsCommand().execute(req, resp);
 	}
 
 	private PdfPTable generatePDFTableWithTariffs(List<TariffDTO> tariffs, Font font) {

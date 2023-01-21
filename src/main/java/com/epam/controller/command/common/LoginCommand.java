@@ -17,7 +17,7 @@ import com.epam.util.AppContext;
 
 public class LoginCommand implements Command{
 
-	private final Logger logger = LogManager.getLogger(LoginCommand.class);
+	private static final Logger LOG = LogManager.getLogger(LoginCommand.class);
 	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp){
@@ -31,15 +31,20 @@ public class LoginCommand implements Command{
 		try {
 			req.getSession().setAttribute("loggedUser",
 					AppContext.getInstance().getUserService().login(login, password));
-			req.setAttribute("successMessage", bundle.getString("login.success"));
-			logger.info("User with login " + login + " successfully logged in.");
+			LOG.info("User with login " + login + " successfully logged in.");
+			resp.sendRedirect(req.getContextPath() + Page.HOME_PAGE + "?success=login");
+			return Page.REDIRECTED;
 		} catch (UserNotFoundException e) {
-			logger.warn("Unsuccessful attempt to access account with login " + login + ".");
+			LOG.warn("Unsuccessful attempt to access account with login " + login + ".");
 			req.setAttribute("login", req.getParameter("login"));
 			req.setAttribute("incorrectLoginOrPassword", bundle.getString("login.incorrect_login_or_password"));
 		} catch (UserServiceException e) {
-			logger.warn("An error occurred while logging into the system.");
-			logger.error("Unable to login due to service error error.", e);
+			LOG.warn("An error occurred while logging into the system.");
+			LOG.error("Unable to login due to service error.", e);
+			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
+		} catch (Exception e) {
+			LOG.warn("An error occurred while logging into the system.");
+			LOG.error("Unable to login due to unexpected error.", e);
 			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
 		}
 		return Page.HOME_PAGE;

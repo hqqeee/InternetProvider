@@ -17,7 +17,7 @@ import com.epam.util.AppContext;
 
 public class AdminMenuCommand implements Command {
 
-	private static final Logger logger = LogManager.getLogger(AdminMenuCommand.class);
+	private static final Logger LOG = LogManager.getLogger(AdminMenuCommand.class);
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -60,8 +60,8 @@ public class AdminMenuCommand implements Command {
 			List<UserDTO> subscribers = userService.viewSubscribers(currentSearchField, currentPage, currentRowNumber);
 			req.setAttribute("usersToDisplay", subscribers);
 		} catch (UserServiceException e) {
-			logger.warn("An error occurred while loading user view.");
-			logger.error("Unable to load user view due to service error.", e);
+			LOG.warn("An error occurred while loading user view.");
+			LOG.error("Unable to load user view due to service error.", e);
 			req.setAttribute("errorMessages", "Unable to load users. Please try again later.");
 		}
 

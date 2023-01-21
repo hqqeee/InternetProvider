@@ -13,9 +13,9 @@
 </c:choose>
 <div class="container py-3">
 	<div class="container bg-dark p-2 text-dark  px-4 py-4">
-		<form action="controller?action=viewTariffs" id="select_service"
-			method="post">
-			<input type="hidden" name="sortingField"
+		<form action="controller" id="select_service" method="get">
+			<input type="hidden" name="action" value="viewTariffs" /> <input
+				type="hidden" name="sortingField"
 				value="${requestScope.sortingField}"> <input type="hidden"
 				name="sortingOrder" value="${requestScope.sortingOrder}"> <input
 				type="hidden" name="rowNumber" value="${requestScope.rowNumber}">
@@ -92,8 +92,10 @@
 	</div>
 
 	<div class="d-flex justify-content-between align-items-center">
-		<form class="my-3 mx-1 d-flex" method="post">
-			<input type="hidden" name="sortingField"
+		<form class="my-3 mx-1 d-flex" method="get">
+
+			<input type="hidden" name="action" value="viewTariffs" /> <input
+				type="hidden" name="sortingField"
 				value="${requestScope.sortingField}"> <input type="hidden"
 				name="sortingOrder" value="${requestScope.sortingOrder}">
 			<%-- 				<input -->
@@ -115,9 +117,10 @@
 			</select>
 		</form>
 		<div>
-			<form action="controller?action=viewTariffs" id="sorting_change"
-				method="post">
-				<input type="hidden" name="sortingField" id="sorting_field"
+			<form action="controller" id="sorting_change" method="get">
+
+				<input type="hidden" name="action" value="viewTariffs" /> <input
+					type="hidden" name="sortingField" id="sorting_field"
 					value="${sortingField}"> <input type="hidden"
 					name="sortingOrder" id="sorting_order" value="${sortingOrder}">
 				<input type="hidden" name="service" value="${requestScope.service}" />
@@ -148,24 +151,9 @@
 	</div>
 	<!-- TARIFFS -->
 	<c:forEach var="tariff" items="${requestScope.tariffsToDisplay}">
-		<div class="card bg-dark text-white border-light mb-5 mt-3">
-			<div class="d-flex justify-content-between align-items-center">
-				<p class="h2 m-3 fw-bold">${tariff.name}</p>
-				<img class="align-self-center mx-3"
-					src="${tariff.service eq 'TELEPHONE'?'images/call-contact-phone-svgrepo-com.png'
-									:tariff.service eq 'INTERNET'?'images/connection-svgrepo-com.png'
-				 					:tariff.service eq 'CABLE_TV'?'images/satelite-svgrepo-com.png':'images/smart-svgrepo-com.png'} 
 
-									"
-					alt="..." width="32" style="filter: invert(1);">
-			</div>
-			<hr class="style1">
-			<div class="d-flex justify-content-between align-items-center">
-				<div class="text-muted mx-3">Description</div>
-				<p class="mx-3 dw-bold">Rate:
-					$${tariff.rate}/${tariff.paymentPeriod eq 28?'month':tariff.paymentPeriod eq 14?'two weeks': tariff.paymentPeriod eq 7? 'week':'day'}</p>
-			</div>
-			<div class="d-flex justify-content-start m-3 text-start">${tariff.description }</div>
+
+		<ctf:tariff tariff="${tariff}">
 			<c:if test="${sessionScope.loggedUser.role eq 'ADMIN'}">
 				<div class="text-end mb-3 me-3">
 
@@ -186,18 +174,20 @@
 						NOW</button>
 				</div>
 			</c:if>
-		</div>
+		</ctf:tariff>
 
 	</c:forEach>
 
 </div>
 <div class="d-flex justify-content-between align-items-center">
-	<form action="controller?action=viewTariffs" method="post">
-		<input type="hidden" name="page" id="page_number" /> <input
-			type="hidden" name="sortingField"
-			value="${requestScope.sortingField}"> <input type="hidden"
-			name="sortingOrder" value="${requestScope.sortingOrder}"> <input
-			type="hidden" name="service" value="${requestScope.service}" /> <input
+	<form action="controller" method="get">
+
+		<input type="hidden" name="action" value="viewTariffs" /> <input
+			type="hidden" name="page" id="page_number" /> <input type="hidden"
+			name="sortingField" value="${requestScope.sortingField}"> <input
+			type="hidden" name="sortingOrder"
+			value="${requestScope.sortingOrder}"> <input type="hidden"
+			name="service" value="${requestScope.service}" /> <input
 			type="hidden" name="rowNumber" value="${requestScope.rowNumber}">
 		<div
 			class="form-group btn-group col-lg-auto me-lg-auto mx-2 justify-content-center">
@@ -216,13 +206,16 @@
 	</form>
 	<c:choose>
 		<c:when test="${sessionScope.loggedUser.role eq 'ADMIN'}">
-			<form action="controller?action=openAddTariff" method="post">
+			<form action="controller" method="get">
+			
+			<input type="hidden" name="action" value="openAddTariff"/>
 				<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Add
 					new tariff</button>
 			</form>
 		</c:when>
 		<c:otherwise>
-			<form action="controller?action=downloadTariffs" method="post">
+			<form action="controller" method="get">
+				<input type="hidden" name="action" value="downloadTariffs"/>
 				<input type="hidden" name="service" value="${requestScope.service}" />
 				<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Download
 					PDF</button>

@@ -1,6 +1,7 @@
 package com.epam.services.dto;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class UserDTO {
 	private int id;
@@ -125,4 +126,40 @@ public class UserDTO {
 		this.role = role;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return "UserDTO [id=" + id + ", blocked=" + blocked + ", login=" + login + ", balance=" + balance
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", city=" + city
+				+ ", address=" + address + ", role=" + role + "]";
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(address, balance, blocked, city, email, firstName, id, lastName, login, role);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UserDTO other = (UserDTO) obj;
+		return Objects.equals(address, other.address) && Objects.equals(balance, other.balance)
+				&& blocked == other.blocked && Objects.equals(city, other.city) && Objects.equals(email, other.email)
+				&& Objects.equals(firstName, other.firstName) && id == other.id
+				&& Objects.equals(lastName, other.lastName) && Objects.equals(login, other.login) && role == other.role;
+	}
+
+	
+	
+	
 }

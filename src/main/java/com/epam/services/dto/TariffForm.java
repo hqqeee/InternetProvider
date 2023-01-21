@@ -46,6 +46,11 @@ public class TariffForm {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	@Override
+	public String toString() {
+		return "TariffForm [name=" + name + ", paymentPeriod=" + paymentPeriod + ", rate=" + rate + ", service="
+				+ service + ", description=" + description + "]";
+	}
     
 	
     

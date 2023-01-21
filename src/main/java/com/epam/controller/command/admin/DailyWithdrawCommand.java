@@ -16,16 +16,17 @@ import com.epam.exception.services.UserServiceException;
 import com.epam.services.dto.TariffDTO;
 import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
+import com.epam.util.EmailUtil;
 
 public class DailyWithdrawCommand implements Command, Runnable {
 
-	private final Logger logger = LogManager.getLogger(DailyWithdrawCommand.class);
+	private static final Logger LOG = LogManager.getLogger(DailyWithdrawCommand.class);
 	
 	
 	@Override
 	public void run() {
 		AppContext appContext = AppContext.getInstance();
-
+		
 		List<UserDTO> users = null;
 
 		try {
@@ -35,14 +36,17 @@ public class DailyWithdrawCommand implements Command, Runnable {
 				List<TariffDTO> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
 				try {
 					appContext.getUserService().chargeUserForTariffsUsing(user.getId(), usersUnpaidTariffs);
+					EmailUtil.INSTANCE.addReceipt(user.getEmail(), usersUnpaidTariffs);
 				} catch (NegativeUserBalanceException e) {
+					EmailUtil.INSTANCE.addNotEnoghtMoneyNotification(user.getEmail(), e.getValueUnderZero());
 					appContext.getUserService().changeUserStatus(false, user.getId());
 				}
 			}
-			logger.info("Daily withdrawal successfully completed.");
+			LOG.info("Daily withdrawal successfully completed.");
+			EmailUtil.INSTANCE.sendMails();
 		} catch (UserServiceException | TariffServiceException e1) {
-			logger.warn("An error occurred while executing daily withdrawal.");
-			logger.fatal("Daily withdrawal failed.", e1);
+			LOG.warn("An error occurred while executing daily withdrawal.");
+			LOG.fatal("Daily withdrawal failed.", e1);
 		}
 
 	}

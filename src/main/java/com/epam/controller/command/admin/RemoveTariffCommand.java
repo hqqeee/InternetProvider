@@ -7,25 +7,33 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.Command;
+import com.epam.controller.command.CommandNames;
+import com.epam.controller.command.Page;
 import com.epam.controller.command.common.ViewTariffsCommand;
+import com.epam.exception.services.TariffServiceException;
 import com.epam.util.AppContext;
 
-public class RemoveTariffCommand implements Command{
+public class RemoveTariffCommand implements Command {
 
-	private final Logger logger = LogManager.getLogger(RemoveTariffCommand.class);
-	
+	private static final Logger LOG = LogManager.getLogger(RemoveTariffCommand.class);
+
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-		try{
+		try {
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
 			AppContext.getInstance().getTariffService().removeTariff(tariffId);
-			logger.info("Tariff with id " + tariffId + " successfully removed.");
-			req.setAttribute("successMessage", "Tariff  successfully removed.");
+			LOG.info("Tariff with id " + tariffId + " successfully removed.");
+			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS
+					+ "&success=remove_tariff");
+			return Page.REDIRECTED;
+		} catch (TariffServiceException e) {
+			LOG.warn("A service error occurred while removing tariff.");
+			LOG.error("Unable to remove tariff due to service error.", e);
 		} catch (Exception e) {
-			logger.warn("An error occurred while removing tariff.");
-			logger.error("Unable to remove tariff due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Unable to remove tariff. Try again later.");
+			LOG.warn("An error occurred while removing tariff.");
+			LOG.error("Unable to remove tariff due to unexpected error.", e);
 		}
+		req.setAttribute("errorMessages", "Unable to remove tariff. Try again later.");
 		return new ViewTariffsCommand().execute(req, resp);
 	}
 

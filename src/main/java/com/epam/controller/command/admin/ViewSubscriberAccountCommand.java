@@ -5,6 +5,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
 import com.epam.exception.services.NoTransactionsFoundException;
@@ -16,18 +19,17 @@ import com.epam.util.AppContext;
 public class ViewSubscriberAccountCommand implements Command{
 
 	private static final int RECORDS_PER_PAGE = 20;
+	private static final Logger LOG = LogManager.getLogger(ViewSubscriberAccountCommand.class);
 	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-		TransactionService transactionService = AppContext.getInstance().getTransactionService();
-		int currentPage = 1;
 		try {
-			currentPage = Integer.parseInt(req.getParameter("page"));
-		} catch (Exception e) {
-			// e.printStackTrace();
-		}
-
-		try {
+			TransactionService transactionService = AppContext.getInstance().getTransactionService();
+			String currentPageReq = req.getParameter("page");
+			int currentPage = 1;
+			if(currentPageReq != null && !currentPageReq.isBlank()) {
+				currentPage = Integer.parseInt(currentPageReq);
+			}
 			int userId = Integer.parseInt(req.getParameter("userId"));
 			req.setAttribute("userId", req.getParameter("userId"));
 			req.setAttribute("numberOfPages",
@@ -37,15 +39,17 @@ public class ViewSubscriberAccountCommand implements Command{
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
 			req.setAttribute("userBalance", AppContext.getInstance().getUserService().getUserBalance(userId));
+			return Page.ACCOUNT_PAGE;
 		} catch (NoTransactionsFoundException e) {
-			req.setAttribute("noTransactionFound", "Payment history is empty");
+			req.setAttribute("noTransactionFound", "Payment history is empty.");
 		} catch (TransactionServiceException e) {
-			e.printStackTrace();
-			req.setAttribute("errorMessages", "Unable to load payment history. Try again later.");
+			LOG.warn("A service error occurred while loading account info.");
+			LOG.error("Unable to load account info due to service error.", e);
 		} catch (Exception e) {
-			e.printStackTrace();
-			req.setAttribute("errorMessages", "Unable to load payment history. Try again later.");
+			LOG.warn("An unexpected error occurred while loading account info.");
+			LOG.error("Unable to load account info due to unexpected error.", e);
 		}
+		req.setAttribute("errorMessages", "Unable to load account info. Try again later.");
 		return Page.ACCOUNT_PAGE;
 	}
 

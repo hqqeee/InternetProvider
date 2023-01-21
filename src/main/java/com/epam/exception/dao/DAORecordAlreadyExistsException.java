@@ -8,9 +8,13 @@ public class DAORecordAlreadyExistsException extends DAOException{
 
 	}
 
-	public DAORecordAlreadyExistsException(String errMessage, Throwable err) {
-		super(errMessage, err);
+	public DAORecordAlreadyExistsException(String errMessage) {
+		super(errMessage);
 	}
+	public DAORecordAlreadyExistsException(String errMessage,Throwable err) {
+		super(errMessage,err);
+	}
+
 
 	public DAORecordAlreadyExistsException(Throwable err) {
 		super(err);

@@ -1,6 +1,7 @@
 package com.epam.services.dto;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class TariffDTO {
 	private int id;
@@ -69,5 +70,25 @@ public class TariffDTO {
 	public void setService(Service service) {
 		this.service = service;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(description, id, name, paymentPeriod, rate, service);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TariffDTO other = (TariffDTO) obj;
+		return Objects.equals(description, other.description) && id == other.id && Objects.equals(name, other.name)
+				&& paymentPeriod == other.paymentPeriod && Objects.equals(rate, other.rate) && service == other.service;
+	}
+	
+	
 
 }

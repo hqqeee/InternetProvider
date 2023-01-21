@@ -8,6 +8,18 @@ public class UserForm {
 	private String city;
 	private String address;
 
+	
+	public UserForm(){}	
+	
+	public UserForm(String firstName, String lastName, String login, String email, String city, String address) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.login = login;
+		this.email = email;
+		this.city = city;
+		this.address = address;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

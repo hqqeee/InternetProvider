@@ -2,6 +2,7 @@ package com.epam.dataaccess.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Tariff implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -78,4 +79,26 @@ public class Tariff implements Serializable {
 				+ paymentPeriod + ", rate=" + rate + ", serviceId=" + serviceId + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(description, id, name, paymentPeriod, rate, serviceId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Tariff other = (Tariff) obj;
+		return Objects.equals(description, other.description) && id == other.id && Objects.equals(name, other.name)
+				&& paymentPeriod == other.paymentPeriod && Objects.equals(rate, other.rate)
+				&& serviceId == other.serviceId;
+	}
+	
+	
+
+	
 }

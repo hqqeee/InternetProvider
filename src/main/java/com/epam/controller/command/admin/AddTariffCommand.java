@@ -1,6 +1,8 @@
 package com.epam.controller.command.admin;
 
 import java.math.BigDecimal;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,16 +11,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.Command;
-import com.epam.controller.command.common.ViewTariffsCommand;
+import com.epam.controller.command.CommandNames;
+import com.epam.controller.command.Page;
 import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.dto.Service;
 import com.epam.services.dto.TariffForm;
 import com.epam.util.AppContext;
+import com.epam.util.Validator;
 
 public class AddTariffCommand implements Command {
 
-	private final Logger logger = LogManager.getLogger(AddTariffCommand.class);
+	private static final Logger LOG = LogManager.getLogger(AddTariffCommand.class);
 	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -30,19 +34,20 @@ public class AddTariffCommand implements Command {
 					new BigDecimal(req.getParameter("rate")),
 					Service.getServiceByString(req.getParameter("serviceSelected")),
 					req.getParameter("description"));
+			Validator.validateTariffForm(form, ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")));
 			AppContext.getInstance().getTariffService().addTariff(form);
-			req.setAttribute("successMessage", "Tariff successfully added." );
-			logger.info("Tariff " + form.getName() + " with rate $" + form.getRate() + "/" + form.getPaymentPeriod() + " day(s) successfully added.");
-			return new ViewTariffsCommand().execute(req, resp);
+			LOG.info("Tariff " + form.getName() + " with rate $" + form.getRate() + "/" + form.getPaymentPeriod() + " day(s) successfully added.");
+			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS + "&success=tariff_added");
+			return Page.REDIRECTED;
 		} catch (ValidationErrorException e) {
 			req.setAttribute("errorMessages", e.getErrors());
 		} catch (TariffServiceException e) {
-			logger.warn("An error occurred while adding a tariff.");
-			logger.error("Unable to add tariff due to service error.", e);
+			LOG.warn("An error occurred while adding a tariff.");
+			LOG.error("Unable to add tariff due to service error.", e);
 			req.setAttribute("errorMessages", "Cannot add tariff. Something went wrong. Try again later.");
 		} catch (Exception e) {
-			logger.warn("An error occurred while adding a tariff.");
-			logger.error("Unable to add tariff due to unexpected error error.", e);
+			LOG.warn("An error occurred while adding a tariff.");
+			LOG.error("Unable to add tariff due to unexpected error error.", e);
 			req.setAttribute("errorMessages", "Cannot add tariff. Something went wrong. Try again later or report bag.");
 		}
 		if(form != null) req.setAttribute("tariffForm", form);

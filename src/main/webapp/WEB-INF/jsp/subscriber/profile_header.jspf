@@ -5,37 +5,43 @@
 <c:when test="${sessionScope.loggedUser.role eq 'ADMIN'}">
 
   <li class="nav-item">
-  <form id="about" action="controller?action=viewSubscriberProfile" method="post">
+  <form id="about" action="controller" method="get">
+  	<input type="hidden" name="action" value="viewSubscriberProfile"/>
   	<input name="userId" value="${requestScope.userId}" type="hidden"/>
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewSubscriberProfile"?"active":"text-warning"}" id="about_tab" onclick="document.getElementById('about').submit();" href="#">About</a></form>
   </li>
   
   <li class="nav-item">
-  <form id="tariffs" action="controller?action=viewSubscriberTariffs" method="post">
+  <form id="tariffs" action="controller" method="get">
+  <input type="hidden" name="action" value="viewSubscriberTariffs"/>
  	<input name="userId" value="${requestScope.userId}" type="hidden"/>
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewSubscriberTariffs"?"active":"text-warning"}" id="tariff_tab" onclick="document.getElementById('tariffs').submit();" href="#">Tariffs</a></form>
   </li>
   <li class="nav-item">
   
-  <form id="account" action="controller?action=viewSubscriberAccount" method="post">
+  <form id="account" action="controller" method="get">
+  <input type="hidden" name="action" value="viewSubscriberAccount"/>
   <input name="userId" value="${requestScope.userId}" type="hidden"/>
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewSubscriberAccount"?"active":"text-warning"}" id="account_tab" onclick="document.getElementById('account').submit();" href="#">Account</a></form>
   </li>
 </c:when>
 <c:otherwise>
   <li class="nav-item">
-  <form id="about" action="controller?action=viewProfile" method="post">
+  <form id="about" action="controller" method="get">
+  <input type="hidden" name="action" value="viewProfile"/>
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewProfile"?"active":"text-warning"}" id="about_tab" onclick="document.getElementById('about').submit();" href="#">About</a></form>
   </li>
   
   <li class="nav-item">
-  <form id="tariffs" action="controller?action=viewActiveTariffs" method="post">
-  	<input name="userId" value="${sessionScope.loggedUser.id}" type="hidden"/>
+  <form id="tariffs" action="controller" method="get">
+  
+  <input type="hidden" name="action" value="viewActiveTariffs"/>
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewActiveTariffs"?"active":"text-warning"}" id="tariff_tab" onclick="document.getElementById('tariffs').submit();" href="#">Tariffs</a></form>
   </li>
   <li class="nav-item">
   
-  <form id="account" action="controller?action=viewAccount" method="post">
+  <form id="account" action="controller" method="get">
+ <input type="hidden" name="action" value="viewAccount"/>
     <a class="nav-link ${pageContext.request.getParameter("action") == "viewAccount"?"active":"text-warning"}" id="account_tab" onclick="document.getElementById('account').submit();" href="#">Account</a></form>
   </li>
 
