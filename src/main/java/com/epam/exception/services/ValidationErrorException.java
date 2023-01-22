@@ -14,8 +14,5 @@ public class ValidationErrorException extends Exception {
 	public List<String> getErrors(){
 		return errors;
 	}
-	public ValidationErrorException(String message) {
-		super(message);
-	}
 	
 }

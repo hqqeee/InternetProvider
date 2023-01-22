@@ -25,16 +25,16 @@ public class ViewSubscriberTariffsCommand implements Command{
 					.getUsersTariffWithDaysUntilPayment(Integer.parseInt(req.getParameter("userId")));
 			req.setAttribute("tariffsToDisplay", tariffsWithDaysLeft);
 			req.setAttribute("userId", req.getParameter("userId"));
+			return Page.ACTIVE_TARIFFS_PAGE;
 		} catch (TariffServiceException e) {
 			LOG.warn("A service error occurred while loading user tariffs.");
 			LOG.error("Unable to load user tariffs due to service error.", e);
-			req.setAttribute("errorMessages", "Unable to load user tariffs. Try again later.");
 		} catch (Exception e) {
 			LOG.warn("An unexpected error occurred while loading user tariffs.");
 			LOG.error("Unable to user tariffs due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Unable to load user tariffs. Try again later.");
 		}
-		return Page.ACTIVE_TARIFFS_PAGE;
+		req.setAttribute("errorMessages", "Unable to load user tariffs. Try again later.");
+		return new AdminMenuCommand().execute(req, resp);
 	}
 
 }

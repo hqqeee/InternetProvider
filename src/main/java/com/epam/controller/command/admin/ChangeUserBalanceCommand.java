@@ -24,12 +24,13 @@ public class ChangeUserBalanceCommand implements Command {
 		try {
 			Command adminMenu = new AdminMenuCommand();
 			BigDecimal difference = new BigDecimal(req.getParameter("amount"));
-			if (difference.compareTo(BigDecimal.ZERO) < 0) {
+			difference.setScale(2);
+			if (difference.compareTo(BigDecimal.ZERO) <= 0) {
 				req.setAttribute("errorMessages", "Amount cannot be negative.");
 				return adminMenu.execute(req, resp);
 			}
 			String description = req.getParameter("description");
-			if(description.length() > 128) {
+			if(description.length() > 128 || description.length() <= 0) {
 				req.setAttribute("errorMessages", "Description is too long.");
 				return adminMenu.execute(req, resp);
 			}

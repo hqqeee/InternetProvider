@@ -1,6 +1,7 @@
 package com.epam.services.dto;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class TariffForm {
 	private String name;
@@ -51,7 +52,24 @@ public class TariffForm {
 		return "TariffForm [name=" + name + ", paymentPeriod=" + paymentPeriod + ", rate=" + rate + ", service="
 				+ service + ", description=" + description + "]";
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(description, name, paymentPeriod, rate, service);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TariffForm other = (TariffForm) obj;
+		return Objects.equals(description, other.description) && Objects.equals(name, other.name)
+				&& paymentPeriod == other.paymentPeriod && Objects.equals(rate, other.rate) && service == other.service;
+	}
     
+	
 	
     
 }

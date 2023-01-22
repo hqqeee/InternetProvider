@@ -26,8 +26,8 @@ public class DisableTariffCommand implements Command {
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 
 		try {
-			int userId = ((UserDTO) req.getSession().getAttribute("loggedUser")).getId();
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
+			int userId = ((UserDTO) req.getSession().getAttribute("loggedUser")).getId();
 			AppContext appContext = AppContext.getInstance();
 			appContext.getUserService().removeTariffFromUser(userId, tariffId);
 			req.setAttribute("successMessage", "Tariff removed seccessfully.");

@@ -17,7 +17,4 @@ public class UserServiceException extends Exception {
 		super(errMessage);
 	}
 
-	public UserServiceException(Throwable err) {
-		super(err);
-	}
 }

@@ -1,6 +1,8 @@
 package com.epam.controller.command.admin;
 
 import java.math.BigDecimal;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +19,7 @@ import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.dto.Service;
 import com.epam.services.dto.TariffForm;
 import com.epam.util.AppContext;
+import com.epam.util.Validator;
 
 public class EditTariffCommand implements Command{
 
@@ -33,6 +36,7 @@ public class EditTariffCommand implements Command{
 					new BigDecimal(req.getParameter("rate")),
 					Service.getServiceByString(req.getParameter("serviceSelected")),
 					req.getParameter("description"));
+			Validator.validateTariffForm(form,  ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")));
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
 			AppContext.getInstance().getTariffService().editTariff(form, 
 					tariffId);
@@ -40,7 +44,6 @@ public class EditTariffCommand implements Command{
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS + "&success=tariff_edited");
 			return Page.REDIRECTED;
 		} catch (ValidationErrorException e) {
-			if(form != null) {req.setAttribute("tariffForm", form);}
 			req.setAttribute("tariffValidateErrors", e.getErrors());
 		} catch (TariffServiceException e) {
 			LOG.warn("A service error occurred while editing the tariff.");
@@ -51,7 +54,7 @@ public class EditTariffCommand implements Command{
 			LOG.error("Unable to edit tariff due to unexpected error.", e);
 			req.setAttribute("errorMessages", "Cannot modify tariff. Something went wrong. Try again later or report bag.");
 		}
-		
+		if(form != null) {req.setAttribute("tariffForm", form);}
 		return new ViewTariffsCommand().execute(req, resp);
 	}
 

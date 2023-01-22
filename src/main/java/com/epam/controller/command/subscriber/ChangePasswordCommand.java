@@ -32,6 +32,7 @@ public class ChangePasswordCommand implements Command {
 		if (user == null || currentPassword == null || newPassword == null)
 			req.setAttribute("errorMessages", "Something went wrong. Cannot change password. Try againg later.");
 		else {
+			
 			try {
 				Validator.validatePassword(newPassword,
 						ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")));

@@ -21,7 +21,7 @@ import com.epam.util.Validator;
 
 public class RegisterUserCommand implements Command {
 
-	private final Logger logger = LogManager.getLogger(RegisterUserCommand.class);
+	private static final Logger LOG = LogManager.getLogger(RegisterUserCommand.class);
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -35,7 +35,7 @@ public class RegisterUserCommand implements Command {
 		try {
 			Validator.validateUserForm(userForm, ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")));
 			AppContext.getInstance().getUserService().registerUser(userForm);
-			logger.info("User: [" + userForm.getFirstName() + "," + userForm.getLastName() + "," + userForm.getLogin() + ","
+			LOG.info("User: [" + userForm.getFirstName() + "," + userForm.getLastName() + "," + userForm.getLogin() + ","
 					+ userForm.getEmail() + ", " + userForm.getCity() + "]" + " registered successfully.");
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.OPEN_USER_REGISTRATION + "&success=register_user");
 			return Page.REDIRECTED;
@@ -46,12 +46,12 @@ public class RegisterUserCommand implements Command {
 			req.setAttribute("userForm", userForm);
 			req.setAttribute("userAlreadyExists", e.getMessage());
 		} catch (UserServiceException e) {
-			logger.warn("A service error occurred while registering user.");
-			logger.error("Unable to register user due to service error.", e);
+			LOG.warn("A service error occurred while registering user.");
+			LOG.error("Unable to register user due to service error.", e);
 			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
 		} catch (Exception e) {
-			logger.warn("An unexpected error occurred while registering user.");
-			logger.error("Unable to register user due to unexpected error.", e);
+			LOG.warn("An unexpected error occurred while registering user.");
+			LOG.error("Unable to register user due to unexpected error.", e);
 			req.setAttribute("errorMessages", "Something went wrong. Try again.");
 		}
 		return Page.USER_REGISTRATION_PAGE;
