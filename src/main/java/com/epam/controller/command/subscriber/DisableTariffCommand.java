@@ -1,6 +1,8 @@
 package com.epam.controller.command.subscriber;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,13 +26,12 @@ public class DisableTariffCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
 			int userId = ((UserDTO) req.getSession().getAttribute("loggedUser")).getId();
 			AppContext appContext = AppContext.getInstance();
 			appContext.getUserService().removeTariffFromUser(userId, tariffId);
-			req.setAttribute("successMessage", "Tariff removed seccessfully.");
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_ACTIVE_TARIFFS
 					+ "&success=disable_tariff");
 			LOG.info("User(id = " + userId + ") disabled tariff(id = " + tariffId + ").");
@@ -50,7 +51,7 @@ public class DisableTariffCommand implements Command {
 			LOG.warn("An unexpected error occurred while disabling tariff.");
 			LOG.error("Unable to disable tariff due to unexpected error.", e);
 		}
-		req.setAttribute("errorMessages", "Something went wrong. Please try again.");
+		req.setAttribute("errorMessages", rs.getString("error.something_went_wrong"));
 		return new ViewActiveTariffsCommand().execute(req, resp);
 	}
 

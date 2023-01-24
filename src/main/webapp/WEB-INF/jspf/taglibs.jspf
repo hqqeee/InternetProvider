@@ -2,3 +2,5 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="lct" uri="custom-taglib"%>
 <%@ taglib prefix="ctf" tagdir="/WEB-INF/tags" %>
+<fmt:setLocale value="${empty cookie['lang'].value?'en':cookie['lang'].value}"/>
+<fmt:setBundle basename="lang"/>

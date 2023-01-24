@@ -1,6 +1,8 @@
 package com.epam.controller.command.common;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -57,6 +59,7 @@ public class ViewTariffsCommand implements Command {
 		} catch (Exception e) {
 			currentRowNumber = 5;
 		}
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
 		try {
 			TariffService tariffService = AppContext.getInstance().getTariffService();
 			List<TariffDTO> tariffs = tariffService.getTariffsForView(activeSortingField, activeSortingOrder,
@@ -72,11 +75,11 @@ public class ViewTariffsCommand implements Command {
 		} catch (TariffServiceException e) {
 			LOG.warn("An error occurred while loading tariffs view.");
 			LOG.error("Unable to load tariffs view due to service error.", e);
-			req.setAttribute("errorMessages", "Unable to show tariffs. Please try again later.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_load_tariffs"));
 		} catch (Exception e) {
 			LOG.warn("An error occurred while loading tariffs view.");
 			LOG.error("Unable to load tariffs view due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Unable to show tariffs. Please try again later.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_load_tariffs"));
 		}
 
 		return Page.VIEW_TARIFF_PAGE;

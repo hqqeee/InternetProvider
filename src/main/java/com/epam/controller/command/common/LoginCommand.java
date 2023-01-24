@@ -41,11 +41,11 @@ public class LoginCommand implements Command{
 		} catch (UserServiceException e) {
 			LOG.warn("An error occurred while logging into the system.");
 			LOG.error("Unable to login due to service error.", e);
-			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
+			req.setAttribute("errorMessages", bundle.getString("error.something_went_wrong"));
 		} catch (Exception e) {
 			LOG.warn("An error occurred while logging into the system.");
 			LOG.error("Unable to login due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
+			req.setAttribute("errorMessages", bundle.getString("error.something_went_wrong"));
 		}
 		return Page.HOME_PAGE;
 	}

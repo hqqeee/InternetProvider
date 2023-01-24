@@ -32,7 +32,7 @@ public class ChangePasswordCommand implements Command {
 		if (user == null || currentPassword == null || newPassword == null)
 			req.setAttribute("errorMessages", "Something went wrong. Cannot change password. Try againg later.");
 		else {
-			
+			ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
 			try {
 				Validator.validatePassword(newPassword,
 						ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")));
@@ -44,15 +44,15 @@ public class ChangePasswordCommand implements Command {
 			} catch (ValidationErrorException e) {
 				req.setAttribute("incorrectChangePasswordFormError", e.getErrors());
 			} catch (PasswordNotMatchException e) {
-				req.setAttribute("incorrectChangePasswordFormError", "Current password is incorrect. Try again.");
+				req.setAttribute("incorrectChangePasswordFormError", rs.getString("error.corrent_password_incorrect"));
 			} catch (UserServiceException | UserNotFoundException e) {
 				LOG.warn("A service error occurred while changing user balance.");
 				LOG.error("Unable to change user balance due to service error.", e);
-				req.setAttribute("errorMessages", "Something went wrong. Cannot change password. Try againg later.");
+				req.setAttribute("errorMessages", rs.getString("error.unable_to_change_password"));
 			} catch (Exception e) {
 				LOG.warn("An error occurred while changing user balance.");
 				LOG.error("Unable to change user balance due to unexpected error.", e);
-				req.setAttribute("errorMessages", "Something went wrong. Cannot change password. Try againg later.");
+				req.setAttribute("errorMessages", rs.getString("error.unable_to_change_password"));
 			}
 		}
 		return new ViewProfileCommand().execute(req, resp);

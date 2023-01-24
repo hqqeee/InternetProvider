@@ -1,5 +1,8 @@
 package com.epam.controller.command.admin;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,12 +30,11 @@ public class RemoveUserCommand implements Command{
 		} catch(UserServiceException e) {
 			LOG.warn("A service error occurred while removing user.");
 			LOG.error("Unable to remove user due to service error.", e);
-			req.setAttribute("errorMessages", "Unable remove user. Try again.");
 		}	catch (Exception e) {
 			LOG.warn("An error occurred while removing user.");
 			LOG.error("Unable to remove user due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Cannot remove user. Invalid request.");
 		}
+		req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getString("error.unable_to_remove_user"));
 		return new AdminMenuCommand().execute(req, resp);
 	}
 	

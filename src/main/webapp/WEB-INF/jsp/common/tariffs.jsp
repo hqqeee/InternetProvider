@@ -3,12 +3,12 @@
 
 <c:choose>
 	<c:when test="${sortingField=='name'}">
-		<c:set var="sortingFieldLabel" scope="request" value="Name" />
-		<c:set var="anotherSortingFieldName" scope="request" value="Rate" />
+		<c:set var="sortingFieldLabel" scope="request" ><fmt:message key="view.name_field" /></c:set>
+		<c:set var="anotherSortingFieldName" scope="request"><fmt:message key="view.rate_field" /></c:set>
 	</c:when>
 	<c:otherwise>
-		<c:set var="sortingFieldLabel" scope="request" value="Rate" />
-		<c:set var="anotherSortingFieldName" scope="request" value="Name" />
+		<c:set var="sortingFieldLabel" scope="request"><fmt:message key="view.rate_field" /></c:set>
+		<c:set var="anotherSortingFieldName" scope="request"><fmt:message key="view.name_field" /></c:set>
 	</c:otherwise>
 </c:choose>
 <div class="container py-3">
@@ -32,8 +32,7 @@
 						<h5 class="card-title text-center text-white">
 							<fmt:message key="tariffs.telephone_service_header" />
 						</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
+						<p class="card-text"><fmt:message key="tariffs.telephone_service_description" /></p>
 
 						<a href="#" class="stretched-link"
 							onclick="select_service('TELEPHONE');document.getElementById('select_service').submit(); "></a>
@@ -49,8 +48,7 @@
 						<h5 class="card-title text-center text-white">
 							<fmt:message key="tariffs.internet_service_header" />
 						</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
+						<p class="card-text"><fmt:message key="tariffs.internet_service_description" /></p>
 
 						<a href="#" class="stretched-link"
 							onclick="select_service('INTERNET');document.getElementById('select_service').submit(); "></a>
@@ -65,8 +63,7 @@
 						<h5 class="card-title text-center text-white">
 							<fmt:message key="tariffs.cableTV_service_header" />
 						</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
+						<p class="card-text"><fmt:message key="tariffs.cableTV_service_description" /></p>
 
 						<a href="#" class="stretched-link"
 							onclick="select_service('CABLE_TV');document.getElementById('select_service').submit();"></a>
@@ -81,8 +78,7 @@
 						<h5 class="card-title text-center text-white">
 							<fmt:message key="tariffs.IP-TV_service_header" />
 						</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
+						<p class="card-text"><fmt:message key="tariffs.IP-TV_service_description" /></p>
 					</div>
 					<a href="#" class="stretched-link"
 						onclick="select_service('IP_TV');document.getElementById('select_service').submit();"></a>
@@ -101,7 +97,7 @@
 			<%-- 				<input -->
 <%-- 				type="hidden" name="page" value="${requestScope.page}" /> --%>
 			<input type="hidden" name="service" value="${requestScope.service}" />
-			<label class="fs-5 text-white">Show</label> <select
+			<label class="fs-5 text-white"><fmt:message key="view.show" /></label> <select
 				class="form-select bg-dark text-white mx-2"
 				onchange="this.form.submit()" name="rowNumber">
 				<c:forEach begin="5" end="20" var="i" step="5">
@@ -127,7 +123,7 @@
 				<input type="hidden" name="rowNumber"
 					value="${requestScope.rowNumber}">
 				<%-- 					<input type="hidden" name="page" value="${requestScope.page}" /> --%>
-				<label class="fs-5 text-white me-2">Sort by</label>
+				<label class="fs-5 text-white me-2"><fmt:message key="view.sort_by" /></label>
 				<div class="btn-group">
 					<button type="button"
 						class="btn btn-warning dropdown-toggle dropdown-toggle-split"
@@ -137,7 +133,7 @@
 					<ul class="dropdown-menu dropdown-menu-dark">
 						<li><a class="dropdown-item"
 							onclick="change_sorting_field(this.innerText);document.getElementById('sorting_change').submit();"
-							href="#">${anotherSortingFieldName }</a></li>
+							href="#">${anotherSortingFieldName}</a></li>
 					</ul>
 					<button type="button" class="btn btn-outline-warning"
 						onclick="change_sorting_order();document.getElementById('sorting_change').submit();">
@@ -159,10 +155,10 @@
 
 					<button type="button" class="btn btn-warning me-2"
 						data-bs-toggle="modal" data-bs-target="#editTariff"
-						onclick="edit_tariff('${tariff.name}','${tariff.rate}','${tariff.service}','${tariff.description}','${tariff.paymentPeriod}','${tariff.id}')">Edit</button>
+						onclick="edit_tariff('${tariff.name}','${tariff.rate}','${tariff.service}','${tariff.description}','${tariff.paymentPeriod}','${tariff.id}')"><fmt:message key="tariffs.edit"/></button>
 					<button type="button" class="btn btn-danger" data-bs-toggle="modal"
 						data-bs-target="#submitTariffRemove"
-						onclick="confirm_tariff_remove('${tariff.name}', '${tariff.id}')">Remove</button>
+						onclick="confirm_tariff_remove('${tariff.name}', '${tariff.id}')"><fmt:message key="tariffs.remove"/></button>
 				</div>
 			</c:if>
 			<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
@@ -170,8 +166,7 @@
 
 					<button type="button" class="btn btn-warning btn-lg "
 						data-bs-toggle="modal" data-bs-target="#submitTariffSelection"
-						onclick="confirm_tariff_selection('${tariff.rate}', '${tariff.name}', '${tariff.id}')">GET
-						NOW</button>
+						onclick="confirm_tariff_selection('${tariff.rate}', '${tariff.name}', '${tariff.id}','${tariff.paymentPeriod}')"><fmt:message key="tariffs.get_now" /></button>
 				</div>
 			</c:if>
 		</ctf:tariff>
@@ -209,16 +204,14 @@
 			<form action="controller" method="get">
 			
 			<input type="hidden" name="action" value="openAddTariff"/>
-				<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Add
-					new tariff</button>
+				<button type="submit" class="btn btn-outline-warning mx-3 mb-3"><fmt:message key="tariffs.add_new_tariff"/></button>
 			</form>
 		</c:when>
 		<c:otherwise>
 			<form action="controller" method="get">
 				<input type="hidden" name="action" value="downloadTariffs"/>
 				<input type="hidden" name="service" value="${requestScope.service}" />
-				<button type="submit" class="btn btn-outline-warning mx-3 mb-3">Download
-					PDF</button>
+				<button type="submit" class="btn btn-outline-warning mx-3 mb-3"><fmt:message key="tariffs.download_pdf"/></button>
 			</form>
 		</c:otherwise>
 	</c:choose>
@@ -230,21 +223,21 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content text-bg-dark">
 				<div class="modal-body">
-					<p class="fs-2">Please confirm you selection.</p>
+					<p class="fs-2"><fmt:message key="tariffs.confirm_selection"/></p>
 					<hr class="style1">
 					<p class="fw-bold">
-						You are about to connect tariff <span id="tariff_name"></span>
+						<fmt:message key="tariffs.about_to_connect"/> <span id="tariff_name"></span>
 					</p>
 					<p class="text-muted">
-						Please note. You will now be charged $<span id="tariff_rate"></span>
-						per month.
+						<fmt:message key="tariffs.charge_note_1"/>$<span id="tariff_rate"></span>
+						<fmt:message key="tariffs.charge_note_2"/> <span id="tariff_days"></span> <fmt:message key="tariffs.charge_note_3"/>
 					</p>
 					<div class="text-end">
 						<form action="controller?action=connectTariff" method="post">
 							<input type="hidden" name="tariffId" id="tariff_id" />
 							<button type="button" class="btn btn-secondary me-2"
-								data-bs-dismiss="modal">Let me think</button>
-							<button type="submit" class="btn btn-warning">Confirm</button>
+								data-bs-dismiss="modal"><fmt:message key="tariffs.let_me_think"/></button>
+							<button type="submit" class="btn btn-warning"><fmt:message key="tariffs.confirm"/></button>
 						</form>
 					</div>
 				</div>
@@ -294,7 +287,7 @@
 					<form action="controller?action=editTariff" method="post"
 						id="edit_tariff_form">
 						<div class="input-group">
-							<label for="name" class="input-group-text">Name: </label><input
+							<label for="name" class="input-group-text"><fmt:message key="tariff_add.name"/></label><input
 								type="text" class="form-control" id="edit_tariff_name"
 								name="name" maxlength="32" placeholder="Max 32 characters."
 								value="${requestScope.tariffForm.name}" required>
@@ -317,16 +310,17 @@
 
 
 						<div class="input-group my-3">
-							<label for="rate" class="input-group-text">Rate</label> <span
+							<label for="rate" class="input-group-text"><fmt:message key="tariff_add.rate"/></label> <span
 								class="input-group-text">$</span> <input id="edit_tariff_rate"
 								type="number" name="rate" class="form-control" step="0.01"
 								value="0" min="0" value="${requestScope.tariffForm.rate}"
 								required /> <input type="hidden" name="paymentPeriod"
 								id="payment_period"> <span class="input-group-text"
-								id="payment_period_span"></span>
+								id="payment_period_span"></span><span class="input-group-text"><fmt:message key="tariff_add.days" /></span>
 						</div>
 						<div class="input-group">
-							<span class="input-group-text">Description</span>
+							<span class="input-group-text"><fmt:message
+									key="tariff_add.description" /></span>
 							<textarea class="form-control" name="description"
 								id="edit_tariff_description" placeholder="Max 255 characters."
 								maxlength="255" required>${requestScope.tariffForm.description}"</textarea>

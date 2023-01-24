@@ -13,8 +13,6 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<fmt:setLocale value="${empty cookie['lang'].value?'en':cookie['lang'].value}"/>
-<fmt:setBundle basename="lang"/>
 
 <title>Internet Provider</title>
 </head>
@@ -46,7 +44,7 @@
 					<li><form action="controller" method="get">
 					<input type="hidden" name="action" value="adminMenu"/>
 					<button type="submit" class="btn btn-outline-warning px-2 mx-1"
-								>Admin menu</button></form></li>
+								><fmt:message key="nav.admin_menu" /></button></form></li>
 					</c:when>
 					<c:when test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}"><li class="nav-item">
     					<a class="nav-link disabled text-white"><fmt:message key="label.welcome"/>, ${sessionScope.loggedUser.firstName}!</a>
@@ -56,7 +54,7 @@
 					<form action="controller" method="get">
 					<input type="hidden" name="action" value="viewProfile"/>
 					<button type="submit" class="btn btn-outline-warning px-2 mx-1"
-								>My Profile</button></form></li>
+								><fmt:message key="nav.my_profile"/></button></form></li>
 					</c:when>
 				</c:choose>
 					<c:choose>
@@ -67,7 +65,7 @@
 						<c:otherwise>
 						
 						<li><form action="controller?action=logout" method="post"><button type="submit" class="btn btn-warning px-2 mx-1"
-								>Logout</button></form></li>
+								><fmt:message key="nav.logout" /></button></form></li>
 						</c:otherwise>
 					</c:choose>
 				</ul>

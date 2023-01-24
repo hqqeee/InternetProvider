@@ -27,6 +27,7 @@ public class AddTariffCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		TariffForm form = null;
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
 		try {
 			form = new TariffForm(
 					req.getParameter("name"),
@@ -34,7 +35,7 @@ public class AddTariffCommand implements Command {
 					new BigDecimal(req.getParameter("rate")),
 					Service.getServiceByString(req.getParameter("serviceSelected")),
 					req.getParameter("description"));
-			Validator.validateTariffForm(form, ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")));
+			Validator.validateTariffForm(form, rs);
 			AppContext.getInstance().getTariffService().addTariff(form);
 			LOG.info("Tariff " + form.getName() + " with rate $" + form.getRate() + "/" + form.getPaymentPeriod() + " day(s) successfully added.");
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS + "&success=tariff_added");
@@ -44,11 +45,11 @@ public class AddTariffCommand implements Command {
 		} catch (TariffServiceException e) {
 			LOG.warn("An error occurred while adding a tariff.");
 			LOG.error("Unable to add tariff due to service error.", e);
-			req.setAttribute("errorMessages", "Cannot add tariff. Something went wrong. Try again later.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_add_tariff"));
 		} catch (Exception e) {
 			LOG.warn("An error occurred while adding a tariff.");
 			LOG.error("Unable to add tariff due to unexpected error error.", e);
-			req.setAttribute("errorMessages", "Cannot add tariff. Something went wrong. Try again later or report bag.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_add_tariff"));
 		}
 		if(form != null) req.setAttribute("tariffForm", form);
 		return new OpenAddTariffCommand().execute(req, resp);

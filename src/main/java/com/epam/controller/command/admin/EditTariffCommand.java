@@ -28,6 +28,7 @@ public class EditTariffCommand implements Command{
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		TariffForm form = null;
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
 		try {
 			
 			form = new TariffForm(
@@ -48,11 +49,11 @@ public class EditTariffCommand implements Command{
 		} catch (TariffServiceException e) {
 			LOG.warn("A service error occurred while editing the tariff.");
 			LOG.error("Unable to edit tariff due to service error.", e);
-			req.setAttribute("errorMessages", "Cannot modify tariff. Something went wrong. Try again later.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_modify_tariff"));
 		} catch (Exception e) {
 			LOG.warn("An unexpected error occurred while editing the tariff.");
 			LOG.error("Unable to edit tariff due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Cannot modify tariff. Something went wrong. Try again later or report bag.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_modify_tariff"));
 		}
 		if(form != null) {req.setAttribute("tariffForm", form);}
 		return new ViewTariffsCommand().execute(req, resp);

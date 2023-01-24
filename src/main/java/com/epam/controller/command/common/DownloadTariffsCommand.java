@@ -3,6 +3,8 @@ package com.epam.controller.command.common;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,24 +32,23 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class DownloadTariffsCommand implements Command {
 
 	private static final Logger LOG = LogManager.getLogger(DownloadTariffsCommand.class);
-	
+
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		resp.setContentType("application/pdf");
 		resp.setHeader("content-disposition", "attachment; filename=tariffs.pdf");
 
-
 		try {
 			String serviceReq = req.getParameter("service");
 			Service service = Service.ALL;
-			if(!serviceReq.isBlank()) {
+			if (!serviceReq.isBlank()) {
 				service = Service.getServiceByString(serviceReq.toUpperCase());
 			}
-			List<TariffDTO> tariffs = AppContext.getInstance().getTariffService()
-					.getAllTariff(service);
+			List<TariffDTO> tariffs = AppContext.getInstance().getTariffService().getAllTariff(service);
 			try (OutputStream out = resp.getOutputStream()) {
 				Document document = new Document();
-				Font font = FontFactory.getFont("/fonts/RobotoMono-VariableFont_wght.ttf", "cp1251", BaseFont.EMBEDDED, 10);
+				Font font = FontFactory.getFont("/fonts/RobotoMono-VariableFont_wght.ttf", "cp1251", BaseFont.EMBEDDED,
+						10);
 				PdfWriter.getInstance(document, out);
 				document.open();
 				document.add(new Paragraph("Tariff list", font));
@@ -56,10 +57,10 @@ public class DownloadTariffsCommand implements Command {
 				document.close();
 				return Page.REDIRECTED;
 
-			} catch (DocumentException | IOException e) {
-				LOG.warn("An error occurred while forming pdf document for downloading.");
-				LOG.error("Unable to form pdf document due to error.", e);
 			}
+		} catch (DocumentException | IOException e) {
+			LOG.warn("An error occurred while forming pdf document for downloading.");
+			LOG.error("Unable to form pdf document due to error.", e);
 		} catch (TariffServiceException e) {
 			LOG.warn("A service error occurred while downloading pdf with tariffs.");
 			LOG.error("Unable to upload tariffs pdf document due to service error.", e);
@@ -67,14 +68,14 @@ public class DownloadTariffsCommand implements Command {
 			LOG.warn("A unexpected error occurred while downloading pdf with tariffs.");
 			LOG.error("Unable to upload tariffs pdf document due to unexpected error.", e);
 		}
-		req.setAttribute("errorMessages", "Cannot download tariffs. Please try againe later.");
+		req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getString("error.unable_to_download_tariffs"));
 		return new ViewTariffsCommand().execute(req, resp);
 	}
 
 	private PdfPTable generatePDFTableWithTariffs(List<TariffDTO> tariffs, Font font) {
 		PdfPTable table = new PdfPTable(3);
 		PdfPCell nameCell = new PdfPCell(new Paragraph("Name", font));
-		PdfPCell descCell = new PdfPCell(new Paragraph("Description",font));
+		PdfPCell descCell = new PdfPCell(new Paragraph("Description", font));
 		PdfPCell priceCell = new PdfPCell(new Paragraph("Price", font));
 
 		table.addCell(nameCell);
@@ -83,7 +84,8 @@ public class DownloadTariffsCommand implements Command {
 		for (TariffDTO tariff : tariffs) {
 			nameCell = new PdfPCell(new Phrase(tariff.getName(), font));
 			descCell = new PdfPCell(new Phrase(tariff.getDescription(), font));
-			priceCell = new PdfPCell(new Phrase(tariff.getRate().toString() + " per " + tariff.getPaymentPeriod() + " days.",  font));
+			priceCell = new PdfPCell(
+					new Phrase(tariff.getRate().toString() + " per " + tariff.getPaymentPeriod() + " days.", font));
 			table.addCell(nameCell);
 			table.addCell(descCell);
 			table.addCell(priceCell);

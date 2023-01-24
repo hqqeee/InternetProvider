@@ -32,6 +32,7 @@ public class RegisterUserCommand implements Command {
 		userForm.setEmail(req.getParameter("email"));
 		userForm.setCity(req.getParameter("city"));
 		userForm.setAddress(req.getParameter("address"));
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
 		try {
 			Validator.validateUserForm(userForm, ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")));
 			AppContext.getInstance().getUserService().registerUser(userForm);
@@ -44,15 +45,15 @@ public class RegisterUserCommand implements Command {
 			req.setAttribute("errorMessages", e.getErrors());
 		} catch (UserAlreadyExistException e) {
 			req.setAttribute("userForm", userForm);
-			req.setAttribute("userAlreadyExists", e.getMessage());
+			req.setAttribute("userAlreadyExists", rs.getString("error.user_exists_1") +" " + e.getField() + " " + rs.getString("error.user_exists_2"));
 		} catch (UserServiceException e) {
 			LOG.warn("A service error occurred while registering user.");
 			LOG.error("Unable to register user due to service error.", e);
-			req.setAttribute("errorMessages", "Something went wrong. Try again later.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_register_user"));
 		} catch (Exception e) {
 			LOG.warn("An unexpected error occurred while registering user.");
 			LOG.error("Unable to register user due to unexpected error.", e);
-			req.setAttribute("errorMessages", "Something went wrong. Try again.");
+			req.setAttribute("errorMessages", rs.getString("error.unable_to_register_user"));
 		}
 		return Page.USER_REGISTRATION_PAGE;
 	}

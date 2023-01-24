@@ -9,7 +9,7 @@
 <c:set var="rowNumber" scope="request" value="${currentRowNumber}" />
 
 
-<h1 class="display-5 fw-bold text-white align-start">User list</h1>
+<h1 class="display-5 fw-bold text-white align-start"><fmt:message key="admin_menu.admin_menu"/></h1>
 <div class="container pt-3">
 	<div
 		class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -22,7 +22,7 @@
 				<input type="hidden" name="action" value="adminMenu"/>
 				<input
 					type="hidden" name="searchField" value="${searchField}" /> <label
-					class="fs-5 text-white">Show</label> <select
+					class="fs-5 text-white"><fmt:message key="view.show"/></label> <select
 					class="form-select bg-dark text-white mx-2"
 					onchange="this.form.submit()" name="rowNumber">
 					<c:forEach begin="5" end="20" var="i" step="5">
@@ -36,8 +36,6 @@
 						</c:choose>
 					</c:forEach>
 				</select>
-
-				<div class="fs-5 text-white">Rows</div>
 			</form>
 
 		</div>
@@ -48,9 +46,9 @@
 				<input type="hidden" name="action" value="adminMenu"/>
 				 <input
 					type="hidden" name="rowNumber" value="${rowNumber}" /> <input
-					class="form-control me-2" type="search" placeholder="Login part"
+					class="form-control me-2" type="search" placeholder=<fmt:message key = "admin_menu.login"/>
 					aria-label="Search" name="searchField" value="${searchField}">
-				<button class="btn btn-outline-warning" type="submit">Search</button>
+				<button class="btn btn-outline-warning" type="submit"><fmt:message key="view.search"/></button>
 			</form>
 		</div>
 	</div>
@@ -59,11 +57,11 @@
 <table class="table align-middle mb-0 p-4 bg-dark">
 	<thead class="table-secondary">
 		<tr>
-			<th>Name</th>
-			<th>Login</th>
-			<th>Address</th>
-			<th>Status</th>
-			<th>Balance</th>
+			<th><fmt:message key = "admin_menu.name"/></th>
+			<th><fmt:message key = "admin_menu.login"/></th>
+			<th><fmt:message key = "admin_menu.address"/></th>
+			<th><fmt:message key = "admin_manu.status"/></th>
+			<th><fmt:message key = "admin_menu.balance"/></th>
 			<th></th>
 		</tr>
 	</thead>
@@ -81,10 +79,10 @@
 				</td>
 				<td><c:choose>
 						<c:when test="${user.blocked}">
-							<span class=" badge text-bg-danger">Blocked</span>
+							<span class=" badge text-bg-danger"><fmt:message key="admin_menu.blocked"/></span>
 						</c:when>
 						<c:otherwise>
-							<span class=" badge text-bg-success">Unblocked</span>
+							<span class=" badge text-bg-success"><fmt:message key="admin_menu.unblocked"/></span>
 						</c:otherwise>
 					</c:choose></td>
 				<td>$${user.balance}</td>
@@ -100,17 +98,17 @@
 						<button type="button" class="btn btn-warning"
 							onclick="
 							document.getElementById('view_user_profile_id').value='${user.id}';
-							document.getElementById('view_profile_form').submit()">Profile</button>
+							document.getElementById('view_profile_form').submit()"><fmt:message key="admin_menu.profile"/></button>
 
 						<button type="button"
 							class="btn btn-outline-warning dropdown-toggle dropdown-toggle-split"
 							data-bs-toggle="dropdown" aria-expanded="false">
-							<span class="visually-hidden">Profile</span>
+							<span class="visually-hidden"><fmt:message key="admin_menu.profile"/></span>
 						</button>
 						<ul class="dropdown-menu dropdown-menu-dark">
 							<li><button type="button" class="dropdown-item"
 									data-bs-toggle="modal" data-bs-target="#submitBlockModal"
-									onClick="submit_modal('${user.firstName}','${user.lastName}','${user.login}','${user.id}')">Remove</button></li>
+									onClick="submit_modal('${user.firstName}','${user.lastName}','${user.login}','${user.id}')"><fmt:message key="admin_menu.remove"/></button></li>
 							<li><form action="controller?action=changeUserStatus"
 									method="post">
 									<input type="hidden" name="page" value="${page}" /> <input
@@ -120,17 +118,16 @@
 										type="hidden" name="userBlocked" value="${user.blocked}" />
 									<c:choose>
 										<c:when test="${user.blocked}">
-											<button type="submit" class="dropdown-item">Unblock</button>
+											<button type="submit" class="dropdown-item"><fmt:message key="admin_menu.unblock"/></button>
 										</c:when>
 										<c:otherwise>
-											<button type="submit" class="dropdown-item">Block</button>
+											<button type="submit" class="dropdown-item"><fmt:message key="admin_menu.block"/></button>
 										</c:otherwise>
 									</c:choose>
 								</form></li>
 							<li><button type="button" class="dropdown-item"
 									data-bs-toggle="modal" data-bs-target="#changeUserBalanceModal"
-									onClick="change_balance_modal('${user.login}','${user.balance}','${user.id}')">Balance
-									change</button></li>
+									onClick="change_balance_modal('${user.login}','${user.balance}','${user.id}')"><fmt:message key="admin_menu.change_balance"/></button></li>
 						</ul>
 					</div>
 				</td>
@@ -165,8 +162,7 @@
 		<div class="text-end">
 			<form action="controller" method="get">
 			<input type="hidden" name="action" value="openUserRegistration"/>
-				<button type="submit" class="btn btn-outline-warning">Register
-					user</button>
+				<button type="submit" class="btn btn-outline-warning"><fmt:message key="admin_menu.register_user"/></button>
 			</form>
 		</div>
 	</div>
@@ -180,30 +176,29 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content text-bg-dark">
 			<div class="modal-body">
-				<h5 class="modal-title fw-bold m-4">Are you sure that you want
-					to remove user:</h5>
+				<h5 class="modal-title fw-bold m-4"><fmt:message key="admin_menu.remove_user_confirm_msg"/></h5>
 				<ul
 					class="list-group list-group-horizontal flex-fill mt-3 mb-1 text-white">
-					<li class="list-group-item">Name:</li>
+					<li class="list-group-item"><fmt:message key="admin_menu.name"/>:</li>
 					<li class="list-group-item flex-fill"
 						id="submit_modal_user_full_name"></li>
 				</ul>
 				<ul class="list-group list-group-horizontal-sm  mt-3 mb-1">
-					<li class="list-group-item">Login:</li>
+					<li class="list-group-item"><fmt:message key="admin_menu.login"/>:</li>
 					<li class="list-group-item flex-fill" id="submit_modal_user_login"></li>
 				</ul>
 
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary"
-					data-bs-dismiss="modal">Close</button>
+					data-bs-dismiss="modal"><fmt:message key="admin_menu.cancel"/></button>
 				<form action="controller?action=removeUser" method="post">
 					<input type="hidden" name="page" value="${page}" />
 					 <input
 						type="hidden" name="searchField" value="${searchField}" /> <input
 						type="hidden" name="rowNumber" value="${rowNumber}" /> <input
 						type="hidden" name="userId" id="remove_user_id" />
-					<button type="submit" class="btn btn-warning">Submit</button>
+					<button type="submit" class="btn btn-warning"><fmt:message key="admin_menu.submit"/></button>
 				</form>
 			</div>
 		</div>
@@ -217,10 +212,9 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content text-bg-dark">
 			<div class="modal-body">
-				<h5 class="modal-title fw-bold m-4">Please enter the amount you
-					wish to withdraw or top up.</h5>
+				<h5 class="modal-title fw-bold m-4"><fmt:message key="admin_menu.change_balance_prompt"/></h5>
 				<ul class="list-group list-group-horizontal-sm  mt-3 mb-1">
-					<li class="list-group-item">Login:</li>
+					<li class="list-group-item"><fmt:message key="admin_menu.login"/>:</li>
 					<li class="list-group-item flex-fill"
 						id="change_balance_modal_user_login"></li>
 				</ul>
@@ -236,18 +230,18 @@
 							value="0" min="0" required />
 					</div>
 					<div class="input-group">
-						<span class="input-group-text">Description</span>
+						<span class="input-group-text"><fmt:message key="admin_menu.transaction_description"/></span>
 						<textarea class="form-control" name="description"
-							placeholder="Max 100 characters." maxlength="100" required></textarea>
+							placeholder="<fmt:message key="tariff_add.max_character_1"/> 100 <fmt:message key="tariff_add.max_character_2"/>" maxlength="100" required></textarea>
 					</div>
 					<hr class="style1">
 					<br>
 					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">Close</button>
+						data-bs-dismiss="modal"><fmt:message key="account.cancel"/></button>
 					<button type=submit class="btn btn-warning"
-						name="balanceChangeType" value="withdraw">Withdraw</button>
+						name="balanceChangeType" value="withdraw"><fmt:message key="admin_menu.withdraw"/></button>
 					<button type="submit" class="btn btn-warning"
-						name="balanceChangeType" value="topUp">Top-up</button>
+						name="balanceChangeType" value="topUp"><fmt:message key="admin_menu.top_up"/></button>
 				</form>
 			</div>
 		</div>

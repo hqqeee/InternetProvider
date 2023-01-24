@@ -1,6 +1,8 @@
 package com.epam.controller.command.admin;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -62,7 +64,7 @@ public class AdminMenuCommand implements Command {
 		} catch (UserServiceException e) {
 			LOG.warn("An error occurred while loading user view.");
 			LOG.error("Unable to load user view due to service error.", e);
-			req.setAttribute("errorMessages", "Unable to load users. Please try again later.");
+			req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getString("error.unable_to_load_users"));
 		}
 
 		return Page.ADMIN_MENU_PAGE;

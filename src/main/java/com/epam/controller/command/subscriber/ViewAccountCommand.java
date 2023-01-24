@@ -1,6 +1,8 @@
 package com.epam.controller.command.subscriber;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,7 +27,7 @@ public class ViewAccountCommand implements Command {
 	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
 
 			TransactionService transactionService = AppContext.getInstance().getTransactionService();
@@ -43,11 +45,12 @@ public class ViewAccountCommand implements Command {
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
 			if(AppContext.getInstance().getUserService().getUserStatus(userId)) {
-				req.setAttribute("errorMessages", "You cannot use our services since you have not enoght money on your account. Please replenish account.");
+				req.setAttribute("errorMessages", rs.getString("error.blocked_message"));
 			}
 			return Page.ACCOUNT_PAGE;
 		} catch (NoTransactionsFoundException e) {
-			req.setAttribute("noTransactionFound", "Payment history is empty.");
+			req.setAttribute("noTransactionFound", rs.getString("error.payment_history_empty"));
+			return Page.ACCOUNT_PAGE;
 		} catch (TransactionServiceException e) {
 			LOG.warn("A service error occurred while loading account info.");
 			LOG.error("Unable to load account info due to service error.", e);
@@ -55,7 +58,7 @@ public class ViewAccountCommand implements Command {
 			LOG.warn("An unexpected error occurred while loading account info.");
 			LOG.error("Unable to load account info due to unexpected error.", e);
 		}
-		req.setAttribute("errorMessages", "Unable to load payment history. Try again later.");
+		req.setAttribute("errorMessages", rs.getString("error.unable_to_load_account_info"));
 		return Page.ACCOUNT_PAGE;
 	}
 

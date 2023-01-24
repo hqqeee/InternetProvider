@@ -1,5 +1,8 @@
 package com.epam.controller.command.admin;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -32,7 +35,7 @@ public class ViewSubscriberProfileCommand implements Command{
 			LOG.warn("An unexpected error occurred while loading user info.");
 			LOG.error("Unable to load user info due to unexpected error.", e);
 		}
-		req.setAttribute("errorMessages", "Unable to load user info. Try again later.");
+		req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getString("error.unable_to_load_user_info"));
 		return new AdminMenuCommand().execute(req, resp);
 	}
 

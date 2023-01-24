@@ -2,6 +2,8 @@ package com.epam.controller.command.subscriber;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,14 +26,15 @@ public class ReplenishCommand implements Command {
 	
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
 			BigDecimal amount = new BigDecimal(req.getParameter("amount"));
 			if (amount.compareTo(BigDecimal.ZERO) < 0) {
-				req.setAttribute("errorMessages", "Amount cannot be negative.");
+				req.setAttribute("errorMessages", rs.getString("error.amount_cannot_be_negative"));
 				return new ViewAccountCommand().execute(req, resp);
 			}
 			UserDTO user = (UserDTO) req.getSession().getAttribute("loggedUser");
-			String description = "Replenish via web site.";
+			String description = rs.getString("account.replenish_description");
 			int userId = user.getId();
 			AppContext appContext = AppContext.getInstance();
 			appContext.getUserService().changeUserBalance(userId, amount,
@@ -55,7 +58,7 @@ public class ReplenishCommand implements Command {
 			LOG.warn("An unexpected error occurred while replenishing the account.");
 			LOG.error("Unable to disable tariff due to unexpected error error.", e);
 		}
-		req.setAttribute("errorMessages", "Unable replenish balance. Please try again later.");
+		req.setAttribute("errorMessages", rs.getString("error.unable_to_replenish_account"));
 		return new ViewAccountCommand().execute(req, resp);
 	}
 

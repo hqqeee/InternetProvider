@@ -1,5 +1,8 @@
 package com.epam.controller.command.common;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -33,7 +36,7 @@ public class ResetPasswordCommand implements Command {
 				LOG.error("Unable to reset password due to unexpected error.", e);
 			}
 		}
-		req.setAttribute("errorMessages", "Unable reset password. Please try again later.");
+		req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getString("error.unable_to_reset_password"));
 		return Page.HOME_PAGE;
 	}
 

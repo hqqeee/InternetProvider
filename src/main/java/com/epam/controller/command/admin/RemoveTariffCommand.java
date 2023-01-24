@@ -1,5 +1,8 @@
 package com.epam.controller.command.admin;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -33,7 +36,7 @@ public class RemoveTariffCommand implements Command {
 			LOG.warn("An error occurred while removing tariff.");
 			LOG.error("Unable to remove tariff due to unexpected error.", e);
 		}
-		req.setAttribute("errorMessages", "Unable to remove tariff. Try again later.");
+		req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getString("error.unable_to_remove_tariff"));
 		return new ViewTariffsCommand().execute(req, resp);
 	}
 

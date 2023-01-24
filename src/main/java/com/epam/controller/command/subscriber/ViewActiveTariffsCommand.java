@@ -1,6 +1,8 @@
 package com.epam.controller.command.subscriber;
 
+import java.util.Locale;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,7 +35,7 @@ public class ViewActiveTariffsCommand implements Command{
 			LOG.warn("An error occurred while loading tariffs view.");
 			LOG.error("Unable to load tariffs view due to unexpected error.", e);
 		}
-		req.setAttribute("errorMessages", "Unable to show tariffs. Please try again later.");
+		req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")).getString("error.unable_to_load_your_tariffs"));
 		return Page.ACTIVE_TARIFFS_PAGE;
 	}
 

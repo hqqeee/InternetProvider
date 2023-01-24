@@ -4,6 +4,8 @@ function select_service(name){
 }
 
 function change_sorting_field(sort_field){
+	if(sort_field === 'Назвою') sort_field = 'name';
+	else if(sort_field === 'Ціною') sort_field = 'rate';
 	document.getElementById("sorting_field").value=sort_field.toLowerCase()
 }
 function change_sorting_order(){
@@ -14,10 +16,11 @@ function submit_page(page){
 	document.getElementById("page_number").value=page
 }
 
-function confirm_tariff_selection(price,name,id){
+function confirm_tariff_selection(price,name,id,days){
 	document.getElementById('tariff_name').innerHTML=name
 	document.getElementById('tariff_rate').innerHTML=price
 	document.getElementById('tariff_id').value=id
+	document.getElementById('tariff_days').innerHTML=days
 }
 
 function confirm_tariff_remove(name,id) {
@@ -31,18 +34,6 @@ function edit_tariff(name, rate, service, description, payment_period, id){
 	document.getElementById("edit_tariff_description").value=description
 	document.getElementById("edit_tariff_service").value=service
 	document.getElementById("payment_period").value=payment_period
-	switch(payment_period) {
-		case '1':
-			document.getElementById("payment_period_span").innerText='Per day'
-			break
-		case '7':
-			document.getElementById("payment_period_span").innerText='Per week'
-			break	
-		case '14':
-			document.getElementById("payment_period_span").innerText='Every two weeks'
-			break
-		default:
-				document.getElementById("payment_period_span").innerText='Per month'
-	}
+	document.getElementById("payment_period_span").innerText=payment_period
 	document.getElementById("edit_tariff_id").value=id
 }

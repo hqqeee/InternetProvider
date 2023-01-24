@@ -3,22 +3,22 @@
 <%@ include file="/WEB-INF/jsp/subscriber/profile_header.jspf"%>
 <div class="text-white  text-start">
 	<div class="d-flex justify-content-between align-items-center">
-		<p class="h2 m-3 fw-bold">Your balance:
+		<p class="h2 m-3 fw-bold"><fmt:message key="account.balance" />
 			$${requestScope.userBalance}</p>
 		<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
 			<button class="btn btn-warning" data-bs-toggle="modal"
-				data-bs-target="#replenishModal">Replenish</button>
+				data-bs-target="#replenishModal"><fmt:message key="account.replenish" /></button>
 		</c:if>
 	</div>
 	<hr class="style1">
 
-	<p class="text-muted fs-4 text-center">Payment History</p>
+	<p class="text-muted fs-4 text-center"><fmt:message key="account.payment_history" /></p>
 	<table class="table table-dark table-striped">
 		<thead>
 			<tr>
-				<th scope="col">Date</th>
-				<th scope="col">Description</th>
-				<th scope="col">Amount</th>
+				<th scope="col"><fmt:message key="account.date" /></th>
+				<th scope="col"><fmt:message key="account.description" /></th>
+				<th scope="col"><fmt:message key="account.amount" /></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -86,7 +86,7 @@
 				<div class="modal-body">
 					<form action="controller?action=replenish" method="post">
 						<div class="d-flex justify-content-between align-items-center">
-							<div class="text-muted fs-5">Amount</div>
+							<div class="text-muted fs-5"><fmt:message key="account.amount" /></div>
 							<div class="mx-5"></div>
 							<div class="input-group">
 								<span class="input-group-text">$</span> <input type="number"
@@ -99,7 +99,7 @@
 						<div class="form-floating text-dark my-4">
 							<input type="text" class="form-control" id="floatingCardNumber"
 								placeholder="1234 5678 9012 3456" name="cardNumber" required>
-							<label for="floatingCardNumber">Card number</label>
+							<label for="floatingCardNumber"><fmt:message key="account.card_number" /></label>
 						</div>
 
 						<div
@@ -107,22 +107,22 @@
 							<div class="form-floating text-dark">
 								<input type="text" class="form-control" id="floatingPassword"
 									placeholder="12/13" name="expireDate" maxlength="5" required>
-								<label for="floatingPassword">Expire Date</label>
+								<label for="floatingPassword"><fmt:message key="account.expire_date" /></label>
 							</div>
 							<div class="form-floating text-dark">
 								<input type="password" class="form-control"
 									id="floatingPassword" placeholder="Password" name="password"
 									minlength="3" maxlength="3" required> <label
-									for="floatingPassword">CVC</label>
+									for="floatingPassword"><fmt:message key="account.CVC" /></label>
 							</div>
 						</div>
 
 						<hr class="style1">
 						<div class="d-flex justify-content-end">
 							<button type="button" class="btn btn-secondary"
-								data-bs-dismiss="modal">Close</button>
+								data-bs-dismiss="modal"><fmt:message key="account.cancel" /></button>
 							<div class="mx-2"></div>
-							<button class="btn btn-warning">Replenish</button>
+							<button class="btn btn-warning"><fmt:message key="account.replenish" /></button>
 						</div>
 					</form>
 				</div>

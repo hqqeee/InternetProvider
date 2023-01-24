@@ -3,13 +3,13 @@
 <%@ include file="/WEB-INF/jsp/subscriber/profile_header.jspf"%>
 <div class="text-white  text-start">
 <div class="d-flex justify-content-between align-items-center">
-	<p class="h2 m-3 fw-bold">Information</p>
+	<p class="h2 m-3 fw-bold"><fmt:message key="profile.information" /></p>
 	</div>
 	<hr class="style1">
 	
 	<div class="row">
 		<div class="col-md-6">
-			<label class="text-warning fw-semibold ">Login</label>
+			<label class="text-warning fw-semibold "><fmt:message key="profile.login" /></label>
 		</div>
 		<div class="col-md-6">
 			<p>
@@ -19,18 +19,18 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 text-warning fw-semibold">
-			<label>Name</label>
+			<label><fmt:message key="profile.name" /></label>
 		</div>
 		<div class="col-md-6">
 			<p>
-				<c:out value="${currentUser.firstName}" />
+				<c:out value="${currentUser.firstName}" /> 
 				<c:out value="${currentUser.lastName}" />
 			</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-6 text-warning fw-semibold">
-			<label>Email</label>
+			<label><fmt:message key="profile.email" /></label>
 		</div>
 		<div class="col-md-6">
 			<p>
@@ -40,7 +40,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 text-warning fw-semibold">
-			<label>City</label>
+			<label><fmt:message key="profile.city" /></label>
 		</div>
 		<div class="col-md-6">
 			<p>
@@ -50,7 +50,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 text-warning fw-semibold">
-			<label>Address</label>
+			<label><fmt:message key="profile.address" /></label>
 		</div>
 		<div class="col-md-6">
 			<p>
@@ -65,8 +65,7 @@
 		<div class="align-items-center d-flex justify-content-start">
 
 			<button type="button" class="btn btn-warning mt-3"
-				data-bs-toggle="modal" data-bs-target="#changePasswordModal">Change
-				password</button>
+				data-bs-toggle="modal" data-bs-target="#changePasswordModal"><fmt:message key="profile.change_password" /></button>
 		</div>
 		<div class="col"></div>
 	</div>
@@ -83,29 +82,27 @@
 						<div class="alert alert-danger" role="alert">
 							${requestScope.incorrectChangePasswordFormError}</div>
 					</c:if>
-					<p class="text-muted fs-5">Please provide your current password
-						and a new one.</p>
+					<p class="text-muted fs-5"><fmt:message key="profile.prompt_for_password" /></p>
 					<hr class="style1">
 					<form action="controller?action=changePassword" method="post">
 					<div class="form-floating text-dark my-3"> 
 					<input type="password" class="form-control" id="floatingPassword"
-							placeholder="Password" name="currentPassword" required> <label for="floatingPassword">Current Password</label>
+							placeholder="Password" name="currentPassword" required> <label for="floatingPassword"><fmt:message key="profile.current_password" /></label>
 						</div>
 						<div class="form-floating text-dark my-3"> 
 					<input type="password" class="form-control" id="password"
-							placeholder="Password" name="newPassword" required> <label for="floatingPassword">New Password</label>
+							placeholder="Password" name="newPassword" required> <label for="floatingPassword"><fmt:message key="profile.new_password" /></label>
 						</div>
 						<div class="form-floating text-dark my-3"> 
 					<input type="password" class="form-control" id="confirm_password"
-							placeholder="Password" required> <label for="floatingPassword">Confirm Password</label>
+							placeholder="Password" required> <label for="floatingPassword"><fmt:message key="profile.confirm_password" /></label>
 						</div>
 						<hr class="style1 mt-2">
 						<div class="d-flex justify-content-end">
 					<button type="button" class="btn btn-secondary"
-					data-bs-dismiss="modal">Close</button>
+					data-bs-dismiss="modal"><fmt:message key="profile.cancel" /></button>
 					<div class="mx-2"></div>
-					<button type="submit" class="btn btn-warning">Change
-							password</button>
+					<button type="submit" class="btn btn-warning"><fmt:message key="profile.change_password" /></button>
 				</div>
 						
 					</form>
