@@ -15,8 +15,21 @@ import com.epam.exception.dao.DAOMappingException;
 import com.epam.exception.dao.DAOReadException;
 import com.epam.exception.dao.DAOUpdateException;
 
+/**
+ * Service DAO implementation for MariaDB. Has methods needed by services to access persistence layer.
+ * @author ruslan
+ *
+ */
+
 public class ServiceDAOMariaDB implements ServiceDAO {
 
+	/**
+	 * Return Service by its ID.
+	 * 
+	 * @param id id of the Service.
+	 * @return Service entity with this id.
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	@Override
 	public Service get(int id) throws DAOException {
 		Service service = null;
@@ -31,6 +44,12 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 		return service;
 	}
 
+	/**
+	 * Return all Service entities.
+	 * 
+	 * @return All Service entities.
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	@Override
 	public List<Service> getAll() throws DAOException {
 		List<Service> services = new ArrayList<>();
@@ -44,6 +63,13 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 		return services;
 	}
 
+	/**
+	 * Insert new Service to the persistence layer.
+	 * 
+	 * @param tariff Service to add.
+	 * @return 1 if inserted, 0 if not.
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	@Override
 	public int insert(Service service) throws DAOException {
 		try {
@@ -54,6 +80,13 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 		}
 	}
 
+	/**
+	 * Update Service in the persistence layer.
+	 * 
+	 * @param user Service to update.
+	 * @return 1 if updated, 0 if not.
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	@Override
 	public int update(Service service) throws DAOException {
 		try {
@@ -65,6 +98,13 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 		}
 	}
 
+	/**
+	 * Delete Service from the persistence layer.
+	 * 
+	 * @param user Service to delete.
+	 * @return 1 if deleted, 0 if not.
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	@Override
 	public int delete(Service service) throws DAOException {
 		try {
@@ -75,6 +115,12 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 		}
 	}
 
+	/**
+	 * This method gets Service from the result set.
+	 * @param rs Result set to get Service from.
+	 * @return Service from Result Set
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	private Service getServiceFromResultSet(ResultSet rs) throws DAOException {
 		try {
 			return new Service(rs.getInt(MariaDBConstants.SERVICE_ID_FIELD),

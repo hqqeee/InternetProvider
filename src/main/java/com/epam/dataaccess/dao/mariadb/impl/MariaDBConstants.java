@@ -1,6 +1,10 @@
 package com.epam.dataaccess.dao.mariadb.impl;
 
-
+/**
+ * Class with constants
+ * @author ruslan
+ *
+ */
 public final class MariaDBConstants {
 	private MariaDBConstants() {
 	};

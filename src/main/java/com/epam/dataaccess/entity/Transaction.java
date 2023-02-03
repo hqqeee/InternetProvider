@@ -2,6 +2,7 @@ package com.epam.dataaccess.entity;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 public class Transaction {
 	private int id;
@@ -53,6 +54,24 @@ public class Transaction {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(amount, description, id, timestamp, userId);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Transaction other = (Transaction) obj;
+		return Objects.equals(amount, other.amount) && Objects.equals(description, other.description) && id == other.id
+				&& Objects.equals(timestamp, other.timestamp) && userId == other.userId;
 	}
 	
 	

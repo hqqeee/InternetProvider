@@ -6,6 +6,11 @@ import com.epam.dataaccess.dao.ServiceDAO;
 import com.epam.dataaccess.dao.TariffDAO;
 import com.epam.dataaccess.dao.TransactionDAO;
 import com.epam.dataaccess.dao.UserDAO;
+/**
+ * DAOFactory implementation for MariaDB. Implements factory methods for DAOs.
+ * @author ruslan
+ *
+ */
 
 public class DAOFactoryMariaDB implements DAOFactory{
 

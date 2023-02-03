@@ -1,6 +1,7 @@
 package com.epam.dataaccess.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -44,6 +45,23 @@ public class Role implements Serializable {
 	@Override
 	public String toString() {
 		return "Role [id=" + id + ", name=" + name + ", description=" + description + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(description, id, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Role other = (Role) obj;
+		return Objects.equals(description, other.description) && id == other.id && Objects.equals(name, other.name);
 	}
 	
 	

@@ -38,7 +38,7 @@ public class FrontController extends HttpServlet {
 			req.setAttribute("errorMessages", "You cannot access this page.");
 		}
 		if(page != null && !page.equals(Page.REDIRECTED)) {
-			getServletContext().getRequestDispatcher(page).forward(req, resp);
+			req.getRequestDispatcher(page).forward(req, resp);
 		}
 	}
 }

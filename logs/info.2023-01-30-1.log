@@ -1,0 +1,43 @@
+2023-01-30 22:51:22,717 [main] WARN  ViewSubscriberAccountCommand A service error occurred while loading account info.
+2023-01-30 22:51:22,741 [main] WARN  ViewSubscriberAccountCommand An unexpected error occurred while loading account info.
+2023-01-30 22:51:22,764 [main] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
+2023-01-30 22:51:22,776 [main] WARN  ViewSubscriberProfileCommand An unexpected error occurred while loading user info.
+2023-01-30 22:51:22,787 [main] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
+2023-01-30 22:51:22,868 [main] WARN  ViewSubscriberTariffsCommand An unexpected error occurred while loading user tariffs.
+2023-01-30 22:51:22,877 [main] WARN  ViewSubscriberTariffsCommand A service error occurred while loading user tariffs.
+2023-01-30 22:51:22,897 [main] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-30 22:51:22,904 [main] WARN  DailyWithdrawCommand An error occurred while executing daily withdrawal.
+2023-01-30 22:51:22,926 [main] WARN  DailyWithdrawCommand An error occurred while executing daily withdrawal.
+2023-01-30 22:51:22,938 [main] INFO  EditTariffCommand Tariff( 1) has been edited. TariffForm [name=name, paymentPeriod=14, rate=12, service=INTERNET, description=desc]
+2023-01-30 22:51:22,945 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-01-30 22:51:22,949 [main] WARN  EditTariffCommand An unexpected error occurred while editing the tariff.
+2023-01-30 22:51:22,952 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-01-30 22:51:22,961 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-01-30 22:51:22,965 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-01-30 22:51:22,979 [main] WARN  EditTariffCommand A service error occurred while editing the tariff.
+2023-01-30 22:51:23,003 [main] INFO  RemoveTariffCommand Tariff with id 1 successfully removed.
+2023-01-30 22:51:23,011 [main] WARN  AddTariffCommand An error occurred while adding a tariff.
+2023-01-30 22:51:23,034 [main] WARN  AddTariffCommand An error occurred while adding a tariff.
+2023-01-30 22:51:23,055 [main] INFO  AddTariffCommand Tariff name with rate $12/14 day(s) successfully added.
+2023-01-30 22:51:23,086 [main] WARN  RegisterUserCommand An unexpected error occurred while registering user.
+2023-01-30 22:51:23,117 [main] WARN  RegisterUserCommand A service error occurred while registering user.
+2023-01-30 22:51:23,126 [main] INFO  RegisterUserCommand User: [firstName,lastName,login,email@mail.com, city] registered successfully.
+2023-01-30 22:51:23,139 [main] WARN  RemoveUserCommand An error occurred while removing user.
+2023-01-30 22:51:23,150 [main] INFO  RemoveUserCommand Tariff with id 2 successfully removed.
+2023-01-30 22:51:23,160 [main] WARN  RemoveUserCommand A service error occurred while removing user.
+2023-01-30 22:51:23,176 [main] WARN  AdminMenuCommand An error occurred while loading user view.
+2023-01-30 22:51:23,225 [main] INFO  ChangeUserBalanceCommand Balance of user with id 1 changed.
+2023-01-30 22:51:23,265 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-01-30 22:51:23,276 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-01-30 22:51:23,314 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-01-30 22:51:23,348 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-01-30 22:51:23,444 [main] INFO  LoginCommand User with login login successfully logged in.
+2023-01-30 22:51:23,458 [main] WARN  LoginCommand An error occurred while logging into the system.
+2023-01-30 22:51:23,466 [main] WARN  LoginCommand Unsuccessful attempt to access account with login login.
+2023-01-30 22:51:24,271 [main] INFO  ChangePasswordCommand UserDTO [id=1, blocked=false, login=login, balance=10, firstName=firstName, lastName=lastName, email=email@asd.asd, city=City, address=Address, role=SUBSCRIBER] changed password.
+2023-01-30 22:51:24,277 [main] WARN  ChangePasswordCommand A service error occurred while changing user balance.
+2023-01-30 22:51:24,293 [main] WARN  ViewActiveTariffsCommand An error occurred while loading tariffs view.
+2023-01-30 22:51:24,348 [main] WARN  ConnectTariffCommand A service error occurred while connecting tariff.
+2023-01-30 22:51:24,355 [main] INFO  ConnectTariffCommand User(id = 1) added tariff(id = 1).
+2023-01-30 22:51:24,362 [main] WARN  ConnectTariffCommand An unexpected error occurred while connecting tariff.
+2023-01-30 22:51:24,379 [main] WARN  ViewAccountCommand A service error occurred while loading account info.

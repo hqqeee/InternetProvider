@@ -12,13 +12,36 @@ import com.epam.exception.services.TransactionServiceException;
 import com.epam.services.TransactionService;
 import com.epam.services.dto.TransactionDTO;
 
+/**
+ * 
+ * Transaction Service implementation with DAOFactory.
+ * It contains methods to interact with the DAO and has some business logic.
+ * 
+ * @author ruslan
+ *
+ */
 public class TransactionServiceImpl implements TransactionService{
 	
 	private DAOFactory daoFactory;
+	
+	/**
+	 * A constructor that assigns a DAO Factory.
+	 * 
+	 * @param daoFactory DAO Factory impl.
+	 */
 	private TransactionServiceImpl(DAOFactory daoFactory) {
 		this.daoFactory = daoFactory;
 	}
 	
+	/**
+	 * This method returns some(recordsPerPage) transactions of the user with specific id. With pagination.
+	 * @param userId the user ID to get the transaction.
+	 * @param page page to return.
+	 * @param recordsPerPage number of records to get.
+	 * @return A list of TransactionsDTO of the user.
+	 * @throws NoTransactionsFoundException is thrown when no transaction was found.
+	 * @throws TransactionServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public List<TransactionDTO> getUserTransaction(int userId, int page, int recordsPerPage) throws NoTransactionsFoundException, TransactionServiceException {
 		try {
@@ -35,6 +58,12 @@ public class TransactionServiceImpl implements TransactionService{
 		}
 	}
 
+	/**
+	 * This method returns the count of all user transactions.
+	 * @param userId id of the user to get count of transaction.
+	 * @return count of all user transactions.
+	 * @throws TransactionServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public int getUsersTransactionNumber(int userId) throws TransactionServiceException {
 		try {
@@ -45,6 +74,12 @@ public class TransactionServiceImpl implements TransactionService{
 		}
 	}
 	
+	/**
+	 * This meth takes Transaction(DAO) entity and converts it to TransactionDTO
+	 * 
+	 * @param transaction DAO transaction entity.
+	 * @return Converted TransactionDTO 
+	 */
 	protected TransactionDTO convertTransactionToTransactionDTO(Transaction transaction) {
 		return new TransactionDTO(
 				transaction.getId(),

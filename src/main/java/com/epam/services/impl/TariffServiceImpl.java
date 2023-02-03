@@ -10,20 +10,44 @@ import com.epam.dataaccess.dao.TariffDAO;
 import com.epam.dataaccess.entity.Tariff;
 import com.epam.exception.dao.DAOException;
 import com.epam.exception.services.TariffServiceException;
-import com.epam.exception.services.ValidationErrorException;
 import com.epam.services.TariffService;
 import com.epam.services.dto.Service;
 import com.epam.services.dto.TariffDTO;
 import com.epam.services.dto.TariffForm;
 import com.epam.util.SortingOrder;
 
+
+/**
+ * 
+ * Tariff Service implementation.
+ * It contains methods to interact with the DAO and has some business logic.
+ * 
+ * @author ruslan
+ *
+ */
 public class TariffServiceImpl implements TariffService {
 	private DAOFactory daoFactory;
 
+
+	/**
+	 * A constructor that assigns a DAO Factory.
+	 * 
+	 * @param daoFactory DAO Factory impl.
+	 */
 	private TariffServiceImpl(DAOFactory daoFactory) {
 		this.daoFactory = daoFactory;
 	}
 
+	/**
+	 * This method returns sorted and filtered by Service list of Tariffs.
+	 * @param fieldName name of the field to sort.
+	 * @param sortingOrder sorting order.
+	 * @param service A service to show.
+	 * @param page page number to show.
+	 * @param entriesPerPage number of tariff to show in the page.
+	 * @return list of TariffsDTO to show.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public List<TariffDTO> getTariffsForView(String fieldName, SortingOrder sortingOrder, Service service, int page,
 			int entriesPerPage) throws TariffServiceException {
@@ -47,6 +71,12 @@ public class TariffServiceImpl implements TariffService {
 		}
 	}
 
+	/**
+	 * This method returns count of the tariffs with specific Service.
+	 * @param service Service to filter.
+	 * @return number of tariff with Service.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public int getTariffsCount(Service service) throws TariffServiceException {
 		try {
@@ -60,6 +90,12 @@ public class TariffServiceImpl implements TariffService {
 		}
 	}
 
+	/**
+	 * This method returns filtered by Service list of Tariffs.
+	 * @param service Service to filter.
+	 * @return Filtered list of tariffs.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public List<TariffDTO> getAllTariff(Service service) throws TariffServiceException {
 		try {
@@ -78,6 +114,12 @@ public class TariffServiceImpl implements TariffService {
 		}
 	}
 
+	/**
+	 * This method returns all the tariff of the user.
+	 * @param userId id of the user to get id from.
+	 * @return List of tariffs of the user.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public List<TariffDTO> getUsersTariff(int userId) throws TariffServiceException {
 
@@ -93,6 +135,12 @@ public class TariffServiceImpl implements TariffService {
 		}
 	}
 
+	/**
+	 * This method return all the tariff of the user that has 0 days until next payment.
+	 * @param userId id of the user to get id from.
+	 * @return List of tariffs of the user.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public List<TariffDTO> getUnpaidTariffs(int userId) throws TariffServiceException {
 		try {
@@ -107,6 +155,12 @@ public class TariffServiceImpl implements TariffService {
 		}
 	}
 
+	/**
+	 * This method returns all the tariff of the user with the number of days left until next payment.
+	 * @param userId id of the user to get id from.
+	 * @return Map of Tariffs with days until next payment.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public Map<TariffDTO, Integer> getUsersTariffWithDaysUntilPayment(int userId) throws TariffServiceException {
 		try {
@@ -121,6 +175,11 @@ public class TariffServiceImpl implements TariffService {
 		}
 	}
 
+	/**
+	 * This method remove tariff from the persistence layer.
+	 * @param tariffId id of the Tariff to remove.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public void removeTariff(int tariffId) throws TariffServiceException {
 		try {
@@ -134,8 +193,13 @@ public class TariffServiceImpl implements TariffService {
 
 	}
 
+	/**
+	 * This method add tariff to the persistence layer.
+	 * @param tariffForm form that contains all necessary information for new tariff.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
-	public void addTariff(TariffForm tariffForm) throws TariffServiceException, ValidationErrorException {
+	public void addTariff(TariffForm tariffForm) throws TariffServiceException {
 		Tariff tariff = new Tariff();
 		tariff.setName(tariffForm.getName());
 		tariff.setRate(tariffForm.getRate());
@@ -151,9 +215,15 @@ public class TariffServiceImpl implements TariffService {
 
 	}
 
+	/**
+	 * This method modify tariff. 
+	 * @param tariffForm Tariff form that contains new values of tariff.
+	 * @param tariffId id of the tariff to modify.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public void editTariff(TariffForm tariffForm, int tariffId)
-			throws TariffServiceException, ValidationErrorException {
+			throws TariffServiceException {
 		Tariff tariff = new Tariff();
 		tariff.setName(tariffForm.getName());
 		tariff.setRate(tariffForm.getRate());
@@ -170,6 +240,10 @@ public class TariffServiceImpl implements TariffService {
 
 	}
 
+	/**
+	 * This method decrement number of days until next payment for all users.
+	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 */
 	@Override
 	public void updateDaysUntilPayments() throws TariffServiceException {
 		try {
@@ -182,6 +256,11 @@ public class TariffServiceImpl implements TariffService {
 
 	}
 
+	/**
+	 * This method convert Tariff(DAO) entity to TariffDTO
+	 * @param tariff tariff(DAO) entity
+	 * @return converted TariffDTO
+	 */
 	protected TariffDTO convertTariffToTariffDTO(Tariff tariff) {
 		return new TariffDTO(tariff.getId(), tariff.getName(), tariff.getDescription(), tariff.getPaymentPeriod(),
 				tariff.getRate(), Service.valueOf(tariff.getServiceId()));

@@ -46,7 +46,7 @@ public class DownloadTariffsCommand implements Command {
 			}
 			List<TariffDTO> tariffs = AppContext.getInstance().getTariffService().getAllTariff(service);
 			try (OutputStream out = resp.getOutputStream()) {
-				Document document = new Document();
+				Document document = getDocument();
 				Font font = FontFactory.getFont("/fonts/RobotoMono-VariableFont_wght.ttf", "cp1251", BaseFont.EMBEDDED,
 						10);
 				PdfWriter.getInstance(document, out);
@@ -72,6 +72,10 @@ public class DownloadTariffsCommand implements Command {
 		return new ViewTariffsCommand().execute(req, resp);
 	}
 
+	protected static Document getDocument() {
+		return new Document();
+	}
+
 	private PdfPTable generatePDFTableWithTariffs(List<TariffDTO> tariffs, Font font) {
 		PdfPTable table = new PdfPTable(3);
 		PdfPCell nameCell = new PdfPCell(new Paragraph("Name", font));
@@ -92,5 +96,6 @@ public class DownloadTariffsCommand implements Command {
 		}
 		return table;
 	}
+
 
 }

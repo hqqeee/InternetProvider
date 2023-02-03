@@ -1,0 +1,951 @@
+2023-01-24 14:28:21,749 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:28:24,045 [pool-3-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:28:24,839 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 230 ms
+2023-01-24 14:28:27,320 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 19 ms
+2023-01-24 14:28:27,344 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 11 ms
+2023-01-24 14:28:32,383 [http-nio-8080-exec-8] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 14:28:32,383 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 5 ms
+2023-01-24 14:28:32,410 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 16 ms
+2023-01-24 14:28:35,511 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 59 ms
+2023-01-24 14:28:35,558 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 2 ms
+2023-01-24 14:29:02,644 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openAddTariff Access time : 20 ms
+2023-01-24 14:29:11,931 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 24 ms
+2023-01-24 14:29:19,262 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 50 ms
+2023-01-24 14:30:14,507 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:30:16,815 [pool-6-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:32:12,599 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 40 ms
+2023-01-24 14:32:14,477 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:32:16,496 [pool-6-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:32:17,076 [http-nio-8080-exec-9] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 14:32:17,076 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 21 ms
+2023-01-24 14:32:17,087 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-01-24 14:32:19,431 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 1123 ms
+2023-01-24 14:33:01,674 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 11 ms
+2023-01-24 14:33:02,675 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 333 ms
+2023-01-24 14:33:14,550 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 9 ms
+2023-01-24 14:33:15,423 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 209 ms
+2023-01-24 14:33:53,912 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 10 ms
+2023-01-24 14:33:54,919 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 226 ms
+2023-01-24 14:34:14,480 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:34:16,201 [pool-6-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:34:21,883 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 9 ms
+2023-01-24 14:34:22,933 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 166 ms
+2023-01-24 14:34:47,863 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 9 ms
+2023-01-24 14:34:48,601 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 13 ms
+2023-01-24 14:34:50,119 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 27 ms
+2023-01-24 14:34:50,890 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 9 ms
+2023-01-24 14:34:59,158 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 34 ms
+2023-01-24 14:34:59,454 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:35:01,364 [pool-9-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:35:03,939 [http-nio-8080-exec-11] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 14:35:03,939 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 9 ms
+2023-01-24 14:35:03,949 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-01-24 14:35:05,443 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 41 ms
+2023-01-24 14:35:15,652 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=7 Access time : 19 ms
+2023-01-24 14:35:15,679 [http-nio-8080-exec-19] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/subscriber_menu.js/null Access time : 2 ms
+2023-01-24 14:35:15,683 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/validate_password_confirm.js/null Access time : 1 ms
+2023-01-24 14:35:17,176 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=7 Access time : 240 ms
+2023-01-24 14:35:18,050 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=7 Access time : 166 ms
+2023-01-24 14:36:22,227 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 8 ms
+2023-01-24 14:36:59,425 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:37:01,276 [pool-9-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:37:22,140 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:37:24,059 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:39:22,105 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:39:23,818 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:41:22,095 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:41:23,921 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:43:22,098 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:43:24,283 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:45:22,096 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:45:24,125 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:47:22,098 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:47:24,040 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:48:59,619 [http-nio-8080-exec-31] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 40 ms
+2023-01-24 14:49:04,605 [http-nio-8080-exec-32] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 14:49:04,605 [http-nio-8080-exec-32] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 21 ms
+2023-01-24 14:49:04,615 [http-nio-8080-exec-33] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 5 ms
+2023-01-24 14:49:05,842 [http-nio-8080-exec-34] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 215 ms
+2023-01-24 14:49:22,097 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:49:24,194 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:50:03,678 [pool-14-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:50:05,327 [pool-15-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:50:20,633 [http-nio-8080-exec-31] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 35 ms
+2023-01-24 14:50:26,683 [http-nio-8080-exec-34] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 14:50:26,683 [http-nio-8080-exec-34] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 23 ms
+2023-01-24 14:50:26,695 [http-nio-8080-exec-37] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-01-24 14:50:27,997 [http-nio-8080-exec-35] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 209 ms
+2023-01-24 14:50:51,299 [http-nio-8080-exec-40] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-01-24 14:50:52,165 [http-nio-8080-exec-33] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 150 ms
+2023-01-24 14:51:51,395 [http-nio-8080-exec-43] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 151 ms
+2023-01-24 14:52:03,649 [pool-14-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:52:05,927 [pool-15-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:54:03,630 [pool-14-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:54:05,615 [pool-15-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:56:03,639 [pool-14-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:56:05,339 [pool-15-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:56:50,675 [http-nio-8080-exec-46] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
+2023-01-24 14:56:51,641 [http-nio-8080-exec-47] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 124 ms
+2023-01-24 14:56:54,882 [http-nio-8080-exec-41] INFO  ChangeUserStatusCommand Status of the user with id 21 successfully changed.
+2023-01-24 14:56:54,882 [http-nio-8080-exec-41] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 7 ms
+2023-01-24 14:56:54,894 [http-nio-8080-exec-42] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 7 ms
+2023-01-24 14:56:56,479 [http-nio-8080-exec-48] INFO  ChangeUserStatusCommand Status of the user with id 21 successfully changed.
+2023-01-24 14:56:56,479 [http-nio-8080-exec-48] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 7 ms
+2023-01-24 14:56:56,496 [http-nio-8080-exec-43] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 10 ms
+2023-01-24 14:57:10,037 [http-nio-8080-exec-49] INFO  ChangeUserStatusCommand Status of the user with id 12 successfully changed.
+2023-01-24 14:57:10,038 [http-nio-8080-exec-49] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 7 ms
+2023-01-24 14:57:10,055 [http-nio-8080-exec-50] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 11 ms
+2023-01-24 14:57:11,636 [http-nio-8080-exec-45] INFO  ChangeUserStatusCommand Status of the user with id 12 successfully changed.
+2023-01-24 14:57:11,637 [http-nio-8080-exec-45] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 7 ms
+2023-01-24 14:57:11,647 [http-nio-8080-exec-46] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 5 ms
+2023-01-24 14:57:30,896 [http-nio-8080-exec-47] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=2 Access time : 13 ms
+2023-01-24 14:57:32,737 [http-nio-8080-exec-42] INFO  ChangeUserStatusCommand Status of the user with id 32 successfully changed.
+2023-01-24 14:57:32,737 [http-nio-8080-exec-42] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 7 ms
+2023-01-24 14:57:32,749 [http-nio-8080-exec-48] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 6 ms
+2023-01-24 14:57:36,048 [http-nio-8080-exec-43] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=2 Access time : 9 ms
+2023-01-24 14:57:45,088 [http-nio-8080-exec-49] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=1 Access time : 8 ms
+2023-01-24 14:58:03,632 [pool-14-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:58:05,519 [pool-15-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 14:59:12,207 [pool-17-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 14:59:14,374 [pool-18-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:00:54,294 [http-nio-8080-exec-42] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 32 ms
+2023-01-24 15:01:01,116 [http-nio-8080-exec-50] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:01:01,117 [http-nio-8080-exec-50] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 21 ms
+2023-01-24 15:01:01,126 [http-nio-8080-exec-48] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
+2023-01-24 15:01:02,391 [http-nio-8080-exec-49] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 154 ms
+2023-01-24 15:01:12,170 [pool-17-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:01:14,147 [pool-18-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:03:12,153 [pool-17-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:03:14,060 [pool-18-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:05:12,172 [pool-17-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:05:13,974 [pool-18-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:06:19,432 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:06:21,353 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:08:09,077 [http-nio-8080-exec-60] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 24 ms
+2023-01-24 15:08:14,996 [http-nio-8080-exec-54] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:08:14,997 [http-nio-8080-exec-54] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 14 ms
+2023-01-24 15:08:15,006 [http-nio-8080-exec-56] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 5 ms
+2023-01-24 15:08:16,491 [http-nio-8080-exec-59] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 169 ms
+2023-01-24 15:08:19,423 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:08:21,366 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:10:19,413 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:10:21,485 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:12:19,424 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:12:21,707 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:14:19,425 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:14:22,746 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:16:19,423 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:16:21,427 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:18:19,432 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:18:21,546 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:19:16,543 [http-nio-8080-exec-63] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 9 ms
+2023-01-24 15:19:17,463 [http-nio-8080-exec-64] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 127 ms
+2023-01-24 15:19:29,305 [http-nio-8080-exec-61] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 104 ms
+2023-01-24 15:20:19,418 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:20:21,352 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:22:19,425 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:22:21,260 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:23:11,687 [http-nio-8080-exec-66] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 124 ms
+2023-01-24 15:23:20,419 [http-nio-8080-exec-67] INFO  ChangeUserStatusCommand Status of the user with id 20 successfully changed.
+2023-01-24 15:23:20,420 [http-nio-8080-exec-67] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 8 ms
+2023-01-24 15:23:20,433 [http-nio-8080-exec-68] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 6 ms
+2023-01-24 15:23:23,738 [http-nio-8080-exec-69] INFO  ChangeUserStatusCommand Status of the user with id 20 successfully changed.
+2023-01-24 15:23:23,738 [http-nio-8080-exec-69] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 3 ms
+2023-01-24 15:23:23,751 [http-nio-8080-exec-70] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 5 ms
+2023-01-24 15:23:29,387 [http-nio-8080-exec-63] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 11 ms
+2023-01-24 15:23:43,644 [http-nio-8080-exec-61] INFO  ChangeUserBalanceCommand Balance of user with id 21 changed.
+2023-01-24 15:23:43,645 [http-nio-8080-exec-61] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserBalance Access time : 11 ms
+2023-01-24 15:23:43,660 [http-nio-8080-exec-62] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&userId=21&success=balance_changed Access time : 7 ms
+2023-01-24 15:23:48,938 [http-nio-8080-exec-65] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=21 Access time : 25 ms
+2023-01-24 15:23:50,095 [http-nio-8080-exec-66] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=21 Access time : 22 ms
+2023-01-24 15:24:11,633 [http-nio-8080-exec-69] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 14 ms
+2023-01-24 15:24:14,736 [http-nio-8080-exec-70] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=7 Access time : 6 ms
+2023-01-24 15:24:15,836 [http-nio-8080-exec-63] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=7 Access time : 7 ms
+2023-01-24 15:24:19,423 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:24:21,126 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:24:21,971 [http-nio-8080-exec-64] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-01-24 15:24:21,993 [http-nio-8080-exec-62] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 3 ms
+2023-01-24 15:24:22,760 [http-nio-8080-exec-65] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 11 ms
+2023-01-24 15:24:26,815 [http-nio-8080-exec-66] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=21 Access time : 6 ms
+2023-01-24 15:24:27,607 [http-nio-8080-exec-67] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=21 Access time : 10 ms
+2023-01-24 15:26:19,424 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:26:21,404 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:28:19,421 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:28:21,227 [pool-21-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:28:50,220 [pool-23-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:28:52,674 [pool-24-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:30:50,211 [pool-23-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:30:52,079 [pool-24-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:31:20,456 [http-nio-8080-exec-71] WARN  AuthenticationFilter An attempt to access viewSubscriberProfile failed.
+2023-01-24 15:31:20,509 [http-nio-8080-exec-71] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=21 Access time : 54 ms
+2023-01-24 15:31:26,335 [http-nio-8080-exec-65] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:31:26,335 [http-nio-8080-exec-65] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 34 ms
+2023-01-24 15:31:26,346 [http-nio-8080-exec-64] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-01-24 15:31:27,418 [http-nio-8080-exec-68] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 18 ms
+2023-01-24 15:31:28,912 [http-nio-8080-exec-66] INFO  LogoutCommand User successfully logged out.
+2023-01-24 15:31:28,913 [http-nio-8080-exec-66] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 0 ms
+2023-01-24 15:31:28,921 [http-nio-8080-exec-63] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 3 ms
+2023-01-24 15:31:34,141 [http-nio-8080-exec-62] INFO  LoginCommand User with login subscriber2 successfully logged in.
+2023-01-24 15:31:34,142 [http-nio-8080-exec-62] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 5 ms
+2023-01-24 15:31:34,154 [http-nio-8080-exec-69] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
+2023-01-24 15:31:35,240 [http-nio-8080-exec-67] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 17 ms
+2023-01-24 15:31:36,234 [http-nio-8080-exec-72] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 19 ms
+2023-01-24 15:31:44,815 [http-nio-8080-exec-73] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 12 ms
+2023-01-24 15:31:46,063 [http-nio-8080-exec-64] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 6 ms
+2023-01-24 15:31:56,097 [http-nio-8080-exec-74] INFO  ReplenishCommand User(id = 32) replenished the account with $0.01
+2023-01-24 15:31:56,102 [http-nio-8080-exec-74] INFO  ReplenishCommand User(id = 32) has been unblocked due to replenishment the account.
+2023-01-24 15:31:56,102 [http-nio-8080-exec-74] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 8 ms
+2023-01-24 15:31:56,113 [http-nio-8080-exec-75] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 7 ms
+2023-01-24 15:31:57,456 [http-nio-8080-exec-63] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 4 ms
+2023-01-24 15:31:58,292 [http-nio-8080-exec-76] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 6 ms
+2023-01-24 15:32:22,826 [http-nio-8080-exec-72] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-01-24 15:32:22,865 [http-nio-8080-exec-73] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
+2023-01-24 15:32:23,520 [http-nio-8080-exec-78] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 3 ms
+2023-01-24 15:32:24,331 [http-nio-8080-exec-74] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 10 ms
+2023-01-24 15:32:44,244 [pool-26-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:32:46,117 [pool-27-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:33:16,682 [http-nio-8080-exec-79] WARN  AuthenticationFilter An attempt to access viewActiveTariffs failed.
+2023-01-24 15:33:16,719 [http-nio-8080-exec-79] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 38 ms
+2023-01-24 15:33:22,109 [http-nio-8080-exec-74] WARN  LoginCommand Unsuccessful attempt to access account with login subscriber.
+2023-01-24 15:33:22,113 [http-nio-8080-exec-74] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 25 ms
+2023-01-24 15:33:27,219 [http-nio-8080-exec-72] INFO  LoginCommand User with login subscriber2 successfully logged in.
+2023-01-24 15:33:27,219 [http-nio-8080-exec-72] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
+2023-01-24 15:33:27,229 [http-nio-8080-exec-80] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-01-24 15:33:28,636 [http-nio-8080-exec-76] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 16 ms
+2023-01-24 15:33:29,542 [http-nio-8080-exec-78] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 17 ms
+2023-01-24 15:34:05,189 [http-nio-8080-exec-82] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
+2023-01-24 15:34:06,026 [http-nio-8080-exec-83] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-01-24 15:34:06,801 [http-nio-8080-exec-84] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 13 ms
+2023-01-24 15:34:07,470 [http-nio-8080-exec-80] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 13 ms
+2023-01-24 15:34:26,234 [pool-29-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:34:29,637 [pool-30-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:35:37,791 [http-nio-8080-exec-90] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 46 ms
+2023-01-24 15:35:43,697 [http-nio-8080-exec-91] INFO  LoginCommand User with login subscriber2 successfully logged in.
+2023-01-24 15:35:43,698 [http-nio-8080-exec-91] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 12 ms
+2023-01-24 15:35:43,706 [http-nio-8080-exec-78] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
+2023-01-24 15:35:44,731 [http-nio-8080-exec-84] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 17 ms
+2023-01-24 15:35:45,739 [http-nio-8080-exec-81] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 22 ms
+2023-01-24 15:35:50,707 [http-nio-8080-exec-88] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-01-24 15:35:50,738 [http-nio-8080-exec-85] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 3 ms
+2023-01-24 15:35:51,360 [http-nio-8080-exec-89] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 8 ms
+2023-01-24 15:35:52,125 [http-nio-8080-exec-92] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 8 ms
+2023-01-24 15:36:26,206 [pool-29-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:36:28,121 [pool-30-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:36:44,764 [http-nio-8080-exec-93] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 9 ms
+2023-01-24 15:36:46,206 [http-nio-8080-exec-94] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 5 ms
+2023-01-24 15:36:48,787 [pool-32-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:36:49,671 [http-nio-8080-exec-92] WARN  AuthenticationFilter An attempt to access viewProfile failed.
+2023-01-24 15:36:49,702 [http-nio-8080-exec-92] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 31 ms
+2023-01-24 15:36:50,313 [pool-33-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:36:55,237 [http-nio-8080-exec-90] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:36:55,237 [http-nio-8080-exec-90] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 14 ms
+2023-01-24 15:36:55,245 [http-nio-8080-exec-93] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
+2023-01-24 15:36:56,386 [http-nio-8080-exec-89] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 14 ms
+2023-01-24 15:36:57,930 [http-nio-8080-exec-96] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=12 Access time : 16 ms
+2023-01-24 15:36:59,031 [http-nio-8080-exec-91] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=12 Access time : 14 ms
+2023-01-24 15:37:00,683 [http-nio-8080-exec-94] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 12 ms
+2023-01-24 15:37:01,661 [http-nio-8080-exec-95] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=21 Access time : 4 ms
+2023-01-24 15:37:02,516 [http-nio-8080-exec-86] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=21 Access time : 14 ms
+2023-01-24 15:37:16,991 [http-nio-8080-exec-97] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 7 ms
+2023-01-24 15:37:18,857 [http-nio-8080-exec-93] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 15 ms
+2023-01-24 15:37:18,900 [http-nio-8080-exec-97] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 25 ms
+2023-01-24 15:37:19,747 [pool-35-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:37:21,459 [pool-36-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:37:25,159 [http-nio-8080-exec-98] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:37:25,160 [http-nio-8080-exec-98] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 4 ms
+2023-01-24 15:37:25,171 [http-nio-8080-exec-95] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-01-24 15:37:27,664 [http-nio-8080-exec-100] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-01-24 15:37:27,682 [http-nio-8080-exec-103] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-01-24 15:37:30,152 [http-nio-8080-exec-102] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-01-24 15:37:30,172 [http-nio-8080-exec-105] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-01-24 15:37:30,924 [http-nio-8080-exec-104] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 30 ms
+2023-01-24 15:37:32,314 [http-nio-8080-exec-97] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 23 ms
+2023-01-24 15:37:33,929 [http-nio-8080-exec-106] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 16 ms
+2023-01-24 15:37:45,207 [http-nio-8080-exec-107] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 6 ms
+2023-01-24 15:38:31,237 [pool-38-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:38:33,030 [pool-39-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:40:31,228 [pool-38-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:40:32,947 [pool-39-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:42:31,230 [pool-38-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:42:33,505 [pool-39-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:44:31,227 [pool-38-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:44:33,165 [pool-39-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:45:38,193 [http-nio-8080-exec-112] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 43 ms
+2023-01-24 15:45:46,121 [http-nio-8080-exec-113] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:45:46,121 [http-nio-8080-exec-113] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 31 ms
+2023-01-24 15:45:46,130 [http-nio-8080-exec-114] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
+2023-01-24 15:45:47,880 [http-nio-8080-exec-115] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 27 ms
+2023-01-24 15:45:51,169 [http-nio-8080-exec-116] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 120 ms
+2023-01-24 15:46:20,745 [http-nio-8080-exec-109] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-01-24 15:46:28,677 [pool-41-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:46:30,543 [pool-42-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:47:46,823 [http-nio-8080-exec-121] WARN  AuthenticationFilter An attempt to access adminMenu failed.
+2023-01-24 15:47:46,860 [http-nio-8080-exec-121] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 37 ms
+2023-01-24 15:47:52,361 [http-nio-8080-exec-116] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:47:52,361 [http-nio-8080-exec-116] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 19 ms
+2023-01-24 15:47:52,371 [http-nio-8080-exec-112] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 5 ms
+2023-01-24 15:47:53,590 [http-nio-8080-exec-115] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 21 ms
+2023-01-24 15:47:57,144 [http-nio-8080-exec-118] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=2 Access time : 12 ms
+2023-01-24 15:47:59,685 [http-nio-8080-exec-120] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 102 ms
+2023-01-24 15:48:28,664 [pool-41-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:48:30,630 [pool-42-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:48:40,982 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:48:42,818 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:48:51,084 [http-nio-8080-exec-112] WARN  AuthenticationFilter An attempt to access adminMenu failed.
+2023-01-24 15:48:51,126 [http-nio-8080-exec-112] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 43 ms
+2023-01-24 15:48:57,161 [http-nio-8080-exec-124] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:48:57,161 [http-nio-8080-exec-124] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 31 ms
+2023-01-24 15:48:57,172 [http-nio-8080-exec-123] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-01-24 15:48:58,534 [http-nio-8080-exec-127] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 28 ms
+2023-01-24 15:49:00,584 [http-nio-8080-exec-125] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 94 ms
+2023-01-24 15:50:40,942 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:50:42,968 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:50:48,014 [http-nio-8080-exec-130] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 20 ms
+2023-01-24 15:50:59,462 [http-nio-8080-exec-131] INFO  RegisterUserCommand User: [Імя,Прізвище,subscriber123,fanyqysu@brand-app.biz, Київ] registered successfully.
+2023-01-24 15:50:59,463 [http-nio-8080-exec-131] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 13 ms
+2023-01-24 15:50:59,471 [http-nio-8080-exec-132] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration&success=register_user Access time : 2 ms
+2023-01-24 15:51:01,464 [pool-45-thread-1] INFO  EmailUtil Email to fanyqysu@brand-app.biz was sent.
+2023-01-24 15:51:06,499 [http-nio-8080-exec-133] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration&success=register_user Access time : 3 ms
+2023-01-24 15:51:21,165 [http-nio-8080-exec-135] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 6 ms
+2023-01-24 15:52:26,916 [http-nio-8080-exec-138] INFO  LogoutCommand User successfully logged out.
+2023-01-24 15:52:26,917 [http-nio-8080-exec-138] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
+2023-01-24 15:52:26,932 [http-nio-8080-exec-130] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 7 ms
+2023-01-24 15:52:31,416 [http-nio-8080-exec-131] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 15:52:31,417 [http-nio-8080-exec-131] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 5 ms
+2023-01-24 15:52:31,433 [http-nio-8080-exec-132] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 5 ms
+2023-01-24 15:52:32,730 [http-nio-8080-exec-133] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 13 ms
+2023-01-24 15:52:33,938 [http-nio-8080-exec-134] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 8 ms
+2023-01-24 15:52:40,946 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:52:44,377 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:53:05,640 [http-nio-8080-exec-137] INFO  RegisterUserCommand User: [Імя,Прізвище,subscriber12,tutrotadre@gufum.com, Київ] registered successfully.
+2023-01-24 15:53:05,640 [http-nio-8080-exec-137] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 5 ms
+2023-01-24 15:53:05,648 [http-nio-8080-exec-136] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration&success=register_user Access time : 3 ms
+2023-01-24 15:53:08,132 [pool-45-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 15:53:08,270 [http-nio-8080-exec-138] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 9 ms
+2023-01-24 15:53:10,126 [http-nio-8080-exec-130] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=2 Access time : 6 ms
+2023-01-24 15:53:17,225 [http-nio-8080-exec-131] INFO  RemoveUserCommand Tariff with id 33 successfully removed.
+2023-01-24 15:53:17,226 [http-nio-8080-exec-131] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeUser Access time : 10 ms
+2023-01-24 15:53:17,258 [http-nio-8080-exec-132] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=remove_user Access time : 16 ms
+2023-01-24 15:53:27,365 [http-nio-8080-exec-134] INFO  LogoutCommand User successfully logged out.
+2023-01-24 15:53:27,365 [http-nio-8080-exec-134] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
+2023-01-24 15:53:27,376 [http-nio-8080-exec-135] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 3 ms
+2023-01-24 15:53:32,234 [http-nio-8080-exec-137] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 3 ms
+2023-01-24 15:53:32,253 [http-nio-8080-exec-136] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 1 ms
+2023-01-24 15:53:32,255 [http-nio-8080-exec-138] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 1 ms
+2023-01-24 15:53:32,296 [http-nio-8080-exec-130] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 0 ms
+2023-01-24 15:53:32,307 [http-nio-8080-exec-131] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/peakpx.jpg/null Access time : 1 ms
+2023-01-24 15:53:39,348 [http-nio-8080-exec-132] INFO  LoginCommand User with login subscriber12 successfully logged in.
+2023-01-24 15:53:39,348 [http-nio-8080-exec-132] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 3 ms
+2023-01-24 15:53:39,358 [http-nio-8080-exec-133] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 3 ms
+2023-01-24 15:53:41,997 [http-nio-8080-exec-134] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-01-24 15:53:43,960 [http-nio-8080-exec-135] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 12 ms
+2023-01-24 15:53:43,974 [http-nio-8080-exec-139] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /js/subscriber_menu.js/null Access time : 0 ms
+2023-01-24 15:53:43,975 [http-nio-8080-exec-137] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /js/validate_password_confirm.js/null Access time : 1 ms
+2023-01-24 15:53:45,894 [http-nio-8080-exec-138] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 15 ms
+2023-01-24 15:53:46,298 [http-nio-8080-exec-136] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 17 ms
+2023-01-24 15:53:51,263 [http-nio-8080-exec-132] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-01-24 15:53:51,287 [http-nio-8080-exec-134] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-01-24 15:53:52,107 [http-nio-8080-exec-135] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-01-24 15:53:52,950 [http-nio-8080-exec-139] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 5 ms
+2023-01-24 15:54:09,159 [http-nio-8080-exec-138] INFO  ReplenishCommand User(id = 34) replenished the account with $1000
+2023-01-24 15:54:09,160 [http-nio-8080-exec-138] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 10 ms
+2023-01-24 15:54:09,173 [http-nio-8080-exec-136] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 9 ms
+2023-01-24 15:54:11,078 [http-nio-8080-exec-130] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-01-24 15:54:11,834 [http-nio-8080-exec-131] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 5 ms
+2023-01-24 15:54:12,808 [http-nio-8080-exec-132] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 7 ms
+2023-01-24 15:54:13,305 [http-nio-8080-exec-133] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 23 ms
+2023-01-24 15:54:13,325 [http-nio-8080-exec-134] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /images/call-contact-phone-svgrepo-com.png/null Access time : 4 ms
+2023-01-24 15:54:13,326 [http-nio-8080-exec-135] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /images/connection-svgrepo-com.png/null Access time : 5 ms
+2023-01-24 15:54:13,341 [http-nio-8080-exec-139] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 1 ms
+2023-01-24 15:54:13,341 [http-nio-8080-exec-137] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /images/satelite-svgrepo-com.png/null Access time : 0 ms
+2023-01-24 15:54:13,346 [http-nio-8080-exec-138] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /images/smart-svgrepo-com.png/null Access time : 1 ms
+2023-01-24 15:54:13,346 [http-nio-8080-exec-136] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /images/arrow.png/null Access time : 0 ms
+2023-01-24 15:54:15,618 [http-nio-8080-exec-130] INFO  ConnectTariffCommand User(id = 34) added tariff(id = 3).
+2023-01-24 15:54:15,618 [http-nio-8080-exec-130] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 16 ms
+2023-01-24 15:54:15,630 [http-nio-8080-exec-131] INFO  LogAccessFilter Login: subscriber12, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 7 ms
+2023-01-24 15:54:40,943 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:54:42,853 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:56:40,948 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:56:43,890 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 15:58:40,934 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 15:58:43,289 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:00:40,946 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:00:43,084 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:02:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:02:43,519 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:04:40,944 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:04:43,839 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:06:40,953 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:06:42,925 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:08:40,944 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:08:42,741 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:10:40,935 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:10:42,858 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:12:40,933 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:12:42,873 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:14:40,946 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:14:43,089 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:16:40,946 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:16:42,899 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:18:40,946 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:18:42,679 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:20:40,950 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:20:42,825 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:22:40,942 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:22:43,717 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:24:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:24:47,653 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:26:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:26:42,544 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:28:40,944 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:28:43,190 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:30:40,944 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:30:42,789 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:32:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:32:43,315 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:34:40,937 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:34:42,818 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:36:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:36:42,735 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:38:40,943 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:38:43,047 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:40:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:40:42,600 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:42:40,943 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:42:42,665 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:44:40,946 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:44:43,088 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:46:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:46:42,795 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:48:40,953 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:48:42,703 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:48:44,340 [pool-45-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 16:50:40,941 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:50:42,924 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:52:40,944 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:52:42,886 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:54:40,937 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:54:42,642 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:56:40,952 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:56:43,380 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 16:58:40,943 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 16:58:42,884 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:00:40,943 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:00:43,094 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:02:40,939 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:02:43,012 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:04:40,943 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:04:42,958 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:06:40,945 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:06:43,031 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:08:40,944 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:08:43,453 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:10:40,942 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:10:42,749 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:12:40,941 [pool-44-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:12:42,662 [pool-45-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:13:09,267 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:13:11,335 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:15:09,245 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:15:10,942 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:17:09,232 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:17:10,950 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:19:09,241 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:19:11,475 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:21:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:21:11,182 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:23:09,233 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:23:11,209 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:25:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:25:11,568 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:27:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:27:11,299 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:29:09,245 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:29:11,336 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:31:09,228 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:31:11,429 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:33:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:33:10,952 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:35:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:35:11,171 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:37:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:37:10,893 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:39:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:39:10,992 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:41:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:41:10,801 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:43:09,254 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:43:11,023 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:43:12,965 [pool-48-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 17:45:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:45:10,931 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:47:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:47:11,047 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:49:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:49:11,245 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:51:09,241 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:51:10,975 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:53:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:53:11,497 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:55:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:55:10,976 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:57:09,245 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:57:11,220 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 17:59:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 17:59:11,025 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:01:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:01:10,924 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:03:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:03:11,101 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:05:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:05:11,270 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:07:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:07:10,878 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:09:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:09:10,894 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:11:09,243 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:11:11,010 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:13:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:13:11,329 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:15:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:15:11,445 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:17:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:17:11,153 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:19:09,243 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:19:11,066 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:21:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:21:10,974 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:23:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:23:11,021 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:25:09,245 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:25:11,105 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:27:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:27:11,117 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:29:09,241 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:29:11,239 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:31:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:31:11,148 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:33:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:33:11,264 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:35:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:35:10,869 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:37:09,232 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:37:11,086 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:39:09,254 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:39:11,204 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:39:12,943 [pool-48-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 18:41:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:41:10,977 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:43:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:43:11,128 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:45:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:45:10,859 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:47:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:47:11,162 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:49:09,240 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:49:11,600 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:51:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:51:11,077 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:53:09,245 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:53:10,959 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:55:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:55:11,410 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:57:09,241 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:57:10,894 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 18:59:09,227 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 18:59:11,336 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:01:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:01:11,040 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:03:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:03:10,786 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:05:09,243 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:05:10,965 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:07:09,241 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:07:10,979 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:09:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:09:10,943 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:11:09,235 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:11:11,109 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:13:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:13:11,241 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:15:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:15:11,082 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:17:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:17:11,250 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:19:09,242 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:19:10,957 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:21:09,243 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:21:10,971 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:23:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:23:11,188 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:25:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:25:11,200 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:27:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:27:11,066 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:29:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:29:10,887 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:31:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:31:11,141 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:33:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:33:10,949 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:35:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:35:11,705 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:35:14,955 [pool-48-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 19:37:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:37:11,183 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:39:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:39:11,091 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:41:09,232 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:41:11,414 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:43:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:43:11,530 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:45:09,232 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:45:11,194 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:47:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:47:11,149 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:49:09,233 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:49:11,159 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:51:09,234 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:51:11,377 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:53:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:55:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:55:11,199 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:57:09,227 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:57:11,114 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 19:59:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 19:59:11,131 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:01:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:01:11,540 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:03:09,245 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:03:11,155 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:05:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:05:11,091 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:07:09,233 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:07:11,051 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:09:09,235 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:09:10,964 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:11:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:11:11,105 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:13:09,235 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:13:11,222 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:15:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:15:11,132 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:17:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:17:10,940 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:19:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:19:11,264 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:21:09,231 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:21:11,073 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:23:09,228 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:23:11,083 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:25:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:25:11,506 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:27:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:27:11,010 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:29:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:29:11,127 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:31:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:31:11,445 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:31:13,086 [pool-48-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 20:33:09,224 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:33:11,150 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:35:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:35:10,959 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:37:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:37:11,500 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:39:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:39:10,988 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:41:09,231 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:41:11,408 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:43:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:43:10,822 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:45:09,235 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:45:10,749 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:47:09,231 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:47:10,982 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:49:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:49:10,952 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:51:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:51:10,969 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:53:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:53:10,907 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:55:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:55:11,094 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:57:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:57:11,109 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 20:59:09,231 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 20:59:11,314 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:01:09,235 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:01:11,136 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:03:09,228 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:03:11,147 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:05:09,238 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:05:10,862 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:07:09,239 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:07:10,891 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:09:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:09:10,999 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:11:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:11:10,749 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:13:09,231 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:13:10,804 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:14:36,864 [http-nio-8080-exec-141] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 27 ms
+2023-01-24 21:14:42,618 [http-nio-8080-exec-143] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 21:14:42,618 [http-nio-8080-exec-143] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 15 ms
+2023-01-24 21:14:42,625 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 3 ms
+2023-01-24 21:14:43,998 [http-nio-8080-exec-145] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 35 ms
+2023-01-24 21:14:45,030 [http-nio-8080-exec-146] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 13 ms
+2023-01-24 21:15:02,585 [http-nio-8080-exec-148] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 6 ms
+2023-01-24 21:15:05,794 [http-nio-8080-exec-149] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-01-24 21:15:05,813 [http-nio-8080-exec-141] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 3 ms
+2023-01-24 21:15:07,422 [http-nio-8080-exec-142] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 12 ms
+2023-01-24 21:15:08,578 [http-nio-8080-exec-143] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 8 ms
+2023-01-24 21:15:09,231 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:15:11,509 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:15:18,579 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 5 ms
+2023-01-24 21:17:09,231 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:17:10,903 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:19:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:19:10,949 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:19:51,105 [http-nio-8080-exec-147] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 3 ms
+2023-01-24 21:19:51,167 [http-nio-8080-exec-148] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 1 ms
+2023-01-24 21:19:51,168 [http-nio-8080-exec-149] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 1 ms
+2023-01-24 21:19:51,171 [http-nio-8080-exec-140] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 0 ms
+2023-01-24 21:19:51,182 [http-nio-8080-exec-141] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/peakpx.jpg/null Access time : 0 ms
+2023-01-24 21:20:09,279 [http-nio-8080-exec-143] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 21:20:09,279 [http-nio-8080-exec-143] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 1 ms
+2023-01-24 21:20:09,286 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 3 ms
+2023-01-24 21:20:10,494 [http-nio-8080-exec-146] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 10 ms
+2023-01-24 21:20:10,531 [http-nio-8080-exec-147] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/admin_menu.js/null Access time : 4 ms
+2023-01-24 21:20:12,175 [http-nio-8080-exec-140] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 2 ms
+2023-01-24 21:21:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:21:10,983 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:21:47,864 [http-nio-8080-exec-143] INFO  LogAccessFilter Login: Unlogged user, IP: 127.0.0.1 Page: /index.jsp/null Access time : 4 ms
+2023-01-24 21:21:47,937 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: Unlogged user, IP: 127.0.0.1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 1 ms
+2023-01-24 21:21:47,939 [http-nio-8080-exec-145] INFO  LogAccessFilter Login: Unlogged user, IP: 127.0.0.1 Page: /images/gb.png/null Access time : 1 ms
+2023-01-24 21:21:47,939 [http-nio-8080-exec-146] INFO  LogAccessFilter Login: Unlogged user, IP: 127.0.0.1 Page: /images/ua.png/null Access time : 0 ms
+2023-01-24 21:21:47,955 [http-nio-8080-exec-147] INFO  LogAccessFilter Login: Unlogged user, IP: 127.0.0.1 Page: /images/peakpx.jpg/null Access time : 1 ms
+2023-01-24 21:23:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:23:11,742 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:23:46,771 [http-nio-8080-exec-141] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 21:23:46,771 [http-nio-8080-exec-141] INFO  LogAccessFilter Login: Unlogged user, IP: 127.0.0.1 Page: /controller/action=login Access time : 1 ms
+2023-01-24 21:23:46,776 [http-nio-8080-exec-142] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /index.jsp/success=login Access time : 2 ms
+2023-01-24 21:23:48,536 [http-nio-8080-exec-143] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=adminMenu Access time : 3 ms
+2023-01-24 21:23:48,558 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /js/admin_menu.js/null Access time : 0 ms
+2023-01-24 21:23:52,045 [http-nio-8080-exec-146] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=openUserRegistration Access time : 6 ms
+2023-01-24 21:24:04,874 [http-nio-8080-exec-145] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=registerUser Access time : 7 ms
+2023-01-24 21:24:17,413 [http-nio-8080-exec-148] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-01-24 21:24:17,441 [http-nio-8080-exec-140] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /index.jsp/null Access time : 2 ms
+2023-01-24 21:24:18,967 [http-nio-8080-exec-141] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=adminMenu Access time : 6 ms
+2023-01-24 21:24:19,985 [http-nio-8080-exec-142] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=openUserRegistration Access time : 8 ms
+2023-01-24 21:24:24,650 [http-nio-8080-exec-143] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=registerUser Access time : 5 ms
+2023-01-24 21:25:09,230 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:25:10,760 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:27:09,249 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:27:11,108 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:27:12,642 [pool-48-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 21:29:09,229 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:29:11,023 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:31:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:31:40,930 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:33:06,234 [http-nio-8080-exec-147] INFO  LogAccessFilter Login: admin, IP: 127.0.0.1 Page: /controller/action=registerUser Access time : 11 ms
+2023-01-24 21:33:09,236 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:33:11,146 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:34:25,486 [http-nio-8080-exec-149] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 8 ms
+2023-01-24 21:34:40,378 [http-nio-8080-exec-140] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 6 ms
+2023-01-24 21:34:53,407 [http-nio-8080-exec-142] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 6 ms
+2023-01-24 21:35:04,870 [http-nio-8080-exec-143] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 22 ms
+2023-01-24 21:35:04,928 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 0 ms
+2023-01-24 21:35:07,053 [http-nio-8080-exec-146] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openAddTariff Access time : 24 ms
+2023-01-24 21:35:09,237 [pool-47-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:35:11,264 [pool-48-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:35:22,114 [http-nio-8080-exec-147] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=addTariff Access time : 8 ms
+2023-01-24 21:36:31,966 [pool-50-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:36:33,763 [pool-51-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:37:00,854 [http-nio-8080-exec-140] WARN  AuthenticationFilter An attempt to access addTariff failed.
+2023-01-24 21:37:00,894 [http-nio-8080-exec-140] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=addTariff Access time : 40 ms
+2023-01-24 21:37:08,172 [http-nio-8080-exec-148] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 21:37:08,172 [http-nio-8080-exec-148] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 18 ms
+2023-01-24 21:37:08,181 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 5 ms
+2023-01-24 21:37:09,596 [http-nio-8080-exec-147] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 18 ms
+2023-01-24 21:37:11,531 [http-nio-8080-exec-142] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 19 ms
+2023-01-24 21:37:13,540 [http-nio-8080-exec-146] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openAddTariff Access time : 20 ms
+2023-01-24 21:37:24,756 [http-nio-8080-exec-149] WARN  AddTariffCommand An error occurred while adding a tariff.
+2023-01-24 21:37:24,766 [http-nio-8080-exec-149] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=addTariff Access time : 11 ms
+2023-01-24 21:37:56,712 [http-nio-8080-exec-144] WARN  AddTariffCommand An error occurred while adding a tariff.
+2023-01-24 21:37:56,718 [http-nio-8080-exec-144] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=addTariff Access time : 6 ms
+2023-01-24 21:38:31,936 [pool-50-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:38:34,438 [pool-51-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:40:31,949 [pool-50-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:40:33,804 [pool-51-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:41:16,776 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:41:18,900 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:43:16,744 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:43:18,997 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:45:16,751 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:45:18,910 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:47:16,754 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:47:18,820 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:49:16,743 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:49:18,425 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:51:16,755 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:51:18,645 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:53:16,745 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:53:18,460 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:55:16,755 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:55:18,875 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:57:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:57:18,484 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 21:59:16,754 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 21:59:18,599 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:01:16,754 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:01:18,712 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:03:16,754 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:03:18,384 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:05:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:05:19,556 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:07:16,757 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:07:18,547 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:09:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:09:18,539 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:11:16,747 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:11:18,470 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:13:16,750 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:13:18,493 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:15:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:15:18,598 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:17:16,746 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:17:18,510 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:19:16,749 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:19:19,032 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:21:16,765 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:21:18,637 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:21:20,356 [pool-54-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 22:23:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:23:18,455 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:25:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:25:18,295 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:27:16,739 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:27:18,471 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:29:16,755 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:29:18,854 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:31:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:31:18,705 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:33:16,746 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:33:18,935 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:35:16,754 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:35:18,525 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:37:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:37:18,640 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:39:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:39:18,546 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:41:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:41:18,421 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:43:16,751 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:43:19,709 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:45:16,748 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:45:18,597 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:47:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:47:18,716 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:49:16,747 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:49:18,943 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:51:16,747 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:51:18,643 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:53:16,750 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:53:18,656 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:55:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:55:19,180 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:57:16,756 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:57:18,330 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:59:16,742 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 22:59:18,486 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 22:59:47,903 [http-nio-8080-exec-160] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 43 ms
+2023-01-24 22:59:47,915 [http-nio-8080-exec-161] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 0 ms
+2023-01-24 22:59:47,919 [http-nio-8080-exec-162] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 0 ms
+2023-01-24 22:59:51,430 [http-nio-8080-exec-163] WARN  LoginCommand Unsuccessful attempt to access account with login ad.
+2023-01-24 22:59:51,436 [http-nio-8080-exec-163] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 22 ms
+2023-01-24 23:00:00,711 [http-nio-8080-exec-164] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 10 ms
+2023-01-24 23:00:06,509 [http-nio-8080-exec-165] INFO  LoginCommand User with login admin successfully logged in.
+2023-01-24 23:00:06,510 [http-nio-8080-exec-165] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 4 ms
+2023-01-24 23:00:06,530 [http-nio-8080-exec-166] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 8 ms
+2023-01-24 23:00:07,738 [http-nio-8080-exec-167] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 18 ms
+2023-01-24 23:00:10,915 [http-nio-8080-exec-169] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=21 Access time : 14 ms
+2023-01-24 23:00:11,933 [http-nio-8080-exec-160] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=21 Access time : 13 ms
+2023-01-24 23:00:12,407 [http-nio-8080-exec-161] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=21 Access time : 23 ms
+2023-01-24 23:00:15,583 [http-nio-8080-exec-162] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=12341234 Access time : 3 ms
+2023-01-24 23:00:18,358 [http-nio-8080-exec-163] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=12341234 Access time : 5 ms
+2023-01-24 23:00:20,349 [http-nio-8080-exec-164] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=12341234 Access time : 6 ms
+2023-01-24 23:00:21,110 [http-nio-8080-exec-165] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=12341234 Access time : 5 ms
+2023-01-24 23:00:22,215 [http-nio-8080-exec-166] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
+2023-01-24 23:00:22,222 [http-nio-8080-exec-166] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=12341234 Access time : 8 ms
+2023-01-24 23:00:23,482 [http-nio-8080-exec-167] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
+2023-01-24 23:00:23,493 [http-nio-8080-exec-167] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=12341234 Access time : 13 ms
+2023-01-24 23:00:30,637 [http-nio-8080-exec-168] INFO  LogoutCommand User successfully logged out.
+2023-01-24 23:00:30,638 [http-nio-8080-exec-168] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
+2023-01-24 23:00:30,650 [http-nio-8080-exec-169] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 5 ms
+2023-01-24 23:00:36,136 [http-nio-8080-exec-161] INFO  LoginCommand User with login subscriber2 successfully logged in.
+2023-01-24 23:00:36,136 [http-nio-8080-exec-161] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
+2023-01-24 23:00:36,144 [http-nio-8080-exec-162] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 3 ms
+2023-01-24 23:00:37,733 [http-nio-8080-exec-163] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 11 ms
+2023-01-24 23:00:38,974 [http-nio-8080-exec-164] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
+2023-01-24 23:00:39,816 [http-nio-8080-exec-165] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 6 ms
+2023-01-24 23:00:41,124 [http-nio-8080-exec-166] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 4 ms
+2023-01-24 23:00:45,115 [http-nio-8080-exec-167] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changePassword Access time : 7 ms
+2023-01-24 23:00:54,798 [http-nio-8080-exec-168] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changePassword Access time : 18 ms
+2023-01-24 23:01:00,933 [http-nio-8080-exec-160] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 9 ms
+2023-01-24 23:01:02,233 [http-nio-8080-exec-161] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 19 ms
+2023-01-24 23:01:02,251 [http-nio-8080-exec-162] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /images/call-contact-phone-svgrepo-com.png/null Access time : 1 ms
+2023-01-24 23:01:02,251 [http-nio-8080-exec-163] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /images/connection-svgrepo-com.png/null Access time : 0 ms
+2023-01-24 23:01:02,263 [http-nio-8080-exec-164] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /images/satelite-svgrepo-com.png/null Access time : 0 ms
+2023-01-24 23:01:02,264 [http-nio-8080-exec-166] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /images/arrow.png/null Access time : 1 ms
+2023-01-24 23:01:02,264 [http-nio-8080-exec-165] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /images/smart-svgrepo-com.png/null Access time : 1 ms
+2023-01-24 23:01:07,126 [http-nio-8080-exec-167] INFO  LogAccessFilter Login: subscriber2, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 8 ms
+2023-01-24 23:01:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:01:18,406 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:03:16,757 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:03:18,618 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:05:16,749 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:05:19,054 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:07:16,748 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:07:18,330 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:09:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:09:18,736 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:11:16,746 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:11:18,779 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:13:16,747 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:13:18,398 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:15:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:15:19,121 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:17:16,749 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:17:18,511 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:17:20,072 [pool-54-thread-1] INFO  EmailUtil Email to tutrotadre@gufum.com was sent.
+2023-01-24 23:19:16,750 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:19:18,651 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:21:16,749 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:21:18,542 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:23:16,746 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:23:18,341 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:25:16,750 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:25:18,974 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:27:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:27:18,578 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:29:16,745 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:29:18,385 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:31:16,766 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:31:19,191 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:33:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:33:18,970 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:35:16,744 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:35:18,548 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:37:16,748 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:37:18,437 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:39:16,752 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:39:18,325 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:41:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:41:18,876 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:43:16,753 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:43:18,612 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:45:16,748 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:45:18,559 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-01-24 23:47:16,748 [pool-53-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-01-24 23:47:18,487 [pool-54-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
