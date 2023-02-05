@@ -17,10 +17,31 @@ import com.epam.services.UserService;
 import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 
+/**
+ * 
+ * AdminMenuCommand is a Command class that handles displaying a list of
+ * subscribers to an administrator.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ **/
 public class AdminMenuCommand implements Command {
-
+	/*
+	 * A Logger instance to log error messages.
+	 */
 	private static final Logger LOG = LogManager.getLogger(AdminMenuCommand.class);
 
+	/**
+	 * This method retrieves the subscribers from the UserService, sets the number
+	 * of pages, current page, search field, and number of rows to be displayed to
+	 * the request object, and then returns the ADMIN_MENU_PAGE.
+	 * 
+	 * @param req  HttpServletRequest instance that contains the request the client
+	 *             has made of the servlet.
+	 * @param resp HttpServletResponse instance that contains the response the
+	 *             servlet sends to the client.
+	 * @return ADMIN_MENU_PAGE.
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		int currentPage;
@@ -36,7 +57,7 @@ public class AdminMenuCommand implements Command {
 		}
 		int currentRowNumber;
 		String reqRowNumberString = req.getParameter("rowNumber");
-		if(reqRowNumberString != null && !reqRowNumberString.trim().isEmpty()) {
+		if (reqRowNumberString != null && !reqRowNumberString.trim().isEmpty()) {
 			try {
 				currentRowNumber = Integer.parseInt(reqRowNumberString);
 			} catch (NumberFormatException e) {
@@ -64,7 +85,8 @@ public class AdminMenuCommand implements Command {
 		} catch (UserServiceException e) {
 			LOG.warn("An error occurred while loading user view.");
 			LOG.error("Unable to load user view due to service error.", e);
-			req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")).getString("error.unable_to_load_users"));
+			req.setAttribute("errorMessages", ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"))
+					.getString("error.unable_to_load_users"));
 		}
 
 		return Page.ADMIN_MENU_PAGE;

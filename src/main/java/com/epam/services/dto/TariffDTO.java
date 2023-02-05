@@ -3,6 +3,12 @@ package com.epam.services.dto;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+/**
+ * TariffDTO class. Contains fields required by view.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class TariffDTO {
 	private int id;
 	private String name;
@@ -88,7 +94,5 @@ public class TariffDTO {
 		return Objects.equals(description, other.description) && id == other.id && Objects.equals(name, other.name)
 				&& paymentPeriod == other.paymentPeriod && Objects.equals(rate, other.rate) && service == other.service;
 	}
-	
-	
 
 }

@@ -13,11 +13,11 @@
 			src="${tariff.service eq 'TELEPHONE'?'images/call-contact-phone-svgrepo-com.png'
 									:tarif.service eq 'INTERNET'?'images/connection-svgrepo-com.png'
 				 					:tariff.service eq 'CABLE_TV'?'images/satelite-svgrepo-com.png':'images/smart-svgrepo-com.png'} "
-			alt="..." width="32" style="filter: invert(1);">
+			alt="text" width="32" style="filter: invert(1);">
 	</div>
 	<c:if test="${not empty daysUtilNext}">
 		<div class="text-start mb-3 ms-3 text-muted">${daysUtilNext}
-			day(s) until next payment.</div>
+			<fmt:message key="active_tariffs.days_untile_next_payment"/></div>
 	</c:if>
 	<hr class="style1">
 	<div class="d-flex justify-content-between align-items-center">

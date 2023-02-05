@@ -16,9 +16,11 @@ import com.epam.exception.dao.DAOReadException;
 import com.epam.exception.dao.DAOUpdateException;
 
 /**
- * Role DAO implementation for MariaDB. Has methods needed by services to access persistence layer.
- * @author ruslan
- *
+ * Role DAO implementation for MariaDB. Has methods needed by services to access
+ * persistence layer.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 
 public class RoleDAOMariaDB implements RoleDAO {
@@ -39,7 +41,7 @@ public class RoleDAOMariaDB implements RoleDAO {
 				role = getRoleFromResultSet(rs);
 			}
 		} catch (SQLException e) {
-			throw new DAOReadException("Cannot get role with id " + id +".", e);
+			throw new DAOReadException("Cannot get role with id " + id + ".", e);
 		}
 		return role;
 	}
@@ -77,7 +79,7 @@ public class RoleDAOMariaDB implements RoleDAO {
 			return getQueryBuilder().addPreparedStatement(MariaDBConstants.ADD_ROLE).setStringField(role.getName())
 					.setStringField(role.getDescription()).executeUpdate();
 		} catch (SQLException e) {
-			throw new DAOInsertException("Cannot add role " + role + ".",e);
+			throw new DAOInsertException("Cannot add role " + role + ".", e);
 		}
 	}
 
@@ -94,7 +96,7 @@ public class RoleDAOMariaDB implements RoleDAO {
 			return getQueryBuilder().addPreparedStatement(MariaDBConstants.UPDATE_ROLE).setStringField(role.getName())
 					.setStringField(role.getDescription()).setIntField(role.getId()).executeUpdate();
 		} catch (SQLException e) {
-			throw new DAOUpdateException("Cannot update role " + role +".", e);
+			throw new DAOUpdateException("Cannot update role " + role + ".", e);
 		}
 	}
 
@@ -115,14 +117,14 @@ public class RoleDAOMariaDB implements RoleDAO {
 			return getQueryBuilder().addPreparedStatement(MariaDBConstants.DELETE_ROLE).setIntField(role.getId())
 					.executeUpdate();
 		} catch (SQLException e) {
-			throw new DAODeleteException("Cannot delete role " + role +".", e);
+			throw new DAODeleteException("Cannot delete role " + role + ".", e);
 		}
 
 	}
 
-	
 	/**
 	 * This method gets Role from the result set.
+	 * 
 	 * @param rs Result set to get Role from.
 	 * @return Role from Result Set
 	 * @throws DAOException is thrown when SQLException occurs.
@@ -135,5 +137,5 @@ public class RoleDAOMariaDB implements RoleDAO {
 			throw new DAOMappingException("Cannot map role from ResultSet.", e);
 		}
 	}
-	
+
 }

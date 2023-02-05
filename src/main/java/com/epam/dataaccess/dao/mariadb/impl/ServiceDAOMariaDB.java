@@ -16,9 +16,11 @@ import com.epam.exception.dao.DAOReadException;
 import com.epam.exception.dao.DAOUpdateException;
 
 /**
- * Service DAO implementation for MariaDB. Has methods needed by services to access persistence layer.
- * @author ruslan
- *
+ * Service DAO implementation for MariaDB. Has methods needed by services to
+ * access persistence layer.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 
 public class ServiceDAOMariaDB implements ServiceDAO {
@@ -39,7 +41,7 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 				service = getServiceFromResultSet(rs);
 			}
 		} catch (SQLException e) {
-			throw new DAOReadException("Cannot get service with id " + id +".", e);
+			throw new DAOReadException("Cannot get service with id " + id + ".", e);
 		}
 		return service;
 	}
@@ -73,8 +75,8 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 	@Override
 	public int insert(Service service) throws DAOException {
 		try {
-			return new QueryBuilder().addPreparedStatement(MariaDBConstants.ADD_SERVICE).setStringField(service.getName())
-					.setStringField(service.getDescription()).executeUpdate();
+			return new QueryBuilder().addPreparedStatement(MariaDBConstants.ADD_SERVICE)
+					.setStringField(service.getName()).setStringField(service.getDescription()).executeUpdate();
 		} catch (SQLException e) {
 			throw new DAOInsertException("Cannot insert service " + service + ".", e);
 		}
@@ -91,10 +93,10 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 	public int update(Service service) throws DAOException {
 		try {
 			return new QueryBuilder().addPreparedStatement(MariaDBConstants.UPDATE_SERVICE)
-					.setStringField(service.getName()).setStringField(service.getDescription()).setIntField(service.getId())
-					.executeUpdate();
+					.setStringField(service.getName()).setStringField(service.getDescription())
+					.setIntField(service.getId()).executeUpdate();
 		} catch (SQLException e) {
-			throw new DAOUpdateException("Cannot update service " + service + ".",e);
+			throw new DAOUpdateException("Cannot update service " + service + ".", e);
 		}
 	}
 
@@ -111,12 +113,13 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 			return new QueryBuilder().addPreparedStatement(MariaDBConstants.DELETE_SERVICE).setIntField(service.getId())
 					.executeUpdate();
 		} catch (SQLException e) {
-			throw new DAODeleteException("Cannot delete service " + service +".", e);
+			throw new DAODeleteException("Cannot delete service " + service + ".", e);
 		}
 	}
 
 	/**
 	 * This method gets Service from the result set.
+	 * 
 	 * @param rs Result set to get Service from.
 	 * @return Service from Result Set
 	 * @throws DAOException is thrown when SQLException occurs.

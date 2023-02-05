@@ -19,10 +19,29 @@ import com.epam.services.TariffService;
 import com.epam.services.dto.Service;
 import com.epam.services.dto.TariffDTO;
 
+/**
+ * The ViewTariffsCommand class implements the Command interface and represents
+ * the implementation of the view tariffs command. It retrieves the information
+ * required to display the tariffs on the view tariffs page, processes it, and
+ * sets it as request attributes.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class ViewTariffsCommand implements Command {
-
+	/*
+	 * A Logger instance to log error messages.
+	 */
 	private static final Logger LOG = LogManager.getLogger(ViewTariffsCommand.class);
 
+	/**
+	 * The method retrieves the necessary information for displaying tariffs,
+	 * processes it, and sets it as request attributes.
+	 *
+	 * @param HttpServletRequest req, HttpServletResponse resp
+	 * @return String the URL of the view tariffs page
+	 * @throws Exception
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		int currentPage;
@@ -33,11 +52,10 @@ public class ViewTariffsCommand implements Command {
 		}
 		Service service = Service.ALL;
 		String serviceReq = req.getParameter("service");
-		if(serviceReq != null && !serviceReq.isBlank()) {
-			System.out.println(serviceReq);
+		if (serviceReq != null && !serviceReq.isBlank()) {
 			service = Service.getServiceByString(serviceReq.toUpperCase());
 		}
-		
+
 		SortingOrder activeSortingOrder;
 		try {
 			if (req.getParameter("sortingOrder").toUpperCase().equals("ASC")) {
@@ -59,11 +77,11 @@ public class ViewTariffsCommand implements Command {
 		} catch (Exception e) {
 			currentRowNumber = 5;
 		}
-		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
 			TariffService tariffService = AppContext.getInstance().getTariffService();
-			List<TariffDTO> tariffs = tariffService.getTariffsForView(activeSortingField, activeSortingOrder,
-					service, currentPage, currentRowNumber);
+			List<TariffDTO> tariffs = tariffService.getTariffsForView(activeSortingField, activeSortingOrder, service,
+					currentPage, currentRowNumber);
 			req.setAttribute("tariffsToDisplay", tariffs);
 			req.setAttribute("page", currentPage);
 			req.setAttribute("service", service);

@@ -2,7 +2,12 @@ package com.epam.dataaccess.entity;
 
 import java.io.Serializable;
 import java.util.Objects;
-
+/**
+ * Role entity class. Matches table 'role' in the persistence layer.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;

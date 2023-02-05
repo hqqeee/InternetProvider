@@ -1,7 +1,13 @@
 package com.epam.services.dto;
 
 import java.util.Objects;
-
+/**
+ * UserForm class. Contains fields required to register new user.
+ * Should be validate.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class UserForm {
 	private String firstName;
 	private String lastName;

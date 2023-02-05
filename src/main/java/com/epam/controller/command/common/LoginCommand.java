@@ -15,16 +15,42 @@ import com.epam.exception.services.UserNotFoundException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.util.AppContext;
 
-public class LoginCommand implements Command{
-
+/**
+ * 
+ * The LoginCommand class implements the Command interface and is used for user
+ * authentication in the system. If the provided login and password are not
+ * empty, it logs the user into the system by calling the login method on the
+ * UserService. The locale of the user is also retrieved from the request
+ * attribute and used to access the language specific messages from the resource
+ * bundle. If the login and password fields are empty or if any exception occurs
+ * during the login process, the corresponding error message is set as an
+ * attribute in the request and the user is redirected to the home page.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
+public class LoginCommand implements Command {
+	/*
+	 * A Logger instance to log error and info messages.
+	 */
 	private static final Logger LOG = LogManager.getLogger(LoginCommand.class);
-	
+
+	/**
+	 * 
+	 * This method is used to execute the login command and handle the
+	 * authentication of a user.
+	 * 
+	 * @param req  HttpServletRequest object to get request parameters
+	 * @param resp HttpServletResponse object to redirect the page
+	 * @return Page.HOME_PAGE if login fails or exception occurs while logging in.
+	 * @return Page.REDIRECTED if the user is successfully logged in.
+	 */
 	@Override
-	public String execute(HttpServletRequest req, HttpServletResponse resp){
-		ResourceBundle bundle =  ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
+	public String execute(HttpServletRequest req, HttpServletResponse resp) {
+		ResourceBundle bundle = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		String login = req.getParameter("login");
 		String password = req.getParameter("password");
-		if(login == null || password == null || login.trim().isEmpty() || password.trim().isEmpty()) {
+		if (login == null || password == null || login.trim().isEmpty() || password.trim().isEmpty()) {
 			req.setAttribute("incorrectLoginOrPassword", bundle.getString("login.empty_login_or_password_field"));
 			return Page.HOME_PAGE;
 		}

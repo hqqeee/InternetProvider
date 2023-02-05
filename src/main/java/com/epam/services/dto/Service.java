@@ -3,6 +3,13 @@ package com.epam.services.dto;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Service enum. If service not specified use ALL.
+ * 
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public enum Service {
 	ALL(0), TELEPHONE(1), INTERNET(2), CABLE_TV(3), IP_TV(4);
 

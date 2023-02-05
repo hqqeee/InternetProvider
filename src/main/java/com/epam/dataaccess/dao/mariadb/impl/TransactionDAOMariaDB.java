@@ -15,7 +15,13 @@ import com.epam.exception.dao.DAOInsertException;
 import com.epam.exception.dao.DAOMappingException;
 import com.epam.exception.dao.DAOReadException;
 import com.epam.exception.dao.DAOUpdateException;
-
+/**
+ * Transaction DAO implementation for MariaDB. Has methods needed by services to
+ * access persistence layer.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class TransactionDAOMariaDB implements TransactionDAO {
 
 

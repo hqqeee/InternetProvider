@@ -22,8 +22,8 @@ import com.epam.util.SortingOrder;
  * Tariff Service implementation.
  * It contains methods to interact with the DAO and has some business logic.
  * 
- * @author ruslan
- *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 public class TariffServiceImpl implements TariffService {
 	private DAOFactory daoFactory;

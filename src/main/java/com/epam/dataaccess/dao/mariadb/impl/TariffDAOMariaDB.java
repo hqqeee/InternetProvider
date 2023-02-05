@@ -22,8 +22,8 @@ import com.epam.util.SortingOrder;
  * Tariff DAO implementation for MariaDB. Has methods needed by services to
  * access persistence layer.
  * 
- * @author ruslan
- *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 public class TariffDAOMariaDB implements TariffDAO {
 
@@ -122,14 +122,16 @@ public class TariffDAOMariaDB implements TariffDAO {
 	}
 
 	/**
-	 * This method return all tariff filtered by serviceId,  limited by offset and recordsPerPage and sorted.
-	 * by fieldName in sorting order.
-	 * @param serviceId service id to filter.
-	 * @param offset number of records to skip.
+	 * This method return all tariff filtered by serviceId, limited by offset and
+	 * recordsPerPage and sorted. by fieldName in sorting order.
+	 * 
+	 * @param serviceId      service id to filter.
+	 * @param offset         number of records to skip.
 	 * @param recordsPerPage number of records of page.
-	 * @param order sorting order.
-	 * @param fieldName name of field to sort by which.
-	 * @return List of tariff filtered by serviceId,  limited by offset and recordsPerPage and sorted.
+	 * @param order          sorting order.
+	 * @param fieldName      name of field to sort by which.
+	 * @return List of tariff filtered by serviceId, limited by offset and
+	 *         recordsPerPage and sorted.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
 	@Override
@@ -158,12 +160,13 @@ public class TariffDAOMariaDB implements TariffDAO {
 	}
 
 	/**
-	 * This method return all tariff limited by offset and recordsPerPage and sorted.
-	 * by fieldName in sorting order.
-	 * @param offset number of records to skip.
+	 * This method return all tariff limited by offset and recordsPerPage and
+	 * sorted. by fieldName in sorting order.
+	 * 
+	 * @param offset         number of records to skip.
 	 * @param recordsPerPage number of records of page.
-	 * @param order sorting order.
-	 * @param fieldName name of field to sort by which.
+	 * @param order          sorting order.
+	 * @param fieldName      name of field to sort by which.
 	 * @return List of tariff limited by offset and recordsPerPage and sorted.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -188,6 +191,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 
 	/**
 	 * This method return number of tariff with specific service.
+	 * 
 	 * @param serviceId service id to filter.
 	 * @return number of tariff with specific service.
 	 * @throws DAOException is thrown when SQLException occurs.
@@ -208,6 +212,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 
 	/**
 	 * This method return number of all tariffs.
+	 * 
 	 * @return number of all tariffs.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -226,7 +231,8 @@ public class TariffDAOMariaDB implements TariffDAO {
 	}
 
 	/**
-	 * This method return all tariffs for specific service. 
+	 * This method return all tariffs for specific service.
+	 * 
 	 * @param serviceId if of service to filter.
 	 * @return All tariffs with specific service.
 	 * @throws DAOException is thrown when SQLException occurs.
@@ -248,6 +254,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 
 	/**
 	 * Return list of tariff for specific users.
+	 * 
 	 * @param userId User ID of which tariff to get.
 	 * @return All tariffs of this user.
 	 * @throws DAOException is thrown when SQLException occurs.
@@ -269,8 +276,9 @@ public class TariffDAOMariaDB implements TariffDAO {
 
 	/**
 	 * Return list of tariffs for specific users that has 0 days until next payment.
+	 * 
 	 * @param userId User ID of which tariff to get.
-	 * @return All tariffs of this user  that has 0 days until next payment.
+	 * @return All tariffs of this user that has 0 days until next payment.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
 	@Override
@@ -289,11 +297,12 @@ public class TariffDAOMariaDB implements TariffDAO {
 	}
 
 	/**
-     * Returns a map of Tariff and day until next payment for specific user.
-     * @param userId id of the user to get map for.
-     * @return a map of Tariff and day until next payment for specific user.
-     * @throws DAOException is thrown when SQLException occurs.
-     */
+	 * Returns a map of Tariff and day until next payment for specific user.
+	 * 
+	 * @param userId id of the user to get map for.
+	 * @return a map of Tariff and day until next payment for specific user.
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	@Override
 	public Map<Tariff, Integer> getUsersTariffsWithDayToPayment(int userId) throws DAOException {
 		Map<Tariff, Integer> tariffsWithDayToPayment = new HashMap<>();
@@ -309,11 +318,13 @@ public class TariffDAOMariaDB implements TariffDAO {
 		}
 		return tariffsWithDayToPayment;
 	}
-	 
-    /**
-     * Decrement day until next payment for all user_has_tariff records that are greater than zero.
-     * @throws DAOException is thrown when SQLException occurs.
-     */
+
+	/**
+	 * Decrement day until next payment for all user_has_tariff records that are
+	 * greater than zero.
+	 * 
+	 * @throws DAOException is thrown when SQLException occurs.
+	 */
 	@Override
 	public void updateDaysLeftForUnblockedUsers() throws DAOException {
 		try {
@@ -326,6 +337,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 
 	/**
 	 * This method gets Tariff from the result set.
+	 * 
 	 * @param rs Result set to get Tariff from.
 	 * @return Tariff from Result Set
 	 * @throws DAOException is thrown when SQLException occurs.
@@ -344,6 +356,5 @@ public class TariffDAOMariaDB implements TariffDAO {
 			throw new DAOMappingException("Cannot map tariff from ResultSet.", e);
 		}
 	}
-
 
 }

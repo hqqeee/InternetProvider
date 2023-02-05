@@ -12,27 +12,52 @@ import org.apache.logging.log4j.Logger;
 
 import com.epam.controller.command.admin.DailyWithdrawCommand;
 
+/**
+ * The `SchedulerInitListner` class is a Servlet context listener that
+ * initializes a scheduler and schedules a `DailyWithdrawCommand` to run at a
+ * fixed rate. The scheduler is shut down when the servlet context is destroyed.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 @WebListener
-public class SchedulerInitListner implements ServletContextListener{
+public class SchedulerInitListner implements ServletContextListener {
+	/**
+	 * A scheduled thread pool executor that manages the scheduling of the
+	 * `DailyWithdrawCommand`.
+	 */
 	private ScheduledThreadPoolExecutor scheduler;
-	private final Logger logger = LogManager.getLogger(SchedulerInitListner.class);
+	/**
+	 * LOG is the logger for this class.
+	 */
+	private final static Logger LOG = LogManager.getLogger(SchedulerInitListner.class);
+
+	/**
+	 * Initializes the scheduler when the servlet context is initialized.
+	 *
+	 * @param sce the servlet context event
+	 */
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		logger.debug("Scheduler initialization begin.");
+		LOG.debug("Scheduler initialization begin.");
 		try {
 			scheduler = new ScheduledThreadPoolExecutor(1);
-			scheduler.scheduleAtFixedRate(new DailyWithdrawCommand(),
-				2, 120, TimeUnit.SECONDS);
+			scheduler.scheduleAtFixedRate(new DailyWithdrawCommand(), 2, 120, TimeUnit.SECONDS);
 		} catch (Exception e) {
-			logger.fatal("Cannot initialize scheduler.", e);
+			LOG.fatal("Cannot initialize scheduler.", e);
 			System.exit(1);
 		}
-		logger.debug("Scheduler initialization finished.");
+		LOG.debug("Scheduler initialization finished.");
 	}
 
+	/**
+	 * Shuts down the scheduler when the servlet context is destroyed.
+	 *
+	 * @param sce the servlet context event
+	 */
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
 		scheduler.shutdownNow();
-		logger.debug("Scheduler shutted down.");
+		LOG.debug("Scheduler shutted down.");
 	}
 }

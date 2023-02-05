@@ -4,7 +4,30 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
+/**
+ * 
+ * The PasswordUtil class provides utility methods for password management.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class PasswordUtil {
+	public static void main(String[] args) {
+		for(int i = 0; i < 50; i ++) {
+			String salt = PasswordUtil.getRandomString(12);
+			String password = PasswordUtil.getRandomString(10);
+			
+			System.out.println(i +". password: " + password + " salt " + salt + " hashed " + hashPassword(password+salt));
+		}
+	}
+	
+	/**
+	 * 
+	 * Hashes a password using the SHA-256 algorithm.
+	 * 
+	 * @param password the password to be hashed
+	 * @return the hashed password in hexadecimal format
+	 */
 	public static String hashPassword(String password) {
 		MessageDigest md = null;
 		try {
@@ -28,9 +51,17 @@ public class PasswordUtil {
 		return sb.toString();
 	}
 
+	/**
+	 * 
+	 * Generates a random string of a given length using a secure random number
+	 * generator.
+	 * 
+	 * @param length the length of the generated random string
+	 * @return the generated random string
+	 */
 	public static String getRandomString(int length) {
 		String chrs = "0123456789abcdefghijklmnopqrstuvwxyz-_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	    SecureRandom secureRandom = null;
+		SecureRandom secureRandom = null;
 		try {
 			secureRandom = SecureRandom.getInstanceStrong();
 		} catch (NoSuchAlgorithmException e) {
@@ -38,7 +69,7 @@ public class PasswordUtil {
 			e.printStackTrace();
 		}
 		return secureRandom.ints(length, 0, chrs.length()).mapToObj(i -> chrs.charAt(i))
-	      .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
+				.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
 	}
 
 }

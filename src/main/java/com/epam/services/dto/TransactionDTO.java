@@ -3,7 +3,12 @@ package com.epam.services.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
-
+/**
+ * TransactionDTO class. Contains fields required by view.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class TransactionDTO {
 	private int id;
 	private Date timestamp;

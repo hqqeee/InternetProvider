@@ -3,7 +3,12 @@ package com.epam.dataaccess.entity;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Objects;
-
+/**
+ * Transaction entity class. Matches table 'transaction' in the persistence layer.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class Transaction {
 	private int id;
 	private int userId;

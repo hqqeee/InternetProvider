@@ -55,7 +55,6 @@ public class LogAccessFilter implements Filter {
 		chain.doFilter(request, response);
 
 		Date dateEndRequest = new Date();
-		System.out.println(request.getServletContext().getMimeType(".svg"));
 		LOG.info("Login: " + login + ", IP: " + ip + " Page: " + page + " Access time : "
 				+ Long.toString(dateEndRequest.getTime() - dateInitRequest.getTime()) + " ms");
 	}

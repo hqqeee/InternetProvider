@@ -21,28 +21,41 @@ import com.epam.services.dto.TariffForm;
 import com.epam.util.AppContext;
 import com.epam.util.Validator;
 
-public class EditTariffCommand implements Command{
-
+/**
+ * Class representing the implementation of the EditTariffCommand. The
+ * EditTariffCommand class is used to edit a tariff in the system.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
+public class EditTariffCommand implements Command {
+	/*
+	 * A Logger instance to log error messages.
+	 */
 	private static final Logger LOG = LogManager.getLogger(EditTariffCommand.class);
-	
+
+	/**
+	 * The execute method is used to edit a tariff in the persistence layer.
+	 * 
+	 * @param req  HttpServletRequest object used to get information from request.
+	 * @param resp HttpServletResponse object used to send response.
+	 * @return The string representation of the page to be redirected to.
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		TariffForm form = null;
-		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
-			
-			form = new TariffForm(
-					req.getParameter("name"),
-					Integer.parseInt(req.getParameter("paymentPeriod")),
+
+			form = new TariffForm(req.getParameter("name"), Integer.parseInt(req.getParameter("paymentPeriod")),
 					new BigDecimal(req.getParameter("rate")),
-					Service.getServiceByString(req.getParameter("serviceSelected")),
-					req.getParameter("description"));
-			Validator.validateTariffForm(form,  ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale")));
+					Service.getServiceByString(req.getParameter("serviceSelected")), req.getParameter("description"));
+			Validator.validateTariffForm(form, ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")));
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
-			AppContext.getInstance().getTariffService().editTariff(form, 
-					tariffId);
+			AppContext.getInstance().getTariffService().editTariff(form, tariffId);
 			LOG.info("Tariff( " + tariffId + ") has been edited. " + form);
-			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS + "&success=tariff_edited");
+			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS
+					+ "&success=tariff_edited");
 			return Page.REDIRECTED;
 		} catch (ValidationErrorException e) {
 			req.setAttribute("tariffValidateErrors", e.getErrors());
@@ -55,7 +68,9 @@ public class EditTariffCommand implements Command{
 			LOG.error("Unable to edit tariff due to unexpected error.", e);
 			req.setAttribute("errorMessages", rs.getString("error.unable_to_modify_tariff"));
 		}
-		if(form != null) {req.setAttribute("tariffForm", form);}
+		if (form != null) {
+			req.setAttribute("tariffForm", form);
+		}
 		return new ViewTariffsCommand().execute(req, resp);
 	}
 

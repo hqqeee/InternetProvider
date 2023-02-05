@@ -3,6 +3,12 @@ package com.epam.services.dto;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Role enum.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public enum Role {
 	ADMIN(1), SUBSCRIBER(2);
 

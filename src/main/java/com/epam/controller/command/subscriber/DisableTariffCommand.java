@@ -20,10 +20,29 @@ import com.epam.exception.services.UserServiceException;
 import com.epam.services.dto.TariffDTO;
 import com.epam.util.AppContext;
 
+/**
+ * The class is responsible for disabling the selected tariff for a subscriber.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class DisableTariffCommand implements Command {
-
+	/*
+	 * A Logger instance to log error messages.
+	 */
 	private static final Logger LOG = LogManager.getLogger(DisableTariffCommand.class);
 
+	/**
+	 * Method execute the disable tariff operation. The method retrieves the
+	 * tariffId and userId from the request, then calls the removeTariffFromUser
+	 * method from the UserService to remove the tariff from user's account. If
+	 * everything goes well, the method sends a redirect response to the view active
+	 * tariffs page.
+	 * 
+	 * @param req  HttpServletRequest object
+	 * @param resp HttpServletResponse object
+	 * @return a string representation of the logical next page.
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));

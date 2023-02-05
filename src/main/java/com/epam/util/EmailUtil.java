@@ -23,24 +23,57 @@ import org.apache.logging.log4j.Logger;
 
 import com.epam.services.dto.TariffDTO;
 
+/**
+ * 
+ * Enum class that provides methods for sending emails in a single threaded
+ * Executor. The class loads email properties from "email.properties" file and
+ * uses javax.mail.Session with provided credentials to send emails using
+ * javax.mail.Transport. The class also uses a java.util.Queue to store emails
+ * that need to be sent. The sendMails() method is executed by the single
+ * threaded Executor to send emails in the queue. The
+ * addRegistrationEmailToQueue(String, String, String),
+ * addSendNewPasswordEmailToQueue(String, String, String), and
+ * addReceipt(String, List) methods are used to add emails to the queue. The
+ * logging of sent emails is done using org.apache.logging.log4j.Logger.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public enum EmailUtil {
-
+	/**
+	 * The singleton instance of the EmailUtil class
+	 */
 	INSTANCE;
 
+	/**
+	 * Logger instance to log events
+	 */
 	private static final Logger LOGGER = LogManager.getLogger(EmailUtil.class);
+	/**
+	 * Queue to store emails to be sent
+	 */
 	private Queue<Email> emails = new LinkedList<>();
-
+	/**
+	 * ExecutorService instance to execute sending of emails in a separate thread
+	 */
 	private final ExecutorService pool = Executors.newSingleThreadExecutor();
-
+	/**
+	 * Authenticator instance to authenticate the email account being used
+	 */
 	private final Authenticator auth = new Authenticator() {
 		protected PasswordAuthentication getPasswordAuthentication() {
 			return new PasswordAuthentication((String) emailProp.get("mail.login"),
 					(String) emailProp.get("mail.app.pass"));
 		}
 	};
-
+	/**
+	 * Properties instance that holds the properties(credentials).
+	 */
 	private final Properties emailProp = new Properties();
 
+	/**
+	 * Private constructor that loads email properties
+	 */
 	private EmailUtil() {
 		try {
 			emailProp.load(getClass().getClassLoader().getResourceAsStream("email.properties"));
@@ -50,6 +83,9 @@ public enum EmailUtil {
 		}
 	}
 
+	/**
+	 * Sends emails from the queue using a separate thread
+	 */
 	public void sendMails() {
 		pool.execute(() -> {
 			Session session = Session.getInstance(emailProp, auth);
@@ -74,6 +110,14 @@ public enum EmailUtil {
 		});
 	}
 
+	/**
+	 * 
+	 * Adds a registration email to the email queue. Use sendMails() to send it.
+	 * 
+	 * @param toEmail  email address of the recipient
+	 * @param login    the login of the recipient
+	 * @param password the password of the recipient
+	 */
 	public boolean addRegistrationEmailToQueue(String toEmail, String login, String password) {
 		return emails.offer(new Email(toEmail, "Welcome to Maven Telecom",
 				"An account in the Maven telecom system has been created for you. Your credentials for logging in: <br>Login: "
@@ -81,12 +125,29 @@ public enum EmailUtil {
 						+ "<br>To protect your account, please change your password as soon as possible."));
 	}
 
+	/**
+	 * 
+	 * Adds a send new password email to the email queue. Use sendMails() to send
+	 * it.
+	 * 
+	 * @param toEmail  email address of the recipient
+	 * @param login    the login of the recipient
+	 * @param password the password of the recipient
+	 */
 	public boolean addSendNewPasswordEmailToQueue(String email, String login, String password) {
 		return emails.offer(new Email(email, "Password Reset",
 				"Your password has been changed.<br>Login: " + login + "<br>Password: " + password
 						+ "<br>To protect your account, please change your password as soon as possible."));
 	}
 
+	/**
+	 * 
+	 * Adds a receipt email to the email queue. Use sendMails() to send it.
+	 * 
+	 * @param email   the email address of the recipient
+	 * @param tariffs the list of tariffs
+	 * @return true if the email was added to the queue, false otherwise.
+	 */
 	public boolean addReceipt(String email, List<TariffDTO> tariffs) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Dear client, <br> Here's your were charge for using out service.");
@@ -99,12 +160,22 @@ public enum EmailUtil {
 					+ tariff.getRate() + "</td>\n" + "  </tr>");
 			sum = sum.add(tariff.getRate());
 		}
-		sb.append("</tbody><tfoot><tr><td></td><td>Sum:</td><td>" + sum.toString()
-				+ "</td>\n</tr>\n</tfoot>");
+		sb.append("</tbody><tfoot><tr><td></td><td>Sum:</td><td>" + sum.toString() + "</td>\n</tr>\n</tfoot>");
 
 		return emails.offer(new Email(email, "Charging receipt", sb.toString()));
 	}
 
+	/**
+	 * 
+	 * Adds a new email notification about not enough money in the user's
+	 * account.Use sendMails() to send it.
+	 * 
+	 * @param email        The email address of the recipient.
+	 * @param notEnoghtSum The minimum amount of money required to continue using
+	 *                     the services.
+	 * @return True if the email was successfully added to the queue, false
+	 *         otherwise.
+	 */
 	public boolean addNotEnoghtMoneyNotification(String email, BigDecimal notEnoghtSum) {
 		return emails.offer(new Email(email, "Replenish your account.",
 				"We cannot continue to provide you with our services. "
@@ -113,6 +184,11 @@ public enum EmailUtil {
 
 	}
 
+	/**
+	 * Email instance. Contains reciver(email), subject and text of the email to
+	 * send.
+	 *
+	 */
 	private class Email {
 		private String reciver;
 		private String subject;

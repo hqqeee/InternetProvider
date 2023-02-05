@@ -32,8 +32,8 @@ import com.epam.util.PasswordUtil;
  * User Service implementation. It contains methods to interact with the DAO and
  * has some business logic.
  * 
- * @author ruslan
- *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 
 public class UserServiceImpl implements UserService {
@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserService {
 				return convertUserToUserDTO(user);
 			}
 		} catch (DAOException e) {
-			throw new UserServiceException("Cannot get user with login " + login + " and password " + password + ".");
+			throw new UserServiceException("Cannot get user with login " + login + " and password " + password + ".",e);
 		}
 	}
 
@@ -524,8 +524,9 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * This method creates User form UserForm, salt(for hashing) and password.
+	 * 
 	 * @param userForm userForm to create user.
-	 * @param salt salt for hashing.
+	 * @param salt     salt for hashing.
 	 * @param password hashed password.
 	 * @return return User(DAO) entity.
 	 */

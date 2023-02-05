@@ -19,12 +19,38 @@ import com.epam.services.dto.TransactionDTO;
 import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 
+/**
+ * The ViewAccountCommand class implements the Command interface. This class is
+ * responsible for rendering the account page of the subscriber, displaying all
+ * the transactions made by the subscriber, and user balance information. This
+ * class loads all the necessary data from the services and stores it in the
+ * request attributes. This class handles all the exceptions thrown by the
+ * services and logs the necessary information.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class ViewAccountCommand implements Command {
-
+	/**
+	 * Constant for number of records per page.
+	 */
 	private static final int RECORDS_PER_PAGE = 20;
+	/**
+	 * Logger to log the events and errors.
+	 */
 	private static final Logger LOG = LogManager.getLogger(ViewAccountCommand.class);
-	
-	
+
+	/**
+	 * The method execute is the implementation of the execute method in the Command
+	 * interface. This method is responsible for fetching all the necessary data
+	 * from the services and storing it in the request attributes. This method is
+	 * also responsible for handling all the exceptions thrown by the services and
+	 * logging the necessary information.
+	 *
+	 * @param req  the HttpServletRequest object
+	 * @param resp the HttpServletResponse object
+	 * @return the URL of the account page
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
@@ -33,7 +59,7 @@ public class ViewAccountCommand implements Command {
 			TransactionService transactionService = AppContext.getInstance().getTransactionService();
 			int currentPage = 1;
 			String currentPageReq = req.getParameter("page");
-			if(currentPageReq != null && !currentPageReq.isBlank()) {
+			if (currentPageReq != null && !currentPageReq.isBlank()) {
 				currentPage = Integer.parseInt(currentPageReq);
 			}
 			int userId = ((UserDTO) req.getSession().getAttribute("loggedUser")).getId();
@@ -44,7 +70,7 @@ public class ViewAccountCommand implements Command {
 					RECORDS_PER_PAGE);
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
-			if(AppContext.getInstance().getUserService().getUserStatus(userId)) {
+			if (AppContext.getInstance().getUserService().getUserStatus(userId)) {
 				req.setAttribute("errorMessages", rs.getString("error.blocked_message"));
 			}
 			return Page.ACCOUNT_PAGE;

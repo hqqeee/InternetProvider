@@ -1,7 +1,12 @@
 package com.epam.dataaccess.entity;
 
 import java.io.Serializable;
-
+/**
+ * Service entity class. Matches table 'service' in the persistence layer.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class Service implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;

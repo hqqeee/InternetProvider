@@ -11,11 +11,36 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 
+/**
+ * The DateFormatTag class is a custom tag class in JavaServer Pages (JSP)
+ * technology that formats a date to be displayed in either English or Ukrainian
+ * locale.
+ * 
+ * The class extends TagSupport and implements the doStartTag method. The method
+ * retrieves the JspWriter from the page context and creates a Calendar instance
+ * for the time zone "Europe/Kiev". The method then sets the time of the
+ * Calendar instance to the given date, retrieves the appropriate resource
+ * bundle based on the locale and writes the formatted date to the JspWriter.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class DateFormatTag extends TagSupport {
 	private static final long serialVersionUID = 1L;
 	private String locale;
 	private Date date;
 
+	/**
+	 * This method retrieves the JspWriter from the page context, creates a Calendar
+	 * instance for the time zone "Europe/Kiev", sets the time of the Calendar
+	 * instance to the given date, retrieves the appropriate resource bundle based
+	 * on the locale and writes the formatted date to the JspWriter.
+	 * 
+	 * @return SKIP_BODY - a constant indicating that the body of the tag should be
+	 *         skipped
+	 * @throws JspException - thrown if an error occurs while writing to the
+	 *                      JspWriter
+	 */
 	public int doStartTag() throws JspException {
 		System.out.println("Called");
 		JspWriter writer = pageContext.getOut();
@@ -31,7 +56,7 @@ public class DateFormatTag extends TagSupport {
 				ResourceBundle rb = ResourceBundle.getBundle("lang", new Locale("en"));
 				writer.print(rb.getString("month.number" + cal.get(Calendar.MONTH)) + " "
 						+ cal.get(Calendar.DAY_OF_MONTH) + " " + cal.get(Calendar.YEAR) + "' " + cal.get(Calendar.HOUR)
-						+ ":" + cal.get(Calendar.MINUTE) + (cal.get(Calendar.AM_PM)==1?"PM":"AM"));
+						+ ":" + cal.get(Calendar.MINUTE) + (cal.get(Calendar.AM_PM) == 1 ? "PM" : "AM"));
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

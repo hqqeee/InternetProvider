@@ -1,5 +1,12 @@
 package com.epam.controller.command;
 
+/**
+ * The Page class contains constant strings representing the various pages in
+ * the application.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ **/
 public final class Page {
 	public static final String HOME_PAGE = "/index.jsp";
 	public static final String ADMIN_MENU_PAGE = "/WEB-INF/jsp/admin/admin_menu.jsp";

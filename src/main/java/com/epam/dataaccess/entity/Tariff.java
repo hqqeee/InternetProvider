@@ -3,7 +3,12 @@ package com.epam.dataaccess.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
-
+/**
+ * Tariff entity class. Matches table 'tariff' in the persistence layer.
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class Tariff implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;

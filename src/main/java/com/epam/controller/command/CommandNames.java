@@ -1,7 +1,13 @@
 package com.epam.controller.command;
 
-
-
+/**
+ * The CommandNames class is a final class that contains the string constant
+ * names of various commands. These commands are used by the controllers to
+ * perform specific actions.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ **/
 public final class CommandNames {
 	/** Common commands **/
 	public static final String LOGIN = "login";
@@ -10,7 +16,7 @@ public final class CommandNames {
 	public static final String DOWNLOAD_TARIFFS = "downloadTariffs";
 	public static final String CHANGE_LANGUAGE = "changeLanguage";
 	public static final String RESET_PASSWORD = "resetPassword";
-	/** Subscriber commands  **/
+	/** Subscriber commands **/
 	public static final String VIEW_PROFILE = "viewProfile";
 	public static final String VIEW_ACCOUNT = "viewAccount";
 	public static final String VIEW_ACTIVE_TARIFFS = "viewActiveTariffs";

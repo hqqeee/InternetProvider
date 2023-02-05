@@ -15,170 +15,225 @@ import com.epam.services.dto.UserForm;
 
 /**
  * 
- * User Service interface.
- * It contains methods to interact with the DAO and has some business logic.
+ * UserService interface contains methods to interact with user data and perform
+ * business logic.
  * 
- * @author ruslan
- *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 
 public interface UserService {
-	
+
 	/**
-	 * This method takes a credential and checks if a user with those credentials exists, if so returns a UserDTo for that user
-	 * @param login login of the user.
-	 * @param password password of the user.
-	 * @return return UserDTO of the user with this credentials.
-	 * @throws UserNotFoundException is thrown when user with these credentials does not exists.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Verifies the user's credentials and returns the UserDTO of the user if the
+	 * user exists.
+	 * 
+	 * @param login    The user's login name.
+	 * @param password The user's password.
+	 * @return The UserDTO of the user with the given credentials.
+	 * @throws UserNotFoundException If the user with the given credentials does not
+	 *                               exist.
+	 * @throws UserServiceException  If an error occurs in the DAO layer.
 	 */
 	public UserDTO login(String login, String password) throws UserNotFoundException, UserServiceException;
 
 	/**
-	 * This method takes the user form and tries to add user to DAO. It generates random password for the user
-	 * and sends it to user's email.
-	 * @param userForm contains all necessary fields to add new subscriber. It should be valid, method not validate this form.
-	 * @throws UserAlreadyExistException is thrown when user is already in the persistent layer.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Registers a new user by taking the user form and adding the user to the DAO
+	 * layer. Sends a random password to the user's email.
+	 * 
+	 * @param userForm The user form containing all necessary information to add a
+	 *                 new subscriber. The form is not validated.
+	 * @throws UserAlreadyExistException If the user is already in the persistent
+	 *                                   layer.
+	 * @throws UserServiceException      If an error occurs in the DAO layer.
 	 */
 	public void registerUser(UserForm userForm) throws UserAlreadyExistException, UserServiceException;
 
 	/**
-	 * This method returns all subscribers from the persistent layer.
-	 * @return all subscribers from the persistent layer.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Returns all subscribers from the persistent layer.
+	 * 
+	 * @return A list of all subscribers from the persistent layer.
+	 * @throws UserServiceException If an error occurs in the DAO layer.
 	 */
 	public List<UserDTO> getAllSubscribers() throws UserServiceException;
 
 	/**
-	 * This method returns all subscribers from the persistent layer that has unblocked status.
-	 * @return all subscribers from the persistent layer that has unblocked status.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Returns all unblocked subscribers from the persistent layer.
+	 * 
+	 * @return A list of all unblocked subscribers from the persistent layer.
+	 * @throws UserServiceException If an error occurs in the DAO layer.
 	 */
 	public List<UserDTO> getAllUnblockedSubscribers() throws UserServiceException;
 
 	/**
-	 * This method returns all subscribers from the persistent layer that has unblocked status and has tariffs with days
-	 * until next payment equals to 0.
-	 * @return all subscribers from the persistent layer that has unblocked status and has tariffs with days until next payment equals to 0.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Returns all unblocked subscribers from the persistent layer with tariffs that
+	 * have 0 days until next payment.
+	 * 
+	 * @return A list of all unblocked subscribers from the persistent layer with
+	 *         tariffs that have 0 days until next payment.
+	 * @throws UserServiceException If an error occurs in the DAO layer.
 	 */
 	public List<UserDTO> getSubscriberForCharging() throws UserServiceException;
 
 	/**
-	 * This method return filtered and sorted by some parameters list of UserDTO.
-	 * @param searchField A string that represents the sortable field.(e.g. "name", "rate")
-	 * @param page A number of the page to view. Starts from 1.
-	 * @param entriesPerPage A number of the records in the page.
-	 * @return List of UserDTO for given sorting and filtering parameters.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Returns a filtered and sorted list of UserDTO based on the specified
+	 * parameters.
+	 * 
+	 * @param searchField    The sortable field as a string (e.g. "name", "rate").
+	 * @param page           The page number to view, starting from 1.
+	 * @param entriesPerPage The number of records per page.
+	 * @return A list of UserDTO matching the specified sorting and filtering
+	 *         parameters.
+	 * @throws UserServiceException If an error occurs in the DAO layer.
 	 */
 	public List<UserDTO> viewSubscribers(String searchField, int page, int entriesPerPage) throws UserServiceException;
 
 	/**
-	 * This method return UserDTO form from the  persistent layer for specific user id.
-	 * @param userId id of the user to get.
-	 * @return UserDTO for user with this id.
-	 * @throws UserNotFoundException is thrown when user with this id not exists
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * This method returns the user with a specific id.
+	 * 
+	 * @param userId the user id to get.
+	 * @return a UserDTO object representing the user information.
+	 * @throws UserNotFoundException is thrown when the user with this id does not
+	 *                               exist.
+	 * @throws UserServiceException  is thrown when something goes wrong in the DAO
+	 *                               layer.
 	 */
 	public UserDTO getUserById(int userId) throws UserNotFoundException, UserServiceException;
 
 	/**
-	 * This method returns the balance of the user with specific uses id.
-	 * @param userId the user id to get the balance of which.
-	 * @return return BigDecimal that represents balance of this user.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * This method returns the balance of the user with specific user id.
+	 * 
+	 * @param userId the user id to get the balance of.
+	 * @return a BigDecimal object representing the user's balance.
+	 * @throws UserServiceException is thrown when something goes wrong in the DAO
+	 *                              layer.
 	 */
 	public BigDecimal getUserBalance(int userId) throws UserServiceException;
 
 	/**
-	 * This method checks the blocked status of the user with specific uses id.
-	 * @param userId the user id to checks the blocked status of which.
-	 * @return true if user is blocked, false if unblocked.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * This method checks the blocked status of the user with specific user id.
+	 * 
+	 * @param userId the user id to check the blocked status of.
+	 * @return a boolean representing the user's blocked status. True if the user is
+	 *         blocked, false if unblocked.
+	 * @throws UserServiceException is thrown when something goes wrong in the DAO
+	 *                              layer.
 	 */
 	public boolean getUserStatus(int userId) throws UserServiceException;
 
 	/**
-	 * Returns the number of the subscribers that contains some text in their login. 
-	 * @param searchField part of the login to search.
-	 * @return number of subscriber that contains some text in their login. 
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * This method returns the number of subscribers that contain a specific text in
+	 * their login.
+	 * 
+	 * @param searchField the text to search in the subscriber's login.
+	 * @return an integer representing the number of subscribers that contain the
+	 *         specified text in their login.
+	 * @throws UserServiceException is thrown when something goes wrong in the DAO
+	 *                              layer.
 	 */
 	public int getSubscribersNumber(String searchField) throws UserServiceException;
 
 	/**
-	 * This method removes the user with the specified ID from the persistent layer.
-	 * @param userId id of the to remove.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * This method removes the user with a specific id from the persistent layer.
+	 * 
+	 * @param userId the id of the user to remove.
+	 * @throws UserServiceException is thrown when something goes wrong in the DAO
+	 *                              layer.
 	 */
 	public void removeUser(int userId) throws UserServiceException;
 
 	/**
-	 * This method changes the status of the user.
-	 * @param blocked new user status. True if blocked, false if unblocked
-	 * @param id id of the user.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * This method changes the status of a user.
+	 * 
+	 * @param blocked the new status of the user. True if blocked, false if
+	 *                unblocked.
+	 * @param id      the id of the user to change the status of.
+	 * @throws UserServiceException is thrown when something goes wrong in the DAO
+	 *                              layer.
 	 */
 	public void changeUserStatus(boolean blocked, int id) throws UserServiceException;
 
 	/**
-	 * This method changes the balance of the user.
-	 * @param userId id of the user to change balance.
-	 * @param difference the difference by which to change the balance
-	 * @param description description of the transaction.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
-	 * @throws NegativeUserBalanceException is thrown when user's will be negative after transaction.
+	 * This method changes the balance of a user.
+	 * 
+	 * @param userId      the id of the user to change the balance of.
+	 * @param difference  the difference by which to change the balance.
+	 * @param description a description of the transaction.
+	 * @throws UserServiceException         is thrown when something goes wrong in
+	 *                                      the DAO layer.
+	 * @throws NegativeUserBalanceException is thrown when the user's balance will
+	 *                                      become negative after the transaction.
 	 */
 	public void changeUserBalance(int userId, BigDecimal difference, String description)
 			throws UserServiceException, NegativeUserBalanceException;
 
 	/**
-	 * This method charges the user a fee for using the tariff.
-	 * @param userId id of the user to be charged.
-	 * @param unpaidTariffs list of Tariffs for which the user have to pay.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
-	 * @throws NegativeUserBalanceException is thrown when user's will be negative after transaction.
+	 * 
+	 * Charges the user a fee for using the specified tariffs.
+	 * 
+	 * @param userId        ID of the user to be charged
+	 * @param unpaidTariffs List of Tariffs that the user needs to pay for
+	 * @throws UserServiceException         If an error occurs in the DAO layer
+	 * @throws NegativeUserBalanceException If the user's balance will become
+	 *                                      negative after the transaction
 	 */
 	public void chargeUserForTariffsUsing(int userId, List<TariffDTO> unpaidTariffs)
 			throws UserServiceException, NegativeUserBalanceException;
 
 	/**
-	 * This method changes user's password. 
-	 * @param userId id of the user whose password will be changed.
-	 * @param currentPassword current password of the user.
-	 * @param newPassword new user password.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
-	 * @throws UserNotFoundException is thrown when user with this id not exists
-	 * @throws PasswordNotMatchException is thrown when current user's password is incorrect.
+	 * 
+	 * Changes the user's password.
+	 * 
+	 * @param userId          ID of the user whose password is being changed
+	 * @param currentPassword The current password of the user
+	 * @param newPassword     The new password for the user
+	 * @throws UserServiceException      If an error occurs in the DAO layer
+	 * @throws UserNotFoundException     If a user with the specified ID does not
+	 *                                   exist
+	 * @throws PasswordNotMatchException If the current password is incorrect
 	 */
 	public void changePassword(int userId, String currentPassword, String newPassword)
 			throws UserServiceException, UserNotFoundException, PasswordNotMatchException;
 
 	/**
-	 * This method change user password for random one and sends this password to the provided email.
-	 * @param email email of the user which password will be reseted.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Resets the user's password to a random one and sends the new password to the
+	 * provided email.
+	 * 
+	 * @param email The email of the user whose password will be reset
+	 * @throws UserServiceException If an error occurs in the DAO layer
 	 */
 	public void resetPassword(String email) throws UserServiceException;
 
 	/**
-	 * This method adds record for user has tariff.
-	 * @param userId id of the user who will be added to the tariff.
-	 * @param tariffId id of the tariff who will be added to the user.
-	 * @throws UserAlreadyHasTariffException is thrown when record with this userId and tariffId already exists.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
-	 * @throws NegativeUserBalanceException is thrown when user doesn't have enough balance to pay for first tariff period.
+	 * 
+	 * Records that a user has a specified tariff.
+	 * 
+	 * @param userId   ID of the user who will be added to the tariff
+	 * @param tariffId ID of the tariff that will be added to the user
+	 * @throws UserAlreadyHasTariffException If a record with the specified user ID
+	 *                                       and tariff ID already exists
+	 * @throws UserServiceException          If an error occurs in the DAO layer
+	 * @throws NegativeUserBalanceException  If the user does not have enough
+	 *                                       balance to pay for the first tariff
+	 *                                       period
 	 */
 	public void addTariffToUser(int userId, int tariffId)
 			throws UserAlreadyHasTariffException, UserServiceException, NegativeUserBalanceException;
 
 	/**
 	 * This method removes record about user has tariff.
-	 * @param userId id of the user.
+	 * 
+	 * @param userId   id of the user.
 	 * @param tariffId id of the tariff.
-	 * @throws UserServiceException is thrown when something wrong happens in the DAO layer.
+	 * @throws UserServiceException is thrown when something wrong happens in the
+	 *                              DAO layer.
 	 */
 	public void removeTariffFromUser(int userId, int tariffId) throws UserServiceException;
 }

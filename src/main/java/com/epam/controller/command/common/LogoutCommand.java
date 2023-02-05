@@ -10,10 +10,27 @@ import org.apache.logging.log4j.Logger;
 import com.epam.controller.command.Command;
 import com.epam.controller.command.Page;
 
+/**
+ * The LogoutCommand class implements the Command interface and is used to
+ * logout from the system.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 public class LogoutCommand implements Command {
-
+	/*
+	 * A Logger instance to log error messages.
+	 */
 	private static final Logger LOG = LogManager.getLogger(LogoutCommand.class);
 
+	/**
+	 * The execute method is used to invalidate the current user's session and
+	 * redirect the user to the home page.
+	 * 
+	 * @param req  HttpServletRequest object
+	 * @param resp HttpServletResponse object
+	 * @return a string indicating the next page to display
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		HttpSession session = req.getSession();

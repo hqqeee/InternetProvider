@@ -22,8 +22,8 @@ import com.epam.exception.dao.DAOUpdateException;
  * User DAO implementation for MariaDB. Has methods needed by services to access
  * persistence layer.
  * 
- * @author ruslan
- *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 
 public class UserDAOMariaDB implements UserDAO {
@@ -193,8 +193,8 @@ public class UserDAOMariaDB implements UserDAO {
 	@Override
 	public int changeBlocked(boolean blocked, int id) throws DAOException {
 		try {
-			return getQueryBuilder().addPreparedStatement(MariaDBConstants.CHANGE_BLOCK_STATUS)
-					.setBooleanField(blocked).setIntField(id).executeUpdate();
+			return getQueryBuilder().addPreparedStatement(MariaDBConstants.CHANGE_BLOCK_STATUS).setBooleanField(blocked)
+					.setIntField(id).executeUpdate();
 		} catch (SQLException e) {
 			throw new DAOUpdateException("Cannot change blocked status for user with id " + id + ".", e);
 		}
@@ -460,6 +460,7 @@ public class UserDAOMariaDB implements UserDAO {
 
 	/**
 	 * This method returns user form ResultSet.
+	 * 
 	 * @param rs ResultSet from which get User.
 	 * @return User entity.
 	 * @throws DAOException is thrown when SQLException occurs.
@@ -481,6 +482,7 @@ public class UserDAOMariaDB implements UserDAO {
 
 	/**
 	 * Checks if user exists by login.
+	 * 
 	 * @param login login of the user.
 	 * @return true if user exists, false if not.
 	 * @throws SQLException is thrown when SQLException occurs.
@@ -494,6 +496,7 @@ public class UserDAOMariaDB implements UserDAO {
 
 	/**
 	 * Checks if user exists by email.
+	 * 
 	 * @param email email of the user.
 	 * @return true if user exists, false if not.
 	 * @throws SQLException is thrown when SQLException occurs.
@@ -504,5 +507,5 @@ public class UserDAOMariaDB implements UserDAO {
 			return rs.next();
 		}
 	}
-	
+
 }

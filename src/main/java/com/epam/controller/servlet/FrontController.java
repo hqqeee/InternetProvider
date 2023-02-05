@@ -11,21 +11,56 @@ import com.epam.controller.command.Command;
 import com.epam.controller.command.CommandFactory;
 import com.epam.controller.command.Page;
 import com.epam.exception.controller.CommandNotFoundException;
-
+/**
+ * FrontController is a servlet that acts as a front controller for the application.
+ * It receives HTTP requests and delegates the request processing to appropriate command object
+ * using CommandFactory. 
+ *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 @WebServlet("/controller")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * doGet method is called when an HTTP GET request is sent to the servlet. 
+	 * This method forwards the request to the processRequest method for processing.
+	 *
+	 * @param req HttpServletRequest object that contains the request the client has made of the servlet.
+	 * @param resp HttpServletResponse object that contains the response the servlet sends to the client.
+	 * @throws ServletException If an exception occurs that interferes with the servlet's normal operation.
+	 * @throws IOException If an input or output exception occurs.
+	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		processRequest(req, resp);
 	}
 
+	/**
+	 * doPost method is called when an HTTP POST request is sent to the servlet. 
+	 * This method forwards the request to the processRequest method for processing.
+	 *
+	 * @param req HttpServletRequest object that contains the request the client has made of the servlet.
+	 * @param resp HttpServletResponse object that contains the response the servlet sends to the client.
+	 * @throws ServletException If an exception occurs that interferes with the servlet's normal operation.
+	 * @throws IOException If an input or output exception occurs.
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		processRequest(req, resp);
 	}
 
+	/**
+	 * processRequest method processes the incoming request. 
+	 * The method gets the appropriate command from CommandFactory and executes the command.
+	 * The method sets the appropriate page as request attribute based on the execution result.
+	 *
+	 * @param req HttpServletRequest object that contains the request the client has made of the servlet.
+	 * @param resp HttpServletResponse object that contains the response the servlet sends to the client.
+	 * @throws ServletException If an exception occurs that interferes with the servlet's normal operation.
+	 * @throws IOException If an input or output exception occurs.
+	 */
 	private void processRequest(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		Command command = null;

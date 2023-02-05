@@ -18,19 +18,39 @@ import com.epam.services.TransactionService;
 import com.epam.services.dto.TransactionDTO;
 import com.epam.util.AppContext;
 
-public class ViewSubscriberAccountCommand implements Command{
-
+/**
+ * Class ViewSubscriberAccountCommand handles the view account request for a
+ * subscriber.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
+public class ViewSubscriberAccountCommand implements Command {
+	/**
+	 * Constant for number of records per page.
+	 */
 	private static final int RECORDS_PER_PAGE = 20;
+	/**
+	 * Logger to log the events and errors.
+	 */
 	private static final Logger LOG = LogManager.getLogger(ViewSubscriberAccountCommand.class);
-	
+
+	/**
+	 * Method execute processes the request from the user to view account details of
+	 * a subscriber.
+	 * 
+	 * @param req  HttpServletRequest object to get request from the user.
+	 * @param resp HttpServletResponse object to send response to the user.
+	 * @return Page string to redirect the user to the page.
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
-		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
+		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
 			TransactionService transactionService = AppContext.getInstance().getTransactionService();
 			String currentPageReq = req.getParameter("page");
 			int currentPage = 1;
-			if(currentPageReq != null && !currentPageReq.isBlank()) {
+			if (currentPageReq != null && !currentPageReq.isBlank()) {
 				currentPage = Integer.parseInt(currentPageReq);
 			}
 			int userId = Integer.parseInt(req.getParameter("userId"));

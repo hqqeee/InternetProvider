@@ -11,91 +11,118 @@ import com.epam.util.SortingOrder;
 
 /**
  * 
- * Tariff Service interface.
- * It contains methods to interact with the DAO and has some business logic.
+ * The TariffService interface provides methods for interacting with the DAO and
+ * performing business logic related to tariffs.
  * 
- * @author ruslan
- *
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
  */
 public interface TariffService {
-	
+
 	/**
-	 * This method returns sorted and filtered by Service list of Tariffs.
-	 * @param fieldName name of the field to sort.
-	 * @param sortingOrder sorting order.
-	 * @param service A service to show.
-	 * @param page page number to show.
-	 * @param entriesPerPage number of tariff to show in the page.
-	 * @return list of TariffsDTO to show.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Retrieves a sorted and filtered list of TariffDTOs based on the specified
+	 * parameters.
+	 * 
+	 * @param fieldName      the name of the field to sort by
+	 * @param sortingOrder   the order to sort the tariffs
+	 * @param service        the service to filter tariffs by
+	 * @param page           the page number to display
+	 * @param entriesPerPage the number of tariffs to display per page
+	 * @return a list of TariffDTOs to display
+	 * @throws TariffServiceException if an error occurs in the DAO layer
 	 */
-	public List<TariffDTO> getTariffsForView(String fieldName, SortingOrder sortingOrder, Service service, int page, int entriesPerPage) throws TariffServiceException;
-	
+	public List<TariffDTO> getTariffsForView(String fieldName, SortingOrder sortingOrder, Service service, int page,
+			int entriesPerPage) throws TariffServiceException;
+
 	/**
-	 * This method returns count of the tariffs with specific Service.
-	 * @param service Service to filter.
-	 * @return number of tariff with Service.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Retrieves the number of tariffs for a specific service.
+	 * 
+	 * @param service the service to count tariffs for
+	 * @return the number of tariffs for the specified service
+	 * @throws TariffServiceException if an error occurs in the DAO layer
 	 */
 	public int getTariffsCount(Service service) throws TariffServiceException;
-	
+
 	/**
-	 * This method returns filtered by Service list of Tariffs.
-	 * @param service Service to filter.
-	 * @return Filtered list of tariffs.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Retrieves a filtered list of all tariffs for a specific service.
+	 * 
+	 * @param service the service to filter tariffs by
+	 * @return a list of tariffs for the specified service
+	 * @throws TariffServiceException if an error occurs in the DAO layer
 	 */
 	public List<TariffDTO> getAllTariff(Service service) throws TariffServiceException;
-	
+
 	/**
-	 * This method returns all the tariff of the user.
-	 * @param userId id of the user to get id from.
-	 * @return List of tariffs of the user.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Retrieves a list of all tariffs for a specific user.
+	 * 
+	 * @param userId the id of the user to retrieve tariffs for
+	 * @return a list of tariffs for the specified user
+	 * @throws TariffServiceException if an error occurs in the DAO layer
 	 */
 	public List<TariffDTO> getUsersTariff(int userId) throws TariffServiceException;
-	
+
 	/**
-	 * This method return all the tariff of the user that has 0 days until next payment.
-	 * @param userId id of the user to get id from.
-	 * @return List of tariffs of the user.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Retrieves a list of all tariffs for a specific user that have 0 days until
+	 * next payment.
+	 * 
+	 * @param userId the id of the user to retrieve tariffs for
+	 * @return a list of tariffs for the specified user with 0 days until next
+	 *         payment
+	 * @throws TariffServiceException if an error occurs in the DAO layer
 	 */
 	public List<TariffDTO> getUnpaidTariffs(int userId) throws TariffServiceException;
-	
+
 	/**
-	 * This method returns all the tariff of the user with the number of days left until next payment.
-	 * @param userId id of the user to get id from.
-	 * @return Map of Tariffs with days until next payment.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Retrieves a map of all tariffs for a specific user with the number of days
+	 * until next payment.
+	 * 
+	 * @param userId the id of the user to retrieve tariffs for
+	 * @return a map of tariffs for the specified user with the number of days until
+	 *         next payment
+	 * @throws TariffServiceException if an error occurs in the DAO layer
 	 */
 	public Map<TariffDTO, Integer> getUsersTariffWithDaysUntilPayment(int userId) throws TariffServiceException;
-	
+
 	/**
-	 * This method remove tariff from the persistence layer.
-	 * @param tariffId id of the Tariff to remove.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Removes a Tariff from the persistence layer.
+	 * 
+	 * @param tariffId ID of the Tariff to remove.
+	 * @throws TariffServiceException if an error occurs in the DAO layer.
 	 */
 	public void removeTariff(int tariffId) throws TariffServiceException;
-	
+
 	/**
-	 * This method add tariff to the persistence layer.
-	 * @param tariffForm form that contains all necessary information for new tariff.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Adds a Tariff to the persistence layer.
+	 * 
+	 * @param tariffForm Form containing all necessary information for the new
+	 *                   Tariff.
+	 * @throws TariffServiceException if an error occurs in the DAO layer.
 	 */
 	public void addTariff(TariffForm tariffForm) throws TariffServiceException;
-	
+
 	/**
-	 * This method modify tariff. 
-	 * @param tariffForm Tariff form that contains new values of tariff.
-	 * @param tariffId id of the tariff to modify.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Modifies a Tariff.
+	 * 
+	 * @param tariffForm Form containing new values for the Tariff.
+	 * @param tariffId   ID of the Tariff to modify.
+	 * @throws TariffServiceException if an error occurs in the DAO layer.
 	 */
 	public void editTariff(TariffForm tariffForm, int tariffId) throws TariffServiceException;
-	
+
 	/**
-	 * This method decrement number of days until next payment for all users.
-	 * @throws TariffServiceException is thrown when something wrong happens in the DAO layer.
+	 * 
+	 * Decrements the number of days until the next payment for all users.
+	 * 
+	 * @throws TariffServiceException if an error occurs in the DAO layer.
 	 */
 	public void updateDaysUntilPayments() throws TariffServiceException;
 }

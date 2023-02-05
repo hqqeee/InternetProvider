@@ -20,10 +20,35 @@ import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
 import com.epam.util.Validator;
 
-public class ChangePasswordCommand implements Command {
+/**
+ * 
+ * The ChangePasswordCommand class implements the Command interface and is used
+ * to change a subscriber's password. This class retrieves the current password
+ * and new password from the request and validates the new password using the
+ * Validator. If the new password is valid, it changes the password using the
+ * UserService. If an error occurs during password change, it sets the error
+ * message in the request.
+ * 
+ * @author Hrebenozhko Ruslan
+ * @version 1.0
+ */
 
+public class ChangePasswordCommand implements Command {
+	/*
+	 * A Logger instance to log error messages.
+	 */
 	private static final Logger LOG = LogManager.getLogger(ChangePasswordCommand.class);
 
+	/**
+	 * 
+	 * Changes the password of a subscriber.
+	 * 
+	 * @param req  HttpServletRequest
+	 * @param resp HttpServletResponse
+	 * @return String a path to the profile page if password change is successful,
+	 *         otherwise the error message is set in the request and the path to the
+	 *         profile page is returned.
+	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {
 		UserDTO user = (UserDTO) req.getSession().getAttribute("loggedUser");
@@ -32,7 +57,7 @@ public class ChangePasswordCommand implements Command {
 		if (user == null || currentPassword == null || newPassword == null)
 			req.setAttribute("errorMessages", "Something went wrong. Cannot change password. Try againg later.");
 		else {
-			ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale)req.getAttribute("locale"));
+			ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 			try {
 				Validator.validatePassword(newPassword,
 						ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")));
