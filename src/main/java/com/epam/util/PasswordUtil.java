@@ -11,16 +11,7 @@ import java.security.SecureRandom;
  * @author Hrebenozhko Ruslan
  * @version 1.0
  */
-public class PasswordUtil {
-	public static void main(String[] args) {
-		for(int i = 0; i < 50; i ++) {
-			String salt = PasswordUtil.getRandomString(12);
-			String password = PasswordUtil.getRandomString(10);
-			
-			System.out.println(i +". password: " + password + " salt " + salt + " hashed " + hashPassword(password+salt));
-		}
-	}
-	
+public class PasswordUtil {	
 	/**
 	 * 
 	 * Hashes a password using the SHA-256 algorithm.

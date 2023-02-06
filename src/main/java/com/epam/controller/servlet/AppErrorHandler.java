@@ -3,6 +3,8 @@ package com.epam.controller.servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -70,22 +72,23 @@ public class AppErrorHandler extends HttpServlet {
 		Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
 		Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
 		String servletName = (String) request.getAttribute("javax.servlet.error.servlet_name");
+		ResourceBundle rb = ResourceBundle.getBundle("lang", (Locale) request.getAttribute("locale"));
 		if (servletName == null) {
-			servletName = "Unknown";
+			servletName = rb.getString("error_handler_unknown");
 		}
 		String requestUri = (String) request.getAttribute("javax.servlet.error.request_uri");
 		if (requestUri == null) {
-			requestUri = "Unknown";
+			requestUri = rb.getString("error_handler_unknown");
 		}
 		List<String> error = new ArrayList<>();
-		error.add("Something went wrong.");
+		error.add(rb.getString("error_handler_first_line"));
 		if (statusCode != 500) {
-			error.add("Status Code: " + statusCode);
-			error.add("Requested URI: " + requestUri);
+			error.add(rb.getString("error_handler_status_code") + statusCode);
+			error.add(rb.getString("error_handler_request_uri") + requestUri);
 		} else {
-			error.add("Exception Name: " + throwable.getClass().getName());
-			error.add("Requested URI: " + requestUri);
-			error.add("Exception Message:" + throwable.getMessage());
+			error.add(rb.getString("error_handler_exception_name") + throwable.getClass().getName());
+			error.add(rb.getString("error_handler_request_uri") + requestUri);
+			error.add(rb.getString("error_handler_exception_message") + throwable.getMessage());
 		}
 		request.setAttribute("errorMessages", error);
 		request.getRequestDispatcher(Page.HOME_PAGE).forward(request, response);

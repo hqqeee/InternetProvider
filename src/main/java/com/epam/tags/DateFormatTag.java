@@ -11,6 +11,11 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.controller.command.subscriber.ViewActiveTariffsCommand;
+
 /**
  * The DateFormatTag class is a custom tag class in JavaServer Pages (JSP)
  * technology that formats a date to be displayed in either English or Ukrainian
@@ -31,6 +36,11 @@ public class DateFormatTag extends TagSupport {
 	private Date date;
 
 	/**
+	 * Logger instance to log the events occurred.
+	 */
+	private static final Logger LOG = LogManager.getLogger(ViewActiveTariffsCommand.class);
+	
+	/**
 	 * This method retrieves the JspWriter from the page context, creates a Calendar
 	 * instance for the time zone "Europe/Kiev", sets the time of the Calendar
 	 * instance to the given date, retrieves the appropriate resource bundle based
@@ -42,7 +52,6 @@ public class DateFormatTag extends TagSupport {
 	 *                      JspWriter
 	 */
 	public int doStartTag() throws JspException {
-		System.out.println("Called");
 		JspWriter writer = pageContext.getOut();
 		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Kiev"));
 		cal.setTime(date);
@@ -59,8 +68,7 @@ public class DateFormatTag extends TagSupport {
 						+ ":" + cal.get(Calendar.MINUTE) + (cal.get(Calendar.AM_PM) == 1 ? "PM" : "AM"));
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOG.error("Cannot display locale date.");
 		}
 		return SKIP_BODY;
 	}

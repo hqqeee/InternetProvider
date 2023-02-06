@@ -65,6 +65,7 @@ public class ViewSubscriberAccountCommand implements Command {
 			return Page.ACCOUNT_PAGE;
 		} catch (NoTransactionsFoundException e) {
 			req.setAttribute("noTransactionFound", rs.getString("error.payment_history_empty"));
+			return Page.ACCOUNT_PAGE;
 		} catch (TransactionServiceException e) {
 			LOG.warn("A service error occurred while loading account info.");
 			LOG.error("Unable to load account info due to service error.", e);

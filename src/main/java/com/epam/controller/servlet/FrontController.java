@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.epam.controller.command.Command;
 import com.epam.controller.command.CommandFactory;
 import com.epam.controller.command.Page;
@@ -23,6 +26,11 @@ import com.epam.exception.controller.CommandNotFoundException;
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Logger instance to log the events occurred.
+	 */
+	private static final Logger LOG = LogManager.getLogger(FrontController.class);
+	
 	/**
 	 * doGet method is called when an HTTP GET request is sent to the servlet. 
 	 * This method forwards the request to the processRequest method for processing.
@@ -69,7 +77,7 @@ public class FrontController extends HttpServlet {
 			command = CommandFactory.getInstance().getCommand(req.getParameter("action"));
 			page = command.execute(req, resp);
 		} catch (CommandNotFoundException e) {
-			System.out.println(e.getMessage());
+			LOG.warn("Attempt to execute not existing command.");
 			req.setAttribute("errorMessages", "You cannot access this page.");
 		}
 		if(page != null && !page.equals(Page.REDIRECTED)) {

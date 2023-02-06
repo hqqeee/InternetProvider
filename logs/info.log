@@ -1,358 +1,366 @@
-2023-02-05 16:20:12,946 [main] WARN  ViewSubscriberAccountCommand A service error occurred while loading account info.
-2023-02-05 16:20:12,974 [main] WARN  ViewSubscriberAccountCommand An unexpected error occurred while loading account info.
-2023-02-05 16:20:12,994 [main] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
-2023-02-05 16:20:13,008 [main] WARN  ViewSubscriberProfileCommand An unexpected error occurred while loading user info.
-2023-02-05 16:20:13,018 [main] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
-2023-02-05 16:20:13,028 [main] WARN  ChangeUserStatusCommand An error occurred while changing user status.
-2023-02-05 16:20:13,038 [main] INFO  ChangeUserStatusCommand Status of the user with id 1 successfully changed.
-2023-02-05 16:20:13,044 [main] WARN  ChangeUserStatusCommand An error occurred while changing user status.
-2023-02-05 16:20:13,107 [main] WARN  ViewSubscriberTariffsCommand An unexpected error occurred while loading user tariffs.
-2023-02-05 16:20:13,115 [main] WARN  ViewSubscriberTariffsCommand A service error occurred while loading user tariffs.
-2023-02-05 16:20:13,130 [main] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:20:13,135 [main] WARN  DailyWithdrawCommand An error occurred while executing daily withdrawal.
-2023-02-05 16:20:13,141 [main] WARN  DailyWithdrawCommand An error occurred while executing daily withdrawal.
-2023-02-05 16:20:13,149 [main] INFO  EditTariffCommand Tariff( 1) has been edited. TariffForm [name=name, paymentPeriod=14, rate=12, service=INTERNET, description=desc]
-2023-02-05 16:20:13,155 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
-2023-02-05 16:20:13,168 [main] WARN  EditTariffCommand An unexpected error occurred while editing the tariff.
-2023-02-05 16:20:13,176 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
-2023-02-05 16:20:13,184 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
-2023-02-05 16:20:13,187 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
-2023-02-05 16:20:13,201 [main] WARN  EditTariffCommand A service error occurred while editing the tariff.
-2023-02-05 16:20:13,211 [main] WARN  RemoveTariffCommand A service error occurred while removing tariff.
-2023-02-05 16:20:13,218 [main] WARN  RemoveTariffCommand An error occurred while removing tariff.
-2023-02-05 16:20:13,225 [main] INFO  RemoveTariffCommand Tariff with id 1 successfully removed.
-2023-02-05 16:20:13,232 [main] WARN  AddTariffCommand An error occurred while adding a tariff.
-2023-02-05 16:20:13,239 [main] WARN  AddTariffCommand An error occurred while adding a tariff.
-2023-02-05 16:20:13,246 [main] INFO  AddTariffCommand Tariff name with rate $12/14 day(s) successfully added.
-2023-02-05 16:20:13,264 [main] WARN  RegisterUserCommand An unexpected error occurred while registering user.
-2023-02-05 16:20:13,287 [main] WARN  RegisterUserCommand A service error occurred while registering user.
-2023-02-05 16:20:13,294 [main] INFO  RegisterUserCommand User: [firstName,lastName,login,email@mail.com, city] registered successfully.
-2023-02-05 16:20:13,301 [main] WARN  RemoveUserCommand An error occurred while removing user.
-2023-02-05 16:20:13,307 [main] INFO  RemoveUserCommand Tariff with id 2 successfully removed.
-2023-02-05 16:20:13,312 [main] WARN  RemoveUserCommand A service error occurred while removing user.
-2023-02-05 16:20:13,340 [main] WARN  AdminMenuCommand An error occurred while loading user view.
-2023-02-05 16:20:13,362 [main] INFO  ChangeUserBalanceCommand Balance of user with id 1 changed.
-2023-02-05 16:20:13,420 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
-2023-02-05 16:20:13,431 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
-2023-02-05 16:20:13,445 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
-2023-02-05 16:20:13,468 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
-2023-02-05 16:20:14,167 [main] WARN  DownloadTariffsCommand A service error occurred while downloading pdf with tariffs.
-2023-02-05 16:20:14,191 [main] WARN  ResetPasswordCommand An unexpected error occurred while reseting password.
-2023-02-05 16:20:14,255 [main] INFO  LogoutCommand User successfully logged out.
-2023-02-05 16:20:14,263 [main] INFO  LoginCommand User with login login successfully logged in.
-2023-02-05 16:20:14,268 [main] WARN  LoginCommand An error occurred while logging into the system.
-2023-02-05 16:20:14,273 [main] WARN  LoginCommand Unsuccessful attempt to access account with login login.
-2023-02-05 16:20:14,440 [main] INFO  LogAccessFilter Login: Unlogged user, IP: ip Page: /path/query Access time : 0 ms
-2023-02-05 16:20:14,445 [main] INFO  LogAccessFilter Login: userLogin, IP: ip Page: /path/query Access time : 1 ms
-2023-02-05 16:20:14,449 [main] WARN  AuthenticationFilter An attempt to access viewProfile failed.
-2023-02-05 16:20:14,460 [main] WARN  AuthenticationFilter An attempt to access viewProfile failed. User: null .
-2023-02-05 16:20:14,463 [main] WARN  AuthenticationFilter An attempt to access adminMenu failed. User: null .
-2023-02-05 16:20:15,487 [main] INFO  ChangePasswordCommand UserDTO [id=1, blocked=false, login=login, balance=10, firstName=firstName, lastName=lastName, email=email@asd.asd, city=City, address=Address, role=SUBSCRIBER] changed password.
-2023-02-05 16:20:15,492 [main] WARN  ChangePasswordCommand A service error occurred while changing user balance.
-2023-02-05 16:20:15,500 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
-2023-02-05 16:20:15,506 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
-2023-02-05 16:20:15,508 [main] INFO  DisableTariffCommand User(id = 1) has been unblocked due to disconnection of the tariff.
-2023-02-05 16:20:15,511 [main] WARN  ViewActiveTariffsCommand An error occurred while loading tariffs view.
-2023-02-05 16:20:15,513 [main] WARN  DisableTariffCommand An unexpected error occurred while disabling tariff.
-2023-02-05 16:20:15,514 [main] WARN  ViewActiveTariffsCommand An error occurred while loading tariffs view.
-2023-02-05 16:20:15,521 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
-2023-02-05 16:20:15,526 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
-2023-02-05 16:20:15,527 [main] WARN  DisableTariffCommand A service error occurred while disabling tariff.
-2023-02-05 16:20:15,538 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
-2023-02-05 16:20:15,547 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
-2023-02-05 16:20:15,549 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
-2023-02-05 16:20:15,549 [main] WARN  ReplenishCommand A service error occurred while replenishing the account.
-2023-02-05 16:20:15,552 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
-2023-02-05 16:20:15,555 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
-2023-02-05 16:20:15,557 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
-2023-02-05 16:20:15,561 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
-2023-02-05 16:20:15,564 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
-2023-02-05 16:20:15,566 [main] WARN  ReplenishCommand An unexpected error occurred while replenishing the account.
-2023-02-05 16:20:15,567 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
-2023-02-05 16:20:15,573 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
-2023-02-05 16:20:15,574 [main] INFO  ReplenishCommand User(id = 1) has been unblocked due to replenishment the account.
-2023-02-05 16:20:15,591 [main] WARN  ConnectTariffCommand A service error occurred while connecting tariff.
-2023-02-05 16:20:15,600 [main] INFO  ConnectTariffCommand User(id = 1) added tariff(id = 1).
-2023-02-05 16:20:15,608 [main] WARN  ConnectTariffCommand An unexpected error occurred while connecting tariff.
-2023-02-05 16:20:15,631 [main] WARN  ViewAccountCommand A service error occurred while loading account info.
-2023-02-05 16:20:15,688 [pool-2-thread-1] INFO  EmailUtil Email to asd@asda.add was sent.
-2023-02-05 16:40:00,478 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:40:02,216 [pool-3-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 16:40:02,624 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 1326 ms
-2023-02-05 16:40:02,652 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 7 ms
-2023-02-05 16:40:02,653 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 7 ms
-2023-02-05 16:40:02,687 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 1 ms
-2023-02-05 16:40:02,702 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/peakpx.jpg/null Access time : 0 ms
-2023-02-05 16:40:04,037 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 327 ms
-2023-02-05 16:40:44,662 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 178 ms
-2023-02-05 16:41:15,507 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 165 ms
-2023-02-05 16:41:26,652 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 194 ms
-2023-02-05 16:41:57,898 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 15 ms
-2023-02-05 16:41:58,737 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 150 ms
-2023-02-05 16:41:59,914 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 17 ms
-2023-02-05 16:41:59,929 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 7 ms
-2023-02-05 16:42:00,443 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:42:01,493 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 5 ms
-2023-02-05 16:42:01,892 [pool-3-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 16:42:11,727 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 24 ms
-2023-02-05 16:42:12,409 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 170 ms
-2023-02-05 16:42:14,456 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
-2023-02-05 16:42:14,484 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
-2023-02-05 16:43:03,945 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:43:05,200 [pool-6-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 16:44:35,719 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 43 ms
-2023-02-05 16:44:39,815 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 10 ms
-2023-02-05 16:44:39,837 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 9 ms
-2023-02-05 16:44:40,981 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 16 ms
-2023-02-05 16:44:43,833 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 13 ms
-2023-02-05 16:44:43,913 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/logo.svg/null Access time : 5 ms
-2023-02-05 16:45:03,937 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:45:05,207 [pool-6-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 16:46:27,524 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:46:28,799 [pool-9-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 16:47:05,482 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 174 ms
-2023-02-05 16:47:05,540 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/logo.png/null Access time : 5 ms
-2023-02-05 16:47:20,761 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 5 ms
-2023-02-05 16:47:22,065 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 22 ms
-2023-02-05 16:47:22,081 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 8 ms
-2023-02-05 16:47:23,324 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 3 ms
-2023-02-05 16:48:02,462 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 7 ms
-2023-02-05 16:48:04,990 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 2 ms
-2023-02-05 16:48:05,663 [http-nio-8080-exec-22] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 3 ms
-2023-02-05 16:48:06,258 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 6 ms
-2023-02-05 16:48:08,283 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 155 ms
-2023-02-05 16:48:27,483 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:48:28,745 [pool-9-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 16:48:39,990 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:48:41,218 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 16:48:51,355 [http-nio-8080-exec-27] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 18 ms
-2023-02-05 16:48:51,401 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 25 ms
-2023-02-05 16:48:52,476 [http-nio-8080-exec-25] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 11 ms
-2023-02-05 16:49:04,769 [http-nio-8080-exec-22] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 6 ms
-2023-02-05 16:49:05,321 [http-nio-8080-exec-28] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 61 ms
-2023-02-05 16:49:05,337 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/call-contact-phone-svgrepo-com.png/null Access time : 1 ms
-2023-02-05 16:49:05,343 [http-nio-8080-exec-24] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/connection-svgrepo-com.png/null Access time : 0 ms
-2023-02-05 16:49:05,344 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/satelite-svgrepo-com.png/null Access time : 0 ms
-2023-02-05 16:49:05,345 [http-nio-8080-exec-29] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/arrow.png/null Access time : 0 ms
-2023-02-05 16:49:05,345 [http-nio-8080-exec-26] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/smart-svgrepo-com.png/null Access time : 0 ms
-2023-02-05 16:49:05,360 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 1 ms
-2023-02-05 16:49:05,806 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
-2023-02-05 16:49:12,491 [http-nio-8080-exec-30] INFO  LoginCommand User with login admin successfully logged in.
-2023-02-05 16:49:12,491 [http-nio-8080-exec-30] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 4 ms
-2023-02-05 16:49:12,506 [http-nio-8080-exec-31] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 9 ms
-2023-02-05 16:50:09,838 [http-nio-8080-exec-29] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 31 ms
-2023-02-05 16:50:09,898 [http-nio-8080-exec-32] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/admin_menu.js/null Access time : 4 ms
-2023-02-05 16:50:11,534 [http-nio-8080-exec-30] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 23 ms
-2023-02-05 16:50:39,974 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 16:50:41,253 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
-2023-02-05 17:44:59,040 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 17:45:03,849 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 192 ms
-2023-02-05 17:45:03,867 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 2 ms
-2023-02-05 17:45:03,868 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 1 ms
-2023-02-05 17:45:03,908 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 2 ms
-2023-02-05 17:45:03,927 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/peakpx.jpg/null Access time : 1 ms
-2023-02-05 17:45:05,474 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 188 ms
-2023-02-05 17:45:05,483 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/arrow.png/null Access time : 0 ms
-2023-02-05 17:45:05,488 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 1 ms
-2023-02-05 17:45:05,489 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/call-contact-phone-svgrepo-com.png/null Access time : 0 ms
-2023-02-05 17:45:05,490 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/satelite-svgrepo-com.png/null Access time : 1 ms
-2023-02-05 17:45:05,490 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/smart-svgrepo-com.png/null Access time : 1 ms
-2023-02-05 17:45:05,491 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/connection-svgrepo-com.png/null Access time : 0 ms
-2023-02-05 17:45:11,233 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 28 ms
-2023-02-05 17:45:13,007 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 23 ms
-2023-02-05 17:45:14,797 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 21 ms
-2023-02-05 17:45:15,668 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 21 ms
-2023-02-05 17:45:19,279 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&rowNumber=5&service=TELEPHONE Access time : 15 ms
-2023-02-05 17:45:20,631 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=TELEPHONE&rowNumber=5 Access time : 24 ms
-2023-02-05 17:45:22,990 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=ASC&service=TELEPHONE&rowNumber=5 Access time : 14 ms
-2023-02-05 17:45:26,069 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&rowNumber=5&service=INTERNET Access time : 17 ms
-2023-02-05 17:45:27,508 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=3&sortingField=name&sortingOrder=ASC&service=INTERNET&rowNumber=5 Access time : 6 ms
-2023-02-05 17:45:29,583 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&rowNumber=5&service=CABLE_TV Access time : 10 ms
-2023-02-05 17:45:35,772 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&rowNumber=5&service=IP_TV Access time : 14 ms
-2023-02-05 17:46:00,669 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=ASC&service=IP_TV&rowNumber=5 Access time : 9 ms
-2023-02-05 17:46:04,130 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=ASC&service=IP_TV&rowNumber=5 Access time : 10 ms
-2023-02-05 17:46:05,540 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=ASC&rowNumber=5&service=ALL Access time : 13 ms
-2023-02-05 17:46:09,593 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 19 ms
-2023-02-05 17:46:23,736 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=20 Access time : 18 ms
-2023-02-05 17:46:26,596 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=3&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=20 Access time : 11 ms
-2023-02-05 17:46:27,870 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 13 ms
-2023-02-05 17:46:29,413 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=6&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 17 ms
-2023-02-05 17:46:30,965 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=15 Access time : 12 ms
-2023-02-05 17:46:59,008 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 17:48:52,630 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&rowNumber=15&service=TELEPHONE Access time : 11 ms
-2023-02-05 17:48:55,144 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&rowNumber=15&service=ALL Access time : 12 ms
-2023-02-05 17:48:59,011 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 17:50:25,589 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 1437 ms
-2023-02-05 17:50:59,009 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:01:43,211 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:01:46,073 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=5&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 239 ms
-2023-02-05 18:01:52,859 [http-nio-8080-exec-3] INFO  LoginCommand User with login carter successfully logged in.
-2023-02-05 18:01:52,859 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 5 ms
-2023-02-05 18:01:52,888 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 24 ms
-2023-02-05 18:01:54,757 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 38 ms
-2023-02-05 18:01:54,785 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /js/subscriber_menu.js/null Access time : 2 ms
-2023-02-05 18:01:54,804 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /js/validate_password_confirm.js/null Access time : 0 ms
-2023-02-05 18:03:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:05:10,070 [http-nio-8080-exec-1] INFO  LogoutCommand User successfully logged out.
-2023-02-05 18:05:10,071 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 2 ms
-2023-02-05 18:05:10,083 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 6 ms
-2023-02-05 18:05:14,956 [http-nio-8080-exec-3] INFO  LoginCommand User with login admin successfully logged in.
-2023-02-05 18:05:14,957 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
-2023-02-05 18:05:14,965 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
-2023-02-05 18:05:16,442 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 24 ms
-2023-02-05 18:05:16,457 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/admin_menu.js/null Access time : 0 ms
-2023-02-05 18:05:19,847 [http-nio-8080-exec-7] INFO  RemoveUserCommand Tariff with id 2 successfully removed.
-2023-02-05 18:05:19,848 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeUser Access time : 9 ms
-2023-02-05 18:05:19,860 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=remove_user Access time : 7 ms
-2023-02-05 18:05:23,402 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 21 ms
-2023-02-05 18:05:27,382 [http-nio-8080-exec-10] INFO  LogoutCommand User successfully logged out.
-2023-02-05 18:05:27,382 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
-2023-02-05 18:05:27,398 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 7 ms
-2023-02-05 18:05:31,250 [http-nio-8080-exec-3] INFO  LoginCommand User with login edgar_thom1989 successfully logged in.
-2023-02-05 18:05:31,251 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 3 ms
-2023-02-05 18:05:31,262 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 5 ms
-2023-02-05 18:05:33,152 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 10 ms
-2023-02-05 18:05:35,269 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 23 ms
-2023-02-05 18:05:35,770 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 1258 ms
-2023-02-05 18:05:36,621 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
-2023-02-05 18:05:37,577 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 9 ms
-2023-02-05 18:05:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:07:43,181 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:09:43,181 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:11:43,185 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:13:43,185 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:15:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:17:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:18:50,554 [http-nio-8080-exec-2] INFO  LogoutCommand User successfully logged out.
-2023-02-05 18:18:50,555 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
-2023-02-05 18:18:50,574 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 8 ms
-2023-02-05 18:18:55,277 [http-nio-8080-exec-4] INFO  LoginCommand User with login admin successfully logged in.
-2023-02-05 18:18:55,278 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 5 ms
-2023-02-05 18:18:55,291 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
-2023-02-05 18:18:56,376 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 7 ms
-2023-02-05 18:19:00,282 [http-nio-8080-exec-6] INFO  RemoveUserCommand Tariff with id 5 successfully removed.
-2023-02-05 18:19:00,283 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeUser Access time : 8 ms
-2023-02-05 18:19:00,294 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=remove_user Access time : 7 ms
-2023-02-05 18:19:02,717 [http-nio-8080-exec-9] INFO  RemoveUserCommand Tariff with id 6 successfully removed.
-2023-02-05 18:19:02,717 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeUser Access time : 8 ms
-2023-02-05 18:19:02,732 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=remove_user Access time : 9 ms
-2023-02-05 18:19:03,638 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 17 ms
-2023-02-05 18:19:05,660 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 12 ms
-2023-02-05 18:19:43,181 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:21:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:22:24,907 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 22 ms
-2023-02-05 18:22:28,335 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=2 Access time : 18 ms
-2023-02-05 18:22:28,787 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 9 ms
-2023-02-05 18:22:30,024 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=10 Access time : 9 ms
-2023-02-05 18:22:31,554 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=10&page=2 Access time : 21 ms
-2023-02-05 18:22:34,186 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=10&page=1 Access time : 15 ms
-2023-02-05 18:22:54,234 [http-nio-8080-exec-3] INFO  LogoutCommand User successfully logged out.
-2023-02-05 18:22:54,234 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 0 ms
-2023-02-05 18:22:54,245 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 5 ms
-2023-02-05 18:22:59,949 [http-nio-8080-exec-5] WARN  LoginCommand Unsuccessful attempt to access account with login freestyle.
-2023-02-05 18:22:59,957 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 11 ms
-2023-02-05 18:23:04,989 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js.map/null Access time : 2 ms
-2023-02-05 18:23:04,994 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap.min.css.map/null Access time : 0 ms
-2023-02-05 18:23:39,134 [http-nio-8080-exec-9] WARN  LoginCommand Unsuccessful attempt to access account with login jan.
-2023-02-05 18:23:39,141 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 8 ms
-2023-02-05 18:23:43,183 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:23:49,602 [http-nio-8080-exec-10] INFO  LoginCommand User with login freestyle successfully logged in.
-2023-02-05 18:23:49,602 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
-2023-02-05 18:23:49,613 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
-2023-02-05 18:23:51,344 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 12 ms
-2023-02-05 18:23:54,026 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 7 ms
-2023-02-05 18:23:59,755 [http-nio-8080-exec-4] INFO  ReplenishCommand User(id = 31) replenished the account with $100
-2023-02-05 18:23:59,756 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 6 ms
-2023-02-05 18:23:59,786 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 24 ms
-2023-02-05 18:24:01,811 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 14 ms
-2023-02-05 18:24:05,816 [http-nio-8080-exec-8] INFO  ConnectTariffCommand User(id = 31) added tariff(id = 33).
-2023-02-05 18:24:05,816 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 14 ms
-2023-02-05 18:24:05,831 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 10 ms
-2023-02-05 18:24:07,054 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 3 ms
-2023-02-05 18:24:07,898 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 10 ms
-2023-02-05 18:24:10,248 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 19 ms
-2023-02-05 18:24:11,212 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 6 ms
-2023-02-05 18:24:12,733 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
-2023-02-05 18:24:12,763 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 7 ms
-2023-02-05 18:24:14,117 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 9 ms
-2023-02-05 18:24:14,845 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 11 ms
-2023-02-05 18:25:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:27:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:29:43,194 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:31:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:33:43,190 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:35:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:37:43,188 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:37:51,249 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 8 ms
-2023-02-05 18:37:52,009 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 8 ms
-2023-02-05 18:37:52,863 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 8 ms
-2023-02-05 18:37:53,975 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 5 ms
-2023-02-05 18:37:56,008 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 11 ms
-2023-02-05 18:38:00,765 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 14 ms
-2023-02-05 18:38:02,150 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 8 ms
-2023-02-05 18:38:02,797 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 19 ms
-2023-02-05 18:38:05,452 [http-nio-8080-exec-9] INFO  ConnectTariffCommand User(id = 31) added tariff(id = 26).
-2023-02-05 18:38:05,453 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 12 ms
-2023-02-05 18:38:05,461 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 5 ms
-2023-02-05 18:38:06,997 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 8 ms
-2023-02-05 18:38:07,806 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 8 ms
-2023-02-05 18:39:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:40:38,023 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:40:54,414 [http-nio-8080-exec-8] WARN  AuthenticationFilter An attempt to access viewProfile failed.
-2023-02-05 18:40:54,463 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 50 ms
-2023-02-05 18:41:04,051 [http-nio-8080-exec-9] INFO  LoginCommand User with login pearline successfully logged in.
-2023-02-05 18:41:04,051 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 23 ms
-2023-02-05 18:41:04,064 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 7 ms
-2023-02-05 18:41:05,871 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 16 ms
-2023-02-05 18:41:07,523 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 19 ms
-2023-02-05 18:41:11,780 [http-nio-8080-exec-6] INFO  ReplenishCommand User(id = 32) replenished the account with $123
-2023-02-05 18:41:11,781 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 10 ms
-2023-02-05 18:41:11,811 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 22 ms
-2023-02-05 18:41:13,282 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 573 ms
-2023-02-05 18:41:15,486 [http-nio-8080-exec-10] INFO  ConnectTariffCommand User(id = 32) added tariff(id = 1).
-2023-02-05 18:41:15,487 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 20 ms
-2023-02-05 18:41:15,507 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 9 ms
-2023-02-05 18:41:17,807 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 7 ms
-2023-02-05 18:41:18,505 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 6 ms
-2023-02-05 18:41:18,979 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 227 ms
-2023-02-05 18:41:21,574 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
-2023-02-05 18:41:21,593 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
-2023-02-05 18:41:22,553 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 4 ms
-2023-02-05 18:41:23,279 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
-2023-02-05 18:42:19,547 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
-2023-02-05 18:42:20,059 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 6 ms
-2023-02-05 18:42:22,411 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
-2023-02-05 18:42:22,435 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
-2023-02-05 18:42:23,443 [http-nio-8080-exec-19] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 2 ms
-2023-02-05 18:42:24,473 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 4 ms
-2023-02-05 18:42:24,771 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 20 ms
-2023-02-05 18:42:30,357 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
-2023-02-05 18:42:53,828 [http-nio-8080-exec-12] WARN  AuthenticationFilter An attempt to access viewActiveTariffs failed.
-2023-02-05 18:42:53,878 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 51 ms
-2023-02-05 18:43:02,234 [http-nio-8080-exec-16] INFO  LoginCommand User with login KellPvP successfully logged in.
-2023-02-05 18:43:02,234 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 20 ms
-2023-02-05 18:43:02,245 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 7 ms
-2023-02-05 18:43:04,851 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 15 ms
-2023-02-05 18:43:05,536 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 32 ms
-2023-02-05 18:43:08,005 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 12 ms
-2023-02-05 18:43:09,954 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 11 ms
-2023-02-05 18:43:11,750 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 10 ms
-2023-02-05 18:43:14,126 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 16 ms
-2023-02-05 18:43:32,742 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 9 ms
-2023-02-05 18:43:33,910 [http-nio-8080-exec-24] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 12 ms
-2023-02-05 18:43:46,777 [http-nio-8080-exec-14] INFO  ReplenishCommand User(id = 28) replenished the account with $1000
-2023-02-05 18:43:46,778 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 7 ms
-2023-02-05 18:43:46,797 [http-nio-8080-exec-25] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 15 ms
-2023-02-05 18:43:47,943 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 8 ms
-2023-02-05 18:43:51,306 [http-nio-8080-exec-26] INFO  ConnectTariffCommand User(id = 28) added tariff(id = 23).
-2023-02-05 18:43:51,307 [http-nio-8080-exec-26] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 15 ms
-2023-02-05 18:43:51,321 [http-nio-8080-exec-27] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 7 ms
-2023-02-05 18:43:56,144 [http-nio-8080-exec-21] INFO  ConnectTariffCommand User(id = 28) added tariff(id = 37).
-2023-02-05 18:43:56,144 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 10 ms
-2023-02-05 18:43:56,158 [http-nio-8080-exec-22] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 10 ms
-2023-02-05 18:43:57,754 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=6&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 7 ms
-2023-02-05 18:44:00,230 [http-nio-8080-exec-24] INFO  ConnectTariffCommand User(id = 28) added tariff(id = 31).
-2023-02-05 18:44:00,230 [http-nio-8080-exec-24] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 11 ms
-2023-02-05 18:44:00,241 [http-nio-8080-exec-29] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 6 ms
-2023-02-05 18:44:01,245 [http-nio-8080-exec-25] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 16 ms
-2023-02-05 18:44:02,040 [http-nio-8080-exec-30] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 19 ms
+2023-02-06 00:00:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:02:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:04:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:06:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:08:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:10:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:12:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:14:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:16:30,336 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:16:31,986 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-06 00:18:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:20:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:22:30,321 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:24:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:26:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:28:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:30:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:32:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:34:30,322 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:36:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:38:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:40:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:42:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:44:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:46:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:48:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:50:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:52:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:54:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:56:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 00:58:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:00:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:02:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:04:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:06:30,323 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:08:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:10:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:12:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:14:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:16:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:18:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:20:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:22:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:24:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:26:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:28:30,322 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:30:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:32:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:34:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:36:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:38:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:40:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:42:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:44:30,322 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:46:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:48:30,323 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:50:30,322 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:52:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:54:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:56:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 01:58:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 02:00:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 02:02:30,323 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 02:04:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 02:06:30,322 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 02:08:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 02:10:30,325 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:46:47,180 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:46:56,724 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 177 ms
+2023-02-06 17:46:56,760 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 6 ms
+2023-02-06 17:46:56,761 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 7 ms
+2023-02-06 17:46:56,767 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 1 ms
+2023-02-06 17:46:56,792 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/peakpx.jpg/null Access time : 1 ms
+2023-02-06 17:47:27,394 [http-nio-8080-exec-2] INFO  LoginCommand User with login admin successfully logged in.
+2023-02-06 17:47:27,394 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 29 ms
+2023-02-06 17:47:27,411 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 13 ms
+2023-02-06 17:47:47,469 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 60 ms
+2023-02-06 17:47:47,500 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/admin_menu.js/null Access time : 5 ms
+2023-02-06 17:47:49,873 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 27 ms
+2023-02-06 17:48:31,634 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 47 ms
+2023-02-06 17:48:45,519 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 38 ms
+2023-02-06 17:48:47,127 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:49:04,760 [http-nio-8080-exec-1] INFO  RegisterUserCommand User: [User,Name,subscriber1,winoca2167@chotunai.com, Kyiv] registered successfully.
+2023-02-06 17:49:04,761 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=registerUser Access time : 20 ms
+2023-02-06 17:49:04,772 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration&success=register_user Access time : 6 ms
+2023-02-06 17:49:06,702 [pool-3-thread-1] INFO  EmailUtil Email to winoca2167@chotunai.com was sent.
+2023-02-06 17:49:17,840 [http-nio-8080-exec-2] INFO  LogoutCommand User successfully logged out.
+2023-02-06 17:49:17,841 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 2 ms
+2023-02-06 17:49:17,858 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 8 ms
+2023-02-06 17:49:27,568 [http-nio-8080-exec-5] INFO  LoginCommand User with login subscriber1 successfully logged in.
+2023-02-06 17:49:27,569 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 3 ms
+2023-02-06 17:49:27,588 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 13 ms
+2023-02-06 17:49:28,885 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 27 ms
+2023-02-06 17:49:28,908 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /js/subscriber_menu.js/null Access time : 0 ms
+2023-02-06 17:49:28,912 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /js/validate_password_confirm.js/null Access time : 1 ms
+2023-02-06 17:49:29,993 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 27 ms
+2023-02-06 17:49:30,491 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 24 ms
+2023-02-06 17:49:31,025 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 13 ms
+2023-02-06 17:49:59,361 [http-nio-8080-exec-3] INFO  ChangePasswordCommand UserDTO [id=35, blocked=false, login=subscriber1, balance=0.00, firstName=User, lastName=Name, email=winoca2167@chotunai.com, city=Kyiv, address= 123 Street, role=SUBSCRIBER] changed password.
+2023-02-06 17:49:59,361 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changePassword Access time : 9 ms
+2023-02-06 17:49:59,372 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile&success=change_password Access time : 6 ms
+2023-02-06 17:50:01,442 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 9 ms
+2023-02-06 17:50:02,532 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 8 ms
+2023-02-06 17:50:03,359 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-02-06 17:50:08,444 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 39 ms
+2023-02-06 17:50:08,465 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /images/call-contact-phone-svgrepo-com.png/null Access time : 1 ms
+2023-02-06 17:50:08,467 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /images/connection-svgrepo-com.png/null Access time : 0 ms
+2023-02-06 17:50:08,468 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /images/satelite-svgrepo-com.png/null Access time : 1 ms
+2023-02-06 17:50:08,473 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /images/smart-svgrepo-com.png/null Access time : 1 ms
+2023-02-06 17:50:08,474 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /images/arrow.png/null Access time : 0 ms
+2023-02-06 17:50:08,483 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 0 ms
+2023-02-06 17:50:09,724 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=&rowNumber=5&service=TELEPHONE Access time : 13 ms
+2023-02-06 17:50:13,395 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 20 ms
+2023-02-06 17:50:21,333 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 18 ms
+2023-02-06 17:50:23,061 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 15 ms
+2023-02-06 17:50:23,869 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 23 ms
+2023-02-06 17:50:30,249 [http-nio-8080-exec-5] INFO  ReplenishCommand User(id = 35) replenished the account with $100
+2023-02-06 17:50:30,250 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 12 ms
+2023-02-06 17:50:30,276 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 19 ms
+2023-02-06 17:50:34,138 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-02-06 17:50:34,163 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 6 ms
+2023-02-06 17:50:34,697 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 8 ms
+2023-02-06 17:50:35,749 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 8 ms
+2023-02-06 17:50:40,791 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 10 ms
+2023-02-06 17:50:43,774 [http-nio-8080-exec-2] INFO  ConnectTariffCommand User(id = 35) added tariff(id = 1).
+2023-02-06 17:50:43,775 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 14 ms
+2023-02-06 17:50:43,790 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 10 ms
+2023-02-06 17:50:46,940 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 14 ms
+2023-02-06 17:50:47,132 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:50:48,936 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=3&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 7 ms
+2023-02-06 17:50:51,650 [http-nio-8080-exec-6] INFO  ConnectTariffCommand User(id = 35) added tariff(id = 7).
+2023-02-06 17:50:51,651 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 15 ms
+2023-02-06 17:50:51,663 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 7 ms
+2023-02-06 17:50:54,233 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=5&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 12 ms
+2023-02-06 17:50:56,715 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=7&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 10 ms
+2023-02-06 17:51:00,160 [http-nio-8080-exec-1] INFO  ConnectTariffCommand User(id = 35) added tariff(id = 21).
+2023-02-06 17:51:00,160 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 14 ms
+2023-02-06 17:51:00,173 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 7 ms
+2023-02-06 17:51:05,310 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=&rowNumber=5&service=TELEPHONE Access time : 13 ms
+2023-02-06 17:51:07,422 [http-nio-8080-exec-3] INFO  ConnectTariffCommand User(id = 35) added tariff(id = 40).
+2023-02-06 17:51:07,423 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 14 ms
+2023-02-06 17:51:07,443 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 13 ms
+2023-02-06 17:51:10,339 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 8 ms
+2023-02-06 17:51:11,572 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=&rowNumber=5&service=TELEPHONE Access time : 13 ms
+2023-02-06 17:51:13,506 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 8 ms
+2023-02-06 17:51:15,074 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 13 ms
+2023-02-06 17:51:15,776 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 10 ms
+2023-02-06 17:51:50,431 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 9 ms
+2023-02-06 17:51:54,345 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 6 ms
+2023-02-06 17:51:56,724 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 12 ms
+2023-02-06 17:52:16,255 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 7 ms
+2023-02-06 17:52:18,093 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 13 ms
+2023-02-06 17:52:36,011 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 13 ms
+2023-02-06 17:52:36,942 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 18 ms
+2023-02-06 17:52:37,473 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 5 ms
+2023-02-06 17:52:38,607 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 6 ms
+2023-02-06 17:52:43,525 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 24 ms
+2023-02-06 17:52:44,163 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 24 ms
+2023-02-06 17:52:44,839 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 8 ms
+2023-02-06 17:52:45,442 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 8 ms
+2023-02-06 17:52:46,112 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 2 ms
+2023-02-06 17:52:47,155 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:52:48,163 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 6 ms
+2023-02-06 17:52:49,001 [pool-3-thread-1] INFO  EmailUtil Email to winoca2167@chotunai.com was sent.
+2023-02-06 17:52:49,145 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
+2023-02-06 17:52:50,682 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 10 ms
+2023-02-06 17:53:01,530 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 9 ms
+2023-02-06 17:53:02,809 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 12 ms
+2023-02-06 17:53:03,520 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 13 ms
+2023-02-06 17:53:06,406 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
+2023-02-06 17:53:13,020 [http-nio-8080-exec-2] INFO  DisableTariffCommand User(id = 35) disabled tariff(id = 7).
+2023-02-06 17:53:13,021 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=disableTariff Access time : 8 ms
+2023-02-06 17:53:13,035 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs&success=disable_tariff Access time : 8 ms
+2023-02-06 17:53:15,602 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 10 ms
+2023-02-06 17:53:16,353 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 13 ms
+2023-02-06 17:53:17,156 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 13 ms
+2023-02-06 17:53:18,392 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 9 ms
+2023-02-06 17:53:20,703 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=&service=ALL&rowNumber=5 Access time : 10 ms
+2023-02-06 17:53:24,064 [http-nio-8080-exec-9] INFO  ConnectTariffCommand User(id = 35) added tariff(id = 25).
+2023-02-06 17:53:24,065 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 22 ms
+2023-02-06 17:53:24,095 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 18 ms
+2023-02-06 17:53:25,211 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-02-06 17:53:26,101 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 13 ms
+2023-02-06 17:53:27,650 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 9 ms
+2023-02-06 17:53:47,326 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 11 ms
+2023-02-06 17:53:49,839 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 6 ms
+2023-02-06 17:53:56,976 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 12 ms
+2023-02-06 17:53:58,464 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 7 ms
+2023-02-06 17:54:15,808 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 10 ms
+2023-02-06 17:54:16,175 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 7 ms
+2023-02-06 17:54:19,711 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 11 ms
+2023-02-06 17:54:20,583 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 23 ms
+2023-02-06 17:54:23,087 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 9 ms
+2023-02-06 17:54:47,131 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:54:48,377 [pool-3-thread-1] INFO  EmailUtil Email to winoca2167@chotunai.com was sent.
+2023-02-06 17:55:05,401 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 8 ms
+2023-02-06 17:55:06,001 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 9 ms
+2023-02-06 17:55:17,717 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-02-06 17:55:17,734 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 3 ms
+2023-02-06 17:55:18,721 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 4 ms
+2023-02-06 17:55:19,689 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 9 ms
+2023-02-06 17:55:57,756 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-02-06 17:55:57,776 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-02-06 17:55:58,680 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 3 ms
+2023-02-06 17:55:59,585 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 10 ms
+2023-02-06 17:56:02,077 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 6 ms
+2023-02-06 17:56:04,726 [http-nio-8080-exec-8] INFO  DisableTariffCommand User(id = 35) disabled tariff(id = 21).
+2023-02-06 17:56:04,728 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=disableTariff Access time : 9 ms
+2023-02-06 17:56:04,740 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs&success=disable_tariff Access time : 5 ms
+2023-02-06 17:56:06,459 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 7 ms
+2023-02-06 17:56:07,946 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 8 ms
+2023-02-06 17:56:10,264 [http-nio-8080-exec-2] INFO  DisableTariffCommand User(id = 35) disabled tariff(id = 40).
+2023-02-06 17:56:10,269 [http-nio-8080-exec-2] INFO  DisableTariffCommand User(id = 35) has been unblocked due to disconnection of the tariff.
+2023-02-06 17:56:10,269 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=disableTariff Access time : 12 ms
+2023-02-06 17:56:10,279 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs&success=disable_tariff Access time : 5 ms
+2023-02-06 17:56:11,384 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 16 ms
+2023-02-06 17:56:13,625 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
+2023-02-06 17:56:34,102 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 6 ms
+2023-02-06 17:56:35,122 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 4 ms
+2023-02-06 17:56:35,724 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-02-06 17:56:37,319 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 10 ms
+2023-02-06 17:56:38,182 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 9 ms
+2023-02-06 17:56:41,638 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=downloadTariffs&service=ALL Access time : 228 ms
+2023-02-06 17:56:47,128 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:56:51,731 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-02-06 17:56:51,771 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
+2023-02-06 17:56:53,123 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 7 ms
+2023-02-06 17:56:54,496 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=downloadTariffs&service=ALL Access time : 51 ms
+2023-02-06 17:57:05,645 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 12 ms
+2023-02-06 17:57:06,710 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
+2023-02-06 17:57:09,065 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-02-06 17:57:10,749 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 8 ms
+2023-02-06 17:57:12,849 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 9 ms
+2023-02-06 17:57:26,579 [http-nio-8080-exec-3] INFO  LogoutCommand User successfully logged out.
+2023-02-06 17:57:26,579 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
+2023-02-06 17:57:26,593 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 4 ms
+2023-02-06 17:57:31,962 [http-nio-8080-exec-4] INFO  LoginCommand User with login admin successfully logged in.
+2023-02-06 17:57:31,963 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
+2023-02-06 17:57:31,970 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 3 ms
+2023-02-06 17:57:33,273 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 16 ms
+2023-02-06 17:57:35,348 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-02-06 17:57:35,363 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-02-06 17:57:36,672 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 5 ms
+2023-02-06 17:57:38,097 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openAddTariff Access time : 21 ms
+2023-02-06 17:57:57,460 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=addTariff Access time : 8 ms
+2023-02-06 17:58:07,315 [http-nio-8080-exec-5] INFO  AddTariffCommand Tariff Ultra Internet with rate $11/14 day(s) successfully added.
+2023-02-06 17:58:07,315 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=addTariff Access time : 8 ms
+2023-02-06 17:58:07,326 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=tariff_added Access time : 6 ms
+2023-02-06 17:58:10,732 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 4 ms
+2023-02-06 17:58:14,980 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&rowNumber=5&service=INTERNET Access time : 10 ms
+2023-02-06 17:58:18,950 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=ASC&service=INTERNET&rowNumber=5 Access time : 13 ms
+2023-02-06 17:58:20,350 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=3&sortingField=name&sortingOrder=ASC&service=INTERNET&rowNumber=5 Access time : 9 ms
+2023-02-06 17:58:27,294 [http-nio-8080-exec-1] INFO  RemoveTariffCommand Tariff with id 22 successfully removed.
+2023-02-06 17:58:27,295 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeTariff Access time : 9 ms
+2023-02-06 17:58:27,308 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=remove_tariff Access time : 6 ms
+2023-02-06 17:58:47,129 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 17:59:17,744 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 12 ms
+2023-02-06 17:59:19,110 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=3&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 12 ms
+2023-02-06 17:59:20,824 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=4&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 14 ms
+2023-02-06 17:59:21,735 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&rowNumber=5&service=CABLE_TV Access time : 6 ms
+2023-02-06 17:59:30,876 [http-nio-8080-exec-7] INFO  EditTariffCommand Tariff( 14) has been edited. TariffForm [name=Movie Buff, paymentPeriod=14, rate=20.1, service=CABLE_TV, description=Features a vast library of movies and on-demand content, with new titles added regularly.]
+2023-02-06 17:59:30,877 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=editTariff Access time : 8 ms
+2023-02-06 17:59:30,891 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=tariff_edited Access time : 7 ms
+2023-02-06 17:59:33,448 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=&rowNumber=5&service=CABLE_TV Access time : 6 ms
+2023-02-06 17:59:38,565 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 17 ms
+2023-02-06 17:59:39,891 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=21 Access time : 9 ms
+2023-02-06 17:59:42,671 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=21 Access time : 5 ms
+2023-02-06 17:59:43,963 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=21 Access time : 9 ms
+2023-02-06 17:59:53,353 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=21 Access time : 10 ms
+2023-02-06 18:00:33,743 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 14 ms
+2023-02-06 18:00:38,406 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=21 Access time : 6 ms
+2023-02-06 18:00:40,329 [http-nio-8080-exec-5] WARN  AuthenticationFilter An attempt to access viewSubscriberAccount failed.
+2023-02-06 18:00:40,393 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=21 Access time : 66 ms
+2023-02-06 18:00:41,375 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:00:46,270 [http-nio-8080-exec-8] INFO  LoginCommand User with login admin successfully logged in.
+2023-02-06 18:00:46,271 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 27 ms
+2023-02-06 18:00:46,281 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-02-06 18:00:47,666 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 32 ms
+2023-02-06 18:00:49,543 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 4 ms
+2023-02-06 18:00:51,411 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=32 Access time : 17 ms
+2023-02-06 18:00:52,356 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=32 Access time : 26 ms
+2023-02-06 18:00:55,726 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=32 Access time : 16 ms
+2023-02-06 18:00:58,101 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=32 Access time : 11 ms
+2023-02-06 18:01:03,107 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=32 Access time : 17 ms
+2023-02-06 18:01:03,583 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=32 Access time : 7 ms
+2023-02-06 18:01:05,033 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 9 ms
+2023-02-06 18:01:06,958 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 12 ms
+2023-02-06 18:01:09,578 [http-nio-8080-exec-13] INFO  ChangeUserStatusCommand Status of the user with id 32 successfully changed.
+2023-02-06 18:01:09,579 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserStatus Access time : 7 ms
+2023-02-06 18:01:09,587 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=status_changed Access time : 4 ms
+2023-02-06 18:01:11,376 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 8 ms
+2023-02-06 18:01:12,731 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=32 Access time : 8 ms
+2023-02-06 18:01:20,556 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 11 ms
+2023-02-06 18:01:22,074 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 7 ms
+2023-02-06 18:01:34,076 [http-nio-8080-exec-18] INFO  ChangeUserBalanceCommand Balance of user with id 32 changed.
+2023-02-06 18:01:34,076 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeUserBalance Access time : 8 ms
+2023-02-06 18:01:34,086 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&userId=32&success=balance_changed Access time : 6 ms
+2023-02-06 18:01:35,861 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 9 ms
+2023-02-06 18:01:36,921 [http-nio-8080-exec-19] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=32 Access time : 5 ms
+2023-02-06 18:01:38,320 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=32 Access time : 15 ms
+2023-02-06 18:01:40,426 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=32 Access time : 8 ms
+2023-02-06 18:01:41,875 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 14 ms
+2023-02-06 18:01:42,848 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 5 ms
+2023-02-06 18:01:47,826 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberProfile&userId=32 Access time : 8 ms
+2023-02-06 18:01:49,104 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberTariffs&userId=32 Access time : 4 ms
+2023-02-06 18:01:49,817 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewSubscriberAccount&userId=32 Access time : 14 ms
+2023-02-06 18:01:51,768 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 9 ms
+2023-02-06 18:01:53,308 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=2 Access time : 13 ms
+2023-02-06 18:01:54,807 [http-nio-8080-exec-19] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=20 Access time : 12 ms
+2023-02-06 18:02:16,824 [http-nio-8080-exec-14] INFO  LogoutCommand User successfully logged out.
+2023-02-06 18:02:16,825 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
+2023-02-06 18:02:16,834 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 4 ms
+2023-02-06 18:02:20,441 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=resetPassword Access time : 14 ms
+2023-02-06 18:02:20,452 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=reset_password Access time : 3 ms
+2023-02-06 18:02:21,949 [pool-6-thread-1] INFO  EmailUtil Email to winoca2167@chotunai.com was sent.
+2023-02-06 18:02:41,358 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:02:42,604 [pool-6-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-06 18:02:57,350 [http-nio-8080-exec-18] INFO  LoginCommand User with login subscriber1 successfully logged in.
+2023-02-06 18:02:57,350 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
+2023-02-06 18:02:57,358 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 3 ms
+2023-02-06 18:03:01,273 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 14 ms
+2023-02-06 18:03:02,132 [http-nio-8080-exec-19] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 26 ms
+2023-02-06 18:03:03,224 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=&rowNumber=5&service=TELEPHONE Access time : 10 ms
+2023-02-06 18:03:05,424 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&rowNumber=5&service=INTERNET Access time : 7 ms
+2023-02-06 18:03:08,125 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&rowNumber=5&service=CABLE_TV Access time : 13 ms
+2023-02-06 18:03:08,533 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&rowNumber=5&service=IP_TV Access time : 5 ms
+2023-02-06 18:03:26,879 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=DESC&service=IP_TV&rowNumber=5 Access time : 7 ms
+2023-02-06 18:03:30,147 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 4 ms
+2023-02-06 18:03:34,849 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 6 ms
+2023-02-06 18:03:35,719 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 10 ms
+2023-02-06 18:03:37,212 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 5 ms
+2023-02-06 18:03:41,137 [http-nio-8080-exec-19] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 7 ms
+2023-02-06 18:03:43,526 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=8&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 7 ms
+2023-02-06 18:04:19,878 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 6 ms
+2023-02-06 18:04:21,123 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 6 ms
+2023-02-06 18:04:21,861 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 10 ms
+2023-02-06 18:04:41,373 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:04:53,704 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: subscriber1, IP: 0:0:0:0:0:0:0:1 Page: /1234123/null Access time : 0 ms
+2023-02-06 18:06:41,346 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:08:41,346 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:10:00,782 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:10:41,941 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:12:05,337 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 29 ms
+2023-02-06 18:12:06,020 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 40 ms
+2023-02-06 18:12:41,925 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:14:41,941 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:14:43,379 [pool-12-thread-1] INFO  EmailUtil Email to winoca2167@chotunai.com was sent.
+2023-02-06 18:16:07,132 [pool-14-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:16:38,007 [pool-17-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:16:48,611 [pool-20-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:16:59,164 [pool-23-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:17:19,861 [pool-26-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:17:30,408 [pool-29-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:17:41,177 [pool-32-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:17:42,646 [pool-33-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-06 18:18:01,902 [pool-35-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:18:12,503 [pool-38-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:20:12,467 [pool-38-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:20:24,321 [http-nio-8080-exec-29] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 37 ms
+2023-02-06 18:20:26,982 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /in/null Access time : 1 ms
+2023-02-06 18:21:05,943 [http-nio-8080-exec-27] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 8 ms
+2023-02-06 18:21:08,529 [http-nio-8080-exec-24] WARN  LoginCommand Unsuccessful attempt to access account with login asdf.
+2023-02-06 18:21:08,531 [http-nio-8080-exec-24] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 19 ms
+2023-02-06 18:21:12,941 [http-nio-8080-exec-30] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /asdfqwerqwe/null Access time : 0 ms
+2023-02-06 18:21:15,526 [pool-41-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-06 18:21:32,955 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 60 ms

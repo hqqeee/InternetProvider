@@ -1,0 +1,546 @@
+2023-02-05 16:20:12,946 [main] WARN  ViewSubscriberAccountCommand A service error occurred while loading account info.
+2023-02-05 16:20:12,974 [main] WARN  ViewSubscriberAccountCommand An unexpected error occurred while loading account info.
+2023-02-05 16:20:12,994 [main] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
+2023-02-05 16:20:13,008 [main] WARN  ViewSubscriberProfileCommand An unexpected error occurred while loading user info.
+2023-02-05 16:20:13,018 [main] WARN  ViewSubscriberProfileCommand A service error occurred while loading user info.
+2023-02-05 16:20:13,028 [main] WARN  ChangeUserStatusCommand An error occurred while changing user status.
+2023-02-05 16:20:13,038 [main] INFO  ChangeUserStatusCommand Status of the user with id 1 successfully changed.
+2023-02-05 16:20:13,044 [main] WARN  ChangeUserStatusCommand An error occurred while changing user status.
+2023-02-05 16:20:13,107 [main] WARN  ViewSubscriberTariffsCommand An unexpected error occurred while loading user tariffs.
+2023-02-05 16:20:13,115 [main] WARN  ViewSubscriberTariffsCommand A service error occurred while loading user tariffs.
+2023-02-05 16:20:13,130 [main] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:20:13,135 [main] WARN  DailyWithdrawCommand An error occurred while executing daily withdrawal.
+2023-02-05 16:20:13,141 [main] WARN  DailyWithdrawCommand An error occurred while executing daily withdrawal.
+2023-02-05 16:20:13,149 [main] INFO  EditTariffCommand Tariff( 1) has been edited. TariffForm [name=name, paymentPeriod=14, rate=12, service=INTERNET, description=desc]
+2023-02-05 16:20:13,155 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-02-05 16:20:13,168 [main] WARN  EditTariffCommand An unexpected error occurred while editing the tariff.
+2023-02-05 16:20:13,176 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-02-05 16:20:13,184 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-02-05 16:20:13,187 [main] WARN  ViewTariffsCommand An error occurred while loading tariffs view.
+2023-02-05 16:20:13,201 [main] WARN  EditTariffCommand A service error occurred while editing the tariff.
+2023-02-05 16:20:13,211 [main] WARN  RemoveTariffCommand A service error occurred while removing tariff.
+2023-02-05 16:20:13,218 [main] WARN  RemoveTariffCommand An error occurred while removing tariff.
+2023-02-05 16:20:13,225 [main] INFO  RemoveTariffCommand Tariff with id 1 successfully removed.
+2023-02-05 16:20:13,232 [main] WARN  AddTariffCommand An error occurred while adding a tariff.
+2023-02-05 16:20:13,239 [main] WARN  AddTariffCommand An error occurred while adding a tariff.
+2023-02-05 16:20:13,246 [main] INFO  AddTariffCommand Tariff name with rate $12/14 day(s) successfully added.
+2023-02-05 16:20:13,264 [main] WARN  RegisterUserCommand An unexpected error occurred while registering user.
+2023-02-05 16:20:13,287 [main] WARN  RegisterUserCommand A service error occurred while registering user.
+2023-02-05 16:20:13,294 [main] INFO  RegisterUserCommand User: [firstName,lastName,login,email@mail.com, city] registered successfully.
+2023-02-05 16:20:13,301 [main] WARN  RemoveUserCommand An error occurred while removing user.
+2023-02-05 16:20:13,307 [main] INFO  RemoveUserCommand Tariff with id 2 successfully removed.
+2023-02-05 16:20:13,312 [main] WARN  RemoveUserCommand A service error occurred while removing user.
+2023-02-05 16:20:13,340 [main] WARN  AdminMenuCommand An error occurred while loading user view.
+2023-02-05 16:20:13,362 [main] INFO  ChangeUserBalanceCommand Balance of user with id 1 changed.
+2023-02-05 16:20:13,420 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-02-05 16:20:13,431 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-02-05 16:20:13,445 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-02-05 16:20:13,468 [main] WARN  ChangeUserBalanceCommand An error occurred while changing user balance.
+2023-02-05 16:20:14,167 [main] WARN  DownloadTariffsCommand A service error occurred while downloading pdf with tariffs.
+2023-02-05 16:20:14,191 [main] WARN  ResetPasswordCommand An unexpected error occurred while reseting password.
+2023-02-05 16:20:14,255 [main] INFO  LogoutCommand User successfully logged out.
+2023-02-05 16:20:14,263 [main] INFO  LoginCommand User with login login successfully logged in.
+2023-02-05 16:20:14,268 [main] WARN  LoginCommand An error occurred while logging into the system.
+2023-02-05 16:20:14,273 [main] WARN  LoginCommand Unsuccessful attempt to access account with login login.
+2023-02-05 16:20:14,440 [main] INFO  LogAccessFilter Login: Unlogged user, IP: ip Page: /path/query Access time : 0 ms
+2023-02-05 16:20:14,445 [main] INFO  LogAccessFilter Login: userLogin, IP: ip Page: /path/query Access time : 1 ms
+2023-02-05 16:20:14,449 [main] WARN  AuthenticationFilter An attempt to access viewProfile failed.
+2023-02-05 16:20:14,460 [main] WARN  AuthenticationFilter An attempt to access viewProfile failed. User: null .
+2023-02-05 16:20:14,463 [main] WARN  AuthenticationFilter An attempt to access adminMenu failed. User: null .
+2023-02-05 16:20:15,487 [main] INFO  ChangePasswordCommand UserDTO [id=1, blocked=false, login=login, balance=10, firstName=firstName, lastName=lastName, email=email@asd.asd, city=City, address=Address, role=SUBSCRIBER] changed password.
+2023-02-05 16:20:15,492 [main] WARN  ChangePasswordCommand A service error occurred while changing user balance.
+2023-02-05 16:20:15,500 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
+2023-02-05 16:20:15,506 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
+2023-02-05 16:20:15,508 [main] INFO  DisableTariffCommand User(id = 1) has been unblocked due to disconnection of the tariff.
+2023-02-05 16:20:15,511 [main] WARN  ViewActiveTariffsCommand An error occurred while loading tariffs view.
+2023-02-05 16:20:15,513 [main] WARN  DisableTariffCommand An unexpected error occurred while disabling tariff.
+2023-02-05 16:20:15,514 [main] WARN  ViewActiveTariffsCommand An error occurred while loading tariffs view.
+2023-02-05 16:20:15,521 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
+2023-02-05 16:20:15,526 [main] INFO  DisableTariffCommand User(id = 1) disabled tariff(id = 2).
+2023-02-05 16:20:15,527 [main] WARN  DisableTariffCommand A service error occurred while disabling tariff.
+2023-02-05 16:20:15,538 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
+2023-02-05 16:20:15,547 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
+2023-02-05 16:20:15,549 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
+2023-02-05 16:20:15,549 [main] WARN  ReplenishCommand A service error occurred while replenishing the account.
+2023-02-05 16:20:15,552 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
+2023-02-05 16:20:15,555 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
+2023-02-05 16:20:15,557 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
+2023-02-05 16:20:15,561 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
+2023-02-05 16:20:15,564 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
+2023-02-05 16:20:15,566 [main] WARN  ReplenishCommand An unexpected error occurred while replenishing the account.
+2023-02-05 16:20:15,567 [main] WARN  ViewAccountCommand An unexpected error occurred while loading account info.
+2023-02-05 16:20:15,573 [main] INFO  ReplenishCommand User(id = 1) replenished the account with $10
+2023-02-05 16:20:15,574 [main] INFO  ReplenishCommand User(id = 1) has been unblocked due to replenishment the account.
+2023-02-05 16:20:15,591 [main] WARN  ConnectTariffCommand A service error occurred while connecting tariff.
+2023-02-05 16:20:15,600 [main] INFO  ConnectTariffCommand User(id = 1) added tariff(id = 1).
+2023-02-05 16:20:15,608 [main] WARN  ConnectTariffCommand An unexpected error occurred while connecting tariff.
+2023-02-05 16:20:15,631 [main] WARN  ViewAccountCommand A service error occurred while loading account info.
+2023-02-05 16:20:15,688 [pool-2-thread-1] INFO  EmailUtil Email to asd@asda.add was sent.
+2023-02-05 16:40:00,478 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:40:02,216 [pool-3-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 16:40:02,624 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 1326 ms
+2023-02-05 16:40:02,652 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 7 ms
+2023-02-05 16:40:02,653 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 7 ms
+2023-02-05 16:40:02,687 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 1 ms
+2023-02-05 16:40:02,702 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/peakpx.jpg/null Access time : 0 ms
+2023-02-05 16:40:04,037 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 327 ms
+2023-02-05 16:40:44,662 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 178 ms
+2023-02-05 16:41:15,507 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 165 ms
+2023-02-05 16:41:26,652 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 194 ms
+2023-02-05 16:41:57,898 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 15 ms
+2023-02-05 16:41:58,737 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 150 ms
+2023-02-05 16:41:59,914 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 17 ms
+2023-02-05 16:41:59,929 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 7 ms
+2023-02-05 16:42:00,443 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:42:01,493 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 5 ms
+2023-02-05 16:42:01,892 [pool-3-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 16:42:11,727 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 24 ms
+2023-02-05 16:42:12,409 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 170 ms
+2023-02-05 16:42:14,456 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-02-05 16:42:14,484 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
+2023-02-05 16:43:03,945 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:43:05,200 [pool-6-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 16:44:35,719 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 43 ms
+2023-02-05 16:44:39,815 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 10 ms
+2023-02-05 16:44:39,837 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 9 ms
+2023-02-05 16:44:40,981 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 16 ms
+2023-02-05 16:44:43,833 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 13 ms
+2023-02-05 16:44:43,913 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/logo.svg/null Access time : 5 ms
+2023-02-05 16:45:03,937 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:45:05,207 [pool-6-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 16:46:27,524 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:46:28,799 [pool-9-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 16:47:05,482 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 174 ms
+2023-02-05 16:47:05,540 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/logo.png/null Access time : 5 ms
+2023-02-05 16:47:20,761 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 5 ms
+2023-02-05 16:47:22,065 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 22 ms
+2023-02-05 16:47:22,081 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 8 ms
+2023-02-05 16:47:23,324 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 3 ms
+2023-02-05 16:48:02,462 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 7 ms
+2023-02-05 16:48:04,990 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 2 ms
+2023-02-05 16:48:05,663 [http-nio-8080-exec-22] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 3 ms
+2023-02-05 16:48:06,258 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 6 ms
+2023-02-05 16:48:08,283 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 155 ms
+2023-02-05 16:48:27,483 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:48:28,745 [pool-9-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 16:48:39,990 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:48:41,218 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 16:48:51,355 [http-nio-8080-exec-27] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 18 ms
+2023-02-05 16:48:51,401 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 25 ms
+2023-02-05 16:48:52,476 [http-nio-8080-exec-25] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /about.jsp/null Access time : 11 ms
+2023-02-05 16:49:04,769 [http-nio-8080-exec-22] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /faq.jsp/null Access time : 6 ms
+2023-02-05 16:49:05,321 [http-nio-8080-exec-28] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 61 ms
+2023-02-05 16:49:05,337 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/call-contact-phone-svgrepo-com.png/null Access time : 1 ms
+2023-02-05 16:49:05,343 [http-nio-8080-exec-24] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/connection-svgrepo-com.png/null Access time : 0 ms
+2023-02-05 16:49:05,344 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/satelite-svgrepo-com.png/null Access time : 0 ms
+2023-02-05 16:49:05,345 [http-nio-8080-exec-29] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/arrow.png/null Access time : 0 ms
+2023-02-05 16:49:05,345 [http-nio-8080-exec-26] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/smart-svgrepo-com.png/null Access time : 0 ms
+2023-02-05 16:49:05,360 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 1 ms
+2023-02-05 16:49:05,806 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 4 ms
+2023-02-05 16:49:12,491 [http-nio-8080-exec-30] INFO  LoginCommand User with login admin successfully logged in.
+2023-02-05 16:49:12,491 [http-nio-8080-exec-30] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 4 ms
+2023-02-05 16:49:12,506 [http-nio-8080-exec-31] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 9 ms
+2023-02-05 16:50:09,838 [http-nio-8080-exec-29] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 31 ms
+2023-02-05 16:50:09,898 [http-nio-8080-exec-32] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/admin_menu.js/null Access time : 4 ms
+2023-02-05 16:50:11,534 [http-nio-8080-exec-30] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 23 ms
+2023-02-05 16:50:39,974 [pool-11-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 16:50:41,253 [pool-12-thread-1] INFO  EmailUtil Email to regekeb380@nevyxus.com was sent.
+2023-02-05 17:44:59,040 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 17:45:03,849 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 192 ms
+2023-02-05 17:45:03,867 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js/null Access time : 2 ms
+2023-02-05 17:45:03,868 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/gb.png/null Access time : 1 ms
+2023-02-05 17:45:03,908 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/ua.png/null Access time : 2 ms
+2023-02-05 17:45:03,927 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/peakpx.jpg/null Access time : 1 ms
+2023-02-05 17:45:05,474 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 188 ms
+2023-02-05 17:45:05,483 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/arrow.png/null Access time : 0 ms
+2023-02-05 17:45:05,488 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /js/tariff_menu.js/null Access time : 1 ms
+2023-02-05 17:45:05,489 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/call-contact-phone-svgrepo-com.png/null Access time : 0 ms
+2023-02-05 17:45:05,490 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/satelite-svgrepo-com.png/null Access time : 1 ms
+2023-02-05 17:45:05,490 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/smart-svgrepo-com.png/null Access time : 1 ms
+2023-02-05 17:45:05,491 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /images/connection-svgrepo-com.png/null Access time : 0 ms
+2023-02-05 17:45:11,233 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 28 ms
+2023-02-05 17:45:13,007 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 23 ms
+2023-02-05 17:45:14,797 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 21 ms
+2023-02-05 17:45:15,668 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 21 ms
+2023-02-05 17:45:19,279 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=DESC&rowNumber=5&service=TELEPHONE Access time : 15 ms
+2023-02-05 17:45:20,631 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=TELEPHONE&rowNumber=5 Access time : 24 ms
+2023-02-05 17:45:22,990 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=ASC&service=TELEPHONE&rowNumber=5 Access time : 14 ms
+2023-02-05 17:45:26,069 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&rowNumber=5&service=INTERNET Access time : 17 ms
+2023-02-05 17:45:27,508 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=3&sortingField=name&sortingOrder=ASC&service=INTERNET&rowNumber=5 Access time : 6 ms
+2023-02-05 17:45:29,583 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&rowNumber=5&service=CABLE_TV Access time : 10 ms
+2023-02-05 17:45:35,772 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&rowNumber=5&service=IP_TV Access time : 14 ms
+2023-02-05 17:46:00,669 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=2&sortingField=name&sortingOrder=ASC&service=IP_TV&rowNumber=5 Access time : 9 ms
+2023-02-05 17:46:04,130 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=ASC&service=IP_TV&rowNumber=5 Access time : 10 ms
+2023-02-05 17:46:05,540 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=ASC&rowNumber=5&service=ALL Access time : 13 ms
+2023-02-05 17:46:09,593 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 19 ms
+2023-02-05 17:46:23,736 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=20 Access time : 18 ms
+2023-02-05 17:46:26,596 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=3&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=20 Access time : 11 ms
+2023-02-05 17:46:27,870 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 13 ms
+2023-02-05 17:46:29,413 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=6&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 17 ms
+2023-02-05 17:46:30,965 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=15 Access time : 12 ms
+2023-02-05 17:46:59,008 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 17:48:52,630 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&rowNumber=15&service=TELEPHONE Access time : 11 ms
+2023-02-05 17:48:55,144 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&rowNumber=15&service=ALL Access time : 12 ms
+2023-02-05 17:48:59,011 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 17:50:25,589 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 1437 ms
+2023-02-05 17:50:59,009 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:01:43,211 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:01:46,073 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=5&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 239 ms
+2023-02-05 18:01:52,859 [http-nio-8080-exec-3] INFO  LoginCommand User with login carter successfully logged in.
+2023-02-05 18:01:52,859 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 5 ms
+2023-02-05 18:01:52,888 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 24 ms
+2023-02-05 18:01:54,757 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 38 ms
+2023-02-05 18:01:54,785 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /js/subscriber_menu.js/null Access time : 2 ms
+2023-02-05 18:01:54,804 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /js/validate_password_confirm.js/null Access time : 0 ms
+2023-02-05 18:03:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:05:10,070 [http-nio-8080-exec-1] INFO  LogoutCommand User successfully logged out.
+2023-02-05 18:05:10,071 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: carter, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 2 ms
+2023-02-05 18:05:10,083 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 6 ms
+2023-02-05 18:05:14,956 [http-nio-8080-exec-3] INFO  LoginCommand User with login admin successfully logged in.
+2023-02-05 18:05:14,957 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
+2023-02-05 18:05:14,965 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
+2023-02-05 18:05:16,442 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 24 ms
+2023-02-05 18:05:16,457 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /js/admin_menu.js/null Access time : 0 ms
+2023-02-05 18:05:19,847 [http-nio-8080-exec-7] INFO  RemoveUserCommand Tariff with id 2 successfully removed.
+2023-02-05 18:05:19,848 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeUser Access time : 9 ms
+2023-02-05 18:05:19,860 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=remove_user Access time : 7 ms
+2023-02-05 18:05:23,402 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 21 ms
+2023-02-05 18:05:27,382 [http-nio-8080-exec-10] INFO  LogoutCommand User successfully logged out.
+2023-02-05 18:05:27,382 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
+2023-02-05 18:05:27,398 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 7 ms
+2023-02-05 18:05:31,250 [http-nio-8080-exec-3] INFO  LoginCommand User with login edgar_thom1989 successfully logged in.
+2023-02-05 18:05:31,251 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 3 ms
+2023-02-05 18:05:31,262 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 5 ms
+2023-02-05 18:05:33,152 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 10 ms
+2023-02-05 18:05:35,269 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 23 ms
+2023-02-05 18:05:35,770 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 1258 ms
+2023-02-05 18:05:36,621 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
+2023-02-05 18:05:37,577 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 9 ms
+2023-02-05 18:05:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:07:43,181 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:09:43,181 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:11:43,185 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:13:43,185 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:15:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:17:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:18:50,554 [http-nio-8080-exec-2] INFO  LogoutCommand User successfully logged out.
+2023-02-05 18:18:50,555 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: edgar_thom1989, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 1 ms
+2023-02-05 18:18:50,574 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 8 ms
+2023-02-05 18:18:55,277 [http-nio-8080-exec-4] INFO  LoginCommand User with login admin successfully logged in.
+2023-02-05 18:18:55,278 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 5 ms
+2023-02-05 18:18:55,291 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 6 ms
+2023-02-05 18:18:56,376 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 7 ms
+2023-02-05 18:19:00,282 [http-nio-8080-exec-6] INFO  RemoveUserCommand Tariff with id 5 successfully removed.
+2023-02-05 18:19:00,283 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeUser Access time : 8 ms
+2023-02-05 18:19:00,294 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=remove_user Access time : 7 ms
+2023-02-05 18:19:02,717 [http-nio-8080-exec-9] INFO  RemoveUserCommand Tariff with id 6 successfully removed.
+2023-02-05 18:19:02,717 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=removeUser Access time : 8 ms
+2023-02-05 18:19:02,732 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&success=remove_user Access time : 9 ms
+2023-02-05 18:19:03,638 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=openUserRegistration Access time : 17 ms
+2023-02-05 18:19:05,660 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 12 ms
+2023-02-05 18:19:43,181 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:21:43,184 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:22:24,907 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu Access time : 22 ms
+2023-02-05 18:22:28,335 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=2 Access time : 18 ms
+2023-02-05 18:22:28,787 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=5&page=3 Access time : 9 ms
+2023-02-05 18:22:30,024 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=10 Access time : 9 ms
+2023-02-05 18:22:31,554 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=10&page=2 Access time : 21 ms
+2023-02-05 18:22:34,186 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=adminMenu&searchField=&rowNumber=10&page=1 Access time : 15 ms
+2023-02-05 18:22:54,234 [http-nio-8080-exec-3] INFO  LogoutCommand User successfully logged out.
+2023-02-05 18:22:54,234 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=logout Access time : 0 ms
+2023-02-05 18:22:54,245 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=logout Access time : 5 ms
+2023-02-05 18:22:59,949 [http-nio-8080-exec-5] WARN  LoginCommand Unsuccessful attempt to access account with login freestyle.
+2023-02-05 18:22:59,957 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 11 ms
+2023-02-05 18:23:04,989 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap/js/bootstrap.bundle.min.js.map/null Access time : 2 ms
+2023-02-05 18:23:04,994 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /bootstrap.min.css.map/null Access time : 0 ms
+2023-02-05 18:23:39,134 [http-nio-8080-exec-9] WARN  LoginCommand Unsuccessful attempt to access account with login jan.
+2023-02-05 18:23:39,141 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 8 ms
+2023-02-05 18:23:43,183 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:23:49,602 [http-nio-8080-exec-10] INFO  LoginCommand User with login freestyle successfully logged in.
+2023-02-05 18:23:49,602 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 2 ms
+2023-02-05 18:23:49,613 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 4 ms
+2023-02-05 18:23:51,344 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 12 ms
+2023-02-05 18:23:54,026 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 7 ms
+2023-02-05 18:23:59,755 [http-nio-8080-exec-4] INFO  ReplenishCommand User(id = 31) replenished the account with $100
+2023-02-05 18:23:59,756 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 6 ms
+2023-02-05 18:23:59,786 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 24 ms
+2023-02-05 18:24:01,811 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 14 ms
+2023-02-05 18:24:05,816 [http-nio-8080-exec-8] INFO  ConnectTariffCommand User(id = 31) added tariff(id = 33).
+2023-02-05 18:24:05,816 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 14 ms
+2023-02-05 18:24:05,831 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 10 ms
+2023-02-05 18:24:07,054 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 3 ms
+2023-02-05 18:24:07,898 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 10 ms
+2023-02-05 18:24:10,248 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 19 ms
+2023-02-05 18:24:11,212 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 6 ms
+2023-02-05 18:24:12,733 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-02-05 18:24:12,763 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 7 ms
+2023-02-05 18:24:14,117 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 9 ms
+2023-02-05 18:24:14,845 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 11 ms
+2023-02-05 18:25:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:27:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:29:43,194 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:31:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:33:43,190 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:35:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:37:43,188 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:37:51,249 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 8 ms
+2023-02-05 18:37:52,009 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 8 ms
+2023-02-05 18:37:52,863 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 8 ms
+2023-02-05 18:37:53,975 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 5 ms
+2023-02-05 18:37:56,008 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 11 ms
+2023-02-05 18:38:00,765 [http-nio-8080-exec-7] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=name&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 14 ms
+2023-02-05 18:38:02,150 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=ASC&service=ALL&rowNumber=5 Access time : 8 ms
+2023-02-05 18:38:02,797 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&sortingField=rate&sortingOrder=DESC&service=ALL&rowNumber=5 Access time : 19 ms
+2023-02-05 18:38:05,452 [http-nio-8080-exec-9] INFO  ConnectTariffCommand User(id = 31) added tariff(id = 26).
+2023-02-05 18:38:05,453 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 12 ms
+2023-02-05 18:38:05,461 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 5 ms
+2023-02-05 18:38:06,997 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 8 ms
+2023-02-05 18:38:07,806 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: freestyle, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 8 ms
+2023-02-05 18:39:43,189 [pool-2-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:40:38,023 [pool-5-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:40:54,414 [http-nio-8080-exec-8] WARN  AuthenticationFilter An attempt to access viewProfile failed.
+2023-02-05 18:40:54,463 [http-nio-8080-exec-8] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 50 ms
+2023-02-05 18:41:04,051 [http-nio-8080-exec-9] INFO  LoginCommand User with login pearline successfully logged in.
+2023-02-05 18:41:04,051 [http-nio-8080-exec-9] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 23 ms
+2023-02-05 18:41:04,064 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 7 ms
+2023-02-05 18:41:05,871 [http-nio-8080-exec-5] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 16 ms
+2023-02-05 18:41:07,523 [http-nio-8080-exec-2] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 19 ms
+2023-02-05 18:41:11,780 [http-nio-8080-exec-6] INFO  ReplenishCommand User(id = 32) replenished the account with $123
+2023-02-05 18:41:11,781 [http-nio-8080-exec-6] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 10 ms
+2023-02-05 18:41:11,811 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 22 ms
+2023-02-05 18:41:13,282 [http-nio-8080-exec-4] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 573 ms
+2023-02-05 18:41:15,486 [http-nio-8080-exec-10] INFO  ConnectTariffCommand User(id = 32) added tariff(id = 1).
+2023-02-05 18:41:15,487 [http-nio-8080-exec-10] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 20 ms
+2023-02-05 18:41:15,507 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 9 ms
+2023-02-05 18:41:17,807 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 7 ms
+2023-02-05 18:41:18,505 [http-nio-8080-exec-1] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 6 ms
+2023-02-05 18:41:18,979 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 227 ms
+2023-02-05 18:41:21,574 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 1 ms
+2023-02-05 18:41:21,593 [http-nio-8080-exec-3] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-02-05 18:41:22,553 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 4 ms
+2023-02-05 18:41:23,279 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 7 ms
+2023-02-05 18:42:19,547 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 5 ms
+2023-02-05 18:42:20,059 [http-nio-8080-exec-18] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 6 ms
+2023-02-05 18:42:22,411 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=changeLanguage Access time : 0 ms
+2023-02-05 18:42:22,435 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/null Access time : 2 ms
+2023-02-05 18:42:23,443 [http-nio-8080-exec-19] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 2 ms
+2023-02-05 18:42:24,473 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 4 ms
+2023-02-05 18:42:24,771 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: pearline, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 20 ms
+2023-02-05 18:42:30,357 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:42:53,828 [http-nio-8080-exec-12] WARN  AuthenticationFilter An attempt to access viewActiveTariffs failed.
+2023-02-05 18:42:53,878 [http-nio-8080-exec-12] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 51 ms
+2023-02-05 18:43:02,234 [http-nio-8080-exec-16] INFO  LoginCommand User with login KellPvP successfully logged in.
+2023-02-05 18:43:02,234 [http-nio-8080-exec-16] INFO  LogAccessFilter Login: Unlogged user, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=login Access time : 20 ms
+2023-02-05 18:43:02,245 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /index.jsp/success=login Access time : 7 ms
+2023-02-05 18:43:04,851 [http-nio-8080-exec-11] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 15 ms
+2023-02-05 18:43:05,536 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 32 ms
+2023-02-05 18:43:08,005 [http-nio-8080-exec-17] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 12 ms
+2023-02-05 18:43:09,954 [http-nio-8080-exec-20] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 11 ms
+2023-02-05 18:43:11,750 [http-nio-8080-exec-13] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 10 ms
+2023-02-05 18:43:14,126 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 16 ms
+2023-02-05 18:43:32,742 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 9 ms
+2023-02-05 18:43:33,910 [http-nio-8080-exec-24] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount Access time : 12 ms
+2023-02-05 18:43:46,777 [http-nio-8080-exec-14] INFO  ReplenishCommand User(id = 28) replenished the account with $1000
+2023-02-05 18:43:46,778 [http-nio-8080-exec-14] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=replenish Access time : 7 ms
+2023-02-05 18:43:46,797 [http-nio-8080-exec-25] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewAccount&success=replenish Access time : 15 ms
+2023-02-05 18:43:47,943 [http-nio-8080-exec-15] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs Access time : 8 ms
+2023-02-05 18:43:51,306 [http-nio-8080-exec-26] INFO  ConnectTariffCommand User(id = 28) added tariff(id = 23).
+2023-02-05 18:43:51,307 [http-nio-8080-exec-26] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 15 ms
+2023-02-05 18:43:51,321 [http-nio-8080-exec-27] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 7 ms
+2023-02-05 18:43:56,144 [http-nio-8080-exec-21] INFO  ConnectTariffCommand User(id = 28) added tariff(id = 37).
+2023-02-05 18:43:56,144 [http-nio-8080-exec-21] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 10 ms
+2023-02-05 18:43:56,158 [http-nio-8080-exec-22] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 10 ms
+2023-02-05 18:43:57,754 [http-nio-8080-exec-23] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&page=6&sortingField=name&sortingOrder=&service=ALL&rowNumber=5 Access time : 7 ms
+2023-02-05 18:44:00,230 [http-nio-8080-exec-24] INFO  ConnectTariffCommand User(id = 28) added tariff(id = 31).
+2023-02-05 18:44:00,230 [http-nio-8080-exec-24] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=connectTariff Access time : 11 ms
+2023-02-05 18:44:00,241 [http-nio-8080-exec-29] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewTariffs&success=connect_tariff Access time : 6 ms
+2023-02-05 18:44:01,245 [http-nio-8080-exec-25] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewProfile Access time : 16 ms
+2023-02-05 18:44:02,040 [http-nio-8080-exec-30] INFO  LogAccessFilter Login: KellPvP, IP: 0:0:0:0:0:0:0:1 Page: /controller/action=viewActiveTariffs Access time : 19 ms
+2023-02-05 18:44:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:46:30,328 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:48:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:50:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:52:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:54:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:56:30,352 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 18:56:32,237 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 18:58:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:00:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:02:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:04:30,339 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:04:31,716 [pool-9-thread-1] INFO  EmailUtil Email to bernard.rayn@gmail.com was sent.
+2023-02-05 19:06:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:08:30,339 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:10:30,341 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:12:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:14:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:16:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:18:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:20:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:22:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:24:30,348 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:24:31,762 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 19:26:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:28:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:30:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:32:30,328 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:34:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:36:30,430 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:36:31,893 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 19:38:30,350 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:38:31,577 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 19:40:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:42:30,329 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:44:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:46:30,329 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:48:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:50:30,333 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:52:30,340 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:52:31,743 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 19:54:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:56:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 19:58:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:00:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:02:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:04:30,340 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:04:31,749 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 20:06:30,340 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:06:31,609 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 20:08:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:10:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:12:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:14:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:16:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:18:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:20:30,345 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:20:31,673 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 20:22:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:24:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:26:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:28:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:30:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:32:30,339 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:32:31,683 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 20:34:30,351 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:34:31,569 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 20:36:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:38:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:40:30,333 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:42:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:44:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:46:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:48:30,337 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:48:32,087 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 20:50:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:52:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:54:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:56:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 20:58:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:00:30,339 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:00:31,816 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 21:02:30,340 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:02:31,580 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 21:04:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:06:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:08:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:10:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:12:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:14:30,328 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:16:30,342 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:16:31,738 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 21:18:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:20:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:22:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:24:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:26:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:28:30,338 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:28:31,696 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 21:30:30,348 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:30:31,604 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 21:32:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:34:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:36:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:38:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:40:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:42:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:44:30,343 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:44:35,069 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 21:46:30,333 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:48:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:50:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:52:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:54:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:56:30,339 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:56:31,865 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 21:58:30,346 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 21:58:31,735 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 22:00:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:02:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:04:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:06:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:08:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:10:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:12:30,347 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:12:31,716 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 22:14:30,329 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:16:30,328 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:18:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:20:30,329 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:22:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:24:30,337 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:24:31,727 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 22:26:30,340 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:26:31,661 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 22:28:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:30:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:32:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:34:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:36:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:38:30,326 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:40:30,337 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:40:31,705 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 22:42:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:44:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:46:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:48:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:50:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:52:30,340 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:52:31,692 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 22:54:30,341 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:54:31,647 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 22:56:30,328 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 22:58:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:00:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:02:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:04:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:06:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:08:30,343 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:08:31,672 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 23:10:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:12:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:14:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:16:30,329 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:18:30,328 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:20:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:20:31,984 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 23:22:30,336 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:22:32,004 [pool-9-thread-1] INFO  EmailUtil Email to vjennyfer.schamberg@hotmail.com was sent.
+2023-02-05 23:24:30,329 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:26:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:28:30,327 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:30:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:32:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:34:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:36:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:38:30,329 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:40:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:42:30,332 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:44:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:46:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:48:30,354 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:48:31,948 [pool-9-thread-1] INFO  EmailUtil Email to emiliano1992@yahoo.com was sent.
+2023-02-05 23:50:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:52:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:54:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:56:30,330 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
+2023-02-05 23:58:30,331 [pool-8-thread-1] INFO  DailyWithdrawCommand Daily withdrawal successfully completed.
