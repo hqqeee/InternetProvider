@@ -61,6 +61,7 @@ public enum EmailUtil {
 	 * Authenticator instance to authenticate the email account being used
 	 */
 	private final Authenticator auth = new Authenticator() {
+		@Override
 		protected PasswordAuthentication getPasswordAuthentication() {
 			return new PasswordAuthentication((String) emailProp.get("mail.login"),
 					(String) emailProp.get("mail.app.pass"));
@@ -78,8 +79,7 @@ public enum EmailUtil {
 		try {
 			emailProp.load(getClass().getClassLoader().getResourceAsStream("email.properties"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("Cannot load email properties.");
 		}
 	}
 
@@ -101,7 +101,7 @@ public enum EmailUtil {
 					message.setSubject(email.getSubject());
 					message.setText(email.getText());
 					Transport.send(message);
-					LOGGER.info("Email to " + email.getReciver() + " was sent.");
+					LOGGER.info("Email to {} was sent.", email.getReciver());
 				}
 			} catch (MessagingException mex) {
 				mex.printStackTrace();

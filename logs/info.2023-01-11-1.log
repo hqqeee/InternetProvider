@@ -1,1 +1,0 @@
-2023-01-12 00:05:04,578 [http-nio-8080-exec-12] INFO  com.epam.controller.filter.LogAccessFilter- Login: admin, IP: 0:0:0:0:0:0:0:1 Page: /index.jspnullnull Access time : 49 ms

@@ -20,7 +20,7 @@ import com.epam.controller.command.Page;
 import com.epam.services.UserService;
 import com.epam.util.AppContext;
 
-public class ResetPasswordCommandTest {
+class ResetPasswordCommandTest {
 
 	private ResetPasswordCommand resetPasswordCommand;
 
@@ -43,7 +43,7 @@ public class ResetPasswordCommandTest {
 	}
 
 	@Test
-	public void testExecuteSuccess() throws Exception {
+	void testExecuteSuccess() throws Exception {
 		try (MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)) {
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			when(appContext.getUserService()).thenReturn(userService);
@@ -59,7 +59,7 @@ public class ResetPasswordCommandTest {
 	}
 
 	@Test
-	public void testExecuteFailure() throws Exception {
+	void testExecuteFailure() throws Exception {
 		try (MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)) {
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			when(request.getParameter("resetEmail")).thenReturn("test@example.com");

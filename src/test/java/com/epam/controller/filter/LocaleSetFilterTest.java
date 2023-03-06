@@ -30,7 +30,7 @@ class LocaleSetFilterTest {
     private LocaleSetFilter filter = new LocaleSetFilter();
 
     @Test
-    public void doFilter_NoCookies_DefaultLocaleSet() throws IOException, ServletException {
+    void doFilter_NoCookies_DefaultLocaleSet() throws IOException, ServletException {
         when(request.getCookies()).thenReturn(null);
         
         filter.doFilter(request, response, chain);
@@ -40,7 +40,7 @@ class LocaleSetFilterTest {
     }
 
     @Test
-    public void doFilter_CookiesWithLang_LocaleSetFromCookie() throws IOException, ServletException {
+    void doFilter_CookiesWithLang_LocaleSetFromCookie() throws IOException, ServletException {
         Cookie[] cookies = new Cookie[] { new Cookie("lang", "fr") };
         when(request.getCookies()).thenReturn(cookies);
         
@@ -51,7 +51,7 @@ class LocaleSetFilterTest {
     }
 
     @Test
-    public void doFilter_CookiesWithoutLang_DefaultLocaleSet() throws IOException, ServletException {
+    void doFilter_CookiesWithoutLang_DefaultLocaleSet() throws IOException, ServletException {
         Cookie[] cookies = new Cookie[] { new Cookie("notLang", "value") };
         when(request.getCookies()).thenReturn(cookies);
         

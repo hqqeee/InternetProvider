@@ -44,7 +44,7 @@ class ChangeUserBalanceCommandTest {
 	}
 	
 	@Test
-	public void testNullBalance() {
+	void testNullBalance() {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
@@ -55,7 +55,7 @@ class ChangeUserBalanceCommandTest {
 
 	
 	@Test
-	public void testNegativeDiffrenece() {
+	void testNegativeDiffrenece() {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
@@ -65,7 +65,7 @@ class ChangeUserBalanceCommandTest {
 	}
 	
 	@Test
-	public void testZeroDiffrence() {
+	void testZeroDiffrence() {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
@@ -77,7 +77,7 @@ class ChangeUserBalanceCommandTest {
 	}
 	
 	@Test
-	public void testTooLongDescription() {
+	void testTooLongDescription() {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
@@ -89,7 +89,7 @@ class ChangeUserBalanceCommandTest {
 	}
 
 	@Test
-	public void testEmptyDescription() {
+	void testEmptyDescription() {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
@@ -101,7 +101,7 @@ class ChangeUserBalanceCommandTest {
 	}
 	
 	@Test
-	public void testNegativeUserBalance() throws UserServiceException, NegativeUserBalanceException {
+	void testNegativeUserBalance() throws UserServiceException, NegativeUserBalanceException {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
@@ -118,7 +118,7 @@ class ChangeUserBalanceCommandTest {
 	}
 	
 	@Test
-	public void testUserServiceException() throws UserServiceException, NegativeUserBalanceException {
+	void testUserServiceException() throws UserServiceException, NegativeUserBalanceException {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
@@ -135,7 +135,7 @@ class ChangeUserBalanceCommandTest {
 	}
 	
 	@Test
-	public void testSuccessChangeBalance() throws UserServiceException, NegativeUserBalanceException {
+	void testSuccessChangeBalance() throws UserServiceException, NegativeUserBalanceException {
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);

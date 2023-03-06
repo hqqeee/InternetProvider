@@ -9,6 +9,8 @@ package com.epam.controller.command;
  * @version 1.0
  **/
 public final class CommandNames {
+	private CommandNames() {}
+	
 	/** Common commands **/
 	public static final String LOGIN = "login";
 	public static final String LOGOUT = "logout";

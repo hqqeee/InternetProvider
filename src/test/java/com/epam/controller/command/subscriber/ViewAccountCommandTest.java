@@ -19,7 +19,6 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 import com.epam.controller.command.Page;
-import com.epam.controller.command.common.ViewTariffsCommand;
 import com.epam.exception.services.NegativeUserBalanceException;
 import com.epam.exception.services.NoTransactionsFoundException;
 import com.epam.exception.services.TransactionServiceException;

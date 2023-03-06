@@ -1,7 +1,5 @@
 package com.epam.controller.servlet;
 
-import static org.junit.Assert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
@@ -10,7 +8,7 @@ import static org.mockito.Mockito.when;
 
 import java.io.IOException;
 
-import javax.servlet.GenericServlet;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -26,8 +24,6 @@ import com.epam.controller.command.Command;
 import com.epam.controller.command.CommandFactory;
 import com.epam.controller.command.Page;
 import com.epam.exception.controller.CommandNotFoundException;
-
-import net.bytebuddy.description.type.TypeDescription.Generic;
 
 class FrontControllerTest {
 
@@ -55,7 +51,7 @@ class FrontControllerTest {
 	}
 
 	@Test
-	public void testDoGet() throws ServletException, IOException, CommandNotFoundException {
+	void testDoGet() throws ServletException, IOException, CommandNotFoundException {
 		when(request.getParameter("action")).thenReturn("someAction");
 		try (MockedStatic<CommandFactory> commandFacotryMock = mockStatic(CommandFactory.class)) {
 			CommandFactory commandFactory = mock(CommandFactory.class);
@@ -74,7 +70,7 @@ class FrontControllerTest {
 	}
 	
 	@Test
-	public void testDoPost() throws CommandNotFoundException, ServletException, IOException {
+	void testDoPost() throws CommandNotFoundException, ServletException, IOException {
 		when(request.getParameter("action")).thenReturn("someAction");
 		try (MockedStatic<CommandFactory> commandFacotryMock = mockStatic(CommandFactory.class)) {
 			CommandFactory commandFactory = mock(CommandFactory.class);

@@ -64,8 +64,7 @@ public class ChangeUserBalanceCommand implements Command {
 		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
 			Command adminMenu = new AdminMenuCommand();
-			BigDecimal difference = new BigDecimal(req.getParameter("amount"));
-			difference.setScale(2);
+			BigDecimal difference = new BigDecimal(req.getParameter("amount")).setScale(2);
 			if (difference.compareTo(BigDecimal.ZERO) <= 0) {
 				req.setAttribute("errorMessages", rs.getString(rs.getString("error.amount_cannot_be_negative")));
 				return adminMenu.execute(req, resp);
@@ -80,7 +79,7 @@ public class ChangeUserBalanceCommand implements Command {
 			}
 			int userId = Integer.parseInt(req.getParameter("userId"));
 			AppContext.getInstance().getUserService().changeUserBalance(userId, difference, description);
-			LOG.info("Balance of user with id " + userId + " changed.");
+			LOG.info("Balance of user with id {} changed.", userId);
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.ADMIN_MENU + "&userId="
 					+ userId + "&success=balance_changed");
 			return Page.REDIRECTED;

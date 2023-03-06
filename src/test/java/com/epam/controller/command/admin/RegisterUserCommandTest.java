@@ -43,7 +43,7 @@ class RegisterUserCommandTest {
 	}
 	
 	@Test
-	public void testValidationException() {
+	void testValidationException() {
 		Mockito.when(req.getParameter("firstName")).thenReturn(null);
 		Mockito.when(req.getParameter("lastName")).thenReturn(null);
 		Mockito.when(req.getParameter("login")).thenReturn(null);
@@ -55,7 +55,7 @@ class RegisterUserCommandTest {
 	}
 	
 	@Test
-	public void testUserAlreadyExistsException() throws UserAlreadyExistException, UserServiceException {
+	void testUserAlreadyExistsException() throws UserAlreadyExistException, UserServiceException {
 		Mockito.when(req.getParameter("firstName")).thenReturn("firstName");
 		Mockito.when(req.getParameter("lastName")).thenReturn("lastName");
 		Mockito.when(req.getParameter("login")).thenReturn("login");
@@ -72,7 +72,7 @@ class RegisterUserCommandTest {
 	}
 	
 	@Test
-	public void testUserServiceException() throws UserAlreadyExistException, UserServiceException {
+	void testUserServiceException() throws UserAlreadyExistException, UserServiceException {
 		Mockito.when(req.getParameter("firstName")).thenReturn("firstName");
 		Mockito.when(req.getParameter("lastName")).thenReturn("lastName");
 		Mockito.when(req.getParameter("login")).thenReturn("login");
@@ -89,7 +89,7 @@ class RegisterUserCommandTest {
 	}
 	
 	@Test
-	public void testException() throws UserAlreadyExistException, UserServiceException {
+	void testException() throws UserAlreadyExistException, UserServiceException {
 		Mockito.when(req.getParameter("firstName")).thenReturn("firstName");
 		Mockito.when(req.getParameter("lastName")).thenReturn("lastName");
 		Mockito.when(req.getParameter("login")).thenReturn("login");
@@ -106,14 +106,13 @@ class RegisterUserCommandTest {
 	}
 	
 	@Test
-	public void testSuccess() {
+	void testSuccess() {
 		Mockito.when(req.getParameter("firstName")).thenReturn("firstName");
 		Mockito.when(req.getParameter("lastName")).thenReturn("lastName");
 		Mockito.when(req.getParameter("login")).thenReturn("login");
 		Mockito.when(req.getParameter("email")).thenReturn("email@mail.com");
 		Mockito.when(req.getParameter("city")).thenReturn("city");
 		Mockito.when(req.getParameter("address")).thenReturn("address");
-		UserForm userForm = new UserForm("firstName", "lastName", "login", "email@mail.com", "city", "address");
 		try(MockedStatic<AppContext> appContextStatic = Mockito.mockStatic(AppContext.class)){
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);

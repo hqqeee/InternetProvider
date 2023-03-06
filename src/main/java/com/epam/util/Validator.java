@@ -20,6 +20,7 @@ import com.epam.services.dto.UserForm;
  * @version 1.0
  */
 public final class Validator {
+	private Validator() {}
 	/**
 	 * 
 	 * Validates a TariffForm and throws a ValidationErrorException if any errors
@@ -42,10 +43,9 @@ public final class Validator {
 		if (tariffForm.getPaymentPeriod() <= 0) {
 			errors.add(rb.getString("validator.invalid_payment_period"));
 		}
-		if (errors.isEmpty()) {
-			return;
-		} else
+		if (!errors.isEmpty()) {
 			throw new ValidationErrorException(errors);
+		} 
 	}
 
 	/**
@@ -100,8 +100,7 @@ public final class Validator {
 	 * @param rb     the ResourceBundle containing error messages.
 	 * @throws ValidationErrorException if errors are found in the login.
 	 */
-	private static void validateLogin(String login, List<String> errors, ResourceBundle rb)
-			throws ValidationErrorException {
+	private static void validateLogin(String login, List<String> errors, ResourceBundle rb){
 		boolean isNullOrEmpty = validateTextFieldValues(errors, login, rb.getString("admin_menu.login"), 32, rb);
 		if (!isNullOrEmpty && !Pattern.compile("[A-Za-z0-9]*$").matcher(login).matches()) {
 			errors.add(rb.getString("validator.invalid_login"));
@@ -116,10 +115,8 @@ public final class Validator {
 	 * @param email  the email to be validated.
 	 * @param errors the list of error messages.
 	 * @param rb     the ResourceBundle containing error messages.
-	 * @throws ValidationErrorException if errors are found in the email.
 	 */
-	private static void validateEmail(String email, List<String> errors, ResourceBundle rb)
-			throws ValidationErrorException {
+	private static void validateEmail(String email, List<String> errors, ResourceBundle rb){
 		boolean isNullOrEmpty = validateTextFieldValues(errors, email, "email", 32, rb);
 		if (!isNullOrEmpty && !Pattern.compile(
 				"^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$")

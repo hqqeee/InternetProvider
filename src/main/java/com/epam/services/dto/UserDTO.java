@@ -1,5 +1,6 @@
 package com.epam.services.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 /**
@@ -8,7 +9,8 @@ import java.util.Objects;
  * @author Hrebenozhko Ruslan
  * @version 1.0
  */
-public class UserDTO {
+public class UserDTO  implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private boolean blocked;
 	private String login;

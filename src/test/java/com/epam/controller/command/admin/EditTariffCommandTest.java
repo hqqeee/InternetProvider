@@ -47,7 +47,7 @@ class EditTariffCommandTest {
 	}
 	
 	@Test
-	public void testValidationError() {
+	void testValidationError() {
 		Mockito.when(req.getParameter("name")).thenReturn(null);
 		Mockito.when(req.getParameter("paymentPeriod")).thenReturn("14");
 		Mockito.when(req.getParameter("rate")).thenReturn("12");

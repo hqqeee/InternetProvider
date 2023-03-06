@@ -54,7 +54,7 @@ public class RemoveTariffCommand implements Command {
 		try {
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
 			AppContext.getInstance().getTariffService().removeTariff(tariffId);
-			LOG.info("Tariff with id " + tariffId + " successfully removed.");
+			LOG.info("Tariff with id {} successfully removed.", tariffId);
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS
 					+ "&success=remove_tariff");
 			return Page.REDIRECTED;

@@ -215,9 +215,7 @@ public class UserDAOMariaDB implements UserDAO {
 					.executeUpdate() == 0) {
 				throw new DAORecordAlreadyExistsException(
 						"Pair tariffId-userId(" + tariffId + "-" + userId + ") already exists.");
-			} else {
-				return;
-			}
+			} 
 		} catch (SQLException e) {
 			throw new DAOInsertException(
 					"Cannot insert tariff with id " + tariffId + " for user with id " + userId + ".", e);

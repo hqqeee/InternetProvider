@@ -69,7 +69,6 @@ public enum ConnectionPool {
 		if (c != null) {
 			try {
 				c.close();
-				c = null;
 				return true;
 			} catch (SQLException ex) {
 				logger.error("Cannot release connection.", ex);

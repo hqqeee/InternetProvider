@@ -14,7 +14,7 @@ package com.epam.dataaccess.dao.mariadb.impl;
  */
 public final class MariaDBConstants {
 	private MariaDBConstants() {
-	};
+	}
 
 	/** USER FIELDS */
 	public static final String USER_TABLE = "user";
@@ -98,11 +98,6 @@ public final class MariaDBConstants {
 	public static final String ADD_BALANCE_TO_USER = "UPDATE " + USER_TABLE + " SET " + USER_BALANCE_FIELD + " = "
 			+ USER_BALANCE_FIELD + " + ? WHERE " + USER_ID_FIELD + " = ?";
 
-//	public static final String ADD_TARIFF_TO_USER = new QueryStringBuilder()
-//			.addInsert(USER_HAS_TARIFF_TABLE, USER_HAS_TARIFF_USER_ID_FIELD + ", " + USER_HAS_TARIFF_TARIFF_ID_FIELD + ", " 
-//	+ USER_HAS_TARIFF_DAYS_UNTIL_NEXT_PAYMENT_FIELD).getQuery() + "(" + new QueryStringBuilder()
-//			.addSelect("?,?, " + TARIFF_PAYMENT_PERIOD_FIELD).addFrom(TARIFF_TABLE).addWhere(TARIFF_ID_FIELD + " = ?)")
-//			.getQuery();
 	public static final String ADD_TARIFF_TO_USER = "INSERT INTO  " + USER_HAS_TARIFF_TABLE + " ( "
 			+ USER_HAS_TARIFF_USER_ID_FIELD + ",  " + USER_HAS_TARIFF_TARIFF_ID_FIELD + ",  "
 			+ USER_HAS_TARIFF_DAYS_UNTIL_NEXT_PAYMENT_FIELD + ") SELECT ?,?,? FROM DUAL WHERE NOT EXISTS"

@@ -9,6 +9,7 @@ import static org.mockito.Mockito.when;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import com.epam.controller.command.Page;
 
@@ -37,6 +39,7 @@ class AppErrorHandlerTest {
     @BeforeEach
     void setup() {
         appErrorHandler = new AppErrorHandler();
+        Mockito.when(request.getAttribute("locale")).thenReturn(new Locale("en"));
     }
     
     
@@ -55,7 +58,7 @@ class AppErrorHandlerTest {
         expectedError.add("Something went wrong.");
         expectedError.add("Exception Name: java.lang.Throwable");
         expectedError.add("Requested URI: requestUri");
-        expectedError.add("Exception Message:Exception message");
+        expectedError.add("Exception Message: Exception message");
         
         verify(request, times(1)).setAttribute("errorMessages", expectedError);
     }

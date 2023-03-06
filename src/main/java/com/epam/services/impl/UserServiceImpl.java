@@ -531,10 +531,9 @@ public class UserServiceImpl implements UserService {
 	 * @return return User(DAO) entity.
 	 */
 	protected User convertUserFormToUser(UserForm userForm, String salt, String password) {
-		User user = new User(0, PasswordUtil.hashPassword(password + salt), salt, userForm.getLogin(), 2, false,
+		return new User(0, PasswordUtil.hashPassword(password + salt), salt, userForm.getLogin(), 2, false,
 				userForm.getEmail(), userForm.getFirstName(), userForm.getLastName(), userForm.getCity(),
 				userForm.getAddress(), BigDecimal.ZERO);
-		return user;
 	}
 
 }

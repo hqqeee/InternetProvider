@@ -13,7 +13,7 @@ public class ValidationErrorException extends Exception {
 	/**
 	 * List of validations errors.
 	 */
-	private List<String> errors;
+	private final List<String> errors;
 
 	public ValidationErrorException(List<String> errors) {
 		super("Incorrect fields");

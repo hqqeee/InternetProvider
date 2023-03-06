@@ -1,6 +1,5 @@
 package com.epam.controller.filter;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -31,7 +30,7 @@ class EncodingFilterTest {
 	private FilterChain chain = mock(FilterChain.class);
 	
 	@Test
-	public void doFilterTest() throws IOException, ServletException {
+	void doFilterTest() throws IOException, ServletException {
 		StringWriter stringWriter = new StringWriter();
 		PrintWriter writer = new PrintWriter(stringWriter);
 		when(response.getWriter()).thenReturn(writer);

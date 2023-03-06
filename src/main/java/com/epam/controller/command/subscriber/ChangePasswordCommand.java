@@ -62,7 +62,7 @@ public class ChangePasswordCommand implements Command {
 				Validator.validatePassword(newPassword,
 						ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")));
 				AppContext.getInstance().getUserService().changePassword(user.getId(), currentPassword, newPassword);
-				LOG.info(user + " changed password.");
+				LOG.info("{} changed password.", user);
 				resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_PROFILE
 						+ "&success=change_password");
 				return Page.REDIRECTED;

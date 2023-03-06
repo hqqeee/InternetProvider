@@ -57,7 +57,7 @@ public class ChangeUserStatusCommand implements Command {
 		try {
 			AppContext.getInstance().getUserService().changeUserStatus(Boolean.parseBoolean(blocked),
 					Integer.parseInt(userId));
-			LOG.info("Status of the user with id " + userId + " successfully changed.");
+			LOG.info("Status of the user with id {} successfully changed.", userId);
 			resp.sendRedirect(
 					req.getContextPath() + "/controller?action=" + CommandNames.ADMIN_MENU + "&success=status_changed");
 			return Page.REDIRECTED;

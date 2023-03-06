@@ -20,7 +20,7 @@ class ValidatorTest {
 	ResourceBundle rs = ResourceBundle.getBundle("lang", new Locale("en"));
 
 	@Test
-	public void testValidateInvalidTariffForm1() {
+	void testValidateInvalidTariffForm1() {
 		TariffForm invalidTariffForm = new TariffForm("", -10, BigDecimal.ONE.negate(), Service.ALL, "");
 		ValidationErrorException ex = assertThrows(ValidationErrorException.class,
 				() -> Validator.validateTariffForm(invalidTariffForm, rs));
@@ -28,7 +28,7 @@ class ValidatorTest {
 	}
 
 	@Test
-	public void testValidateInvalidTariffForm2() {
+	void testValidateInvalidTariffForm2() {
 		TariffForm invalidTariffForm = new TariffForm("Ruaqwersadasdasndnasdnasndasndqweq", 0, BigDecimal.ZERO,
 				Service.ALL,
 				"asdasdasndnasdnasndasndqweqasdf12341234asdfasdfasdfasdfassdfasdfdfqwerqwerzsxdffasdfasdfjaksdfhjquwehriuqwhberiubzoixucvbuioasbdgfouiqbwqiouwebruioqwerbuiqwerbiuobdziuosbfasuibfauiobdfu1293804h1029834gh978absdf0bua89dsfbikasdfaiojskdfbaisdfoyiubqweirouqwoeiruqwoieuroqiwuerbqweiuor");
@@ -38,7 +38,7 @@ class ValidatorTest {
 	}
 
 	@Test
-	public void testValidateInvalidTariffForm3() {
+	void testValidateInvalidTariffForm3() {
 		TariffForm invalidTariffForm = new TariffForm(null, 0, null, null, null);
 		ValidationErrorException ex = assertThrows(ValidationErrorException.class,
 				() -> Validator.validateTariffForm(invalidTariffForm, rs));
@@ -46,14 +46,14 @@ class ValidatorTest {
 	}
 
 	@Test
-	public void testValidateValidForm() {
+	void testValidateValidForm() {
 		TariffForm validTariffForm = new TariffForm("Tariff Name", 14, BigDecimal.ONE, Service.INTERNET,
 				"Description 1 2 3 ");
 		assertDoesNotThrow(() -> Validator.validateTariffForm(validTariffForm, rs));
 	}
 
 	@Test
-	public void testValidateInvalidUserForm1() {
+	void testValidateInvalidUserForm1() {
 		UserForm invalidUserForm = new UserForm(null, null, null, null, null, null);
 		ValidationErrorException ex = assertThrows(ValidationErrorException.class,
 				() -> Validator.validateUserForm(invalidUserForm, rs));
@@ -61,7 +61,7 @@ class ValidatorTest {
 	}
 
 	@Test
-	public void testValidateInvalidUserForm2() {
+	void testValidateInvalidUserForm2() {
 		UserForm invalidUserForm = new UserForm("", "", "фівафівайцй123?!", "asdf", "", "");
 		ValidationErrorException ex = assertThrows(ValidationErrorException.class,
 				() -> Validator.validateUserForm(invalidUserForm, rs));
@@ -69,7 +69,7 @@ class ValidatorTest {
 	}
 
 	@Test
-	public void testValidateInvalidUserForm3() {
+	void testValidateInvalidUserForm3() {
 		UserForm invalidUserForm = new UserForm("First Name", "Last Name", "^&**H(ASD?!", "asdf@asd.a", "City",
 				"Address");
 		ValidationErrorException ex = assertThrows(ValidationErrorException.class,
@@ -78,27 +78,27 @@ class ValidatorTest {
 	}
 
 	@Test
-	public void testValidateValidUserForm() {
+	void testValidateValidUserForm() {
 		UserForm invalidUserForm = new UserForm("First Name", "Last Name", "login", "asdf@asd.aa", "City", "Address");
 		assertDoesNotThrow(() -> Validator.validateUserForm(invalidUserForm, rs));
 	}
 
 	@Test
-	public void testValidatePasswordInvalid1() {
+	void testValidatePasswordInvalid1() {
 		String password = null;
 		assertThrows(ValidationErrorException.class, () -> Validator.validatePassword(password, rs));
 	}
 	
 
 	@Test
-	public void testValidatePasswordInvalid2() {
+	void testValidatePasswordInvalid2() {
 		String password = "123asd";
 		assertThrows(ValidationErrorException.class, () -> Validator.validatePassword(password, rs));
 	}
 	
 
 	@Test
-	public void testValidatePasswordValid() {
+	void testValidatePasswordValid() {
 		String password = "123as123d";
 		assertDoesNotThrow(() -> Validator.validatePassword(password, rs));
 	}

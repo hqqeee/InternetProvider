@@ -53,12 +53,12 @@ public class DisableTariffCommand implements Command {
 			appContext.getUserService().removeTariffFromUser(userId, tariffId);
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_ACTIVE_TARIFFS
 					+ "&success=disable_tariff");
-			LOG.info("User(id = " + userId + ") disabled tariff(id = " + tariffId + ").");
+			LOG.info("User(id = {}) disabled tariff(id = {}).", userId, tariffId);
 			if (appContext.getUserService().getUserStatus(userId)) {
 				List<TariffDTO> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(userId);
 				appContext.getUserService().chargeUserForTariffsUsing(userId, usersUnpaidTariffs);
 				appContext.getUserService().changeUserStatus(true, userId);
-				LOG.info("User(id = " + userId + ") has been unblocked due to disconnection of the tariff.");
+				LOG.info("User(id = {}) has been unblocked due to disconnection of the tariff.", userId);
 			}
 			return Page.REDIRECTED;
 		} catch (NegativeUserBalanceException e) {

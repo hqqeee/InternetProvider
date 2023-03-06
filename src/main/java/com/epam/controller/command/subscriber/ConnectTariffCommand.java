@@ -59,7 +59,7 @@ public class ConnectTariffCommand implements Command {
 			int userId = ((UserDTO) req.getSession().getAttribute("loggedUser")).getId();
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
 			AppContext.getInstance().getUserService().addTariffToUser(userId, tariffId);
-			LOG.info("User(id = " + userId + ") added tariff(id = " + tariffId + ").");
+			LOG.info("User(id = {}) added tariff(id = {}).", userId, tariffId);
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS
 					+ "&success=connect_tariff");
 			return Page.REDIRECTED;

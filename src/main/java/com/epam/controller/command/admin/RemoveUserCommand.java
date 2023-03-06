@@ -49,7 +49,7 @@ public class RemoveUserCommand implements Command {
 		try {
 			int userId = Integer.parseInt(req.getParameter("userId"));
 			AppContext.getInstance().getUserService().removeUser(userId);
-			LOG.info("Tariff with id " + userId + " successfully removed.");
+			LOG.info("User with id {} successfully removed.",userId);
 			resp.sendRedirect(
 					req.getContextPath() + "/controller?action=" + CommandNames.ADMIN_MENU + "&success=remove_user");
 			return Page.REDIRECTED;

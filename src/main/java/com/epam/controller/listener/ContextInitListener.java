@@ -76,12 +76,12 @@ public class ContextInitListener implements ServletContextListener {
 	 * @throws SQLException
 	 */
 	private DAOFactory initDatabase()
-			throws ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException,
+			throws InstantiationException, IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException, NoSuchMethodException, SecurityException, SQLException {
 		ConnectionPool cp = ConnectionPool.getInstance();
 		Connection c = cp.getConnection();
 		cp.releaseConnection(c);
-		return (DAOFactory) DAOFactoryMariaDB.class.getDeclaredConstructor().newInstance();
+		return DAOFactoryMariaDB.class.getDeclaredConstructor().newInstance();
 	}
 
 	/**

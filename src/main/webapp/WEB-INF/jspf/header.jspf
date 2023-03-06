@@ -1,7 +1,7 @@
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ include file="/WEB-INF/jspf/taglibs.jspf"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,22 +77,22 @@
 					<c:when test="${cookie['lang'].value eq 'uk'}">
 					<a class="dropdown-toggle" type="button" id="dropdownMenuButton1"
 						data-bs-toggle="dropdown" aria-expanded="false"><img
-						src="${pageContext.request.contextPath}/images/ua.png" width="16"></a>
+						src="${pageContext.request.contextPath}/images/ua.png" width="16" alt="ua"></a>
 					<ul class="dropdown-menu text-bg-dark">
 						<li><a class="dropdown-item m-0" href="#" onclick="document.getElementById('lang').value='en';document.getElementById('change_lang').submit()"><img
 								src="${pageContext.request.contextPath}/images/gb.png"
-								width="16"> <span class="text-warning">English</span></a></li>
+								width="16" alt="gb"> <span class="text-warning">English</span></a></li>
 						</ul>
 					</div>
 					</c:when>
 					<c:otherwise>
 					<a class="dropdown-toggle" type="button" id="dropdownMenuButton1"
 						data-bs-toggle="dropdown" aria-expanded="false"><img
-						src="${pageContext.request.contextPath}/images/gb.png" width="16"></a>
+						src="${pageContext.request.contextPath}/images/gb.png" width="16" alt="gb></a>
 					<ul class="dropdown-menu text-bg-dark">
 						<li><a class="dropdown-item m-0" href="#" onclick="document.getElementById('lang').value='uk';document.getElementById('change_lang').submit()"><img
 								src="${pageContext.request.contextPath}/images/ua.png"
-								width="16"> <span class="text-warning">Українська</span></a></li>
+								width="16" alt="gb"> <span class="text-warning">Українська</span></a></li>
 						</ul>
 					</div>
 					</c:otherwise>

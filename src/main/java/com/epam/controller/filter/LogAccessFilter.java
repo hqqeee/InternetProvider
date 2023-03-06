@@ -53,10 +53,10 @@ public class LogAccessFilter implements Filter {
 		String page = ((HttpServletRequest) request).getServletPath() + "/"
 				+ ((HttpServletRequest) request).getQueryString();
 		chain.doFilter(request, response);
-
+		
 		Date dateEndRequest = new Date();
-		LOG.info("Login: " + login + ", IP: " + ip + " Page: " + page + " Access time : "
-				+ Long.toString(dateEndRequest.getTime() - dateInitRequest.getTime()) + " ms");
+		LOG.info("Login: {}, IP: {} Page: {} Access time : " + "{} ms", login, ip, page,
+				Long.toString(dateEndRequest.getTime() - dateInitRequest.getTime()));
 	}
 
 }

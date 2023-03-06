@@ -66,8 +66,8 @@ public class RegisterUserCommand implements Command {
 		try {
 			Validator.validateUserForm(userForm, ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")));
 			AppContext.getInstance().getUserService().registerUser(userForm);
-			LOG.info("User: [" + userForm.getFirstName() + "," + userForm.getLastName() + "," + userForm.getLogin()
-					+ "," + userForm.getEmail() + ", " + userForm.getCity() + "]" + " registered successfully.");
+			LOG.info("User: [{},{},{},{}, {}] registered successfully.",userForm.getFirstName(),
+					userForm.getLastName(),userForm.getLogin(), userForm.getEmail(),userForm.getCity());
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.OPEN_USER_REGISTRATION
 					+ "&success=register_user");
 			return Page.REDIRECTED;

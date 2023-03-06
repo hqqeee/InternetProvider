@@ -14,7 +14,6 @@ import javax.servlet.jsp.tagext.TagSupport;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.epam.controller.command.subscriber.ViewActiveTariffsCommand;
 
 /**
  * The DateFormatTag class is a custom tag class in JavaServer Pages (JSP)
@@ -38,7 +37,7 @@ public class DateFormatTag extends TagSupport {
 	/**
 	 * Logger instance to log the events occurred.
 	 */
-	private static final Logger LOG = LogManager.getLogger(ViewActiveTariffsCommand.class);
+	private static final Logger LOG = LogManager.getLogger(DateFormatTag.class);
 	
 	/**
 	 * This method retrieves the JspWriter from the page context, creates a Calendar
@@ -51,6 +50,7 @@ public class DateFormatTag extends TagSupport {
 	 * @throws JspException - thrown if an error occurs while writing to the
 	 *                      JspWriter
 	 */
+	@Override
 	public int doStartTag() throws JspException {
 		JspWriter writer = pageContext.getOut();
 		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Kiev"));

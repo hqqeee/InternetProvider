@@ -279,7 +279,7 @@ class UserServiceImplTest {
 	}
 
 	@Test
-	public void testResetPassword() throws DAOException, UserServiceException {
+	void testResetPassword() throws DAOException, UserServiceException {
 
 		try (MockedStatic<PasswordUtil> passwdUtil = Mockito.mockStatic(PasswordUtil.class)) {
 			passwdUtil.when(() -> PasswordUtil.getRandomString(12)).thenReturn("Ne3Sa9lrat=");
@@ -297,14 +297,14 @@ class UserServiceImplTest {
 	}
 
 	@Test
-	public void testAddTariffForUserNotEnoughMoney() throws DAOException {
+	void testAddTariffForUserNotEnoughMoney() throws DAOException {
 		Mockito.when(tariffDAO.get(1)).thenReturn(tariff);
 		Mockito.when(userDAO.getUserBalance(1)).thenReturn(BigDecimal.ZERO);
 		assertThrows(NegativeUserBalanceException.class, () -> userService.addTariffToUser(1, 1));
 	}
 
 	@Test
-	public void testAddTariffForUserRecordExists() throws DAOException {
+	void testAddTariffForUserRecordExists() throws DAOException {
 		doThrow(DAORecordAlreadyExistsException.class).when(userDAO).addTariffToUser(1, 1);
 		Mockito.when(tariffDAO.get(1)).thenReturn(tariff);
 		Mockito.when(userDAO.getUserBalance(1)).thenReturn(BigDecimal.ONE);
@@ -312,7 +312,7 @@ class UserServiceImplTest {
 	}
 
 	@Test
-	public void testChargeUserForTariffsUsingNotEnoughMoney() throws DAOException {
+	void testChargeUserForTariffsUsingNotEnoughMoney() throws DAOException {
 		List<TariffDTO> tariffDTOs = new ArrayList<>();
 		tariffDTOs.add(new TariffDTO(1, "name", "desk", 13, BigDecimal.ONE, Service.CABLE_TV));
 		tariffDTOs.add(new TariffDTO(2, "name2", "desk2", 13, BigDecimal.TEN, Service.CABLE_TV));
@@ -321,26 +321,26 @@ class UserServiceImplTest {
 	}
 
 	@Test
-	public void testGetUserBalance() throws UserServiceException, DAOException {
+	void testGetUserBalance() throws UserServiceException, DAOException {
 		Mockito.when(userDAO.getUserBalance(1)).thenReturn(BigDecimal.ONE);
 		assertEquals(BigDecimal.ONE, userService.getUserBalance(1));
 	}
 
 	@Test
-	public void testGetUserStatus() throws UserServiceException, DAOException {
+	void testGetUserStatus() throws UserServiceException, DAOException {
 		Mockito.when(userDAO.getUserStatus(1)).thenReturn(true);
 		assertTrue(userService.getUserStatus(1));
 	}
 
 	@Test
-	public void testConvertUserFormToUser() {
+	void testConvertUserFormToUser() {
 		testUser.setId(0);
 		assertEquals(testUser.toString(),
 				userService.convertUserFormToUser(testUserForm, "yYMg0RzhJNM=", "password").toString());
 	}
 
 	@Test
-	public void testDAOExceptionsLogin() throws DAOException {
+	void testDAOExceptionsLogin() throws DAOException {
 		Mockito.when(userDAO.getUser("login", "e3be1c3aae45bcdf77890c7557f7c424ef8b945fad5ed0c6bb9668deac075cd9"))
 				.thenThrow(DAOException.class);
 		Mockito.when(daoFactory.getUserDAO().getSalt("login")).thenReturn("yYMg0RzhJNM=");
@@ -348,7 +348,7 @@ class UserServiceImplTest {
 	}
 
 	@Test
-	public void testDAOExceptionsRegister()
+	void testDAOExceptionsRegister()
 			throws DAOException, NoSuchMethodException, SecurityException, ClassNotFoundException,
 			InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		Mockito.when(userDAO.insert(testUser)).thenThrow(DAOException.class);
@@ -366,56 +366,56 @@ class UserServiceImplTest {
 	}
 
 	@Test
-	public void testDAOExceptionGetAllSubscribers() throws DAOException {
+	void testDAOExceptionGetAllSubscribers() throws DAOException {
 		Mockito.when(userDAO.getAllSubscriber()).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.getAllSubscribers());
 	}
 
 	@Test
-	public void testDAOExceptionGetAllUnblockedSubscriber() throws DAOException {
+	void testDAOExceptionGetAllUnblockedSubscriber() throws DAOException {
 		Mockito.when(userDAO.getAllUnblockedSubscriber()).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.getAllUnblockedSubscribers());
 	}
 
 	@Test
-	public void testDAOExceptionGetSubscribersForChargin() throws DAOException {
+	void testDAOExceptionGetSubscribersForChargin() throws DAOException {
 		Mockito.when(userDAO.getSubscriberForCharging()).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.getSubscriberForCharging());
 	}
 
 	@Test
-	public void testDAOExceptionViewSubscribers() throws DAOException {
+	void testDAOExceptionViewSubscribers() throws DAOException {
 		Mockito.when(userDAO.getSubscriberForView("", 0, 5)).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.viewSubscribers("", 1, 5));
 	}
 
 	@Test
-	public void testDAOExceptionGetSubscribersNumber() throws DAOException {
+	void testDAOExceptionGetSubscribersNumber() throws DAOException {
 		Mockito.when(userDAO.getSubscriberNumber("")).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.getSubscribersNumber(""));
 	}
 
 	@Test
-	public void testDAOExceptionGetUserById() throws DAOException {
+	void testDAOExceptionGetUserById() throws DAOException {
 		Mockito.when(userDAO.get(1)).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.getUserById(1));
 	}
 
 	@Test
-	public void testDAOExceptionChangeUserStatus() throws DAOException {
+	void testDAOExceptionChangeUserStatus() throws DAOException {
 		Mockito.when(userDAO.changeBlocked(true, 0)).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.changeUserStatus(false, 0));
 	}
 
 	@Test
-	public void testDAOExceptionChangeUserBalance() throws DAOException {
+	void testDAOExceptionChangeUserBalance() throws DAOException {
 		Mockito.when(userDAO.get(1)).thenReturn(testUser);
 		Mockito.when(transactionDAO.changeUserBalance(1, BigDecimal.ONE, "desc")).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.changeUserBalance(1, BigDecimal.ONE, "desc"));
 	}
 
 	@Test
-	public void testDAOExceptionChangePassword() throws DAOException {
+	void testDAOExceptionChangePassword() throws DAOException {
 		try (MockedStatic<PasswordUtil> passwdUtil = Mockito.mockStatic(PasswordUtil.class)) {
 			passwdUtil.when(() -> PasswordUtil.getRandomString(12)).thenReturn("Ne3Sa9lrat=");
 			passwdUtil.when(() -> PasswordUtil.getRandomString(10)).thenReturn("newPassword");
@@ -432,11 +432,10 @@ class UserServiceImplTest {
 	}
 	
 	@Test
-	public void testDAOExpcetionResetPassword() throws DAOException {
+	void testDAOExpcetionResetPassword() throws DAOException {
 		try (MockedStatic<PasswordUtil> passwdUtil = Mockito.mockStatic(PasswordUtil.class)) {
 			passwdUtil.when(() -> PasswordUtil.getRandomString(12)).thenReturn("Ne3Sa9lrat=");
 			passwdUtil.when(() -> PasswordUtil.getRandomString(10)).thenReturn("newPassword");
-			User user = new User();
 			String hashedPassword = PasswordUtil.hashPassword("newPasswordNe3Sa9lrat=");
 			Mockito.when(userDAO.changePassword("email", hashedPassword, "Ne3Sa9lrat=")).thenThrow(DAOException.class);
 			assertThrows(UserServiceException.class, () ->  userService.resetPassword("email"));
@@ -445,7 +444,7 @@ class UserServiceImplTest {
 	}
 	
 	@Test
-	public void testDAOExceptionAddTariffToUser() throws DAOException{
+	void testDAOExceptionAddTariffToUser() throws DAOException{
 		Mockito.when(transactionDAO.chargeUserForTariffUsing(1, 1, "For using tariff tariffName.")).thenThrow(DAOException.class);
 		Mockito.when(tariffDAO.get(1)).thenReturn(tariff);
 		Mockito.when(userDAO.get(1)).thenReturn(testUser);
@@ -454,19 +453,19 @@ class UserServiceImplTest {
 	}
 	
 	@Test
-	public void testDAOExceptionRemoveTariffFromUser() throws DAOException {
+	void testDAOExceptionRemoveTariffFromUser() throws DAOException {
 		Mockito.when(userDAO.removeTariffFromUser(1, 1)).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, () -> userService.removeTariffFromUser(1, 1));
 	}
 	
 	@Test
-	public void testDAOExceptionGetUserBalance() throws DAOException {
+	void testDAOExceptionGetUserBalance() throws DAOException {
 		Mockito.when(userDAO.getUserBalance(1)).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, ()-> userService.getUserBalance(1)); 
 	}
 	
 	@Test
-	public void testDAOExceptionGetUserStatus() throws DAOException {
+	void testDAOExceptionGetUserStatus() throws DAOException {
 		Mockito.when(userDAO.getUserStatus(1)).thenThrow(DAOException.class);
 		assertThrows(UserServiceException.class, ()-> userService.getUserStatus(1)); 
 	}

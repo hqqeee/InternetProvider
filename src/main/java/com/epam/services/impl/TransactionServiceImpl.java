@@ -49,7 +49,7 @@ public class TransactionServiceImpl implements TransactionService {
 	public List<TransactionDTO> getUserTransaction(int userId, int page, int recordsPerPage)
 			throws NoTransactionsFoundException, TransactionServiceException {
 		try {
-			List<Transaction> transactions = new ArrayList<>();
+			List<Transaction> transactions;
 			transactions = daoFactory.getTransactionDAO().getUserTransactionForView(userId, (page - 1) * recordsPerPage,
 					recordsPerPage);
 			if (transactions.isEmpty()) {
@@ -75,8 +75,7 @@ public class TransactionServiceImpl implements TransactionService {
 	@Override
 	public int getUsersTransactionNumber(int userId) throws TransactionServiceException {
 		try {
-			int numberOfTransaction = daoFactory.getTransactionDAO().getNumberOfUserTransaction(userId);
-			return numberOfTransaction;
+			return daoFactory.getTransactionDAO().getNumberOfUserTransaction(userId);
 		} catch (DAOException e) {
 			throw new TransactionServiceException("Cannot get number of transaction for user with id = " + userId + ".",
 					e);

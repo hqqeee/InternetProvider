@@ -58,7 +58,7 @@ public class ViewTariffsCommand implements Command {
 
 		SortingOrder activeSortingOrder;
 		try {
-			if (req.getParameter("sortingOrder").toUpperCase().equals("ASC")) {
+			if (req.getParameter("sortingOrder").equalsIgnoreCase("ASC")) {
 				activeSortingOrder = SortingOrder.ASC;
 			} else {
 				activeSortingOrder = SortingOrder.DESC;

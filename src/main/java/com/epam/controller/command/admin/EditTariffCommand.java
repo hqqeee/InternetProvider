@@ -53,7 +53,7 @@ public class EditTariffCommand implements Command {
 			Validator.validateTariffForm(form, ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale")));
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
 			AppContext.getInstance().getTariffService().editTariff(form, tariffId);
-			LOG.info("Tariff( " + tariffId + ") has been edited. " + form);
+			LOG.info("Tariff( {}) has been edited. {}", tariffId, form);
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS
 					+ "&success=tariff_edited");
 			return Page.REDIRECTED;

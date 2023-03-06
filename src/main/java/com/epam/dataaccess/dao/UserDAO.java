@@ -164,5 +164,5 @@ public interface UserDAO extends DAO<User> {
 	 * @return The login of the user.
 	 * @throws DAOException If a SQL exception occurs.
 	 */
-	public String getLoginByEmail(String email) throws DAOException;;
+	public String getLoginByEmail(String email) throws DAOException;
 }

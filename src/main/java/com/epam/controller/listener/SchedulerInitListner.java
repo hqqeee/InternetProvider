@@ -30,7 +30,7 @@ public class SchedulerInitListner implements ServletContextListener {
 	/**
 	 * LOG is the logger for this class.
 	 */
-	private final static Logger LOG = LogManager.getLogger(SchedulerInitListner.class);
+	private static final Logger LOG = LogManager.getLogger(SchedulerInitListner.class);
 
 	/**
 	 * Initializes the scheduler when the servlet context is initialized.

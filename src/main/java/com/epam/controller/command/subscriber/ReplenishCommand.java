@@ -68,12 +68,12 @@ public class ReplenishCommand implements Command {
 			appContext.getUserService().changeUserBalance(userId, amount, description);
 			resp.sendRedirect(
 					req.getContextPath() + "/controller?action=" + CommandNames.VIEW_ACCOUNT + "&success=replenish");
-			LOG.info("User(id = " + userId + ") replenished the account with $" + amount.toString());
+			LOG.info("User(id = {}) replenished the account with ${}", amount,userId);
 			if (appContext.getUserService().getUserStatus(userId)) {
 				List<TariffDTO> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
 				appContext.getUserService().chargeUserForTariffsUsing(user.getId(), usersUnpaidTariffs);
 				appContext.getUserService().changeUserStatus(true, userId);
-				LOG.info("User(id = " + userId + ") has been unblocked due to replenishment the account.");
+				LOG.info("User(id = {}) has been unblocked due to replenishment the account.",userId);
 			}
 			return Page.REDIRECTED;
 		} catch (NegativeUserBalanceException e) {

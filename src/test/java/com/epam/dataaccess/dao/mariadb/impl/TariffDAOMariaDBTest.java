@@ -409,7 +409,6 @@ class TariffDAOMariaDBTest {
 	
 	@Test
 	void testUpdateDaysLeftForUnblockedUsers() throws SQLException, DAOException {
-		Tariff tariffToUpdate =  new Tariff(1,"name","name", 1, BigDecimal.ONE, 1);
 		when(mockQueryBuilder.addPreparedStatement(MariaDBConstants.UPDATE_DAYS_UNTIL_PAYMENT_FOR_UNBLOCKED_USERS)).thenReturn(mockQueryBuilder);
 		when(mockQueryBuilder.executeUpdate()).thenReturn(1);
 		tariffDAOMariaDB.updateDaysLeftForUnblockedUsers();

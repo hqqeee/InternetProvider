@@ -57,11 +57,11 @@ public class LoginCommand implements Command {
 		try {
 			req.getSession().setAttribute("loggedUser",
 					AppContext.getInstance().getUserService().login(login, password));
-			LOG.info("User with login " + login + " successfully logged in.");
+			LOG.info("User with login {} successfully logged in.", login);
 			resp.sendRedirect(req.getContextPath() + Page.HOME_PAGE + "?success=login");
 			return Page.REDIRECTED;
 		} catch (UserNotFoundException e) {
-			LOG.warn("Unsuccessful attempt to access account with login " + login + ".");
+			LOG.warn("Unsuccessful attempt to access account with login {}.", login);
 			req.setAttribute("login", req.getParameter("login"));
 			req.setAttribute("incorrectLoginOrPassword", bundle.getString("login.incorrect_login_or_password"));
 		} catch (UserServiceException e) {

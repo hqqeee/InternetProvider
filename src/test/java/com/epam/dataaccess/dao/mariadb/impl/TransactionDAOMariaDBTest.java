@@ -21,7 +21,7 @@ import com.epam.dataaccess.dao.mariadb.datasource.QueryBuilder;
 import com.epam.dataaccess.entity.Transaction;
 import com.epam.exception.dao.DAOException;
 
-public class TransactionDAOMariaDBTest {
+class TransactionDAOMariaDBTest {
 
 	@Mock
 	private QueryBuilder mockQueryBuilder = mock(QueryBuilder.class);
@@ -133,7 +133,7 @@ public class TransactionDAOMariaDBTest {
 	}
 
 	@Test
-	public void testDelete() throws DAOException, SQLException {
+	void testDelete() throws DAOException, SQLException {
 		int id = 1;
 		Transaction transaction = new Transaction(id, 1, new Timestamp(System.currentTimeMillis()),
 				BigDecimal.valueOf(100), "test");
@@ -148,7 +148,7 @@ public class TransactionDAOMariaDBTest {
 	}
 
 	@Test
-	public void testChangeUserBalance() throws DAOException, SQLException {
+	void testChangeUserBalance() throws DAOException, SQLException {
 		int userId = 1;
 		BigDecimal amount = BigDecimal.valueOf(100);
 		when(mockQueryBuilder.addPreparedStatement(MariaDBConstants.ADD_BALANCE_TO_USER)).thenReturn(mockQueryBuilder);
@@ -166,7 +166,7 @@ public class TransactionDAOMariaDBTest {
 	}
 
 	@Test
-	public void testGetUserTransactionForView() throws DAOException, SQLException {
+	void testGetUserTransactionForView() throws DAOException, SQLException {
 		int userId = 1;
 		int start = 0;
 		int limit = 10;

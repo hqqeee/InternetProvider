@@ -4,6 +4,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * 
  * The PasswordUtil class provides utility methods for password management.
@@ -12,6 +15,11 @@ import java.security.SecureRandom;
  * @version 1.0
  */
 public class PasswordUtil {	
+	/**
+	 * Logger instance to log events
+	 */
+	private static final Logger LOGGER = LogManager.getLogger(PasswordUtil.class);
+	private PasswordUtil() {}
 	/**
 	 * 
 	 * Hashes a password using the SHA-256 algorithm.
@@ -24,7 +32,7 @@ public class PasswordUtil {
 		try {
 			md = MessageDigest.getInstance("SHA-256");
 		} catch (NoSuchAlgorithmException e) {
-			System.out.println(e);
+			LOGGER.error(e);
 		}
 		md.reset();
 		md.update(password.getBytes());
@@ -56,10 +64,9 @@ public class PasswordUtil {
 		try {
 			secureRandom = SecureRandom.getInstanceStrong();
 		} catch (NoSuchAlgorithmException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
-		return secureRandom.ints(length, 0, chrs.length()).mapToObj(i -> chrs.charAt(i))
+		return secureRandom.ints(length, 0, chrs.length()).mapToObj(chrs::charAt)
 				.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append).toString();
 	}
 

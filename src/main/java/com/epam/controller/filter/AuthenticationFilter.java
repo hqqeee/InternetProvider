@@ -94,14 +94,14 @@ public class AuthenticationFilter implements Filter {
 		}
 		UserDTO user = (UserDTO) req.getSession().getAttribute("loggedUser");
 		if (user == null) {
-			logger.warn("An attempt to access " + action + " failed.");
+			logger.warn("An attempt to access {} failed.", action);
 			return false;
 		}
 		if ((user.getRole() == Role.ADMIN && Arrays.stream(ADMIN_COMMANDS).anyMatch(action::equals))
 				|| (user.getRole() == Role.SUBSCRIBER && Arrays.stream(SUBSCRIBER_COMMANDS).anyMatch(action::equals))) {
 			return true;
 		} else {
-			logger.warn("An attempt to access " + action + " failed. User: " + user.getLogin() + " .");
+			logger.warn("An attempt to access {} failed. User: {} .", action, user.getLogin());
 			return false;
 		}
 	}

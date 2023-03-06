@@ -56,8 +56,8 @@ public class AddTariffCommand implements Command {
 					Service.getServiceByString(req.getParameter("serviceSelected")), req.getParameter("description"));
 			Validator.validateTariffForm(form, rs);
 			AppContext.getInstance().getTariffService().addTariff(form);
-			LOG.info("Tariff " + form.getName() + " with rate $" + form.getRate() + "/" + form.getPaymentPeriod()
-					+ " day(s) successfully added.");
+			LOG.info("Tariff {} with rate ${}/{} day(s) successfully added.", form.getName(), form.getRate(),
+					form.getPaymentPeriod());
 			resp.sendRedirect(
 					req.getContextPath() + "/controller?action=" + CommandNames.VIEW_TARIFFS + "&success=tariff_added");
 			return Page.REDIRECTED;

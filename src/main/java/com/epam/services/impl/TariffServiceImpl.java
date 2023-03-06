@@ -53,7 +53,7 @@ public class TariffServiceImpl implements TariffService {
 			int entriesPerPage) throws TariffServiceException {
 		try {
 			TariffDAO tariffDAO = daoFactory.getTariffDAO();
-			List<Tariff> tariffs = new ArrayList<>();
+			List<Tariff> tariffs;
 			if (service == Service.ALL) {
 				tariffs = tariffDAO.getAll(entriesPerPage * (page - 1), entriesPerPage, sortingOrder, fieldName);
 			} else {
@@ -100,7 +100,7 @@ public class TariffServiceImpl implements TariffService {
 	public List<TariffDTO> getAllTariff(Service service) throws TariffServiceException {
 		try {
 			TariffDAO tariffDAO = daoFactory.getTariffDAO();
-			List<Tariff> tariffs = new ArrayList<>();
+			List<Tariff> tariffs;
 			if (service == Service.ALL) {
 				tariffs = tariffDAO.getAll();
 			} else {
@@ -125,7 +125,7 @@ public class TariffServiceImpl implements TariffService {
 
 		try {
 			TariffDAO tariffDAO = daoFactory.getTariffDAO();
-			List<Tariff> tariffs = new ArrayList<>();
+			List<Tariff> tariffs;
 			tariffs =  tariffDAO.getUsersTariffs(userId);
 			List<TariffDTO> tariffDTOs = new ArrayList<>();
 			tariffs.forEach(t -> tariffDTOs.add(convertTariffToTariffDTO(t)));
@@ -145,7 +145,7 @@ public class TariffServiceImpl implements TariffService {
 	public List<TariffDTO> getUnpaidTariffs(int userId) throws TariffServiceException {
 		try {
 			TariffDAO tariffDAO = daoFactory.getTariffDAO();
-			List<Tariff> tariffs = new ArrayList<>();
+			List<Tariff> tariffs;
 			tariffs = tariffDAO.getUsersUnpaidTariffs(userId);
 			List<TariffDTO> tariffDTOs = new ArrayList<>();
 			tariffs.forEach(t -> tariffDTOs.add(convertTariffToTariffDTO(t)));
@@ -165,7 +165,7 @@ public class TariffServiceImpl implements TariffService {
 	public Map<TariffDTO, Integer> getUsersTariffWithDaysUntilPayment(int userId) throws TariffServiceException {
 		try {
 			TariffDAO tariffDAO = daoFactory.getTariffDAO();
-			Map<Tariff, Integer> tariffsWithDaysUntilPayment = new HashMap<>();
+			Map<Tariff, Integer> tariffsWithDaysUntilPayment;
 			tariffsWithDaysUntilPayment = tariffDAO.getUsersTariffsWithDayToPayment(userId);
 			Map<TariffDTO, Integer> tariffDTOsWithDaysUntilPayment = new HashMap<>();
 			tariffsWithDaysUntilPayment.forEach((t,i) -> tariffDTOsWithDaysUntilPayment.put(convertTariffToTariffDTO(t), i));

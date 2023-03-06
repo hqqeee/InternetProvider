@@ -70,7 +70,7 @@ public enum CommandFactory {
 	 * CommandFactory object can only be instantiated within this class.
 	 */
 	private CommandFactory() {
-	};
+	}
 
 	/**
 	 * 

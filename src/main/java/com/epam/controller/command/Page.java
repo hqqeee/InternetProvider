@@ -8,6 +8,7 @@ package com.epam.controller.command;
  * @version 1.0
  **/
 public final class Page {
+	private Page() {}
 	public static final String HOME_PAGE = "/index.jsp";
 	public static final String ADMIN_MENU_PAGE = "/WEB-INF/jsp/admin/admin_menu.jsp";
 	public static final String USER_REGISTRATION_PAGE = "/WEB-INF/jsp/admin/register_user.jsp";

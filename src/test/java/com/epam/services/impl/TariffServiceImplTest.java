@@ -56,7 +56,7 @@ class TariffServiceImplTest {
 	}
 
 	@Test
-	public void testGetAllTariffsForView() throws DAOException, TariffServiceException {
+	void testGetAllTariffsForView() throws DAOException, TariffServiceException {
 		List<Tariff> tariffs = new ArrayList<>();
 		tariffs.add(testTariff);
 		Tariff tariff2 = new Tariff(2, "tariff2", "desc ", 14, BigDecimal.ONE, 1);
@@ -69,7 +69,7 @@ class TariffServiceImplTest {
 	}
 
 	@Test
-	public void testGetWithServiceTariffsForView() throws DAOException, TariffServiceException {
+	void testGetWithServiceTariffsForView() throws DAOException, TariffServiceException {
 		List<Tariff> tariffs = new ArrayList<>();
 		tariffs.add(testTariff);
 		Tariff tariff2 = new Tariff(2, "tariff2", "desc ", 14, BigDecimal.ONE, 1);
@@ -82,7 +82,7 @@ class TariffServiceImplTest {
 	}
 
 	@Test
-	public void testGetTariffsForViewDAOException() throws DAOException {
+	void testGetTariffsForViewDAOException() throws DAOException {
 		Mockito.when(tariffDAO.getAll(Service.INTERNET.getId(), 0, 2, SortingOrder.ASC, "name"))
 				.thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class,
@@ -90,25 +90,25 @@ class TariffServiceImplTest {
 	}
 
 	@Test
-	public void testGetAllTariffsCount() throws DAOException, TariffServiceException {
+	void testGetAllTariffsCount() throws DAOException, TariffServiceException {
 		Mockito.when(tariffDAO.getTariffCount()).thenReturn(5);
 		assertEquals(5, tariffService.getTariffsCount(Service.ALL));
 	}
 
 	@Test
-	public void testGetWithServiceTariffsCount() throws DAOException, TariffServiceException {
+	void testGetWithServiceTariffsCount() throws DAOException, TariffServiceException {
 		Mockito.when(tariffDAO.getTariffCount(Service.INTERNET.getId())).thenReturn(5);
 		assertEquals(5, tariffService.getTariffsCount(Service.INTERNET));
 	}
 
 	@Test
-	public void testGetTariffsCountDAOException() throws DAOException {
+	void testGetTariffsCountDAOException() throws DAOException {
 		Mockito.when(tariffDAO.getTariffCount(Service.INTERNET.getId())).thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class, () -> tariffService.getTariffsCount(Service.INTERNET));
 	}
 
 	@Test
-	public void testGetAllTariffAllServices() throws DAOException, TariffServiceException {
+	void testGetAllTariffAllServices() throws DAOException, TariffServiceException {
 		List<Tariff> tariffs = new ArrayList<>();
 		tariffs.add(testTariff);
 		Tariff tariff2 = new Tariff(2, "tariff2", "desc ", 14, BigDecimal.ONE, 1);
@@ -121,7 +121,7 @@ class TariffServiceImplTest {
 	}
 
 	@Test
-	public void testGetAllTariffWithService() throws DAOException, TariffServiceException {
+	void testGetAllTariffWithService() throws DAOException, TariffServiceException {
 		List<Tariff> tariffs = new ArrayList<>();
 		tariffs.add(testTariff);
 		Tariff tariff2 = new Tariff(2, "tariff2", "desc ", 14, BigDecimal.ONE, 1);
@@ -134,13 +134,13 @@ class TariffServiceImplTest {
 	}
 
 	@Test
-	public void testGetAllTariffDAOException() throws DAOException, TariffServiceException {
+	void testGetAllTariffDAOException() throws DAOException, TariffServiceException {
 		Mockito.when(tariffDAO.getAll(Service.IP_TV.getId())).thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class, () -> tariffService.getAllTariff(Service.IP_TV));
 	}
 
 	@Test
-	public void testGetUsersTariff() throws TariffServiceException, DAOException {
+	void testGetUsersTariff() throws TariffServiceException, DAOException {
 		List<Tariff> tariffs = new ArrayList<>();
 		tariffs.add(testTariff);
 		Tariff tariff2 = new Tariff(2,"tariff2", "desc ", 14, BigDecimal.ONE, 1);
@@ -153,13 +153,13 @@ class TariffServiceImplTest {
 	}
 	
 	@Test
-	public void testGetUsersTariffDAOException() throws DAOException {
+	void testGetUsersTariffDAOException() throws DAOException {
 		Mockito.when(tariffDAO.getUsersTariffs(3)).thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class,() -> tariffService.getUsersTariff(3));
 	}
 	
 	@Test
-	public void testGetUnpaidTariffs() throws DAOException, TariffServiceException {
+	void testGetUnpaidTariffs() throws DAOException, TariffServiceException {
 		List<Tariff> tariffs = new ArrayList<>();
 		tariffs.add(testTariff);
 		List<TariffDTO> tariffsDTOs = new ArrayList<>();
@@ -169,13 +169,13 @@ class TariffServiceImplTest {
 	}
 	
 	@Test
-	public void testGetUnpaidTariffsDAOException() throws DAOException {
+	void testGetUnpaidTariffsDAOException() throws DAOException {
 		Mockito.when(tariffDAO.getUsersUnpaidTariffs(4)).thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class,  () -> tariffService.getUnpaidTariffs(4));
 	}
 	
 	@Test
-	public void testGetUsersTariffWithDaysUntilPayment() throws DAOException, TariffServiceException {
+	void testGetUsersTariffWithDaysUntilPayment() throws DAOException, TariffServiceException {
 		Map<Tariff, Integer> tariffsWithDays = new HashMap<>();
 		tariffsWithDays.put(testTariff, 6);
 		Map<TariffDTO, Integer> tariffDTOsWithDays = new HashMap<>();
@@ -185,13 +185,13 @@ class TariffServiceImplTest {
 	}
 	
 	@Test
-	public void testGetUsersTariffWithDaysUntilPaymentDAOException() throws DAOException {
+	void testGetUsersTariffWithDaysUntilPaymentDAOException() throws DAOException {
 		Mockito.when(tariffDAO.getUsersTariffsWithDayToPayment(3)).thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class, () -> tariffService.getUsersTariffWithDaysUntilPayment(3));
 	}
 	
 	@Test
-	public void testRemoveTariffDAOException() throws DAOException {
+	void testRemoveTariffDAOException() throws DAOException {
 		Tariff tariffNew = new Tariff();
 		tariffNew.setId(1);
 		Mockito.when(tariffDAO.delete(tariffNew)).thenThrow(DAOException.class);
@@ -199,19 +199,19 @@ class TariffServiceImplTest {
 	}
 	
 	@Test
-	public void testAddTariffDAOException() throws DAOException {
+	void testAddTariffDAOException() throws DAOException {
 		Mockito.when(tariffDAO.insert(testTariff)).thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class, () -> tariffService.addTariff(testTariffForm));
 	}
 	
 	@Test
-	public void testEditTariffDAOException() throws DAOException {
+	void testEditTariffDAOException() throws DAOException {
 		Mockito.when(tariffDAO.update(testTariff)).thenThrow(DAOException.class);
 		assertThrows(TariffServiceException.class, () -> tariffService.editTariff(testTariffForm, 0));
 	}
 	
 	@Test
-	public void testUpdateDaysUntilPayment() throws DAOException {
+	void testUpdateDaysUntilPayment() throws DAOException {
 		doThrow(DAOException.class).when(tariffDAO).updateDaysLeftForUnblockedUsers();
 		assertThrows(TariffServiceException.class, () -> tariffService.updateDaysUntilPayments());
 	}

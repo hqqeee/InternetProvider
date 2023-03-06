@@ -36,6 +36,7 @@ public class AppErrorHandler extends HttpServlet {
 	 * @throws ServletException if there is a servlet error
 	 * @throws IOException      if there is an I/O error
 	 **/
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processError(request, response);
@@ -51,6 +52,7 @@ public class AppErrorHandler extends HttpServlet {
 	 * @throws ServletException if there is a servlet error
 	 * @throws IOException      if there is an I/O error
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processError(request, response);
@@ -71,11 +73,7 @@ public class AppErrorHandler extends HttpServlet {
 		// Analyze the servlet exception
 		Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
 		Integer statusCode = (Integer) request.getAttribute("javax.servlet.error.status_code");
-		String servletName = (String) request.getAttribute("javax.servlet.error.servlet_name");
 		ResourceBundle rb = ResourceBundle.getBundle("lang", (Locale) request.getAttribute("locale"));
-		if (servletName == null) {
-			servletName = rb.getString("error_handler_unknown");
-		}
 		String requestUri = (String) request.getAttribute("javax.servlet.error.request_uri");
 		if (requestUri == null) {
 			requestUri = rb.getString("error_handler_unknown");

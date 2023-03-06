@@ -3,7 +3,6 @@ package com.epam.controller.command.admin;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
@@ -51,7 +50,7 @@ class AddTariffCommandTest {
 	}
 
 	@Test
-	public void testValidationError() {
+	void testValidationError() {
 		Mockito.when(req.getParameter("name")).thenReturn(null);
 		Mockito.when(req.getParameter("paymentPeriod")).thenReturn("14");
 		Mockito.when(req.getParameter("rate")).thenReturn("12");
@@ -61,7 +60,7 @@ class AddTariffCommandTest {
 	}
 
 	@Test
-	public void testTariffServiceException() throws TariffServiceException, ValidationErrorException {
+	void testTariffServiceException() throws TariffServiceException, ValidationErrorException {
 		Mockito.when(req.getParameter("name")).thenReturn("name");
 		Mockito.when(req.getParameter("paymentPeriod")).thenReturn("14");
 		Mockito.when(req.getParameter("rate")).thenReturn("12");
@@ -79,7 +78,7 @@ class AddTariffCommandTest {
 	}
 
 	@Test
-	public void testAddTariffException() {
+	void testAddTariffException() {
 		Mockito.when(req.getParameter("name")).thenReturn("name");
 		Mockito.when(req.getParameter("paymentPeriod")).thenReturn("14");
 		Mockito.when(req.getParameter("rate")).thenReturn("12asd");
@@ -89,7 +88,7 @@ class AddTariffCommandTest {
 	}
 
 	@Test
-	public void testSuccessAddTariff() {
+	void testSuccessAddTariff() {
 		Mockito.when(req.getParameter("name")).thenReturn("name");
 		Mockito.when(req.getParameter("paymentPeriod")).thenReturn("14");
 		Mockito.when(req.getParameter("rate")).thenReturn("12");
@@ -99,8 +98,6 @@ class AddTariffCommandTest {
 			appContextStatic.when(() -> AppContext.getInstance()).thenReturn(appContext);
 			Mockito.when(appContext.getTariffService()).thenReturn(tariffService);
 			Mockito.when(appContext.getUserService()).thenReturn(userService);
-			TariffForm tariffForm = new TariffForm("name", Integer.parseInt("14"), new BigDecimal("12"),
-					Service.INTERNET, "desc");
 			assertEquals(Page.REDIRECTED, new AddTariffCommand().execute(req, resp));
 		}
 	}

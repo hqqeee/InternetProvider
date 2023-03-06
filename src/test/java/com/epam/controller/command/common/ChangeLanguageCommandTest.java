@@ -8,7 +8,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -16,15 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import com.epam.controller.command.Page;
 
 
-public class ChangeLanguageCommandTest {
+class ChangeLanguageCommandTest {
 
     private ChangeLanguageCommand changeLanguageCommand;
 
@@ -42,7 +39,7 @@ public class ChangeLanguageCommandTest {
 
 
     @Test
-    public void testExecuteWithValidLanguage() {
+    void testExecuteWithValidLanguage() {
     	Mockito.when(request.getAttribute("locale")).thenReturn(new Locale("en"));
         when(request.getParameter("lang")).thenReturn("en");
         doNothing().when(response).addCookie(any(Cookie.class));

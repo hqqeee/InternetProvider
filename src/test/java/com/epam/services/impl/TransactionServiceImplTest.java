@@ -51,7 +51,7 @@ class TransactionServiceImplTest {
 	}
 	
 	@Test
-	public void testGetUserTransaction() throws DAOException, TransactionServiceException, NoTransactionsFoundException {
+	void testGetUserTransaction() throws DAOException, TransactionServiceException, NoTransactionsFoundException {
 		List<Transaction> transactions = new ArrayList<>();
 		transactions.add(testTransaction);
 		List<TransactionDTO> transactionsDTOs = new ArrayList<>();
@@ -61,26 +61,26 @@ class TransactionServiceImplTest {
 	}
 	
 	@Test
-	public void testGetUserTransactionNoTransactions() throws DAOException {
+	void testGetUserTransactionNoTransactions() throws DAOException {
 		List<Transaction> transactions = new ArrayList<>();
 		Mockito.when(transactionDAO.getUserTransactionForView(0, 0, 1)).thenReturn(transactions);
 		assertThrows(NoTransactionsFoundException.class, () -> transactionService.getUserTransaction(0,1,1));
 	}
 	
 	@Test
-	public void testGetUserTransactionDAOException() throws DAOException {
+	void testGetUserTransactionDAOException() throws DAOException {
 		Mockito.when(transactionDAO.getUserTransactionForView(0, 0, 1)).thenThrow(DAOException.class);
 		assertThrows(TransactionServiceException.class, () -> transactionService.getUserTransaction(0,1,1));
 	}
 	
 	@Test
-	public void testGetUsersTransactionNumber() throws DAOException, TransactionServiceException {
+	void testGetUsersTransactionNumber() throws DAOException, TransactionServiceException {
 		Mockito.when(transactionDAO.getNumberOfUserTransaction(0)).thenReturn(2);
 		assertEquals(2, transactionService.getUsersTransactionNumber(0));
 	}
 	
 	@Test
-	public void testGetUsersTransactionNumberDAOException() throws DAOException {
+	void testGetUsersTransactionNumberDAOException() throws DAOException {
 		Mockito.when(transactionDAO.getNumberOfUserTransaction(0)).thenThrow(DAOException.class);
 		assertThrows(TransactionServiceException.class, () -> transactionService.getUsersTransactionNumber(0));
 	}

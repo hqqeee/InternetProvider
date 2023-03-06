@@ -30,7 +30,7 @@ class RoleDAOMariaDBTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		MockitoAnnotations.initMocks(this);
+		MockitoAnnotations.openMocks(this);
 		roleDAO = new RoleDAOMariaDB() {
 			@Override
 			protected QueryBuilder getQueryBuilder() throws SQLException {
