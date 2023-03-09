@@ -14,6 +14,7 @@ public class UserAlreadyExistException extends Exception {
 
 	public UserAlreadyExistException(String field, String value) {
 		super("User with " + field + ": " + value + " is already registrated.");
+		this.field = field;
 	}
 
 	public String getField() {

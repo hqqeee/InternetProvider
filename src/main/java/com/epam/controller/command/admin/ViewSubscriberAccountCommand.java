@@ -1,5 +1,6 @@
 package com.epam.controller.command.admin;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -57,11 +58,11 @@ public class ViewSubscriberAccountCommand implements Command {
 			req.setAttribute("userId", req.getParameter("userId"));
 			req.setAttribute("numberOfPages",
 					Math.ceil(transactionService.getUsersTransactionNumber(userId) * 1.0 / RECORDS_PER_PAGE));
+			req.setAttribute("userBalance", AppContext.getInstance().getUserService().getUserBalance(userId));
 			List<TransactionDTO> transactions = transactionService.getUserTransaction(userId, currentPage,
 					RECORDS_PER_PAGE);
 			req.setAttribute("transactionsToDisplay", transactions);
 			req.setAttribute("page", currentPage);
-			req.setAttribute("userBalance", AppContext.getInstance().getUserService().getUserBalance(userId));
 			return Page.ACCOUNT_PAGE;
 		} catch (NoTransactionsFoundException e) {
 			req.setAttribute("noTransactionFound", rs.getString("error.payment_history_empty"));

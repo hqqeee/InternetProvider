@@ -88,7 +88,7 @@
 					<c:otherwise>
 					<a class="dropdown-toggle" type="button" id="dropdownMenuButton1"
 						data-bs-toggle="dropdown" aria-expanded="false"><img
-						src="${pageContext.request.contextPath}/images/gb.png" width="16" alt="gb></a>
+						src="${pageContext.request.contextPath}/images/gb.png" width="16" alt="gb"/></a>
 					<ul class="dropdown-menu text-bg-dark">
 						<li><a class="dropdown-item m-0" href="#" onclick="document.getElementById('lang').value='uk';document.getElementById('change_lang').submit()"><img
 								src="${pageContext.request.contextPath}/images/ua.png"

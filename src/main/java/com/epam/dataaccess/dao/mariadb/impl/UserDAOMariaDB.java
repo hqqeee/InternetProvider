@@ -84,7 +84,7 @@ public class UserDAOMariaDB implements UserDAO {
 			if (checkUserExistsByLogin(user.getLogin())) {
 				throw new DAORecordAlreadyExistsException("User with login " + user.getLogin() + " already exists.");
 			}
-			if (checkUserExistsByEmail(user.getLogin())) {
+			if (checkUserExistsByEmail(user.getEmail())) {
 				throw new DAORecordAlreadyExistsException("User with email " + user.getEmail() + " already exists.");
 			}
 			return getQueryBuilder().addPreparedStatement(MariaDBConstants.ADD_USER).setStringField(user.getPassword())

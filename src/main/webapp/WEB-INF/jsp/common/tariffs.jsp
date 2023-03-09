@@ -252,17 +252,17 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content text-bg-dark">
 				<div class="modal-body">
-					<p class="fs-2">Please confirm you action.</p>
+					<p class="fs-2"><fmt:message key="tariff_remove.prompt"/></p>
 					<hr class="style1">
-					<p class="fw-bold">You are about to remove tariff</p>
+					<p class="fw-bold"><fmt:message key="tariff_remove.about_to_remove"/></p>
 					<p id="tariff_name" class="fw-bold fs-5"></p>
 
 					<div class="text-end">
 						<form action="controller?action=removeTariff" method="post">
 							<input type="hidden" name="tariffId" id="tariff_id" />
 							<button type="button" class="btn btn-secondary me-2"
-								data-bs-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-warning">Confirm</button>
+								data-bs-dismiss="modal"><fmt:message key="tariff_remove.cancel"/></button>
+							<button type="submit" class="btn btn-warning"><fmt:message key="tariff_remove.confirm"/></button>
 						</form>
 					</div>
 				</div>
@@ -275,8 +275,7 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content text-bg-dark">
 				<div class="modal-body">
-					<p class="fs-2" id="enter_invite">Please provide data to
-						update.</p>
+					<p class="fs-2" id="enter_invite"><fmt:message key="tariff_update.prompt"/></p>
 					<hr class="style1">
 					<c:if test="${not empty requestScope.tariffValidateErrors}">
 						<c:forEach var="error"
@@ -329,7 +328,7 @@
 						<div class="text-end my-3">
 							<input type="hidden" name="tariffId" id="edit_tariff_id" />
 							<button type="button" class="btn btn-secondary me-2"
-								data-bs-dismiss="modal">Cancel</button>
+								data-bs-dismiss="modal"><fmt:message key="tariff_update.cancel"/></button>
 							<input type="hidden" name="service"
 								value="${requestScope.service}" /> <input type="hidden"
 								name="rowNumber" value="${requestScope.rowNumber}"> <input
@@ -339,7 +338,7 @@
 								value="${requestScope.sortingOrder}"> <input
 								type="hidden" name="page" value="${requestScope.page}" />
 							<button type="submit" class="btn btn-warning"
-								id="update_add_buttom">Update</button>
+								id="update_add_buttom"><fmt:message key="tariff_update.update"/></button>
 						</div>
 					</form>
 				</div>

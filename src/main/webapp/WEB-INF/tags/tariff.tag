@@ -27,6 +27,6 @@
 			?requestScope.perTwoWeeks: tariff.paymentPeriod eq 7? requestScope.perWeek:
 			requestScope.perDay}</p>
 	</div>
-	<div class="d-flex justify-content-start m-3 text-start">${tariff.description}</div>
+	<div class="justify-content-start m-3 text-start text-wrap">${tariff.description}</div>
 	<jsp:doBody />
 </div>
