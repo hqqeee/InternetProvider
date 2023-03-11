@@ -60,12 +60,12 @@ public class DateFormatTag extends TagSupport {
 				ResourceBundle rb = ResourceBundle.getBundle("lang", new Locale("uk"));
 				writer.print(cal.get(Calendar.DAY_OF_MONTH) + " "
 						+ rb.getString("month.number" + cal.get(Calendar.MONTH)) + " " + cal.get(Calendar.YEAR) + " "
-						+ cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
+						+ cal.get(Calendar.HOUR_OF_DAY) + ":" + String.format("%02d", cal.get(Calendar.MINUTE)));
 			} else {
 				ResourceBundle rb = ResourceBundle.getBundle("lang", new Locale("en"));
 				writer.print(rb.getString("month.number" + cal.get(Calendar.MONTH)) + " "
 						+ cal.get(Calendar.DAY_OF_MONTH) + " " + cal.get(Calendar.YEAR) + "' " + cal.get(Calendar.HOUR)
-						+ ":" + cal.get(Calendar.MINUTE) + (cal.get(Calendar.AM_PM) == 1 ? "PM" : "AM"));
+						+ ":" + String.format("%02d", cal.get(Calendar.MINUTE)) + (cal.get(Calendar.AM_PM) == 1 ? "PM" : "AM"));
 			}
 		} catch (IOException e) {
 			LOG.error("Cannot display locale date.");

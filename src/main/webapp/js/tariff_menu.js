@@ -29,6 +29,7 @@ function confirm_tariff_remove(name,id) {
 }
 
 function edit_tariff(name, rate, service, description, payment_period, id){
+	console.log(name);
 	document.getElementById("edit_tariff_name").value=name
 	document.getElementById("edit_tariff_rate").value=rate
 	document.getElementById("edit_tariff_description").value=description

@@ -19,7 +19,6 @@
 				value="${requestScope.sortingField}"> <input type="hidden"
 				name="sortingOrder" value="${requestScope.sortingOrder}"> <input
 				type="hidden" name="rowNumber" value="${requestScope.rowNumber}">
-			<%-- 			<input type="hidden" name="page" value="${requestScope.page}" /> --%>
 			<input type="hidden" name="service" id="service_name"
 				value="${requestScope.service}">
 			<div class="row justify-content-around form-group">
@@ -94,8 +93,6 @@
 				type="hidden" name="sortingField"
 				value="${requestScope.sortingField}"> <input type="hidden"
 				name="sortingOrder" value="${requestScope.sortingOrder}">
-			<%-- 				<input -->
-<%-- 				type="hidden" name="page" value="${requestScope.page}" /> --%>
 			<input type="hidden" name="service" value="${requestScope.service}" />
 			<label class="fs-5 text-white"><fmt:message key="view.show" /></label> <select
 				class="form-select bg-dark text-white mx-2"
@@ -155,10 +152,10 @@
 
 					<button type="button" class="btn btn-warning me-2"
 						data-bs-toggle="modal" data-bs-target="#editTariff"
-						onclick="edit_tariff('${tariff.name}','${tariff.rate}','${tariff.service}','${tariff.description}','${tariff.paymentPeriod}','${tariff.id}')"><fmt:message key="tariffs.edit"/></button>
+						onclick="edit_tariff(`${tariff.name}`,`${tariff.rate}`,`${tariff.service}`,`${tariff.description}`,`${tariff.paymentPeriod}`,`${tariff.id}`)"><fmt:message key="tariffs.edit"/></button>
 					<button type="button" class="btn btn-danger" data-bs-toggle="modal"
 						data-bs-target="#submitTariffRemove"
-						onclick="confirm_tariff_remove('${tariff.name}', '${tariff.id}')"><fmt:message key="tariffs.remove"/></button>
+						onclick="confirm_tariff_remove(`${tariff.name}`, `${tariff.id}`)"><fmt:message key="tariffs.remove"/></button>
 				</div>
 			</c:if>
 			<c:if test="${sessionScope.loggedUser.role eq 'SUBSCRIBER'}">
@@ -166,7 +163,7 @@
 
 					<button type="button" class="btn btn-warning btn-lg "
 						data-bs-toggle="modal" data-bs-target="#submitTariffSelection"
-						onclick="confirm_tariff_selection('${tariff.rate}', '${tariff.name}', '${tariff.id}','${tariff.paymentPeriod}')"><fmt:message key="tariffs.get_now" /></button>
+						onclick="confirm_tariff_selection(`${tariff.rate}`, `${tariff.name}`, `${tariff.id}`,`${tariff.paymentPeriod}`)"><fmt:message key="tariffs.get_now" /></button>
 				</div>
 			</c:if>
 		</ctf:tariff>

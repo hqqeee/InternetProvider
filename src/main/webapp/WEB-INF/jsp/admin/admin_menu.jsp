@@ -18,7 +18,6 @@
 
 			<form action="controller" class="my-3 mx-1 d-flex"
 				method="get">
-<%-- 				<input type="hidden" name="page" value="${page}" />  --%>
 				<input type="hidden" name="action" value="adminMenu"/>
 				<input
 					type="hidden" name="searchField" value="${searchField}" /> <label
@@ -42,7 +41,6 @@
 		<div class="text-end">
 			<form class="d-flex text-end" role="search"
 				action="controller" method="get">
-<%-- 				<input type="hidden" name="page" value="${page}" /> --%>
 				<input type="hidden" name="action" value="adminMenu"/>
 				 <input
 					type="hidden" name="rowNumber" value="${rowNumber}" /> <input
@@ -108,7 +106,7 @@
 						<ul class="dropdown-menu dropdown-menu-dark">
 							<li><button type="button" class="dropdown-item"
 									data-bs-toggle="modal" data-bs-target="#submitBlockModal"
-									onClick="submit_modal('${user.firstName}','${user.lastName}','${user.login}','${user.id}')"><fmt:message key="admin_menu.remove"/></button></li>
+									onClick="submit_modal(`${user.firstName}`,`${user.lastName}`,`${user.login}`,`${user.id}`)"><fmt:message key="admin_menu.remove"/></button></li>
 							<li><form action="controller?action=changeUserStatus"
 									method="post">
 									<input type="hidden" name="page" value="${page}" /> <input
@@ -127,7 +125,7 @@
 								</form></li>
 							<li><button type="button" class="dropdown-item"
 									data-bs-toggle="modal" data-bs-target="#changeUserBalanceModal"
-									onClick="change_balance_modal('${user.login}','${user.balance}','${user.id}')"><fmt:message key="admin_menu.change_balance"/></button></li>
+									onClick="change_balance_modal(`${user.login}`,`${user.balance}`,`${user.id}`)"><fmt:message key="admin_menu.change_balance"/></button></li>
 						</ul>
 					</div>
 				</td>

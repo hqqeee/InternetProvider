@@ -46,7 +46,6 @@ public class EditTariffCommand implements Command {
 		TariffForm form = null;
 		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
-
 			form = new TariffForm(req.getParameter("name"), Integer.parseInt(req.getParameter("paymentPeriod")),
 					new BigDecimal(req.getParameter("rate")),
 					Service.getServiceByString(req.getParameter("serviceSelected")), req.getParameter("description"));
