@@ -2,6 +2,8 @@ package com.epam.controller.filter;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -72,7 +74,7 @@ public class AuthenticationFilter implements Filter {
 		if (checkAccess(httpRequest)) {
 			chain.doFilter(request, response);
 		} else {
-			request.setAttribute("errorMessages", "You cannot access this page.");
+			request.setAttribute("errorMessages",  ResourceBundle.getBundle("lang", (Locale) request.getAttribute("locale")).getString("error.attempt_to_get_access"));
 			request.getRequestDispatcher(Page.HOME_PAGE).forward(request, response);
 		}
 	}

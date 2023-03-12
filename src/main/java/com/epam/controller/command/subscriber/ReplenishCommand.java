@@ -19,6 +19,7 @@ import com.epam.exception.services.UserServiceException;
 import com.epam.services.dto.TariffDTO;
 import com.epam.services.dto.UserDTO;
 import com.epam.util.AppContext;
+import com.epam.util.EmailUtil;
 
 /**
  * The ReplenishCommand class implements Command interface and represents a
@@ -73,6 +74,10 @@ public class ReplenishCommand implements Command {
 				List<TariffDTO> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(user.getId());
 				appContext.getUserService().chargeUserForTariffsUsing(user.getId(), usersUnpaidTariffs);
 				appContext.getUserService().changeUserStatus(true, userId);
+				if(!usersUnpaidTariffs.isEmpty()) {
+					EmailUtil.INSTANCE.addReceipt(user.getEmail(), usersUnpaidTariffs);
+					EmailUtil.INSTANCE.sendMails();
+				}
 				LOG.info("User(id = {}) has been unblocked due to replenishment the account.",userId);
 			}
 			return Page.REDIRECTED;

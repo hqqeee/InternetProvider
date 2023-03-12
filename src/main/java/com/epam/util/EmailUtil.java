@@ -150,7 +150,7 @@ public enum EmailUtil {
 	 */
 	public boolean addReceipt(String email, List<TariffDTO> tariffs) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Dear client, <br> Here's your were charge for using out service.");
+		sb.append("Dear client, <br>Here is your receipt for using our services.");
 		BigDecimal sum = BigDecimal.ZERO;
 		int count = 1;
 		sb.append("<br> <table border=\"1\">\n" + " <thead> <tr>\n" + "    <th>No</th>\n" + "    <th>Tariff</th>\n"

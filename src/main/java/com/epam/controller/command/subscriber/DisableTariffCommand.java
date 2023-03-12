@@ -19,6 +19,7 @@ import com.epam.exception.services.TariffServiceException;
 import com.epam.exception.services.UserServiceException;
 import com.epam.services.dto.TariffDTO;
 import com.epam.util.AppContext;
+import com.epam.util.EmailUtil;
 
 /**
  * The class is responsible for disabling the selected tariff for a subscriber.
@@ -48,7 +49,8 @@ public class DisableTariffCommand implements Command {
 		ResourceBundle rs = ResourceBundle.getBundle("lang", (Locale) req.getAttribute("locale"));
 		try {
 			int tariffId = Integer.parseInt(req.getParameter("tariffId"));
-			int userId = ((UserDTO) req.getSession().getAttribute("loggedUser")).getId();
+			UserDTO loggedUser = ((UserDTO) req.getSession().getAttribute("loggedUser"));
+			int userId = loggedUser.getId();
 			AppContext appContext = AppContext.getInstance();
 			appContext.getUserService().removeTariffFromUser(userId, tariffId);
 			resp.sendRedirect(req.getContextPath() + "/controller?action=" + CommandNames.VIEW_ACTIVE_TARIFFS
@@ -58,6 +60,10 @@ public class DisableTariffCommand implements Command {
 				List<TariffDTO> usersUnpaidTariffs = appContext.getTariffService().getUnpaidTariffs(userId);
 				appContext.getUserService().chargeUserForTariffsUsing(userId, usersUnpaidTariffs);
 				appContext.getUserService().changeUserStatus(true, userId);
+				if(!usersUnpaidTariffs.isEmpty()) {
+					EmailUtil.INSTANCE.addReceipt(loggedUser.getEmail(), usersUnpaidTariffs);
+					EmailUtil.INSTANCE.sendMails();
+				}
 				LOG.info("User(id = {}) has been unblocked due to disconnection of the tariff.", userId);
 			}
 			return Page.REDIRECTED;
