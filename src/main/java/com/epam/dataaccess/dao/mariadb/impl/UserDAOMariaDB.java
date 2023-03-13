@@ -354,10 +354,13 @@ public class UserDAOMariaDB implements UserDAO {
 	}
 
 	/**
-	 * Return user blocked status.
+	 * This method update User record in the persistence layer with new password and
+	 * salt.
 	 * 
-	 * @param userId id of the user which status will be returned.
-	 * @return true if user blocked, false if unblocked.
+	 * @param email       email of the user.
+	 * @param newPassword new password(hashed)
+	 * @param salt        salt(needed to hash).
+	 * @return 1 if password changed.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
 	@Override

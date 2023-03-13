@@ -66,7 +66,6 @@ public interface TariffDAO extends DAO<Tariff> {
 	/**
 	 * Retrieves the number of tariffs with a specific service ID.
 	 *
-	 * @param serviceId The service ID to filter by.
 	 * @return The number of tariffs with the specified service ID.
 	 * @throws DAOException If a SQL exception occurs.
 	 */
@@ -83,7 +82,7 @@ public interface TariffDAO extends DAO<Tariff> {
 	/**
 	 * Returns a list of all tariffs associated with a specific service.
 	 * 
-	 * @param serviceId the id of the service to get tariffs for
+	 * @param userId the id of the user to get tariffs for
 	 * @return a list of tariffs for the specified service
 	 * @throws DAOException if an error occurs while accessing the persistence layer
 	 */

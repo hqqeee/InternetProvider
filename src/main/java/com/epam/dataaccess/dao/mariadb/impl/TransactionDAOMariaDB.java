@@ -71,7 +71,7 @@ public class TransactionDAOMariaDB implements TransactionDAO {
 	/**
 	 * Insert new Transaction to the persistence layer.
 	 * 
-	 * @param tariff Transaction to add.
+	 * @param transaction Transaction to add.
 	 * @return 1 if inserted, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -93,7 +93,7 @@ public class TransactionDAOMariaDB implements TransactionDAO {
 	/**
 	 * Update Transaction in the persistence layer.
 	 * 
-	 * @param user Transaction to update.
+	 * @param transaction Transaction to update.
 	 * @return 1 if updated, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -112,7 +112,7 @@ public class TransactionDAOMariaDB implements TransactionDAO {
 	/**
 	 * Delete Transaction from the persistence layer.
 	 * 
-	 * @param user Transaction to delete.
+	 * @param transaction Transaction to delete.
 	 * @return 1 if deleted, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -135,21 +135,21 @@ public class TransactionDAOMariaDB implements TransactionDAO {
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
 	@Override
-	public int changeUserBalance(int userId, BigDecimal diffrence, String description) throws DAOException {
+	public int changeUserBalance(int userId, BigDecimal difference, String description) throws DAOException {
 		try {
 			return getQueryBuilder().addPreparedStatement(MariaDBConstants.ADD_BALANCE_TO_USER)
-					.setBigDecimalField(diffrence).setIntField(userId)
+					.setBigDecimalField(difference).setIntField(userId)
 					.addPreparedStatement(MariaDBConstants.ADD_TRANSACTION).setIntField(userId)
-					.setBigDecimalField(diffrence).setStringField(description).executeUpdate();
+					.setBigDecimalField(difference).setStringField(description).executeUpdate();
 		} catch (SQLException e) {
-			throw new DAOUpdateException("Cannot change balance for user with id " + userId + " amount " + diffrence
+			throw new DAOUpdateException("Cannot change balance for user with id " + userId + " amount " + difference
 					+ " description " + description + ".", e);
 		}
 	}
 
 	/**
 	 * Return all transaction for the specific user ID.
-	 * @param userIdThe ID of the user whose transaction to be get.
+	 * @param userId The ID of the user whose transaction to be get.
 	 * @param offset number of record to skip.
 	 * @param recordsNumber number maximum records to get.
 	 * @return List of Transaction with specififc user ID.

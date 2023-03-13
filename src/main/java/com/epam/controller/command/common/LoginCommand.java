@@ -43,7 +43,7 @@ public class LoginCommand implements Command {
 	 * @param req  HttpServletRequest object to get request parameters
 	 * @param resp HttpServletResponse object to redirect the page
 	 * @return Page.HOME_PAGE if login fails or exception occurs while logging in.
-	 * @return Page.REDIRECTED if the user is successfully logged in.
+	 *  Page.REDIRECTED if the user is successfully logged in.
 	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {

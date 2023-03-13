@@ -38,9 +38,11 @@ public class ViewTariffsCommand implements Command {
 	 * The method retrieves the necessary information for displaying tariffs,
 	 * processes it, and sets it as request attributes.
 	 *
-	 * @param HttpServletRequest req, HttpServletResponse resp
+	 * @param req - the request object that is passed to the
+	 *                            servlet
+	 * @param resp - the response object that the servlet
+	 *                            generates
 	 * @return String the URL of the view tariffs page
-	 * @throws Exception
 	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {

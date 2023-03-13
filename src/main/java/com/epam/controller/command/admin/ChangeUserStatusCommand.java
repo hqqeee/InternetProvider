@@ -47,7 +47,6 @@ public class ChangeUserStatusCommand implements Command {
 	 * @param req  the HttpServletRequest object
 	 * @param resp the HttpServletResponse object
 	 * @return The Page String that corresponds to the next page
-	 * @throws Exception if there is an error while changing the user's status
 	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {

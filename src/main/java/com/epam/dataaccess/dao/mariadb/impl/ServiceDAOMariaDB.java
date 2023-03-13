@@ -68,7 +68,7 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 	/**
 	 * Insert new Service to the persistence layer.
 	 * 
-	 * @param tariff Service to add.
+	 * @param service Service to add.
 	 * @return 1 if inserted, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -85,7 +85,7 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 	/**
 	 * Update Service in the persistence layer.
 	 * 
-	 * @param user Service to update.
+	 * @param service Service to update.
 	 * @return 1 if updated, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -103,7 +103,7 @@ public class ServiceDAOMariaDB implements ServiceDAO {
 	/**
 	 * Delete Service from the persistence layer.
 	 * 
-	 * @param user Service to delete.
+	 * @param service Service to delete.
 	 * @return 1 if deleted, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */

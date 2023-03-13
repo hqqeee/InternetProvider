@@ -51,7 +51,6 @@ public class RegisterUserCommand implements Command {
 	 * @param resp an HttpServletResponse object that contains the response
 	 *             the servlet sends to the client
 	 * @return a String representing the forwarding JSP page name.
-	 * @throws Exception if any unexpected error occurs while registering a user.
 	 */
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) {

@@ -117,6 +117,7 @@ public enum EmailUtil {
 	 * @param toEmail  email address of the recipient
 	 * @param login    the login of the recipient
 	 * @param password the password of the recipient
+	 * @return true if email was added successfully
 	 */
 	public boolean addRegistrationEmailToQueue(String toEmail, String login, String password) {
 		return emails.offer(new Email(toEmail, "Welcome to Maven Telecom",
@@ -130,9 +131,10 @@ public enum EmailUtil {
 	 * Adds a send new password email to the email queue. Use sendMails() to send
 	 * it.
 	 * 
-	 * @param toEmail  email address of the recipient
+	 * @param email  email address of the recipient
 	 * @param login    the login of the recipient
 	 * @param password the password of the recipient
+	 * @return true if email was added successfully
 	 */
 	public boolean addSendNewPasswordEmailToQueue(String email, String login, String password) {
 		return emails.offer(new Email(email, "Password Reset",

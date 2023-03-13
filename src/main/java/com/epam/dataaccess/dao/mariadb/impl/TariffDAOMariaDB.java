@@ -88,7 +88,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 	/**
 	 * Update Tariff in the persistence layer.
 	 * 
-	 * @param user Tariff to update.
+	 * @param tariff Tariff to update.
 	 * @return 1 if updated, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -107,7 +107,7 @@ public class TariffDAOMariaDB implements TariffDAO {
 	/**
 	 * Delete Tariff from the persistence layer.
 	 * 
-	 * @param user Tariff to delete.
+	 * @param tariff Tariff to delete.
 	 * @return 1 if deleted, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */

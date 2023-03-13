@@ -296,7 +296,7 @@ public class UserServiceImpl implements UserService {
 	 *                                      after transaction.
 	 */
 	@Override
-	public void changeUserBalance(int userId, BigDecimal diffrence, String description)
+	public void changeUserBalance(int userId, BigDecimal difference, String description)
 			throws UserServiceException, NegativeUserBalanceException {
 		if (description.length() > 128) {
 			throw new UserServiceException("Description is too long");
@@ -304,10 +304,10 @@ public class UserServiceImpl implements UserService {
 		try {
 			UserDAO userDAO = daoFactory.getUserDAO();
 			TransactionDAO transactionDAO = daoFactory.getTransactionDAO();
-			if ((userDAO.get(userId).getBalance().add(diffrence)).signum() < 0) {
+			if ((userDAO.get(userId).getBalance().add(difference)).signum() < 0) {
 				throw new NegativeUserBalanceException();
 			}
-			transactionDAO.changeUserBalance(userId, diffrence, description);
+			transactionDAO.changeUserBalance(userId, difference, description);
 		} catch (DAOException e) {
 			throw new UserServiceException();
 		}

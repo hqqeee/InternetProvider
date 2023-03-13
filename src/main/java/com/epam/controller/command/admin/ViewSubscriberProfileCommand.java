@@ -39,9 +39,9 @@ public class ViewSubscriberProfileCommand implements Command {
 	 * retrieving the user information, the error message will be set as an
 	 * attribute in the request.
 	 * 
-	 * @param HttpServletRequest  req - the request object that is passed to the
+	 * @param req - the request object that is passed to the
 	 *                            servlet
-	 * @param HttpServletResponse resp - the response object that the servlet
+	 * @param resp - the response object that the servlet
 	 *                            generates
 	 * @return String - the name of the next page that the servlet should redirect
 	 *         to

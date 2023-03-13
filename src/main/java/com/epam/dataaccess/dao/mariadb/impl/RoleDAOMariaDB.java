@@ -69,7 +69,7 @@ public class RoleDAOMariaDB implements RoleDAO {
 	/**
 	 * Insert new Role to the persistence layer.
 	 * 
-	 * @param tariff Role to add.
+	 * @param role Role to add.
 	 * @return 1 if inserted, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -86,7 +86,7 @@ public class RoleDAOMariaDB implements RoleDAO {
 	/**
 	 * Update Role in the persistence layer.
 	 * 
-	 * @param user Role to update.
+	 * @param role Role to update.
 	 * @return 1 if updated, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
@@ -107,7 +107,7 @@ public class RoleDAOMariaDB implements RoleDAO {
 	/**
 	 * Delete Role from the persistence layer.
 	 * 
-	 * @param user Role to delete.
+	 * @param role Role to delete.
 	 * @return 1 if deleted, 0 if not.
 	 * @throws DAOException is thrown when SQLException occurs.
 	 */
