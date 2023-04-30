@@ -42,7 +42,7 @@ public class SchedulerInitListner implements ServletContextListener {
 		LOG.debug("Scheduler initialization begin.");
 		try {
 			scheduler = new ScheduledThreadPoolExecutor(1);
-			scheduler.scheduleAtFixedRate(new DailyWithdrawCommand(), 2, 120, TimeUnit.SECONDS);
+			scheduler.scheduleAtFixedRate(new DailyWithdrawCommand(), 0, 1, TimeUnit.MINUTES);
 		} catch (Exception e) {
 			LOG.fatal("Cannot initialize scheduler.", e);
 			System.exit(1);

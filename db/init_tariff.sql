@@ -1,4 +1,5 @@
 USE internet_provider;
+USE internet_provider;
 INSERT INTO tariff (name, description, payment_period_days, rate, service_id)
 VALUES
 ("Basic", "Includes a limited selection of popular channels and on-demand content, suitable for individuals or small households.", 14, 10,4),
@@ -47,7 +48,5 @@ VALUES
 ("VoIP", "A Voice over Internet Protocol (VoIP) package that provides telephone service over the internet, with features such as call forwarding and voicemail.", 1, 7,1),
 ("Premium", "A high-end package that provides a wide range of calling and messaging features, with a high-quality connection.", 28, 29,1),
 ("Landline", "A traditional landline telephone package that provides a wired telephone connection, suitable for homes and businesses that require a stable connection.", 28, 10,1)
-
-
 
 

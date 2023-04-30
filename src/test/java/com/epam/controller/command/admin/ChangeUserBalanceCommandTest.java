@@ -113,7 +113,7 @@ class ChangeUserBalanceCommandTest {
 			bd.setScale(2);
 			bd = bd.negate();
 			doThrow(NegativeUserBalanceException.class).when(userService).changeUserBalance(1, bd, "desc");
-			assertEquals(new AdminMenuCommand().execute(req, resp), new ChangeUserBalanceCommand().execute(req, resp));
+			assertEquals("redirected", new ChangeUserBalanceCommand().execute(req, resp));
 		}
 	}
 	
@@ -130,7 +130,7 @@ class ChangeUserBalanceCommandTest {
 			bd.setScale(2);
 			bd = bd.negate();
 			doThrow(UserServiceException.class).when(userService).changeUserBalance(1, bd, "desc");
-			assertEquals(new AdminMenuCommand().execute(req, resp), new ChangeUserBalanceCommand().execute(req, resp));
+			assertEquals("redirected", new ChangeUserBalanceCommand().execute(req, resp));
 		}
 	}
 	

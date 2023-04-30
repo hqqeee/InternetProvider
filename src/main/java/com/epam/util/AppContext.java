@@ -16,7 +16,7 @@ import com.epam.services.UserService;
  * @author Hrebenozhko Ruslan
  * @version 1.0
  */
-public final class AppContext {
+public class AppContext {
 	private TariffService tariffService;
 	private UserService userService;
 	private TransactionService transactionService;
